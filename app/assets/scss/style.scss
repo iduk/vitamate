@@ -1,0 +1,37 @@
+@charset 'UTF-8';
+
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+
+// Bootstrap & Variables
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "variables";
+@import "cube-variables";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// Components
+@import "global/_index";
+@import "components/_index";
+
+// pages
+
+// reset
+body {
+  letter-spacing: -0.5px;
+  font-weight: normal;
+}
+b {
+  font-weight: 700;
+}
+
+.logo-text {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.card {
+  word-break: keep-all;
+}
+
+#wrapper {
+  min-width: 1024px;
+}
