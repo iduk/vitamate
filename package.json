@@ -1,6 +1,7 @@
 {
   "name": "vitamate",
   "version": "0.1.0",
+  "license": "MIT",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,9 +9,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@tailwindcss/postcss7-compat": "^2.2.9",
     "autoprefixer": "^9",
-    "babel-polyfill": "^6.26.0",
     "core-js": "^3.6.5",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
