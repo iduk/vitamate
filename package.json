@@ -21,10 +21,10 @@
     "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
     "babel-polyfill": "^6.26.0",
-    "css-vars-ponyfill": "2.4.7",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "postcss": "^7",
+    "sass-loader": "^12.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-template-compiler": "^2.6.11"
   },

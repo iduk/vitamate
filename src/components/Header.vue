@@ -1,79 +1,60 @@
 <template>
-  <nav class="sticky top-0 h-20 bg-gray-800 p-5 sm:px-24 xl:px-64">
-    <div class="mx-auto flex justify-between items-center">
-      <a
-        href="#"
-        class="
-          uppercase
-          text-white text-xl
-          xl:text-3xl
-          font-bold
-          whitespace-no-wrap
-          font-Montserrat
-          leading-normal
-          tracking-tighter
-        "
-        >Start Tailwind</a
-      >
-      <button class="block md:hidden uppercase items-center bg-green-500 px-3 py-2 rounded-lg text-white">
-        Menu
-        <svg class="h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path
-            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-          />
-        </svg>
-      </button>
-      <div class="hidden md:block">
+  <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-white shadow mb-3">
+    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      <div class="flex w-auto px-4 static justify-start">
         <a
-          href=""
-          class="
-            px-4
-            uppercase
-            text-white text-base
-            font-bold
-            whitespace-no-wrap
-            font-Montserrat
-            leading-normal
-            tracking-tighter
-            hover:text-green-500
-          "
-          >Portfolio</a
+          class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
+          href="#"
         >
-        <a
-          href=""
-          class="
-            px-4
-            uppercase
-            text-white text-base
-            font-bold
-            whitespace-no-wrap
-            font-Montserrat
-            leading-normal
-            tracking-tighter
-            hover:text-green-500
-          "
-          >About</a
-        >
-        <a
-          href=""
-          class="
-            px-4
-            uppercase
-            text-white text-base
-            font-bold
-            whitespace-no-wrap
-            font-Montserrat
-            leading-normal
-            tracking-tighter
-            hover:text-green-500
-          "
-          >Contact</a
-        >
+          vitamate
+        </a>
+      </div>
+      <div class="flex flex-grow items-center">
+        <ul class="flex flex-row list-none ml-auto">
+          <li class="nav-item">
+            <a
+              class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+              href="#pablo"
+            >
+              <i class="fab fa-facebook-square text-lg leading-lg text-white opacity-75" /><span class="ml-2"
+                >Share</span
+              >
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+              href="#pablo"
+            >
+              <i class="fab fa-twitter text-lg leading-lg text-white opacity-75" /><span class="ml-2">Tweet</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+              href="#pablo"
+            >
+              <i class="fab fa-pinterest text-lg leading-lg text-white opacity-75" /><span class="ml-2">Pin</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'navbar',
+  data() {
+    return {
+      showMenu: false,
+    }
+  },
+  methods: {
+    toggleNavbar: function () {
+      this.showMenu = !this.showMenu
+    },
+  },
+}
 </script>
