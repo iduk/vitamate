@@ -1,6 +1,7 @@
 {
   "name": "vitamate",
   "version": "0.1.0",
+  "license": "MIT",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -39,9 +40,18 @@
     },
     "rules": {}
   },
-  "browserslist": [
-    "> 0.1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  "browserslist": {
+    "production": [
+      "ie 11",
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "ie 11",
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
