@@ -24,7 +24,8 @@
     "autoprefixer": "^9",
     "babel-polyfill": "^6.26.0",
     "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "css-vars-ponyfill": "2.4.7"
   },
   "eslintConfig": {
     "root": true,
@@ -41,9 +42,10 @@
     "rules": {}
   },
   "browserslist": [
-    "> 0.1%",
-    "ie 11",
+    "> 1%",
+    "IE 11",
     "last 2 versions",
+    "maintained node versions",
     "not dead"
   ]
 }
