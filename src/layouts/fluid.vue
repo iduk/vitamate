@@ -1,8 +1,9 @@
 <template>
   <div>
     <Header />
-    <p>전체화면</p>
-    <slot />
+    <main class="container mx-auto py-16">
+      <slot />
+    </main>
   </div>
 </template>
 
@@ -10,7 +11,7 @@
 import Header from '@/components/Header'
 
 export default {
-  name: 'fluid',
+  name: 'layout-fluid',
   components: {
     Header,
   },

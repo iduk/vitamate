@@ -1,17 +1,19 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router/index'
-import Default from './layouts/default'
-import Sidebar from './layouts/sidebar'
-import Fluid from './layouts/fluid'
-import Tung from './layouts/tung'
 import 'babel-polyfill'
 import './assets/index.css'
+import './assets/global.scss'
 
-Vue.component('default', Default)
-Vue.component('sidebar', Sidebar)
-Vue.component('fluid', Fluid)
-Vue.component('tung', Tung)
+import Default from '@/layouts/Default'
+import Sidebar from '@/layouts/Sidebar'
+import Fluid from '@/layouts/Fluid'
+import Tung from '@/layouts/Tung'
+
+Vue.component('layout-default', Default)
+Vue.component('layout-sidebar', Sidebar)
+Vue.component('layout-fluid', Fluid)
+Vue.component('layout-tung', Tung)
 
 Vue.config.productionTip = false
 

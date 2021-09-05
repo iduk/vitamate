@@ -23,8 +23,10 @@
     "babel-polyfill": "^6.26.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^6.0.1",
     "postcss": "^7",
-    "sass-loader": "^12.1.0",
+    "postcss-import": "^14.0.2",
+    "sass-loader": "^10",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-template-compiler": "^2.6.11"
   },

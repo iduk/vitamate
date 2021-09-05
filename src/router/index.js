@@ -1,25 +1,107 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Index from '@/pages/Index.vue'
-import Error from '@/pages/Error.vue'
+
+import Home from '@/pages/Home.vue'
+import PageNotFound from '@/pages/Error.vue'
+import Login from '@/pages/Auth/Login.vue'
+import Logout from '@/pages/Auth/Logout.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  // redirect
   {
     path: '/',
-    component: Index,
-    layout: 'default',
+    redirect: '/home',
   },
   {
-    path: '/cart/',
+    path: '/test',
+    component: () => import('@/pages/Test.vue'),
+    meta: { layout: 'layout-tung' },
+  },
+
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    meta: { layout: 'layout-tung', authRequired: true },
+  },
+  {
+    path: '/logout',
+    name: 'Logout',
+    component: Logout,
+    meta: { layout: 'layout-tung' },
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home,
+    meta: { layout: 'layout-default' },
+  },
+  {
+    path: '/dtc',
+    name: 'DTC',
+    component: () => import('@/pages/Dtc/Index.vue'),
+    meta: { layout: 'layout-sidebar' },
+  },
+  {
+    path: '/survey',
+    name: 'Survey',
+    component: () => import('@/pages/Survey/Index.vue'),
+    meta: { layout: 'layout-fluid' },
+  },
+  {
+    path: '/products',
+    name: 'Products',
+    component: () => import('@/pages/Products/Index.vue'),
+    meta: { layout: 'layout-fluid' },
+  },
+  {
+    path: '/mypage',
+    name: 'Mypage',
+    component: () => import('@/pages/Mypage/Index.vue'),
+    meta: { layout: 'layout-sidebar' },
+    children: [
+      {
+        path: '/userinfo',
+        name: 'UserInfo',
+        component: () => import('@/pages/Mypage/UserInfo.vue'),
+      },
+      {
+        path: '/order',
+        name: 'Order',
+        component: () => import('@/pages/Mypage/Order.vue'),
+      },
+      {
+        path: '/point',
+        name: 'Point',
+        component: () => import('@/pages/Mypage/Point.vue'),
+      },
+    ],
+  },
+  {
+    path: '/news',
+    name: 'News',
+    component: () => import('@/pages/News/Index.vue'),
+    meta: { layout: 'layout-sidebar' },
+  },
+  {
+    path: '/support',
+    name: 'Support',
+    component: () => import('@/pages/Support/Index.vue'),
+    meta: { layout: 'layout-sidebar' },
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
     component: () => import('@/pages/Cart/Index.vue'),
-    layout: 'fluid',
+    meta: { layout: 'layout-default' },
   },
   {
     path: '/:catchAll(.*)',
-    component: Error,
-    layout: 'tung',
+    name: 'NotFound',
+    component: PageNotFound,
+    meta: { layout: 'layout-tung', requiresAuth: false },
   },
 ]
 

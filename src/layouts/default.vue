@@ -1,8 +1,10 @@
 <template>
   <div>
     <Header />
-    <h1>디폴트 레이아웃</h1>
-    <slot />
+    <main class="container">
+      <h1>표준 레이아웃</h1>
+      <slot />
+    </main>
   </div>
 </template>
 
@@ -10,11 +12,9 @@
 import Header from '@/components/Header'
 
 export default {
-  name: 'default',
+  name: 'layout-default',
   components: {
     Header,
   },
 }
 </script>
-
-<style lang="scss" scoped></style>

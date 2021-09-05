@@ -2,14 +2,13 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./public/index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  purge: ['./public/**/*.html', './src/**/*.vue'],
   theme: {
     screens: {
-      lg: '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      xl: '1280px',
-      // => @media (min-width: 1280px) { ... }
+      lg: { min: '1024px', max: '1279px' },
+    },
+    container: {
+      center: true,
     },
     colors: {
       primary: '#5cbbbb',
