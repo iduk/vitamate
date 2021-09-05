@@ -3,3 +3,22 @@ html,
 body {
   min-width: 1200px;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bolder;
+}
+
+.btn {
+  @apply p-4 text-base font-medium rounded-md;
+  &.disabled {
+    cursor: no-drop;
+    @apply border-0 bg-gray-900 opacity-20 text-gray-50;
+  }
+}
+.btn + .btn {
+  margin-top: 0.925rem;
+}
