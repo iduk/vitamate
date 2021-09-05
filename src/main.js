@@ -5,10 +5,10 @@ import 'babel-polyfill'
 import './assets/index.css'
 import './assets/global.scss'
 
-import Default from './layouts/Default'
-import Sidebar from './layouts/Sidebar'
-import Fluid from './layouts/Fluid'
-import Tung from './layouts/Tung'
+import Default from './layouts/default.vue'
+import Sidebar from './layouts/sidebar.vue'
+import Fluid from './layouts/fluid.vue'
+import Tung from './layouts/tung.vue'
 
 Vue.component('default', Default)
 Vue.component('sidebar', Sidebar)
