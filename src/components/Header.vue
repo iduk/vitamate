@@ -1,5 +1,8 @@
 <template>
-  <header id="header" class="relative flex flex-wrap items-center justify-between bg-white border-b border-gray-200">
+  <header
+    id="header"
+    class="relative z-10 flex flex-wrap items-center justify-between border-b border-opacity-10 border-black"
+  >
     <div class="container mx-auto">
       <ul class="topnav flex flex-wrap items-center justify-end h-full">
         <li><router-link class="block p-2 text-sm" to="/login" active-class="active">로그인</router-link></li>
@@ -87,13 +90,13 @@ $topnav-size: 44px;
   font-size: 17px;
 
   &::before {
-    transition: 0.2s linear;
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     height: 3px;
-    width: 0;
+    width: 1%;
+    transition: 0.2s ease-in-out;
   }
   &.active {
     &::before {

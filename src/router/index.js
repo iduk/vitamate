@@ -24,13 +24,13 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login,
-    meta: { layout: 'layout-tung', authRequired: true },
+    meta: { layout: 'layout-fluid', authRequired: true },
   },
   {
     path: '/logout',
     name: 'Logout',
     component: Logout,
-    meta: { layout: 'layout-tung' },
+    meta: { layout: 'layout-fluid' },
   },
   {
     path: '/home',

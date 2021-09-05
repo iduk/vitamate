@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div id="wrapper" class="subpixel-antialiased">
     <component :is="layout">
       <router-view />
     </component>
