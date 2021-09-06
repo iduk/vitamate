@@ -10,10 +10,10 @@ import Sidebar from './layouts/sidebar.vue'
 import Fluid from './layouts/fluid.vue'
 import Tung from './layouts/tung.vue'
 
-Vue.component('default', Default)
-Vue.component('sidebar', Sidebar)
-Vue.component('fluid', Fluid)
-Vue.component('tung', Tung)
+Vue.component('layout-default', Default)
+Vue.component('layout-sidebar', Sidebar)
+Vue.component('layout-fluid', Fluid)
+Vue.component('layout-tung', Tung)
 
 Vue.config.productionTip = false
 
