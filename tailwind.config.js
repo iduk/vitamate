@@ -2,7 +2,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./public/**/*.html', './src/**/*.vue'],
+  purge: ['./public/**/*.html', './src/**/*.vue', './src/**/*.js'],
   theme: {
     screens: {
       lg: { min: '1024px', max: '1279px' },
@@ -11,10 +11,14 @@ module.exports = {
       center: true,
     },
     colors: {
-      primary: '#5cbbbb',
+      primary: {
+        light: '#7CC8C8',
+        DEFAULT: '#5cbbbb',
+        dark: '#499595',
+      },
+      success: colors.green,
       danger: colors.rose,
       warning: colors.amber,
-      success: colors.green,
       gray: colors.gray,
       transparent: colors.transparent,
       white: colors.white,

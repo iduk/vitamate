@@ -16,24 +16,8 @@
             내 몸에 맞는 영양소를 확인해 보세요!
           </p>
           <div class="mt-8 flex flex-shrink-0">
-            <div class="inline-flex rounded-md shadow">
-              <a
-                href="#"
-                class="
-                  inline-flex
-                  items-center
-                  justify-center
-                  px-5
-                  py-3
-                  border border-transparent
-                  text-base
-                  font-medium
-                  rounded-md
-                  text-indigo-600
-                  bg-primary
-                  text-white
-                "
-              >
+            <div class="inline-flex rounded-md">
+              <a href="#" class="inline-flex items-center justify-center btn animate-bounce">
                 회원 가입하기
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +37,7 @@
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .bg-hero {
   height: 80vh;
   &::after {
@@ -65,6 +49,15 @@
   line-height: 1.3;
   b {
     font-weight: 900;
+  }
+}
+
+.btn {
+  @apply px-5 py-3 text-base font-medium rounded-md bg-primary text-white;
+  /* focus,hover */
+  &:focus,
+  &:hover {
+    @apply bg-primary-dark;
   }
 }
 </style>
