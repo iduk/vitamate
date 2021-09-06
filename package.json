@@ -34,6 +34,7 @@
     "postcss": "^7",
     "prettier": "^2.3.2",
     "sass-loader": "10",
+    "stylelint-config-recommended": "^5.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-template-compiler": "^2.6.11"
   },
@@ -58,7 +59,7 @@
     "maintained node versions",
     "not dead"
   ],
-    "husky": {
+  "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
