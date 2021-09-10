@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import TopNav from '../components/TopNav'
 import styles from '../styles/Home.module.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
@@ -13,7 +14,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={cx('main', 'bg-black')}>
+      <TopNav />
+
+      <main className={cx('main', 'bg-white')}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>

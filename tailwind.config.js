@@ -9,10 +9,20 @@ module.exports = {
   purge: ['./src/components/**/*.js', './pages/**/*.js'],
   theme: {
     extend: {},
+    screens: {
+      desktop: '1140px',
+    },
+    container: {
+      center: true,
+    },
     colors: {
       primary: '#5cbbbb',
       black: colors.black,
       white: colors.white,
+    },
+    fontFamily: {
+      sans: ['Nanumsquare', 'sans-serif'],
+      serif: ['serif'],
     },
   },
   variants: {},

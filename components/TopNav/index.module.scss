@@ -1,0 +1,45 @@
+$header-size: 110px;
+$topnav-size: 44px;
+
+#header {
+  height: $header-size;
+}
+.topnav {
+  height: $topnav-size;
+  li > a {
+    @apply hover:text-primary;
+    &.active {
+      @apply text-primary;
+    }
+  }
+}
+.nav-item a {
+  position: relative;
+  font-size: 17px;
+  &::before {
+    transition: 0.2s linear;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    width: 1%;
+    transition: 0.2s ease-in-out;
+  }
+  &.active {
+    &::before {
+      content: '';
+      width: 100%;
+      @apply bg-primary;
+    }
+  }
+}
+
+.btn {
+  @apply p-4 text-base font-medium rounded-md;
+  &.disabled {
+    cursor: no-drop;
+    @apply border-0 bg-gray-900 opacity-20;
+  }
+}
