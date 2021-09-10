@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import styles from './index.module.scss'
 import classNames from 'classnames/bind'
@@ -15,61 +16,61 @@ export default function TopNav() {
         <div className="container mx-auto">
           <ul className="topnav flex flex-wrap items-center justify-end h-full">
             <li>
-              <a className="block p-2 text-sm" href="/login" active-class="active">
+              <Link className="block p-2 text-sm" href="/login" active-class="active">
                 로그인
-              </a>
+              </Link>
             </li>
             <li>
               <span className="block text-sm">・</span>
             </li>
             <li>
-              <a className="block p-2 text-sm" href="/signup" active-class="active">
+              <Link className="block p-2 text-sm" href="/signup" active-class="active">
                 회원가입
-              </a>
+              </Link>
             </li>
           </ul>
           <nav className="navbar flex flex-wrap items-center justify-between">
             <div className="flex w-auto static justify-start items-center">
-              <a className={cx('logo', 'inline-block')} href="/">
+              <Link className={cx('logo', 'inline-block')} href="/">
                 <Image src="/images/logo.svg" alt="brand" width={200} height={80} />
-              </a>
+              </Link>
             </div>
             <div className="flex flex-grow items-center">
               <ul className="flex flex-row list-none ml-auto">
                 <li className="nav-item">
-                  <a href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
+                  <Link href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
                     건강설문
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
+                  <Link href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
                     건강설문
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
+                  <Link href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
                     건강설문
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
+                  <Link href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
                     건강설문
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
+                  <Link href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
                     건강설문
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
+                  <Link href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
                     건강설문
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
+                  <Link href="" active-class="active" className="font-bold px-4 py-5 flex items-center">
                     건강설문
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
