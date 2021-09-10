@@ -13,6 +13,10 @@ $topnav-size: 44px;
     }
   }
 }
+.logo {
+  width: 180px;
+}
+
 .nav-item a {
   position: relative;
   font-size: 17px;
@@ -39,7 +43,7 @@ $topnav-size: 44px;
 .btn {
   @apply p-4 text-base font-medium rounded-md;
   &.disabled {
+    @apply border-0 opacity-20;
     cursor: no-drop;
-    @apply border-0 bg-gray-900 opacity-20;
   }
 }

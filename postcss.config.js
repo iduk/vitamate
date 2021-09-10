@@ -3,7 +3,7 @@ module.exports = {
     'postcss-import': {},
     autoprefixer: {},
     tailwindcss: {
-      postcss-nesting: {}
+      // postcss-nesting: {}
     },
     'postcss-flexbugs-fixes': {},
     'postcss-preset-env': {
@@ -13,7 +13,7 @@ module.exports = {
       stage: 3,
       features: {
         'custom-properties': false,
-        'nesting-rules': false
+        'nesting-rules': false,
       },
     },
   },

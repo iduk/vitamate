@@ -1,4 +1,9 @@
 import React from 'react'
+import Image from 'next/image'
+
+import styles from './index.module.scss'
+import classNames from 'classnames/bind'
+const cx = classNames.bind(styles)
 
 export default function TopNav() {
   return (
@@ -25,8 +30,8 @@ export default function TopNav() {
           </ul>
           <nav className="navbar flex flex-wrap items-center justify-between">
             <div className="flex w-auto static justify-start items-center">
-              <a className="leading-relaxed inline-block pb-2" href="/">
-                <img src="/images/logo.svg" alt="logo" />
+              <a className={cx('logo', 'inline-block')} href="/">
+                <Image src="/images/logo.svg" alt="brand" width={200} height={80} />
               </a>
             </div>
             <div className="flex flex-grow items-center">
