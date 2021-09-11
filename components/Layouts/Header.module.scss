@@ -1,20 +1,16 @@
 $header-size: 110px;
 $topnav-size: 44px;
 
+.brand-logo {
+  display: block;
+  border: 1px solid red;
+}
+
 #header {
   height: $header-size;
 }
-.topnav {
+.navbar {
   height: $topnav-size;
-  li > a {
-    @apply hover:text-primary;
-    &.active {
-      @apply text-primary;
-    }
-  }
-}
-.logo {
-  width: 180px;
 }
 
 .nav-item a {
@@ -35,15 +31,6 @@ $topnav-size: 44px;
     &::before {
       content: '';
       width: 100%;
-      @apply bg-primary;
     }
-  }
-}
-
-.btn {
-  @apply p-4 text-base font-medium rounded-md;
-  &.disabled {
-    @apply border-0 opacity-20;
-    cursor: no-drop;
   }
 }

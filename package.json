@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -20,6 +21,7 @@
     "autoprefixer": "^9",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "eslint-import-resolver-alias": "^1.1.2",
     "postcss": "^7",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.2",
@@ -27,12 +29,27 @@
     "postcss-preset-env": "^6.7.0",
     "precss": "^4.0.0",
     "sass": "^1.39.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "gh-pages": "^2.2",
+    "husky": "^4.2.1",
+    "keymirror": "^0.1.1",
+    "lint-staged": "^10.0.7"
   },
   "browserslist": [
     ">0.3%",
     "not ie 11",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  }
 }

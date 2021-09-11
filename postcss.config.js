@@ -3,7 +3,7 @@ module.exports = {
     'postcss-import': {},
     autoprefixer: {},
     tailwindcss: {
-      // postcss-nesting: {}
+      'postcss-nesting': {},
     },
     'postcss-flexbugs-fixes': {},
     'postcss-preset-env': {

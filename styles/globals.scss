@@ -18,3 +18,10 @@ h5 {
 .btn + .btn {
   margin-top: 0.925rem;
 }
+.btn {
+  @apply p-4 text-base font-medium rounded-md;
+  &.disabled {
+    @apply border-0 opacity-20;
+    cursor: no-drop;
+  }
+}
