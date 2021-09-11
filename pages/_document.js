@@ -9,7 +9,14 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ko">
-        <Head />
+        <Head>
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

@@ -2,6 +2,9 @@
   height: 80vh;
   &::after {
     content: '';
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
   }
 }
 .hero-title {

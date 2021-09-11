@@ -1,11 +1,7 @@
-@import '~tailwindcss/base';
-@import '~tailwindcss/components';
-@import '~tailwindcss/utilities';
-
-html,
-body {
-  min-width: 1140px;
-}
+// tailwind css
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 h1,
 h2,
@@ -13,15 +9,32 @@ h3,
 h4,
 h5 {
   font-weight: bolder;
+  line-height: 1.5;
+}
+
+// buttons
+
+.btn {
+  @apply py-3 px-4 text-base font-medium rounded-md border border-transparent shadow;
+
+  &.disabled {
+    @apply border-0 opacity-20;
+    cursor: no-drop;
+  }
 }
 
 .btn + .btn {
   margin-top: 0.925rem;
 }
-.btn {
-  @apply p-4 text-base font-medium rounded-md;
-  &.disabled {
-    @apply border-0 opacity-20;
-    cursor: no-drop;
+
+// forms
+
+.form-control {
+  margin-bottom: 1.5em;
+  label {
+    @apply block uppercase tracking-wide text-gray-800 text-sm font-bold mb-2;
+  }
+  input {
+    @apply appearance-none block w-full text-gray-800 border border-gray-300 rounded py-4 px-4 leading-tight;
   }
 }

@@ -2,9 +2,7 @@ module.exports = {
   plugins: {
     'postcss-import': {},
     autoprefixer: {},
-    tailwindcss: {
-      'postcss-nesting': {},
-    },
+    tailwindcss: {},
     'postcss-flexbugs-fixes': {},
     'postcss-preset-env': {
       autoprefixer: {
@@ -13,7 +11,7 @@ module.exports = {
       stage: 3,
       features: {
         'custom-properties': false,
-        'nesting-rules': false,
+        'nesting-rules': true,
       },
     },
   },

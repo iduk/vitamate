@@ -1,32 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import styles from './Home.module.scss'
-import classNames from 'classnames/bind'
-const cx = classNames.bind(styles)
+import './Home.module.scss'
 
 export default function Home() {
   return (
-    <section
-      className={cx(
-        'bg-hero',
-        'bg-cover',
-        'bg-no-repeat',
-        'fixed',
-        'top-0',
-        'left-0',
-        'w-full',
-        'z-0',
-        'bg-success-100'
-      )}
-    >
-      <div className="container flex flex-wrap justify-end items-center h-full">
-        <div className="bg-gray-50 w-7/1 rounded-xl shadow">
+    <section className="bg-hero bg-cover bg-no-repeat fixed top-0 left-0 w-full h-3/5 z-0 bg-success-100">
+      <div className="container max-w-5xl flex flex-wrap justify-end items-center h-full pt-24">
+        <div className="bg-white w-7/1 rounded-xl shadow">
           <div className="py-14 px-16">
             <h6 className="text-3xl tracking-tight text-gray-900">
               <span className="text-xl mb-2 block">내 몸의 영양 발란스!</span>
             </h6>
-            <h2 className="hero-title font-bold text-5xl block">
+            <h2 className="hero-title text-5xl leading-tight">
               유전자가 읽어주고,
               <br />
               AI가 말해주는
@@ -42,18 +28,14 @@ export default function Home() {
                 <a
                   href="#"
                   className="
+                  btn
                   inline-flex
                   items-center
                   justify-center
-                  px-5
-                  py-3
-                  border border-transparent
-                  text-base
-                  font-medium
-                  rounded-md
-                  text-indigo-600
-                  bg-primary
                   text-white
+                  bg-primary
+                  hover:bg-primary-dark
+                  focus:bg-primary-dark
                 "
                 >
                   회원 가입하기
@@ -64,12 +46,7 @@ export default function Home() {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
               </div>

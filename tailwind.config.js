@@ -2,26 +2,41 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./**/*.js'],
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
+  purge: ['./**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {},
     container: {
       center: true,
     },
     colors: {
-      primary: '#5cbbbb',
+      // Build your palette here
       black: colors.black,
       white: colors.white,
+      gray: colors.gray,
+      red: colors.red,
+      blue: colors.sky,
+      yellow: colors.amber,
+      success: colors.green,
+      transparent: 'transparent',
+      current: 'currentColor',
+      primary: {
+        light: '#6CC1C1',
+        DEFAULT: '#5cbbbb',
+        dark: '#52A8A8',
+      },
     },
     fontFamily: {
       sans: ['Nanumsquare', 'sans-serif'],
       serif: ['serif'],
     },
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['hover', 'focus'],
+    borderColor: ['focus', 'hover'],
+  },
   plugins: [require('tailwindcss'), require('precss'), require('autoprefixer')],
 }

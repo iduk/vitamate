@@ -1,9 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import styles from './Header.module.scss'
-import classNames from 'classnames/bind'
-const cx = classNames.bind(styles)
+import s from './Header.module.scss'
 
 export default function Header() {
   const styles = {
@@ -38,10 +36,10 @@ export default function Header() {
   ]
 
   return (
-    <div>
+    <div className={s.wrapper}>
       <header
         id="header"
-        className={'relative z-0 flex flex-wrap items-center justify-between border-b border-opacity-10 border-black'}
+        className={'relative z-10 flex flex-wrap items-center justify-between border-b border-opacity-10 border-black'}
       >
         <div className={'container max-w-5xl mx-auto'}>
           <ul className={'navbar flex flex-wrap items-center justify-end h-full'}>
@@ -74,10 +72,10 @@ export default function Header() {
               </Link>
             </li> */}
           </ul>
-          <nav className={'navbar flex flex-wrap items-center justify-between'}>
-            <div className={'flex w-auto static justify-start items-center'}>
+          <nav className="navbar flex flex-wrap items-center justify-between">
+            <div className="flex w-auto static justify-start items-center">
               <Link href="/">
-                <a className={cx('brand-logo')}>
+                <a className="brand-logo">
                   <img src={'/images/logo.svg'} alt="vitamate logo" />
                 </a>
               </Link>
@@ -85,7 +83,7 @@ export default function Header() {
             <div className="flex flex-grow items-center">
               <ul className="flex flex-row list-none ml-auto">
                 {navItems.map((nav) => (
-                  <li key={nav} className="nav-item">
+                  <li key={nav.id} className={'nav-item'}>
                     <Link href={nav.path} activeClassName={nav.activeClassName}>
                       <a className={nav.className}>{nav.title}</a>
                     </Link>

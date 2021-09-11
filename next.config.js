@@ -1,9 +1,11 @@
 const path = require('path')
 const withSass = require('@zeit/next-sass')
-const tailwindCss = require('tailwindcss')
 
 module.exports = {
   trailingSlash: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, '.')],
+  },
   // webpack
   webpackDevMiddleware: (config) => {
     config.watchOptions = {
