@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+
 import styles from './Header.module.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
@@ -14,19 +15,25 @@ export default function Header() {
       className: styles.className,
       activeClassName: styles.activeClassName,
       path: '/',
-      title: '유전자검사',
+      title: '유전자 검사',
     },
     {
       className: styles.className,
       activeClassName: styles.activeClassName,
-      path: '/posts',
-      title: '건강설문',
+      path: '/survey',
+      title: '건강 설문',
     },
     {
       className: styles.className,
       activeClassName: styles.activeClassName,
-      path: '/contact',
-      title: 'Contact',
+      path: '/news',
+      title: '비타 소식',
+    },
+    {
+      className: styles.className,
+      activeClassName: styles.activeClassName,
+      path: '/support',
+      title: '고객 센터',
     },
   ]
 
@@ -34,13 +41,14 @@ export default function Header() {
     <div>
       <header
         id="header"
-        className={'relative z-10 flex flex-wrap items-center justify-between border-b border-opacity-10 border-black'}
+        className={'relative z-0 flex flex-wrap items-center justify-between border-b border-opacity-10 border-black'}
       >
-        <div className={'container mx-auto'}>
+        <div className={'container max-w-5xl mx-auto'}>
           <ul className={'navbar flex flex-wrap items-center justify-end h-full'}>
+            {/* Logout */}
             <li>
               <Link href="/login" activeClassName="active">
-                <a className={'block p-2 text-sm'}>로그인</a>
+                <a className={'block p-2 text-sm'}>회원가입</a>
               </Link>
             </li>
             <li>
@@ -48,9 +56,23 @@ export default function Header() {
             </li>
             <li>
               <Link href="/login" activeClassName="active">
-                <a className={'block p-2 text-sm'}>회원가입</a>
+                <a className={'block p-2 text-sm'}>로그인</a>
               </Link>
             </li>
+            {/* Login */}
+            {/* <li>
+              <Link href="/login" activeClassName="active">
+                <a className={'block p-2 text-sm'}>아임비타</a>
+              </Link>
+            </li>
+            <li>
+              <span className={'block text-sm'}>・</span>
+            </li>
+            <li>
+              <Link href="/login" activeClassName="active">
+                <a className={'block p-2 text-sm'}>로그아웃</a>
+              </Link>
+            </li> */}
           </ul>
           <nav className={'navbar flex flex-wrap items-center justify-between'}>
             <div className={'flex w-auto static justify-start items-center'}>
@@ -63,7 +85,7 @@ export default function Header() {
             <div className="flex flex-grow items-center">
               <ul className="flex flex-row list-none ml-auto">
                 {navItems.map((nav) => (
-                  <li key={nav.id} className="nav-item">
+                  <li key={nav} className="nav-item">
                     <Link href={nav.path} activeClassName={nav.activeClassName}>
                       <a className={nav.className}>{nav.title}</a>
                     </Link>

@@ -2,16 +2,13 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./**/*.js', './**/*.scss'],
+  purge: ['./**/*.js'],
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
   theme: {
     extend: {},
-    screens: {
-      desktop: '1140px',
-    },
     container: {
       center: true,
     },

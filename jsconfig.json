@@ -3,5 +3,5 @@
     "baseUrl": "."
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.js", "**/*.ts", "**/*.tsx"]
+  "include": ["**/*.js"]
 }

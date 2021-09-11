@@ -12,28 +12,26 @@
   "dependencies": {
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "^1.39.2"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-do-expressions": "^7.14.5",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
-    "eslint-import-resolver-alias": "^1.1.2",
+    "gh-pages": "^2.2",
+    "husky": "^4.2.1",
+    "keymirror": "^0.1.1",
+    "lint-staged": "^10.0.7",
     "postcss": "^7",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.2",
     "postcss-nesting": "^8.0.1",
     "postcss-preset-env": "^6.7.0",
     "precss": "^4.0.0",
-    "sass": "^1.39.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "gh-pages": "^2.2",
-    "husky": "^4.2.1",
-    "keymirror": "^0.1.1",
-    "lint-staged": "^10.0.7"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "browserslist": [
     ">0.3%",

@@ -1,9 +1,11 @@
 $header-size: 110px;
 $topnav-size: 44px;
 
+.wrapper {
+  border: 2px solid red;
+}
 .brand-logo {
   display: block;
-  border: 1px solid red;
 }
 
 #header {
