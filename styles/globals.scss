@@ -13,7 +13,6 @@ h5 {
 }
 
 // buttons
-
 .btn {
   @apply py-3 px-4 text-base font-medium rounded-md border border-transparent shadow;
 
@@ -28,13 +27,17 @@ h5 {
 }
 
 // forms
-
 .form-control {
   margin-bottom: 1.5em;
   label {
+    transition: all 0.2s ease-out;
     @apply block uppercase tracking-wide text-gray-800 text-sm font-bold mb-2;
   }
   input {
+    transition: border 0.2s ease-in-out;
     @apply appearance-none block w-full text-gray-800 border border-gray-300 rounded py-4 px-4 leading-tight;
+    &:focus {
+      @apply focus:outline-none focus:bg-white focus:border-gray-500;
+    }
   }
 }

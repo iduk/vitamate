@@ -1,11 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Modal from 'components/Modal'
+import { useState } from 'react'
 
 import './Home.module.scss'
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false)
+
   return (
-    <section className="bg-hero bg-cover bg-no-repeat fixed top-0 left-0 w-full h-3/5 z-0 bg-success-100">
+    <section className="bg-hero bg-cover bg-no-repeat fixed top-0 left-0 w-full h-3/5 bg-success-100">
       <div className="container max-w-5xl flex flex-wrap justify-end items-center h-full pt-24">
         <div className="bg-white w-7/1 rounded-xl shadow">
           <div className="py-14 px-16">
@@ -26,7 +30,7 @@ export default function Home() {
             <div className="mt-8 flex flex-shrink-0">
               <div className="inline-flex rounded-md shadow">
                 <a
-                  href="#"
+                  onClick={() => setShowModal(true)}
                   className="
                   btn
                   inline-flex
@@ -53,6 +57,15 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <Modal title={'B메이트'} onClose={() => setShowModal(false)} show={showModal}>
+          <article className={'p-10'}>asdfasdf</article>
+          <footer className={'flex justify-center p-0'}>
+            <button onClick={() => setShowModal(false)} className={'w-full py-6 bg-primary text-white rounded-none'}>
+              장바구니 담기
+            </button>
+          </footer>
+        </Modal>
       </div>
     </section>
   )

@@ -2,39 +2,42 @@ $header-size: 110px;
 $topnav-size: 44px;
 
 .wrapper {
-  border: 2px solid red;
-  .brand-logo {
-    display: block;
-  }
+  position: relative;
+}
+.brand-logo {
+  display: block;
+}
 
-  #header {
-    height: $header-size;
-  }
-  .navbar {
-    height: $topnav-size;
-  }
+#header {
+  height: $header-size;
+}
+.navbar {
+  height: $topnav-size;
+}
 
-  .nav-item {
-    a {
-      position: relative;
-      font-size: 17px;
-      &::before {
-        transition: 0.2s linear;
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 3px;
-        width: 0;
-        width: 1%;
-        transition: 0.2s ease-in-out;
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-        }
-      }
+.navItem {
+  .navLink {
+    position: relative;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 1%;
+      transition: 0.15s linear;
+    }
+  }
+  .navLink.active {
+    &::before {
+      content: '';
+      width: 100%;
+      background-color: #5cbbbb;
     }
   }
 }

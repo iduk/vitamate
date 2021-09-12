@@ -1,37 +1,33 @@
 import React from 'react'
 import Link from 'next/link'
-
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 import s from './Header.module.scss'
 
 export default function Header() {
-  const styles = {
-    className: 'px-4 py-5 flex items-center hover:text-primary',
-    activeClassName: 'active',
-  }
+  const router = useRouter()
+  const [showModal, setShowModal] = useState(false)
+
   const navItems = [
     {
-      className: styles.className,
-      activeClassName: styles.activeClassName,
-      path: '/',
+      path: '/dtc',
       title: '유전자 검사',
     },
     {
-      className: styles.className,
-      activeClassName: styles.activeClassName,
       path: '/survey',
       title: '건강 설문',
     },
     {
-      className: styles.className,
-      activeClassName: styles.activeClassName,
       path: '/news',
       title: '비타 소식',
     },
     {
-      className: styles.className,
-      activeClassName: styles.activeClassName,
       path: '/support',
       title: '고객 센터',
+    },
+    {
+      path: '/mypage/Profile',
+      title: 'MY비타',
     },
   ]
 
@@ -42,19 +38,19 @@ export default function Header() {
         className={'relative z-10 flex flex-wrap items-center justify-between border-b border-opacity-10 border-black'}
       >
         <div className={'container max-w-5xl mx-auto'}>
-          <ul className={'navbar flex flex-wrap items-center justify-end h-full'}>
+          <ul className={' flex flex-wrap items-center justify-end h-full'}>
             {/* Logout */}
             <li>
-              <Link href="/login" activeClassName="active">
-                <a className={'block p-2 text-sm'}>회원가입</a>
+              <Link href="/SignIn">
+                <a className={'block p-2 text-sm focus:text-primary'}>로그인</a>
               </Link>
             </li>
             <li>
               <span className={'block text-sm'}>・</span>
             </li>
             <li>
-              <Link href="/login" activeClassName="active">
-                <a className={'block p-2 text-sm'}>로그인</a>
+              <Link href="/SignUp">
+                <a className={'block p-2 text-sm focus:text-primary'}>회원가입</a>
               </Link>
             </li>
             {/* Login */}
@@ -75,7 +71,7 @@ export default function Header() {
           <nav className="navbar flex flex-wrap items-center justify-between">
             <div className="flex w-auto static justify-start items-center">
               <Link href="/">
-                <a className="brand-logo">
+                <a className="brand-logo pb-1">
                   <img src={'/images/logo.svg'} alt="vitamate logo" />
                 </a>
               </Link>
@@ -83,12 +79,19 @@ export default function Header() {
             <div className="flex flex-grow items-center">
               <ul className="flex flex-row list-none ml-auto">
                 {navItems.map((nav) => (
-                  <li key={nav.id} className={'nav-item'}>
-                    <Link href={nav.path} activeClassName={nav.activeClassName}>
-                      <a className={nav.className}>{nav.title}</a>
+                  <li key={nav.id} className={s.navItem}>
+                    <Link href={nav.path}>
+                      <a className={nav.path === router.pathname ? s.navLink + ' ' + s.active : s.navLink}>
+                        {nav.title}
+                      </a>
                     </Link>
                   </li>
                 ))}
+                <style jsx>{`
+                  .nav-link.active::after {
+                    content: ' (current page)';
+                  }
+                `}</style>
               </ul>
             </div>
           </nav>

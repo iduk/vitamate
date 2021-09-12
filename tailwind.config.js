@@ -8,7 +8,11 @@ module.exports = {
   },
   purge: ['./**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+        large: '20px',
+      },
+    },
     container: {
       center: true,
     },
