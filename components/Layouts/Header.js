@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import s from './Header.module.scss'
+import img from 'next/image'
 
 export default function Header() {
   const router = useRouter()
