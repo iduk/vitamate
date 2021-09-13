@@ -52,13 +52,13 @@ export default function Sidebar({ subpages }) {
   `
 
   return (
-    <aside id="sidebar" class="flex-shrink-0 w-52 p-4 py-16 my-0 text-center ">
+    <aside id="sidebar" className="flex-shrink-0 w-52 p-4 py-16 my-0 text-center">
       <nav>
-        <h3 class="text-xl font-bold">pageTitle</h3>
-        <ul class="mt-6">
+        <h3 className="text-xl font-bold">pageTitle</h3>
+        <ul className="mt-6">
           <>
             {navItems.map((nav) => (
-              <li class="py-3" key={nav.id}>
+              <li className="py-3" key={nav.id}>
                 <Link className={'nav'} href={nav.path}>
                   {nav.title}
                 </Link>

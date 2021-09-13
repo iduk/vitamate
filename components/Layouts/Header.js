@@ -38,7 +38,7 @@ export default function Header() {
         className={'relative z-10 flex flex-wrap items-center justify-between border-b border-opacity-10 border-black'}
       >
         <div className={'container max-w-5xl mx-auto'}>
-          <ul className={' flex flex-wrap items-center justify-end h-full'}>
+          <ul className={'flex flex-wrap items-center justify-end h-full'} style={{ height: '40px' }}>
             {/* Logout */}
             <li>
               <Link href="/SignIn">

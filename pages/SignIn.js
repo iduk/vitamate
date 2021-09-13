@@ -10,13 +10,13 @@ export default function SignIn() {
         <article className={'p-10'}>
           <form action="">
             <div className="form-control w-full">
-              <label for="login-input-id"> 아이디 </label>
+              <label htmlFor="login-input-id"> 아이디 </label>
               <input className="text-lg" id="login-input-id" type="text" placeholder="핸드폰 번호를 입력해 주세요" />
             </div>
 
             <div className="form-control w-full">
               <div className="flex justify-between">
-                <label for="login-input-id"> 비밀번호 </label>
+                <label htmlFor="login-input-id"> 비밀번호 </label>
                 <a href="#" className="text-sm underline text-gray-400">
                   비밀번호를 잊어버리셨나요?
                 </a>
