@@ -4,33 +4,11 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import s from './Header.module.scss'
 import img from 'next/image'
+import navs from './navs'
 
-export default function Header() {
+export default function Header({ Navs }) {
   const router = useRouter()
   const [showModal, setShowModal] = useState(false)
-
-  const navItems = [
-    {
-      path: '/dtc',
-      title: '유전자 검사',
-    },
-    {
-      path: '/survey',
-      title: '건강 설문',
-    },
-    {
-      path: '/news',
-      title: '비타 소식',
-    },
-    {
-      path: '/support',
-      title: '고객 센터',
-    },
-    {
-      path: '/mypage/Profile',
-      title: 'MY비타',
-    },
-  ]
 
   return (
     <div className={s.wrapper}>
@@ -79,7 +57,7 @@ export default function Header() {
             </div>
             <div className="flex flex-grow items-center">
               <ul className="flex flex-row list-none ml-auto">
-                {navItems.map((nav) => (
+                {navs.pages.map((nav) => (
                   <li key={nav.id} className={s.navItem}>
                     <Link href={nav.path}>
                       <a className={nav.path === router.pathname ? s.navLink + ' ' + s.active : s.navLink}>

@@ -3,13 +3,11 @@ import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import Navs, { navs } from './navs'
 
-export const getStaticProps = async () => {
-  return {
-    props: {
-      subpages: navs.subpages,
-    },
-  }
-}
+// export async function getStaticProps({ params }) {
+//   const currentPath = `/${params.slug.join('/')}`
+//   const page = content.pages.find((page) => page.path === currentPath) || { notfound: true }
+//   return { props: { page } }
+// }
 
 export default function Sidebar({ subpages }) {
   // console.log(data)
