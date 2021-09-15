@@ -1,4 +1,4 @@
-import LayoutSidebar from 'components/layouts/LayoutSidebar'
+import LayoutSidebar from 'components/Layouts/LayoutSidebar'
 import { useState } from 'react'
 
 export default function News() {
