@@ -1,9 +1,9 @@
 import LayoutSidebar from 'components/Layouts/LayoutSidebar'
 
-export default function Mypage() {
+export default function Profile() {
   return (
     <LayoutSidebar>
-      <h1>마이비타</h1>
+      <h1>회원정보수정</h1>
     </LayoutSidebar>
   )
 }
