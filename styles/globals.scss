@@ -41,3 +41,16 @@ h5 {
     }
   }
 }
+
+#sidebar {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: calc(100vh - 110px);
+    @apply bg-gray-200;
+  }
+}

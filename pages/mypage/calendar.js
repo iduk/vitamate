@@ -1,9 +1,9 @@
 import LayoutSidebar from 'components/layouts/LayoutSidebar'
 
-export default function Profile() {
+export default function User() {
   return (
     <LayoutSidebar>
-      <h1>회원정보수정</h1>
+      <h1>구독관리</h1>
     </LayoutSidebar>
   )
 }
