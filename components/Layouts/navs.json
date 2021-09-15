@@ -35,36 +35,33 @@
           "title": "1:1문의"
         }
       ]
+    }
+  ],
+
+  "mypage": [
+    {
+      "path": "/mypage/subscribe",
+      "title": "구독 관리"
     },
     {
-      "title": "MY비타",
-      "path": "/mypage",
-      "subpages": [
-        {
-          "path": "/mypage/subscribe",
-          "title": "구독 관리"
-        },
-        {
-          "path": "/mypage/user",
-          "title": "내 정보"
-        },
-        {
-          "path": "/mypage/addressbook",
-          "title": "배송지 관리"
-        },
-        {
-          "path": "/mypage/calendar",
-          "title": "비타 캘린더"
-        },
-        {
-          "path": "/mypage/sale",
-          "title": "할인 현황"
-        },
-        {
-          "path": "/mypage/pointshop",
-          "title": "포인트샵"
-        }
-      ]
+      "path": "/mypage/user",
+      "title": "내 정보"
+    },
+    {
+      "path": "/mypage/addressbook",
+      "title": "배송지 관리"
+    },
+    {
+      "path": "/mypage/calendar",
+      "title": "비타 캘린더"
+    },
+    {
+      "path": "/mypage/sale",
+      "title": "할인 현황"
+    },
+    {
+      "path": "/mypage/pointshop",
+      "title": "포인트샵"
     }
   ]
 }
