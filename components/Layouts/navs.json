@@ -13,11 +13,11 @@
       "path": "/news",
       "subpages": [
         {
-          "path": "/news",
+          "path": "/news/",
           "title": "비타 뉴스"
         },
         {
-          "path": "/whitepaper",
+          "path": "/news/whitepaper",
           "title": "비타 백서"
         }
       ]
@@ -41,27 +41,27 @@
       "path": "/mypage",
       "subpages": [
         {
-          "path": "/subscribe",
+          "path": "/mypage/subscribe",
           "title": "구독 관리"
         },
         {
-          "path": "/user",
+          "path": "/mypage/user",
           "title": "내 정보"
         },
         {
-          "path": "/addressbook",
+          "path": "/mypage/addressbook",
           "title": "배송지 관리"
         },
         {
-          "path": "/calendar",
+          "path": "/mypage/calendar",
           "title": "비타 캘린더"
         },
         {
-          "path": "/sale",
+          "path": "/mypage/sale",
           "title": "할인 현황"
         },
         {
-          "path": "/pointshop",
+          "path": "/mypage/pointshop",
           "title": "포인트샵"
         }
       ]

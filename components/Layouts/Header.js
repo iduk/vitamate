@@ -6,7 +6,7 @@ import s from './Header.module.scss'
 import img from 'next/image'
 import navs from './navs'
 
-export default function Header({ Navs }) {
+export default function Header() {
   const router = useRouter()
   const [showModal, setShowModal] = useState(false)
 
@@ -19,7 +19,7 @@ export default function Header({ Navs }) {
         <div className={'container max-w-5xl mx-auto'}>
           <ul className={'flex flex-wrap items-center justify-end h-full'} style={{ height: '40px' }}>
             {/* Logout */}
-            <li>
+            {/* <li>
               <Link href="/SignIn">
                 <a className={'block p-2 text-sm focus:text-primary'}>로그인</a>
               </Link>
@@ -31,11 +31,11 @@ export default function Header({ Navs }) {
               <Link href="/SignUp">
                 <a className={'block p-2 text-sm focus:text-primary'}>회원가입</a>
               </Link>
-            </li>
+            </li> */}
             {/* Login */}
-            {/* <li>
-              <Link href="/login" activeClassName="active">
-                <a className={'block p-2 text-sm'}>아임비타</a>
+            <li>
+              <Link href="/mypage/" activeClassName="active">
+                <a className={'block p-2 text-sm'}>마이비타</a>
               </Link>
             </li>
             <li>
@@ -45,7 +45,7 @@ export default function Header({ Navs }) {
               <Link href="/login" activeClassName="active">
                 <a className={'block p-2 text-sm'}>로그아웃</a>
               </Link>
-            </li> */}
+            </li>
           </ul>
           <nav className="navbar flex flex-wrap items-center justify-between">
             <div className="flex w-auto static justify-start items-center">
@@ -58,7 +58,7 @@ export default function Header({ Navs }) {
             <div className="flex flex-grow items-center">
               <ul className="flex flex-row list-none ml-auto">
                 {navs.pages.map((nav) => (
-                  <li key={nav.id} className={s.navItem}>
+                  <li key={nav.path} className={s.navItem}>
                     <Link href={nav.path}>
                       <a className={nav.path === router.pathname ? s.navLink + ' ' + s.active : s.navLink}>
                         {nav.title}
