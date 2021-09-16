@@ -41,3 +41,23 @@ h5 {
     }
   }
 }
+
+#sidebar {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: calc(100vh - 110px);
+    @apply bg-gray-200;
+  }
+}
+
+.page-title {
+  @apply text-3xl font-bold pb-7;
+  &.sidebar {
+    @apply border-b border-black;
+  }
+}

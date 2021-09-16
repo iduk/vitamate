@@ -6,7 +6,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ['./**/*.{js,ts,jsx,tsx}'],
+  purge: ['./components/**/*.js', './pages/**/*.js'],
   theme: {
     extend: {
       borderRadius: {

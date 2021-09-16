@@ -1,7 +1,9 @@
+import LayoutFluid from 'components/Layouts/LayoutFluid'
+
 export default function Dtc() {
   return (
-    <div>
-      <h1>유전자검사</h1>
-    </div>
+    <LayoutFluid>
+      <p>유전자 검사</p>
+    </LayoutFluid>
   )
 }

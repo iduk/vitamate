@@ -102,16 +102,16 @@ export default function Header() {
             </li> */}
             {/* Login */}
             <li>
-              <Link href="/mypage/" activeClassName="active">
-                <a className={'block p-2 text-sm'}>마이비타</a>
+              <Link href="/mypage" activeClassName="active">
+                <a className={'block p-2 text-sm hover:text-primary'}>MY비타</a>
               </Link>
             </li>
             <li>
               <span className={'block text-sm'}>・</span>
             </li>
             <li>
-              <Link href="/login" activeClassName="active">
-                <a className={'block p-2 text-sm'}>로그아웃</a>
+              <Link href="/login">
+                <a className={'block p-2 text-sm hover:text-primary'}>로그아웃</a>
               </Link>
             </li>
           </ul>
