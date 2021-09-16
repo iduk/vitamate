@@ -10,6 +10,74 @@ export default function Header() {
   const router = useRouter()
   const [showModal, setShowModal] = useState(false)
 
+  const navs = {
+    pages: [
+      {
+        title: '유전자 검사',
+        path: '/dtc',
+      },
+      {
+        title: '건강 설문',
+        path: '/survey',
+      },
+      {
+        title: '비타 소식',
+        path: '/news',
+        subpages: [
+          {
+            path: '/news/',
+            title: '비타 뉴스',
+          },
+          {
+            path: '/news/whitepaper',
+            title: '비타 백서',
+          },
+        ],
+      },
+      {
+        title: '고객 센터',
+        path: '/support',
+        subpages: [
+          {
+            path: '/support/faq',
+            title: 'FAQ',
+          },
+          {
+            path: '/support/contact',
+            title: '1:1문의',
+          },
+        ],
+      },
+    ],
+
+    mypage: [
+      {
+        path: '/mypage',
+        title: '내 정보',
+      },
+      {
+        path: '/mypage/subscribe',
+        title: '구독 관리',
+      },
+      {
+        path: '/mypage/addressbook',
+        title: '배송지 관리',
+      },
+      {
+        path: '/mypage/calendar',
+        title: '비타 캘린더',
+      },
+      {
+        path: '/mypage/sale',
+        title: '할인 현황',
+      },
+      {
+        path: '/mypage/pointshop',
+        title: '포인트샵',
+      },
+    ],
+  }
+
   return (
     <div className={s.wrapper}>
       <header
@@ -51,7 +119,7 @@ export default function Header() {
             <div className="flex w-auto static justify-start items-center">
               <Link href="/">
                 <a className="brand-logo pb-1">
-                  <Img src={'/images/logo.svg'} alt="vitamate logo" />
+                  <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
                 </a>
               </Link>
             </div>

@@ -1,5 +1,6 @@
 import LayoutSidebar from 'components/Layouts/LayoutSidebar'
 import { useState } from 'react'
+import Img from 'next/image'
 
 export default function News() {
   const [question, setquestion] = useState(0)
@@ -45,9 +46,9 @@ export default function News() {
                 <h3 className="w-10/12 font-normal">비타메이트는 이런걸 공지합니다.</h3>
                 <span>
                   {question === 1 ? (
-                    <img src="/images/ic-arrowdown.svg" alt="down" />
+                    <Img src="/images/ic-arrowdown.svg" width="40" height="40" alt="down" />
                   ) : (
-                    <img src="/images/ic-arrowup.svg" alt="up" />
+                    <Img src="/images/ic-arrowup.svg" width="40" height="40" alt="up" />
                   )}
                 </span>
               </article>
