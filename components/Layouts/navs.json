@@ -40,12 +40,12 @@
 
   "mypage": [
     {
-      "path": "/mypage/subscribe",
-      "title": "구독 관리"
+      "path": "/mypage",
+      "title": "내 정보"
     },
     {
-      "path": "/mypage/user",
-      "title": "내 정보"
+      "path": "/mypage/subscribe",
+      "title": "구독 관리"
     },
     {
       "path": "/mypage/addressbook",

@@ -44,7 +44,7 @@ export default function Sidebar() {
         <h3 className="text-xl font-bold">현재페이지 타이틀</h3>
         <ul className="mt-6">
           {news.map((nav) => (
-            <li className="py-3" key={nav.id}>
+            <li className="py-3" key={nav.path}>
               <Link className={'nav'} href={nav.path}>
                 {nav.title}
               </Link>
