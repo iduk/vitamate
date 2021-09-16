@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Modal from 'components/Modal'
+import router from 'next/router'
 
 export default function SignIn() {
   const [showModal, setShowModal] = useState(true)

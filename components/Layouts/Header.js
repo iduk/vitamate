@@ -9,6 +9,7 @@ import navs from './navs'
 export default function Header() {
   const router = useRouter()
   const [showModal, setShowModal] = useState(false)
+  const [isLoggin, setIsLoggin] = useState(true)
 
   const navs = {
     pages: [
@@ -67,14 +68,6 @@ export default function Header() {
         path: '/mypage/calendar',
         title: '비타 캘린더',
       },
-      {
-        path: '/mypage/sale',
-        title: '할인 현황',
-      },
-      {
-        path: '/mypage/pointshop',
-        title: '포인트샵',
-      },
     ],
   }
 
@@ -87,34 +80,43 @@ export default function Header() {
         <div className={'container max-w-5xl mx-auto'}>
           <ul className={'flex flex-wrap items-center justify-end h-full'} style={{ height: '40px' }}>
             {/* Logout */}
-            {/* <li>
-              <Link href="/SignIn">
-                <a className={'block p-2 text-sm focus:text-primary'}>로그인</a>
-              </Link>
-            </li>
-            <li>
-              <span className={'block text-sm'}>・</span>
-            </li>
-            <li>
-              <Link href="/SignUp">
-                <a className={'block p-2 text-sm focus:text-primary'}>회원가입</a>
-              </Link>
-            </li> */}
-            {/* Login */}
-            <li>
-              <Link href="/mypage" activeClassName="active">
-                <a className={'block p-2 text-sm hover:text-primary'}>MY비타</a>
-              </Link>
-            </li>
-            <li>
-              <span className={'block text-sm'}>・</span>
-            </li>
-            <li>
-              <Link href="/login">
-                <a className={'block p-2 text-sm hover:text-primary'}>로그아웃</a>
-              </Link>
-            </li>
+            {isLoggin === false ? (
+              <>
+                <li>
+                  <Link href="/SignIn">
+                    <a className={'block p-2 text-sm focus:text-primary'}>로그인</a>
+                  </Link>
+                </li>
+                <li>
+                  <span className={'block text-sm'}>・</span>
+                </li>
+                <li>
+                  <Link href="/SignUp">
+                    <a className={'block p-2 text-sm focus:text-primary'}>회원가입</a>
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link href="/mypage" activeClassName="active">
+                    <a className={'block p-2 text-sm hover:text-primary'}>MY비타</a>
+                  </Link>
+                </li>
+                <li>
+                  <span className={'block text-sm'}>・</span>
+                </li>
+                <li>
+                  <Link href=".">
+                    <a onClick={() => setIsLoggin(false)} className={'block p-2 text-sm hover:text-primary'}>
+                      로그아웃
+                    </a>
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
+
           <nav className="navbar flex flex-wrap items-center justify-between">
             <div className="flex w-auto static justify-start items-center">
               <Link href="/">
@@ -134,11 +136,6 @@ export default function Header() {
                     </Link>
                   </li>
                 ))}
-                <style jsx>{`
-                  .nav-link.active::after {
-                    content: ' (current page)';
-                  }
-                `}</style>
               </ul>
             </div>
           </nav>
