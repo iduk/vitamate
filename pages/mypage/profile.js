@@ -1,9 +1,9 @@
 import LayoutSidebar from 'components/Layouts/LayoutSidebar'
 
-export default function Addressbook() {
+export default function Profile() {
   return (
     <LayoutSidebar>
-      <h1>배송지관리</h1>
+      <h1>회원정보수정</h1>
     </LayoutSidebar>
   )
 }
