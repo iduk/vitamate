@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import s from './Header.module.scss'
-import img from 'next/image'
+import Img from 'next/image'
 import navs from './navs'
 
 export default function Header() {
@@ -51,7 +51,7 @@ export default function Header() {
             <div className="flex w-auto static justify-start items-center">
               <Link href="/">
                 <a className="brand-logo pb-1">
-                  <img src={'/images/logo.svg'} alt="vitamate logo" />
+                  <Img src={'/images/logo.svg'} alt="vitamate logo" />
                 </a>
               </Link>
             </div>
