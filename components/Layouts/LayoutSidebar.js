@@ -1,5 +1,4 @@
 import Sidebar from './Sidebar'
-import { withRouter } from 'next/router'
 
 export default function LayoutSidebar({ children }) {
   return (

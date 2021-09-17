@@ -1,5 +1,6 @@
 import LayoutSidebar from 'components/Layouts/LayoutSidebar'
 import { useState } from 'react'
+import Img from 'next/image'
 
 export default function Support() {
   const [question, setquestion] = useState(0)
@@ -17,9 +18,9 @@ export default function Support() {
                 <h3 className="w-10/12 font-normal">비타메이트 DTC유전자검사 키트배송안내</h3>
                 <span>
                   {question === 0 ? (
-                    <img src="/images/ic-arrowdown.svg" alt="down" />
+                    <Img width={40} height={40} src="/images/ic-arrowdown.svg" alt="down" />
                   ) : (
-                    <img src="/images/ic-arrowup.svg" alt="up" />
+                    <Img width={40} height={40} src="/images/ic-arrowup.svg" alt="up" />
                   )}
                 </span>
               </article>
@@ -45,9 +46,9 @@ export default function Support() {
                 <h3 className="w-10/12 font-normal">비타메이트 리뷰이벤트 진행</h3>
                 <span>
                   {question === 1 ? (
-                    <img src="/images/ic-arrowdown.svg" alt="down" />
+                    <Img width={40} height={40} src="/images/ic-arrowdown.svg" alt="down" />
                   ) : (
-                    <img src="/images/ic-arrowup.svg" alt="up" />
+                    <Img width={40} height={40} src="/images/ic-arrowup.svg" alt="up" />
                   )}
                 </span>
               </article>
@@ -73,9 +74,9 @@ export default function Support() {
                 <h3 className="w-10/12 font-normal">비타메이트는 이런걸 공지합니다.</h3>
                 <span>
                   {question === 2 ? (
-                    <img src="/images/ic-arrowdown.svg" alt="down" />
+                    <Img width={40} height={40} src="/images/ic-arrowdown.svg" alt="down" />
                   ) : (
-                    <img src="/images/ic-arrowup.svg" alt="up" />
+                    <Img width={40} height={40} src="/images/ic-arrowup.svg" alt="up" />
                   )}
                 </span>
               </article>

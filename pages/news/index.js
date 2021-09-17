@@ -18,9 +18,9 @@ export default function News() {
                 <h3 className="w-10/12 font-normal">비타메이트는 이런걸 공지합니다.</h3>
                 <span>
                   {question === 0 ? (
-                    <img src="/images/ic-arrowdown.svg" alt="down" />
+                    <Img width={40} height={40} src="/images/ic-arrowdown.svg" alt="down" />
                   ) : (
-                    <img src="/images/ic-arrowup.svg" alt="up" />
+                    <Img width={40} height={40} src="/images/ic-arrowup.svg" alt="up" />
                   )}
                 </span>
               </article>
@@ -46,9 +46,9 @@ export default function News() {
                 <h3 className="w-10/12 font-normal">비타메이트는 이런걸 공지합니다.</h3>
                 <span>
                   {question === 1 ? (
-                    <Img src="/images/ic-arrowdown.svg" width="40" height="40" alt="down" />
+                    <Img width={40} height={40} src="/images/ic-arrowdown.svg" alt="down" />
                   ) : (
-                    <Img src="/images/ic-arrowup.svg" width="40" height="40" alt="up" />
+                    <Img width={40} height={40} src="/images/ic-arrowup.svg" alt="up" />
                   )}
                 </span>
               </article>
@@ -71,9 +71,9 @@ export default function News() {
                 <h3 className="w-10/12 font-normal">비타메이트는 이런걸 공지합니다.</h3>
                 <span>
                   {question === 2 ? (
-                    <img src="/images/ic-arrowdown.svg" alt="down" />
+                    <Img width={40} height={40} src="/images/ic-arrowdown.svg" alt="down" />
                   ) : (
-                    <img src="/images/ic-arrowup.svg" alt="up" />
+                    <Img width={40} height={40} src="/images/ic-arrowup.svg" alt="up" />
                   )}
                 </span>
               </article>

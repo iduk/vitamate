@@ -2,14 +2,17 @@ import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import s from './Header.module.scss'
 import Img from 'next/image'
-import navs from './navs'
+import s from './Header.module.scss'
+import Modal from 'components/Modal'
+import SignUp from 'pages/SignUp'
+import SignIn from 'pages/SignIn'
 
 export default function Header() {
   const router = useRouter()
-  const [showModal, setShowModal] = useState(false)
-  const [isLoggin, setIsLoggin] = useState(true)
+  const [isLoggin, setIsLoggin] = useState(false)
+  const [showSignin, setShowSignin] = useState(false)
+  const [showSignup, setShowSignup] = useState(false)
 
   const navs = {
     pages: [
@@ -80,19 +83,23 @@ export default function Header() {
         <div className={'container max-w-5xl mx-auto'}>
           <ul className={'flex flex-wrap items-center justify-end h-full'} style={{ height: '40px' }}>
             {/* Logout */}
-            {isLoggin === false ? (
+            {isLoggin === true ? (
               <>
                 <li>
-                  <Link href="/SignIn">
-                    <a className={'block p-2 text-sm focus:text-primary'}>로그인</a>
+                  <Link href=".">
+                    <a onClick={() => setShowSignin(true)} className={'block p-2 text-sm focus:text-primary'}>
+                      로그인
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <span className={'block text-sm'}>・</span>
                 </li>
                 <li>
-                  <Link href="/SignUp">
-                    <a className={'block p-2 text-sm focus:text-primary'}>회원가입</a>
+                  <Link href=".">
+                    <a onClick={() => setShowSignup(true)} className={'block p-2 text-sm focus:text-primary'}>
+                      회원가입
+                    </a>
                   </Link>
                 </li>
               </>
@@ -108,7 +115,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link href=".">
-                    <a onClick={() => setIsLoggin(false)} className={'block p-2 text-sm hover:text-primary'}>
+                    <a onClick={() => setIsLoggin(true)} className={'block p-2 text-sm hover:text-primary'}>
                       로그아웃
                     </a>
                   </Link>
@@ -141,6 +148,14 @@ export default function Header() {
           </nav>
         </div>
       </header>
+
+      <Modal title={'로그인'} onClose={() => setShowSignin(false)} show={showSignin}>
+        <SignIn />
+      </Modal>
+
+      <Modal title={'회원가입'} onClose={() => setShowSignup(false)} show={showSignup}>
+        <SignUp />
+      </Modal>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
-import img from 'next/image'
+import Img from 'next/image'
 
 export default function Modal({ show, onClose, children, title }) {
   const [isBrowser, setIsBrowser] = useState(false)
@@ -24,7 +24,7 @@ export default function Modal({ show, onClose, children, title }) {
             className="ml-auto bg-transparent border-0float-right text-3xl leading-none outline-none focus:outline-none"
             onClick={handleCloseClick}
           >
-            <img src="/images/btn-popup-cancel.svg" width="48" height="48" alt="닫기" />
+            <Img src="/images/btn-popup-cancel.svg" width="48" height="48" alt="닫기" />
           </button>
         </header>
       </>
