@@ -79,7 +79,7 @@ export default function SignUp() {
           <ul>
             <li className="flex justify-between items-center border-b border-gray-200">
               <div className="flex-shrink-0">
-                <label htmlFor="check-test" class="inline-flex items-center py-2">
+                <label htmlFor="check-test" className="inline-flex items-center py-2">
                   <input id="check-test" type="checkbox" className="form-checkbox" />
                   <p className="ml-3 font-bold">전체 동의하기</p>
                 </label>
@@ -87,7 +87,7 @@ export default function SignUp() {
             </li>
             <li className="flex justify-between items-center">
               <div className="flex-shrink-0">
-                <label htmlFor="check-test" class="inline-flex items-center py-2">
+                <label htmlFor="check-test" className="inline-flex items-center py-2">
                   <input id="check-test" type="checkbox" className="form-checkbox" />
                   <p className="ml-3">[필수] 이용약관</p>
                 </label>
