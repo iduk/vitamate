@@ -62,7 +62,7 @@ function Sidebar({ children, router }) {
               {news.nav.map((nav) => (
                 <li className="py-3" key={nav.path}>
                   <Link href={nav.path} as={nav.path}>
-                    <a className={('nav', nav.path === router.pathname ? 'text-primary' : '')}>{nav.title}</a>
+                    <a className={('nav', nav.path === router.pathname ? 'text-primary-600' : '')}>{nav.title}</a>
                   </Link>
                 </li>
               ))}
@@ -76,7 +76,7 @@ function Sidebar({ children, router }) {
               {support.nav.map((nav) => (
                 <li className="py-3" key={nav.path}>
                   <Link href={nav.path} as={nav.path}>
-                    <a className={('nav', nav.path === router.pathname ? 'text-primary' : '')}>{nav.title}</a>
+                    <a className={('nav', nav.path === router.pathname ? 'text-primary-600' : '')}>{nav.title}</a>
                   </Link>
                 </li>
               ))}
@@ -90,7 +90,7 @@ function Sidebar({ children, router }) {
               {mypage.nav.map((nav) => (
                 <li className="py-3" key={nav.path}>
                   <Link href={nav.path} as={nav.path}>
-                    <a className={('nav', nav.path === router.pathname ? 'text-primary' : '')}>{nav.title}</a>
+                    <a className={('nav', nav.path === router.pathname ? 'text-primary-600' : '')}>{nav.title}</a>
                   </Link>
                 </li>
               ))}

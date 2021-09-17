@@ -34,7 +34,7 @@ export default function Modal({ show, onClose, children, title }) {
   const ModalLayout = show ? (
     <>
       <section className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-        <article className="relative w-full my-6 mx-auto min-w-min max-w-xl">
+        <article className="modal-size relative w-full my-6 mx-auto min-w-min">
           <div className="rounded-large shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <ModalHeader title />
             {children}

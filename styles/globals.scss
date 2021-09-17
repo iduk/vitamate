@@ -17,10 +17,26 @@ h5 {
   line-height: 1.5;
 }
 
+// input + btn
+.btn,
+input[type='text'],
+input[type='password'],
+input[type='number'],
+input[type='date'],
+input[type='file'],
+input[type='range'],
+input[type='reset'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='button'],
+select {
+  @apply py-3 px-4 text-base font-medium rounded;
+  transition: border 0.15s ease-out;
+}
+
 // buttons
 .btn {
-  @apply py-3 px-4 text-base font-medium rounded-md border border-transparent shadow;
-
   &.disabled {
     @apply border-0 opacity-20;
     cursor: no-drop;
@@ -32,17 +48,50 @@ h5 {
 }
 
 // forms
-.form-control {
-  margin-bottom: 1.5em;
-  label {
-    transition: all 0.2s ease-out;
-    @apply block uppercase tracking-wide text-gray-800 text-sm font-bold mb-2;
+.form-group {
+  & + .form-group {
+    @apply mt-6;
   }
-  input {
-    transition: border 0.2s ease-in-out;
-    @apply appearance-none block w-full text-gray-800 border border-gray-300 rounded py-4 px-4 leading-tight;
+  label {
+    transition: all 0.15s ease-out;
+    @apply block uppercase tracking-wide text-black text-sm font-bold mb-2;
+  }
+}
+.form-control {
+  label {
+    transition: all 0.15s ease-out;
+    @apply block uppercase tracking-wide text-black text-sm font-bold mb-2;
+  }
+  input,
+  select {
+    @apply appearance-none block w-full text-gray-700 border border-gray-300;
     &:focus {
-      @apply focus:outline-none focus:bg-white focus:border-gray-500;
+      @apply outline-none bg-white border-gray-500 text-black;
+    }
+    // disabled
+    &:disabled {
+      cursor: no-drop;
+      @apply bg-gray-100 border-gray-200;
+    }
+  }
+}
+
+// Forms validate
+.error {
+  input,
+  select {
+    @apply border-danger-500  text-danger-500;
+    &:focus {
+      @apply border-danger-500;
+    }
+  }
+}
+.success {
+  input,
+  select {
+    @apply border-success-500  text-success-500;
+    &:focus {
+      @apply border-success-500;
     }
   }
 }
@@ -62,6 +111,11 @@ h5 {
 
 $header-size: 110px;
 $topnav-size: 44px;
+$modal-size: 500px;
+
+.modal-size {
+  max-width: $modal-size;
+}
 
 // home
 .bg-hero {

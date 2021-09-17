@@ -36,9 +36,9 @@ export default function Home() {
                   items-center
                   justify-center
                   text-white
-                  bg-primary
-                  hover:bg-primary-dark
-                  focus:bg-primary-dark
+                  bg-primary-600
+                  hover:bg-primary-600-800
+                  focus:bg-primary-600-800
                 "
                 >
                   회원 가입하기
