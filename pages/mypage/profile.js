@@ -1,9 +1,9 @@
-import LayoutSidebar from 'components/Layouts/LayoutSidebar'
+import ContainerAside from 'components/Layouts/ContainerAside'
 
 export default function Profile() {
   return (
-    <LayoutSidebar>
+    <ContainerAside>
       <h1>회원정보수정</h1>
-    </LayoutSidebar>
+    </ContainerAside>
   )
 }

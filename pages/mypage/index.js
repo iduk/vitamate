@@ -1,9 +1,9 @@
-import LayoutSidebar from 'components/Layouts/LayoutSidebar'
+import ContainerAside from 'components/Layouts/ContainerAside'
 
 export default function Mypage() {
   return (
-    <LayoutSidebar>
+    <ContainerAside>
       <h1>마이비타</h1>
-    </LayoutSidebar>
+    </ContainerAside>
   )
 }

@@ -1,8 +1,8 @@
 import Sidebar from './Sidebar'
 
-export default function LayoutSidebar({ children }) {
+export default function ContainerAside({ children }) {
   return (
-    <section className={'container-view mx-auto flex flex-initial'}>
+    <section className={'container-view flex flex-initial'}>
       <Sidebar />
 
       <div className="w-full px-16 py-16">

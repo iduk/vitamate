@@ -1,9 +1,9 @@
-import LayoutSidebar from 'components/Layouts/LayoutSidebar'
+import ContainerAside from 'components/Layouts/ContainerAside'
 
 export default function Whitepaper() {
   return (
-    <LayoutSidebar>
+    <ContainerAside>
       <h1>비타백서</h1>
-    </LayoutSidebar>
+    </ContainerAside>
   )
 }

@@ -1,7 +1,7 @@
 import { withRouter } from 'next/router'
 import TextInput from 'components/Forms/TextInput'
 import Select from 'components/Forms/Select'
-import LayoutFluid from 'components/Layouts/LayoutFluid'
+import ContainerFluid from 'components/Layouts/ContainerFluid'
 
 function Page({ router }) {
   const registerUser = (e) => {
@@ -16,7 +16,7 @@ function Page({ router }) {
   ]
 
   return (
-    <LayoutFluid>
+    <ContainerFluid>
       <h1>{router.pathname}</h1>
       <article className="pt-10">
         <h1 className="text-4xl mb-8">Forms</h1>
@@ -40,7 +40,7 @@ function Page({ router }) {
           <Select label="선택하세요" value="a1" id="hahaha" options={option} />
         </div>
       </article>
-    </LayoutFluid>
+    </ContainerFluid>
   )
 }
 

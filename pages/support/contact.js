@@ -1,9 +1,9 @@
-import LayoutSidebar from 'components/Layouts/LayoutSidebar'
+import ContainerAside from 'components/Layouts/ContainerAside'
 
 export default function Support() {
   return (
-    <LayoutSidebar>
+    <ContainerAside>
       <div></div>
-    </LayoutSidebar>
+    </ContainerAside>
   )
 }

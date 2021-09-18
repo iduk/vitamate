@@ -1,9 +1,9 @@
-import LayoutSidebar from 'components/Layouts/LayoutSidebar'
+import ContainerAside from 'components/Layouts/ContainerAside'
 
 export default function Addressbook() {
   return (
-    <LayoutSidebar>
+    <ContainerAside>
       <h1>배송지관리</h1>
-    </LayoutSidebar>
+    </ContainerAside>
   )
 }

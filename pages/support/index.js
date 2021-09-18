@@ -1,11 +1,11 @@
-import LayoutSidebar from 'components/Layouts/LayoutSidebar'
+import ContainerAside from 'components/Layouts/ContainerAside'
 import { useState } from 'react'
 import Img from 'next/image'
 
 export default function Support() {
   const [question, setquestion] = useState(0)
   return (
-    <LayoutSidebar>
+    <ContainerAside>
       <div className="container mx-auto">
         <div className="w-full mx-auto">
           <ul>
@@ -93,6 +93,6 @@ export default function Support() {
           </ul>
         </div>
       </div>
-    </LayoutSidebar>
+    </ContainerAside>
   )
 }

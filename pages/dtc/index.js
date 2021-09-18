@@ -1,9 +1,9 @@
-import LayoutFluid from 'components/Layouts/LayoutFluid'
+import ContainerFluid from 'components/Layouts/ContainerFluid'
 
 export default function Dtc() {
   return (
-    <LayoutFluid>
+    <ContainerFluid>
       <p>유전자 검사</p>
-    </LayoutFluid>
+    </ContainerFluid>
   )
 }

@@ -1,9 +1,9 @@
-import LayoutFluid from 'components/Layouts/LayoutFluid'
+import ContainerFluid from 'components/Layouts/ContainerFluid'
 
 export default function Survey() {
   return (
-    <LayoutFluid>
+    <ContainerFluid>
       <h1>건강설문</h1>
-    </LayoutFluid>
+    </ContainerFluid>
   )
 }
