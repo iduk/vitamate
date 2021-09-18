@@ -8,6 +8,10 @@ body {
   max-height: 800px;
 }
 
+.container-view {
+  width: 1024px;
+}
+
 h1,
 h2,
 h3,
@@ -96,8 +100,58 @@ select {
   }
 }
 
-#sidebar {
+// Layout
+
+$header-size: 110px;
+$topnav-size: 44px;
+$sidebar-size: 250px;
+
+.header {
+  height: $header-size;
+}
+.topnav {
+  height: $topnav-size;
+}
+.navbar {
+  height: $header-size - $topnav-size;
+}
+
+.brand-logo {
+  display: block;
+  width: $sidebar-size;
+}
+
+.nav-item {
+  .nav-link {
+    position: relative;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 1%;
+      transition: 0.15s linear;
+    }
+  }
+  .nav-link.active {
+    &::before {
+      content: '';
+      width: 100%;
+      background-color: #5cbbbb;
+    }
+  }
+}
+
+.sidebar {
   position: relative;
+  width: $sidebar-size;
+
   &::before {
     content: '';
     position: absolute;
@@ -109,10 +163,14 @@ select {
   }
 }
 
-$header-size: 110px;
-$topnav-size: 44px;
+// Modal
+
 $modal-size: 500px;
 
+.modal-wrap {
+  position: fixed;
+  top: 10%;
+}
 .modal-size {
   max-width: $modal-size;
 }
@@ -121,6 +179,7 @@ $modal-size: 500px;
 .bg-hero {
   height: 800px;
   padding-top: $header-size;
+  z-index: -1;
   &::after {
     content: '';
     background-repeat: no-repeat;
@@ -135,7 +194,7 @@ $modal-size: 500px;
   }
 }
 
-// common
+// Common
 
 .page-title {
   @apply text-3xl font-bold pb-7;

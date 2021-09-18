@@ -53,8 +53,8 @@ const mypage = {
 function Sidebar({ children, router }) {
   const { asPath } = useRouter()
   return (
-    <aside id="sidebar" className="flex-shrink-0 w-52 p-4 py-16 my-0 text-center">
-      <nav id="mypage">
+    <aside className="sidebar flex-shrink-0 py-16 my-0 text-center">
+      <nav>
         {asPath.indexOf('news') === 1 && (
           <>
             <h3 className="text-xl font-bold">{news.title}</h3>

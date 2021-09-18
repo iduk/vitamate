@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Img from 'next/image'
-import s from './Header.module.scss'
 import Modal from 'components/Modal'
 import SignUp from 'pages/SignUp'
 import SignIn from 'pages/SignIn'
+import classNames from 'classnames/bind'
 
 export default function Header() {
   const router = useRouter()
@@ -75,13 +75,10 @@ export default function Header() {
   }
 
   return (
-    <div className={s.wrapper}>
-      <header
-        id="header"
-        className={'relative z-10 flex flex-wrap items-center justify-between border-b border-opacity-10 border-black'}
-      >
-        <div className={'container max-w-5xl mx-auto'}>
-          <ul className={'flex flex-wrap items-center justify-end h-full'} style={{ height: '40px' }}>
+    <header className={'header border-b border-gray-200 relative'}>
+      <section className={'container-view mx-auto flex flex-wrap justify-between'}>
+        <nav className={'topnav w-full flex-shrink-0 ml-auto mr-0'}>
+          <ul className={'flex flex-wrap items-center justify-end h-full'}>
             {/* Logout */}
             {isLoggin === true ? (
               <>
@@ -123,32 +120,30 @@ export default function Header() {
               </>
             )}
           </ul>
+        </nav>
 
-          <nav className="navbar flex flex-wrap items-center justify-between">
-            <div className="flex w-auto static justify-start items-center">
-              <Link href="/">
-                <a className="brand-logo pb-1">
-                  <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
-                </a>
-              </Link>
-            </div>
-            <div className="flex flex-grow items-center">
-              <ul className="flex flex-row list-none ml-auto">
-                {navs.pages.map((nav) => (
-                  <li key={nav.path} className={s.navItem}>
-                    <Link href={nav.path}>
-                      <a className={nav.path === router.pathname ? s.navLink + ' ' + s.active : s.navLink}>
-                        {nav.title}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <article className="navbar w-full flex justify-between items-center">
+          <div className="flex items-center h-full">
+            <Link href="/">
+              <a className="brand-logo">
+                <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
+              </a>
+            </Link>
+          </div>
+
+          <nav>
+            <ul className="flex flex-row justify-end list-none ml-auto">
+              {navs.pages.map((nav) => (
+                <li key={nav.path} className="nav-item">
+                  <Link href={nav.path}>
+                    <a className={nav.path === router.pathname ? 'nav-link active' : 'nav-link'}>{nav.title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
-        </div>
-      </header>
-
+        </article>
+      </section>
       <Modal title={'로그인'} onClose={() => setShowSignin(false)} show={showSignin}>
         <SignIn />
       </Modal>
@@ -156,6 +151,6 @@ export default function Header() {
       <Modal title={'회원가입'} onClose={() => setShowSignup(false)} show={showSignup}>
         <SignUp />
       </Modal>
-    </div>
+    </header>
   )
 }

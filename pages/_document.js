@@ -11,6 +11,7 @@ class MyDocument extends Document {
       <Html lang="ko">
         <Head>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, intial-scale=1.0, minimum-scale=1.0" />
           <link
             rel="stylesheet"
             type="text/css"
