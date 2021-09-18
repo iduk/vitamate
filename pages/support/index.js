@@ -6,6 +6,7 @@ export default function Support() {
   const [question, setquestion] = useState(0)
   return (
     <ContainerAside>
+      <h1 className="page-title _sub">FAQ</h1>
       <div className="container mx-auto">
         <div className="w-full mx-auto">
           <ul>

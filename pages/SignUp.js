@@ -12,7 +12,7 @@ export default function SignUp() {
 
   return (
     <>
-      <article className={'p-10'}>
+      <article className={'p-10 min-h-full overflow-y-auto'} style={{ maxHeight: 500 }}>
         <form onSubmit={registerUser}>
           <div className="form-group">
             <TextInput type="text" label="휴대폰 번호" id="userPhone" placeholder="010-0000-0000" />
@@ -74,22 +74,45 @@ export default function SignUp() {
             </div>
           </div>
 
-          <hr className="my-8" />
+          <hr className="mt-8" />
 
           <ul>
-            <li className="flex justify-between items-center border-b border-gray-200">
-              <div className="flex-shrink-0">
-                <label htmlFor="check-test" className="inline-flex items-center py-2">
-                  <input id="check-test" type="checkbox" className="form-checkbox" />
+            <li className="flex justify-between items-center">
+              <div className="form-checkbox flex-shrink-0">
+                <label htmlFor="check-all" className="inline-flex items-center py-5">
+                  <input id="check-all" type="checkbox" />
                   <p className="ml-3 font-bold">전체 동의하기</p>
                 </label>
               </div>
             </li>
+
             <li className="flex justify-between items-center">
-              <div className="flex-shrink-0">
-                <label htmlFor="check-test" className="inline-flex items-center py-2">
-                  <input id="check-test" type="checkbox" className="form-checkbox" />
-                  <p className="ml-3">[필수] 이용약관</p>
+              <div className="form-checkbox flex-shrink-0">
+                <label htmlFor="check-1" className="inline-flex items-center py-2">
+                  <input id="check-1" type="checkbox" />
+                  <p className="ml-3">[필수]이용약관</p>
+                </label>
+              </div>
+              <Link href="/TermsOfService">
+                <a className="p-2 text-sm text-gray-500 underline">보기</a>
+              </Link>
+            </li>
+            <li className="flex justify-between items-center">
+              <div className="form-checkbox flex-shrink-0">
+                <label htmlFor="check-2" className="inline-flex items-center py-2">
+                  <input id="check-2" type="checkbox" />
+                  <p className="ml-3">[필수]개인정보 수집 동의 약관</p>
+                </label>
+              </div>
+              <Link href="/PrivacyPolicy">
+                <a className="p-2 text-sm text-gray-500 underline">보기</a>
+              </Link>
+            </li>
+            <li className="flex justify-between items-center">
+              <div className="form-checkbox flex-shrink-0">
+                <label htmlFor="check-3" className="inline-flex items-center py-2">
+                  <input id="check-3" type="checkbox" />
+                  <p className="ml-3">[선택]마케팅 수집 동의</p>
                 </label>
               </div>
               <Link href=".">

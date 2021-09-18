@@ -7,6 +7,15 @@ export default function Modal({ show, onClose, children, title }) {
 
   useEffect(() => {
     setIsBrowser(true)
+    function handleTouchMove(event) {
+      if (showModal) {
+        event.preventDefault() // 여기가 핵심
+      }
+    }
+    window.addEventListener('touchmove', handleTouchMove, {
+      passive: false,
+    })
+    return () => window.removeEventListener('touchmove', handleTouchMove)
   }, [])
 
   const handleCloseClick = (e) => {
@@ -33,15 +42,15 @@ export default function Modal({ show, onClose, children, title }) {
 
   const ModalLayout = show ? (
     <>
-      <section className="modal-wrap overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-        <article className="modal-size relative w-full my-6 mx-auto min-w-min">
+      <section className="modal-wrap overflow-hidden fixed inset-0 z-50 outline-none focus:outline-none p-6">
+        <article className="modal-size max-w-min mx-auto">
           <div className="rounded-large shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <ModalHeader title />
             {children}
           </div>
         </article>
       </section>
-      <div className="opacity-60 fixed inset-0 z-40 bg-black"></div>
+      <div id="backdrop"></div>
     </>
   ) : null
 

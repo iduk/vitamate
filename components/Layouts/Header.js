@@ -1,12 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
-import { useState } from 'react'
 import { useRouter } from 'next/router'
-import Img from 'next/image'
+import { useState } from 'react'
 import Modal from 'components/Modal'
+import Img from 'next/image'
 import SignUp from 'pages/SignUp'
 import SignIn from 'pages/SignIn'
-import classNames from 'classnames/bind'
 
 export default function Header() {
   const router = useRouter()

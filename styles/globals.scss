@@ -20,6 +20,7 @@ h4,
 h5 {
   font-weight: bolder;
   line-height: 1.5;
+  letter-spacing: -0.4px;
 }
 
 // input + btn
@@ -77,6 +78,37 @@ select {
     &:disabled {
       cursor: no-drop;
       @apply bg-gray-100 border-gray-200;
+    }
+  }
+}
+.form-control.lg {
+  input,
+  select {
+    @apply py-4 px-5 text-xl;
+  }
+}
+
+.form-checkbox {
+  label {
+    cursor: pointer;
+  }
+  input[type='checkbox'] {
+    appearance: none;
+    transition: all 0.1s ease-out;
+    width: 24px;
+    height: 24px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url(/images/btn-checkbox-off.svg);
+    &:checked {
+      background-image: url(/images/btn-checkbox-on.svg);
+    }
+  }
+
+  &.lg {
+    input[type='checkbox'] {
+      width: 32px;
+      height: 32px;
     }
   }
 }
@@ -155,13 +187,22 @@ $sidebar-size: 250px;
 
   &::before {
     content: '';
+    z-index: -1;
     position: absolute;
     right: 0;
     top: 0;
     width: 1px;
-    height: calc(100vh - 110px);
+    height: calc(100vh - 110px - 356px);
     @apply bg-gray-200;
   }
+}
+
+.footer {
+  height: 300px;
+}
+
+main.main-content {
+  min-height: 800px;
 }
 
 // Modal
@@ -169,20 +210,28 @@ $sidebar-size: 250px;
 $modal-size: 500px;
 
 .modal-wrap {
-  position: fixed;
-  top: 10%;
+  display: flex;
+  align-items: center;
 }
 .modal-size {
-  max-width: $modal-size;
+  min-width: $modal-size;
+}
+#backdrop {
+  @apply opacity-60 fixed inset-0 w-full h-full z-40 bg-black overflow-hidden;
 }
 
 // home
 .bg-hero {
-  height: 800px;
-  padding-top: $header-size;
-  z-index: -1;
-  &::after {
+  z-index: 0;
+  &::before {
     content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 900px;
+    @apply bg-success-100;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top left;
@@ -194,12 +243,16 @@ $modal-size: 500px;
     font-weight: 900;
   }
 }
+.hero-section {
+  position: relative;
+  height: calc(900px - 110px);
+}
 
 // Common
 
 .page-title {
   @apply text-3xl font-bold pb-7;
-  &.sidebar {
+  &._sub {
     @apply border-b border-black;
   }
 }
