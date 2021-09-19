@@ -18,7 +18,7 @@ export default function Support() {
     <ContainerAside>
       <h1 className="page-title _sub">1:1 문의</h1>
       <div className="my-6 p-6 leading-normal text-gray-500 bg-gray-100 rounded-lg" role="alert">
-        <p>문의 하신 내용은 최대 영업일 기준 2일 안에 선택하신 답변 제공 방법에 따라 답변드립니다.</p>
+        <p>문의하신 내용은 최대 영업일 기준 2일안에 선택하신 답변 제공 방법에 따라 답변드립니다.</p>
       </div>
 
       <form>

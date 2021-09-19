@@ -34,8 +34,12 @@ textarea {
 
 // buttons
 .btn {
+  &:hover {
+    @apply shadow;
+  }
+  &:disabled,
   &.disabled {
-    @apply border-0 opacity-20;
+    @apply border-gray-200 bg-gray-100 text-gray-300;
     cursor: no-drop;
   }
 }
@@ -126,7 +130,7 @@ textarea {
 
 $header-size: 110px;
 $topnav-size: 44px;
-$sidebar-size: 250px;
+$sidebar-size: 230px;
 
 .layout {
   display: grid;

@@ -47,6 +47,10 @@ const mypage = {
       path: '/mypage/calendar',
       title: '비타 캘린더',
     },
+    {
+      path: '/mypage/point',
+      title: '포인트',
+    },
   ],
 }
 

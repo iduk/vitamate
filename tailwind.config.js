@@ -31,6 +31,7 @@ module.exports = {
       current: 'currentColor',
       primary: '#5cbbbb',
       primary: {
+        50: '#F1F9F9',
         100: '#EEF8F8',
         200: '#DEF1F1',
         300: '#BDE3E3',
