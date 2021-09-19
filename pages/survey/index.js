@@ -5,7 +5,9 @@ import Modal from 'components/Modal'
 import TextInput from 'components/Forms/TextInput'
 
 export default function Survey() {
-  const [showModal, setShowModal] = useState(false)
+  const [surveyStart, setSurveyStart] = useState(false)
+  const [surveyContent, setSurveyContent] = useState(false)
+  const [surveyEnd, setSurveyEnd] = useState(false)
 
   return (
     <ContainerFluid>
@@ -16,12 +18,24 @@ export default function Survey() {
           <p>하하핳ㅎㅎㅎㅎ하..........</p>
         </div>
       </div>
-      <div className="h-48 flex justify-center items-center">
-        <button onClick={() => setShowModal(true)} className="btn bg-primary-600 text-white focus:bg-primary-700">
-          건강설문 시작하기
+      <div className=" w-96 h-48 mx-autorr5r5 flex justify-between items-center">
+        <button onClick={() => setSurveyStart(true)} className="btn bg-primary-600 text-white focus:bg-primary-700">
+          건강설문 시작
+        </button>
+        <button onClick={() => setSurveyContent(true)} className="btn bg-primary-600 text-white focus:bg-primary-700">
+          건강설문 진행
+        </button>
+        <button onClick={() => setSurveyEnd(true)} className="btn bg-primary-600 text-white focus:bg-primary-700">
+          건강설문 종료
         </button>
       </div>
-      <Modal onClose={() => setShowModal(false)} show={showModal}>
+      <Modal onClose={() => setSurveyStart(false)} show={surveyStart}>
+        <SurveyStart />
+      </Modal>
+      <Modal onClose={() => setSurveyContent(false)} show={surveyContent}>
+        <SurveyContent />
+      </Modal>
+      <Modal onClose={() => setSurveyEnd(false)} show={surveyEnd}>
         <SurveyLoading />
       </Modal>
     </ContainerFluid>
@@ -36,7 +50,7 @@ const SurveyStart = () => {
           <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
         </p>
 
-        <h1 className="my-12 text-4xl leading-snug">
+        <h1 className="mt-10 mb-6 text-4xl leading-snug">
           비타메이트
           <br />
           건강 설문을 시작합니다
@@ -106,6 +120,7 @@ const SurveyContent = () => {
                     보통 (좌식 중심의 일이지만, 직장 내에서 이동하거나 서서 일하는 활동 중심)
                   </p>
                 </label>
+                <p className="mt-2 text-sm text-danger-500">*다시 입력해주세요</p>
               </div>
             </li>
           </ul>
@@ -133,17 +148,20 @@ const SurveyLoading = () => {
           <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
         </p>
 
-        <h1 className="my-12 text-4xl leading-snug">
+        <h1 className="mt-10 mb-6 text-4xl leading-snug">
           답변 내용을
           <br />
           분석하고 있습니다.
         </h1>
         <p>잠시만 기다려주세요</p>
-        <div className="mt-10">
+        <div className="mt-6">
           <article className="flex justify-center">
-            {/* circle progress....... */}
-            <div className="flex justify-center items-center relative overflow-hidden w-20 h-20 border-8 border-gray-200 rounded-full">
-              <span className="text-lg font-extrabold text-primary-600">48</span>
+            {/* 
+              Circle progress
+              className = " progress--circle propgress--[number] "
+            */}
+            <div className="progress--circle progress--94">
+              <div className="progress__number text-xl text-primary-600 font-extrabold">94</div>
             </div>
           </article>
         </div>

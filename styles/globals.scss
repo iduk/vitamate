@@ -25,18 +25,9 @@ h5 {
 
 // input + btn
 .btn,
-input[type='text'],
-input[type='password'],
-input[type='number'],
-input[type='date'],
-input[type='file'],
-input[type='range'],
-input[type='reset'],
-input[type='tel'],
-input[type='time'],
-input[type='url'],
-input[type='button'],
-select {
+input,
+select,
+textarea {
   @apply py-3 px-4 text-base font-medium rounded;
   transition: border 0.15s ease-out;
 }
@@ -49,27 +40,20 @@ select {
   }
 }
 
-.btn + .btn {
-  margin-top: 0.925rem;
-}
-
 // forms
 .form-group {
   & + .form-group {
     @apply mt-6;
   }
-  label {
-    transition: all 0.15s ease-out;
-    @apply block uppercase tracking-wide text-black text-sm font-bold mb-2;
-  }
 }
 .form-control {
   label {
     transition: all 0.15s ease-out;
-    @apply block uppercase tracking-wide text-black text-sm font-bold mb-2;
+    @apply block uppercase tracking-wide text-black text-base mb-1;
   }
   input,
-  select {
+  select,
+  textarea {
     @apply appearance-none block w-full text-gray-700 border border-gray-300;
     &:focus {
       @apply outline-none bg-white border-gray-500 text-black;
@@ -80,6 +64,9 @@ select {
       @apply bg-gray-100 border-gray-200;
     }
   }
+  select {
+    margin-right: 1.5rem;
+  }
 }
 .form-control.lg {
   input,
@@ -88,28 +75,29 @@ select {
   }
 }
 
-.form-checkbox {
-  label {
-    cursor: pointer;
+// checkbox
+
+@mixin checkbox_style {
+  appearance: none;
+  transition: all 0.1s ease-out;
+  background-repeat: no-repeat;
+  background-image: url('/images/btn-checkbox-off.svg');
+  &:checked {
+    background-image: url('/images/btn-checkbox-on.svg');
   }
+}
+
+.form-checkbox {
   input[type='checkbox'] {
-    appearance: none;
-    transition: all 0.1s ease-out;
+    @include checkbox_style;
     width: 24px;
     height: 24px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-image: url(/images/btn-checkbox-off.svg);
-    &:checked {
-      background-image: url(/images/btn-checkbox-on.svg);
-    }
+    background-size: 24px 24px;
+    padding: 0;
   }
 
-  &.lg {
-    input[type='checkbox'] {
-      width: 32px;
-      height: 32px;
-    }
+  > label {
+    cursor: pointer;
   }
 }
 
@@ -192,7 +180,7 @@ $sidebar-size: 250px;
     right: 0;
     top: 0;
     width: 1px;
-    height: calc(100vh - 110px - 356px);
+    height: calc(100vh);
     @apply bg-gray-200;
   }
 }
@@ -212,6 +200,7 @@ $modal-size: 500px;
 .modal-wrap {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .modal-size {
   min-width: $modal-size;
@@ -255,4 +244,81 @@ $modal-size: 500px;
   &._sub {
     @apply border-b border-black;
   }
+}
+
+// Circle Progress
+$spacing: 1rem;
+$themeColor: #5cbbbb;
+$backColor: #e5e7eb;
+$progress-size: 72px;
+$progress-status-size: calc($progress-size - 8px);
+
+$step: 1;
+$loops: round(100 / $step);
+$increment: 360 / $loops;
+$half: round($loops / 2);
+@for $i from 0 through $loops {
+  .progress--bar.progress--#{$i * $step}::after {
+    width: $i * $step * 1%;
+  }
+  .progress--circle.progress--#{$i * $step}::after {
+    @if $i < $half {
+      $nextDeg: 90deg + ($increment * $i);
+      background-image: linear-gradient(90deg, $backColor 50%, transparent 50%, transparent),
+        linear-gradient($nextDeg, $themeColor 50%, $backColor 50%, $backColor);
+    } @else {
+      $nextDeg: -90deg + ($increment * ($i - $half));
+      background-image: linear-gradient($nextDeg, $themeColor 50%, transparent 50%, transparent),
+        linear-gradient(270deg, $themeColor 50%, $backColor 50%, $backColor);
+    }
+  }
+}
+
+.progress--bar {
+  height: 1.5rem;
+  margin: $spacing;
+  background-color: $backColor;
+  &:after {
+    content: '';
+    display: block;
+    height: 100%;
+    background-color: $themeColor;
+  }
+}
+
+.progress--circle {
+  position: relative;
+  display: inline-block;
+  margin: $spacing;
+  width: $progress-size;
+  height: $progress-size;
+  border-radius: 50%;
+  background-color: $backColor;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: $progress-status-size;
+    height: $progress-status-size;
+    border-radius: 50%;
+    background-color: white;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: $themeColor;
+  }
+}
+
+.progress__number {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  line-height: 1;
+  transform: translateY(-50%);
+  text-align: center;
 }

@@ -9,9 +9,9 @@ const TextInput = ({ label, id, type, placeholder, disabled, children, className
         <InputLabel label={label} />
         <div className="relative">
           <input
+            type={type}
             className={className}
             id={id}
-            type={type}
             placeholder={placeholder}
             value={value}
             onChange={(e) => setValue(e.target.value)}

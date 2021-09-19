@@ -18,7 +18,7 @@ const Select = ({ id, label, value, option, options, onChange, className, childr
           ))}
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3">
-          <Img src="/images/ic-arrowdown.svg" width={24} height={24} alt="arrow" />
+          <Img src="/images/ic-dropdown.svg" width={24} height={24} alt="arrow" />
         </div>
 
         <p className={className}>{children}</p>

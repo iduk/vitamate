@@ -7,15 +7,9 @@ export default function Modal({ show, onClose, children, title }) {
 
   useEffect(() => {
     setIsBrowser(true)
-    function handleTouchMove(event) {
-      if (showModal) {
-        event.preventDefault() // 여기가 핵심
-      }
-    }
-    window.addEventListener('touchmove', handleTouchMove, {
-      passive: false,
-    })
-    return () => window.removeEventListener('touchmove', handleTouchMove)
+    window.setTimeout(function () {
+      document.body.scrollTop = null
+    }, 0)
   }, [])
 
   const handleCloseClick = (e) => {
