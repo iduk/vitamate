@@ -10,12 +10,8 @@ export default function Addressbook() {
   ]
   return (
     <ContainerAside>
-      <header className="relative">
-        <h1 className="page-title _sub">배송지 관리</h1>
-        <div className="absolute right-0 -top-1">
-          <button className="btn bg-primary-600 text-white hover:bg-primary-700">배송지 등록</button>
-        </div>
-      </header>
+      <h1 className="page-title _sub">배송지 관리</h1>
+
       <article>
         <Link href="#">
           <a className="mt-6 flex justify-between px-8 py-8 border border-gray-300 rounded-lg hover:border-gray-500 hover:shadow hover:transition duration-200 ease-in-out">
@@ -100,13 +96,13 @@ export default function Addressbook() {
             </div>
           </a>
         </Link>
-
-        <div className="mt-10 text-right">
-          <button className="btn border border-primary-600 text-primary-600 hover:border-primary-700 hover:text-primary-700 hover:shadow">
-            기본 배송지로 등록
-          </button>
-        </div>
       </article>
+      <div className="my-6 text-right">
+        <button className="btn border border-primary-600 text-primary-600 hover:border-primary-700 hover:text-primary-700 hover:shadow">
+          기본 배송지로 등록
+        </button>
+        <button className="btn bg-primary-600 text-white hover:bg-primary-700 ml-3">신규 배송지 등록</button>
+      </div>
 
       <div className="mt-20" style={{ display: 'none' }}>
         <table className="min-w-full leading-normal border-b border-gray-200">
