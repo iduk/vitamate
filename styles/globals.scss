@@ -9,7 +9,7 @@ body {
 }
 
 .container-view {
-  width: 1024px;
+  width: 1200px;
   margin: auto;
 }
 
@@ -102,6 +102,7 @@ textarea {
 }
 
 // Forms validate
+
 .error {
   input,
   select {
@@ -126,6 +127,11 @@ textarea {
 $header-size: 110px;
 $topnav-size: 44px;
 $sidebar-size: 250px;
+
+.layout {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+}
 
 .header {
   height: $header-size;
@@ -172,25 +178,12 @@ $sidebar-size: 250px;
 .sidebar {
   position: relative;
   width: $sidebar-size;
-
-  &::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 1px;
-    height: calc(100vh);
-    @apply bg-gray-200;
-  }
-}
-
-.footer {
-  height: 300px;
+  display: table;
+  @apply border-r border-gray-200;
 }
 
 main.main-content {
-  min-height: 800px;
+  min-height: 500px;
 }
 
 // Modal
@@ -257,6 +250,7 @@ $step: 1;
 $loops: round(100 / $step);
 $increment: 360 / $loops;
 $half: round($loops / 2);
+
 @for $i from 0 through $loops {
   .progress--bar.progress--#{$i * $step}::after {
     width: $i * $step * 1%;

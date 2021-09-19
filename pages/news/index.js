@@ -6,6 +6,7 @@ export default function News() {
   const [question, setquestion] = useState(0)
   return (
     <ContainerAside>
+      <h1 className="page-title _sub">비타 뉴스</h1>
       <div className="container mx-auto">
         <div className="w-full mx-auto">
           <ul>

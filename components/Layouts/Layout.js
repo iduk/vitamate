@@ -5,9 +5,11 @@ import Footer from './Footer'
 export default function Layout({ children }) {
   return (
     <>
-      <Header />
-      <main className="main-content">{children}</main>
-      <Footer />
+      <div className="layout">
+        <Header />
+        <main className="layout-main">{children}</main>
+        <Footer />
+      </div>
     </>
   )
 }

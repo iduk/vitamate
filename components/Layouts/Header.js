@@ -74,7 +74,7 @@ export default function Header() {
   }
 
   return (
-    <header className={'header border-b border-gray-200 relative'}>
+    <header className={'layout-header header border-b border-gray-200 relative'}>
       <section className={'container-view mx-auto flex flex-wrap justify-between'}>
         <nav className={'topnav w-full flex-shrink-0 ml-auto mr-0'}>
           <ul className={'flex flex-wrap items-center justify-end h-full'}>
@@ -102,8 +102,8 @@ export default function Header() {
             ) : (
               <>
                 <li>
-                  <Link href="/mypage" activeClassName="active">
-                    <a className={'block p-2 text-sm hover:text-primary'}>MY비타</a>
+                  <Link href="/mypage">
+                    <a className={'block p-2 text-sm hover:text-primary-600'}>MY비타</a>
                   </Link>
                 </li>
                 <li>
@@ -111,7 +111,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link href=".">
-                    <a onClick={() => setIsLoggin(true)} className={'block p-2 text-sm hover:text-primary'}>
+                    <a onClick={() => setIsLoggin(true)} className={'block p-2 text-sm hover:text-primary-600'}>
                       로그아웃
                     </a>
                   </Link>
