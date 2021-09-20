@@ -21,6 +21,28 @@ h5 {
   font-weight: bolder;
   line-height: 1.5;
   letter-spacing: -0.4px;
+  word-break: keep-all;
+}
+ol,
+ul {
+  li {
+    word-break: keep-all;
+  }
+}
+ol {
+  list-style-position: inside;
+  display: table;
+  li {
+    display: table-row;
+    @apply text-gray-600;
+  }
+  li::before {
+    content: '✔︎';
+    color: #5cbbbb;
+    @apply pr-3;
+    display: table-cell; /* aha! */
+    text-align: right;
+  }
 }
 
 // input + btn

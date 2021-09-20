@@ -47,6 +47,15 @@ module.exports = {
       sans: ['Nanumsquare', 'sans-serif'],
       serif: ['serif'],
     },
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
+      lower: 'lower-alpha',
+      upper: 'upper-alpha',
+    },
   },
   variants: {
     backgroundColor: ['hover', 'focus'],
