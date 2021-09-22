@@ -1,47 +1,60 @@
-import { withRouter } from 'next/router'
-import TextInput from 'components/Forms/TextInput'
-import Select from 'components/Forms/Select'
-import ContainerFluid from 'components/Layouts/ContainerFluid'
+import Link from 'next/link'
+import { useState } from 'react'
 
-function Page({ router }) {
-  const registerUser = (e) => {
-    e.preventDefault()
+const Test = () => {
+  const [active, setActive] = useState(false)
+
+  const handleClick = () => {
+    setActive(!active)
   }
 
-  const option = [
-    { id: 'hahaha', value: 'HOHOHO', label: 'aaa' },
-    { id: 'hahaha', value: 'HOHOHO', label: 'bbb' },
-    { id: 'hahaha', value: 'HOHOHO', label: 'ccc' },
-    { id: 'hahaha', value: 'HOHOHO', label: 'ddd' },
-  ]
-
   return (
-    <ContainerFluid>
-      <h1>{router.pathname}</h1>
-      <article className="pt-10">
-        <h1 className="text-4xl mb-8">Forms</h1>
-        <div>
-          <TextInput label="테스트 테스트" type="text" placeholder="와우"></TextInput>
-          <div className="error">
-            <TextInput label="테스트 테스트" type="text" placeholder="와우"></TextInput>
-          </div>
-
-          <div className="grid grid-cols-12 gap-4 place-items-center">
-            <div className="col-span-3 w-full">
-              <label htmlFor="">하하ㅏ하하</label>
+    <>
+      <div className="container">
+        <nav className="relative flex items-center flex-wrap bg-green-400 p-3">
+          <Link href="/">
+            <a className="inline-flex items-center p-2 mr-4 ">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="fill-current  h-8 w-8 mr-2">
+                <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+              </svg>
+              <span className="text-xl font-bold uppercase tracking-wide">Talwind CSS</span>
+            </a>
+          </Link>
+          <button className={'relative lg:hidden ml-auto hover: outline-none'} onClick={handleClick}>
+            <span className={'toggle-menu ' + (active === true ? 'active' : null)}>
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+          </button>
+          {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
+          <div className={`${active ? '' : 'hidden'}   w-full lg:inline-flex lg:flex-grow lg:w-auto`}>
+            <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+              <Link href="/">
+                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded  font-bold items-center justify-center hover:bg-green-600 hover:text-primary-600 ">
+                  Home
+                </a>
+              </Link>
+              <Link href="/">
+                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded  font-bold items-center justify-center hover:bg-green-600 hover:text-primary-600">
+                  Services
+                </a>
+              </Link>
+              <Link href="/">
+                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded  font-bold items-center justify-center hover:bg-green-600 hover:text-primary-600">
+                  About us
+                </a>
+              </Link>
+              <Link href="/">
+                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded  font-bold items-center justify-center hover:bg-green-600 hover:text-primary-600">
+                  Contact us
+                </a>
+              </Link>
             </div>
-            <div className="col-span-9 w-full">
-              <div className="form-control">
-                <input type="text" />
-              </div>
-            </div>
           </div>
-
-          <Select label="선택하세요" value="a1" id="hahaha" options={option} />
-        </div>
-      </article>
-    </ContainerFluid>
+        </nav>
+      </div>
+    </>
   )
 }
-
-export default withRouter(Page)
+export default Test

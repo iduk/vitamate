@@ -8,6 +8,16 @@ module.exports = {
   },
   purge: ['./components/**/*.js', './pages/**/*.js'],
   theme: {
+    screens: {
+      sm: '640px',
+      // => @media (min-width: 639px) { ... }
+
+      md: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      lg: '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
     extend: {
       borderRadius: {
         large: '20px',
@@ -27,8 +37,8 @@ module.exports = {
       warning: colors.yellow,
       danger: colors.red,
       success: colors.green,
-      transparent: 'transparent',
-      current: 'currentColor',
+      transparent: colors.transparent,
+
       primary: '#5cbbbb',
       primary: {
         50: '#F1F9F9',

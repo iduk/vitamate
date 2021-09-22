@@ -2,15 +2,19 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import 'tailwindcss/screens';
 
 body {
   height: 100%;
   max-height: 800px;
 }
 
-.container-view {
-  width: 1200px;
-  margin: auto;
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.container {
+  @apply mx-auto;
 }
 
 h1,
@@ -150,8 +154,6 @@ textarea {
 
 // Layout
 
-$header-size: 110px;
-$topnav-size: 44px;
 $sidebar-size: 230px;
 
 .layout {
@@ -159,14 +161,46 @@ $sidebar-size: 230px;
   grid-template-rows: repeat(3, auto);
 }
 
-.header {
-  height: $header-size;
+.toggle-menu {
+  position: relative;
+  width: 1.5rem;
+  height: 2.25rem;
+  overflow: hidden;
+  display: block;
+  i {
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 1.5rem;
+    left: 0;
+    transition: transform 0.2s;
+    @apply bg-gray-600;
+
+    &:nth-child(1) {
+      top: 0.5rem;
+    }
+    &:nth-child(2) {
+      top: 1rem;
+    }
+    &:nth-child(3) {
+      top: 1.5rem;
+    }
+  }
 }
-.topnav {
-  height: $topnav-size;
-}
-.navbar {
-  height: $header-size - $topnav-size;
+.toggle-menu.active {
+  i {
+    &:nth-child(1) {
+      top: 1rem;
+      transform: rotateZ(45deg);
+    }
+    &:nth-child(2) {
+      background: transparent;
+    }
+    &:nth-child(3) {
+      top: 1rem;
+      transform: rotateZ(-45deg);
+    }
+  }
 }
 
 .brand-logo {
@@ -204,12 +238,7 @@ $sidebar-size: 230px;
 .sidebar {
   position: relative;
   width: $sidebar-size;
-  display: table;
-  @apply border-r border-gray-200;
-}
-
-main.main-content {
-  min-height: 500px;
+  @apply hidden lg:table border-r border-gray-200;
 }
 
 // Modal

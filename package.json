@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3333",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
@@ -20,6 +20,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "classnames": "^2.3.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",

@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <>
       <footer className="layout-footer footer border-t border-gray-200 bg-white text-gray-900 pt-12">
-        <div className="container-view grid grid-cols-12 gap-x-8">
-          <article className="col-span-8">
+        <div className="px-6 lg:px-0 container flex flex-col lg:flex-row lg:justify-between lg:flex-wrap">
+          <article className="lg:w-8/12 w-full">
             <div>
               <span className="brand-logo">
                 <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
@@ -37,7 +37,7 @@ export default function Footer() {
             </address>
           </article>
 
-          <article className="col-span-4">
+          <article className="lg:w-4/12 w-full mt-10">
             <div>
               <h6 className="text-lg font-extrabold mb-2">메일링 구독 서비스</h6>
               <TextInput id="mailing" type="text" placeholder="이메일을 남겨주세요" />
@@ -63,19 +63,19 @@ export default function Footer() {
               </div>
             </div>
           </article>
-        </div>
-        <div className="mt-8 border-t border-gray-200 text-gray-500">
-          <article className="container-view py-4 flex justify-between items-center text-sm">
-            <div className="flex">
-              <Link href="/TermsOfService">
-                <a className="mr-8 text-base hover:text-gray-900">서비스약관</a>
-              </Link>
-              <Link href="/PrivacyPolicy">
-                <a className=" text-base hover:text-gray-900">개인정보취급방침</a>
-              </Link>
-            </div>
-            <p className="text-sm">© VITAMATE Corp. All rights reserved.</p>
-          </article>
+          <div className="mt-8 border-t border-gray-200 text-gray-500">
+            <article className="container py-4 text-sm block w-full lg:flex lg:justify-between lg:items-center">
+              <div className="flex">
+                <Link href="/TermsOfService">
+                  <a className="mr-8 text-base hover:text-gray-900">서비스약관</a>
+                </Link>
+                <Link href="/PrivacyPolicy">
+                  <a className=" text-base hover:text-gray-900">개인정보취급방침</a>
+                </Link>
+              </div>
+              <p className="text-sm lg:p-0 py-4">© VITAMATE Corp. All rights reserved.</p>
+            </article>
+          </div>
         </div>
       </footer>
     </>

@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="container-view">
+      <div className="container">
         <div className="bg-hero"></div>
         {/* hero */}
         <article className="hero-section">

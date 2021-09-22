@@ -12,6 +12,11 @@ export default function Header() {
   const [isLoggin, setIsLoggin] = useState(false)
   const [showSignin, setShowSignin] = useState(false)
   const [showSignup, setShowSignup] = useState(false)
+  const [active, setActive] = useState(false)
+
+  const handleClick = () => {
+    setActive(!active)
+  }
 
   const navs = {
     pages: [
@@ -75,9 +80,9 @@ export default function Header() {
 
   return (
     <header className={'layout-header header border-b border-gray-200 relative'}>
-      <section className={'container-view mx-auto flex flex-wrap justify-between'}>
-        <nav className={'topnav w-full flex-shrink-0 ml-auto mr-0'}>
-          <ul className={'flex flex-wrap items-center justify-end h-full'}>
+      <section className={'w-full px-6 container flex flex-wrap justify-between relative'}>
+        <nav className={'hidden lg:block w-full flex-shrink-0 ml-auto mr-0'}>
+          <ul className={'flex flex-wrap items-center justify-end'}>
             {/* Logout */}
             {isLoggin === true ? (
               <>
@@ -120,20 +125,32 @@ export default function Header() {
             )}
           </ul>
         </nav>
-
-        <article className="navbar w-full flex justify-between items-center">
-          <div className="flex items-center h-full">
+        <article className="relative w-full block lg:flex lg:justify-between items-center">
+          {/* Brand */}
+          <div className="flex items-center justify-between w-full py-4 lg:p-0 lg:justify-start lg:w-auto">
             <Link href="/">
               <a className="brand-logo">
-                <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
+                <Img src={'/images/logo.svg'} width="162" height="30" alt="vitamate logo" />
               </a>
             </Link>
+            <button className={'relative lg:hidden ml-auto mr-0 hover:outline-none'} onClick={handleClick}>
+              <span className={'toggle-menu ' + (active === true ? 'active' : null)}>
+                <i></i>
+                <i></i>
+                <i></i>
+              </span>
+            </button>
           </div>
 
-          <nav>
-            <ul className="flex flex-row justify-end list-none ml-auto">
+          <nav className={`${active ? 'flex' : 'hidden'} lg:flex lg:p-0 lg:justify-end lg:w-auto lg:ml-auto`}>
+            {/* menu */}
+            <ul
+              className={
+                'w-full lg:inline-flex lg:flex-grow lg:w-auto bg-primary-600 rounded-large lg:rounded-none lg:bg-none'
+              }
+            >
               {navs.pages.map((nav) => (
-                <li key={nav.path} className="nav-item">
+                <li key={nav.path} className="p-4 text-white text-center lg:nav-item">
                   <Link href={nav.path}>
                     <a className={nav.path === router.pathname ? 'nav-link active' : 'nav-link'}>{nav.title}</a>
                   </Link>
@@ -143,6 +160,7 @@ export default function Header() {
           </nav>
         </article>
       </section>
+
       <Modal title={'로그인'} onClose={() => setShowSignin(false)} show={showSignin}>
         <SignIn />
       </Modal>
