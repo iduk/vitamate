@@ -133,7 +133,11 @@ export default function Header() {
                 <Img src={'/images/logo.svg'} width={162} height={30} objectFit={'contain'} alt="vitamate logo" />
               </a>
             </Link>
-            <button className={'relative lg:hidden ml-auto mr-0 hover:outline-none'} onClick={handleClick}>
+            <button
+              style={{ zIndex: 200 }}
+              className={'absolute right-0 lg:hidden ml-auto mr-0 hover:outline-none'}
+              onClick={handleClick}
+            >
               <span className={'toggle-menu ' + (active === true ? 'active' : null)}>
                 <i></i>
                 <i></i>
@@ -142,16 +146,41 @@ export default function Header() {
             </button>
           </div>
 
-          <nav className={`${active ? 'flex' : 'hidden'} lg:flex lg:p-0 lg:justify-end lg:w-auto lg:ml-auto`}>
+          {/* Nav List */}
+          <nav
+            className={`${
+              active ? 'flex' : 'hidden'
+            } w-full h-screen bg-white text-black border shadow fixed top-0 left-0 justify-center items-center z-50 lg:relative lg:flex lg:p-0 lg:justify-end lg:w-auto lg:h-auto lg:ml-auto lg:bg-opacity-0 lg:shadow-none lg:border-none`}
+          >
             {/* menu */}
-            <ul className={'w-full lg:inline-flex lg:flex-grow lg:w-auto rounded-large lg:rounded-none lg:bg-none'}>
+            <ul
+              style={{ zIndex: 100 }}
+              className={'w-full lg:inline-flex lg:flex-grow lg:w-auto lg:rounded-none  lg:text-black'}
+            >
               {navs.pages.map((nav) => (
-                <li key={nav.path} className="p-4 text-center lg:nav-item">
+                <li key={nav.path} className={'text-center text-2xl lg:p-0 nav-item'}>
                   <Link href={nav.path}>
                     <a className={nav.path === router.pathname ? 'nav-link active' : 'nav-link'}>{nav.title}</a>
                   </Link>
                 </li>
               ))}
+
+              {/* 일단 아무데나 넣자 */}
+              <li className={'text-center text-2xl lg:p-0 nav-item lg:hidden'}>
+                <Link href="/mypage">
+                  <a className={'nav-link'}>MY비타</a>
+                </Link>
+              </li>
+              <li className={'text-center text-2xl lg:p-0 nav-item lg:hidden'}>
+                <Link href="">
+                  <a className={'nav-link'}>로그인</a>
+                </Link>
+              </li>
+              <li className={'text-center text-2xl lg:p-0 nav-item lg:hidden'}>
+                <Link href="">
+                  <a className={'nav-link'}>회원가입</a>
+                </Link>
+              </li>
             </ul>
           </nav>
         </article>

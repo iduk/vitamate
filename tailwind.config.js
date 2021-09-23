@@ -10,10 +10,10 @@ module.exports = {
   theme: {
     screens: {
       sm: '768px',
-      // => @media (min-width: 639px) { ... }
+      // => @media (min-width: 768px) { ... }
 
       lg: '1200px',
-      // => @media (min-width: 1280px) { ... }
+      // => @media (min-width: 1200px) { ... }
     },
     extend: {
       borderRadius: {

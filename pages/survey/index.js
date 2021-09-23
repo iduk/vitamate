@@ -16,7 +16,7 @@ export default function Survey() {
           <p>하하핳ㅎㅎㅎㅎ하..........</p>
         </div>
       </div>
-      <div className=" w-96 h-48 mx-autorr5r5 flex justify-between items-center">
+      <div className=" w-96 h-48 mx-auto flex justify-between items-center">
         <button onClick={() => setSurveyStart(true)} className="btn bg-primary-600 text-white focus:bg-primary-700">
           건강설문 시작
         </button>

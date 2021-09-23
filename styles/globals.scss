@@ -161,9 +161,46 @@ $sidebar-size: 230px;
   grid-template-rows: repeat(3, auto);
 
   .header {
-    border-bottom-width: 1px;
-    border-style: solid;
-    @apply border-gray-200;
+    @media (min-width: 1200px) {
+      border-bottom-width: 1px;
+      border-style: solid;
+      @apply border-gray-200;
+    }
+  }
+  .nav-item {
+    .nav-link {
+      @apply block text-black py-3;
+      &:hover {
+        @apply text-primary-600;
+      }
+    }
+    @media (min-width: 1200px) {
+      .nav-link {
+        position: relative;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        padding: 1.25rem 1rem;
+        color: black;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 3px;
+          width: 1%;
+          transition: 0.15s linear;
+        }
+      }
+      .nav-link.active {
+        &::before {
+          content: '';
+          width: 100%;
+          background-color: #5cbbbb;
+        }
+      }
+    }
   }
 
   .subpage {
@@ -238,33 +275,7 @@ $sidebar-size: 230px;
   display: block;
   overflow: hidden;
   width: $sidebar-size;
-}
-
-.nav-item {
-  .nav-link {
-    position: relative;
-    font-size: 17px;
-    display: flex;
-    align-items: center;
-    padding: 1.25rem 1rem;
-
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 3px;
-      width: 1%;
-      transition: 0.15s linear;
-    }
-  }
-  .nav-link.active {
-    &::before {
-      content: '';
-      width: 100%;
-      background-color: #5cbbbb;
-    }
-  }
+  height: 30px;
 }
 
 .sidebar {
@@ -291,22 +302,15 @@ $modal-size: 500px;
 
 // home
 .bg-hero {
-  z-index: 0;
-  &::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 900px;
-    @apply bg-success-100;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top left;
-    background-image: url('https://images.pexels.com/photos/3786169/pexels-photo-3786169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  }
+  width: 100%;
+  height: 800px;
+  @apply bg-success-100;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  background-image: url('https://images.pexels.com/photos/3786169/pexels-photo-3786169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 }
+
 .hero-title {
   line-height: 1.3;
   b {
@@ -314,8 +318,6 @@ $modal-size: 500px;
   }
 }
 .hero-section {
-  position: relative;
-  height: calc(900px - 110px);
 }
 
 // Common

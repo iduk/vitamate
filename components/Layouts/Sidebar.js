@@ -105,23 +105,66 @@ function Sidebar({ children, router }) {
         </nav>
       </aside>
 
-      <nav className="lg:hidden container overflow-hidden">
-        <ul className="flex flex-shrink-0">
-          {news.nav.map((nav) => (
-            <li key={nav.path}>
-              <Link href={nav.path} as={nav.path}>
-                <a
-                  className={`${
-                    nav.path === router.pathname ? 'bg-primary-100 font-extrabold' : null
-                  } block p-6 text-xl`}
-                >
-                  {nav.title}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      {/* mobile */}
+      {asPath.indexOf('news') === 1 ? (
+        <nav className="lg:hidden container overflow-hidden">
+          <ul className="flex flex-shrink-0">
+            {news.nav.map((nav) => (
+              <li key={nav.path}>
+                <Link href={nav.path} as={nav.path}>
+                  <a
+                    className={`${
+                      nav.path === router.pathname ? 'bg-primary-100 font-extrabold' : null
+                    } block p-6 text-xl`}
+                  >
+                    {nav.title}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ) : null}
+
+      {asPath.indexOf('support') === 1 ? (
+        <nav className="lg:hidden container overflow-hidden">
+          <ul className="flex flex-shrink-0">
+            {support.nav.map((nav) => (
+              <li key={nav.path}>
+                <Link href={nav.path} as={nav.path}>
+                  <a
+                    className={`${
+                      nav.path === router.pathname ? 'bg-primary-100 font-extrabold' : null
+                    } block p-6 text-xl`}
+                  >
+                    {nav.title}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ) : null}
+
+      {asPath.indexOf('mypage') === 1 ? (
+        <nav className="lg:hidden container overflow-hidden">
+          <ul className="flex flex-shrink-0">
+            {mypage.nav.map((nav) => (
+              <li key={nav.path}>
+                <Link href={nav.path} as={nav.path}>
+                  <a
+                    className={`${
+                      nav.path === router.pathname ? 'bg-primary-100 font-extrabold' : null
+                    } block p-6 text-xl`}
+                  >
+                    {nav.title}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ) : null}
     </>
   )
 }
