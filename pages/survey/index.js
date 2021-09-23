@@ -11,8 +11,6 @@ export default function Survey() {
 
   return (
     <ContainerFluid>
-      <h1 className="page-title">건강설문</h1>
-
       <div className="h-72 bg-gray-200 flex justify-center items-center">
         <div>
           <p>하하핳ㅎㅎㅎㅎ하..........</p>

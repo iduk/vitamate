@@ -79,7 +79,7 @@ export default function Header() {
   }
 
   return (
-    <header className={'layout-header header border-b border-gray-200 relative'}>
+    <header className={'layout-header header relative'}>
       <section className={'w-full px-6 lg:px-0 container flex flex-wrap justify-between relative'}>
         <nav className={'hidden lg:block w-full flex-shrink-0 ml-auto mr-0'}>
           <ul className={'flex flex-wrap items-center justify-end'}>

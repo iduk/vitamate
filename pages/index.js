@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <>
       <div className="container">
-        <div className="bg-hero"></div>
         {/* hero */}
         <article className="hero-section">
           <div className="pt-24 text-right">
@@ -74,7 +73,7 @@ export default function Home() {
 
           <div>
             <div className=" relative">
-              <Img src="/images/img-main-serviceflow@2x.png" width={1024} height={520} alt="서비스 순서" />
+              <Img src="/images/img-main-serviceflow@2x.png" width={1200} height={609} alt="서비스 순서" />
             </div>
           </div>
         </article>
