@@ -133,11 +133,7 @@ export default function Header() {
                 <Img src={'/images/logo.svg'} width={162} height={30} objectFit={'contain'} alt="vitamate logo" />
               </a>
             </Link>
-            <button
-              style={{ zIndex: 200 }}
-              className={'absolute right-0 lg:hidden ml-auto mr-0 hover:outline-none'}
-              onClick={handleClick}
-            >
+            <button className={'absolute z-30 right-0 lg:hidden ml-auto mr-0 hover:outline-none'} onClick={handleClick}>
               <span className={'toggle-menu ' + (active === true ? 'active' : null)}>
                 <i></i>
                 <i></i>
@@ -150,7 +146,7 @@ export default function Header() {
           <nav
             className={`${
               active ? 'flex' : 'hidden'
-            } w-full h-screen bg-white text-black border shadow fixed top-0 left-0 justify-center items-center z-50 lg:relative lg:flex lg:p-0 lg:justify-end lg:w-auto lg:h-auto lg:ml-auto lg:bg-opacity-0 lg:shadow-none lg:border-none`}
+            } w-full h-screen bg-white text-black border shadow fixed top-0 left-0 justify-center items-center z-20 lg:relative lg:flex lg:p-0 lg:justify-end lg:w-auto lg:h-auto lg:ml-auto lg:bg-opacity-0 lg:shadow-none lg:border-none`}
           >
             {/* menu */}
             <ul

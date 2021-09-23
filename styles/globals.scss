@@ -185,6 +185,7 @@ $sidebar-size: 230px;
 
         &::before {
           content: '';
+          z-index: 1;
           position: absolute;
           bottom: 0;
           left: 0;
@@ -294,7 +295,8 @@ $modal-size: 500px;
   justify-content: center;
 }
 .modal-size {
-  min-width: $modal-size;
+  width: 100%;
+  // max-width: $modal-size;
 }
 #backdrop {
   @apply opacity-60 fixed inset-0 w-full h-full z-40 bg-black overflow-hidden;

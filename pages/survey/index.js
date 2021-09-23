@@ -1,7 +1,7 @@
 import ContainerFluid from 'components/Layouts/ContainerFluid'
 import { useState } from 'react'
 import Img from 'next/image'
-import Modal from 'components/Modal'
+import ModalFull from 'components/ModalFull'
 import TextInput from 'components/Forms/TextInput'
 
 export default function Survey() {
@@ -16,7 +16,7 @@ export default function Survey() {
           <p>하하핳ㅎㅎㅎㅎ하..........</p>
         </div>
       </div>
-      <div className=" w-96 h-48 mx-auto flex justify-between items-center">
+      <div className=" w-full h-48 mx-auto flex justify-between items-center">
         <button onClick={() => setSurveyStart(true)} className="btn bg-primary-600 text-white focus:bg-primary-700">
           건강설문 시작
         </button>
@@ -27,22 +27,22 @@ export default function Survey() {
           건강설문 종료
         </button>
       </div>
-      <Modal onClose={() => setSurveyStart(false)} show={surveyStart}>
+      <ModalFull onClose={() => setSurveyStart(false)} show={surveyStart}>
         <SurveyStart />
-      </Modal>
-      <Modal onClose={() => setSurveyContent(false)} show={surveyContent}>
+      </ModalFull>
+      <ModalFull onClose={() => setSurveyContent(false)} show={surveyContent}>
         <SurveyContent />
-      </Modal>
-      <Modal onClose={() => setSurveyEnd(false)} show={surveyEnd}>
+      </ModalFull>
+      <ModalFull onClose={() => setSurveyEnd(false)} show={surveyEnd}>
         <SurveyLoading />
-      </Modal>
+      </ModalFull>
     </ContainerFluid>
   )
 }
 
 const SurveyStart = () => {
   return (
-    <div className="px-10 pb-10" style={{ width: 800 }}>
+    <div className="px-10 pb-10 overflow-y-auto">
       <article className="text-center">
         <p>
           <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
@@ -66,7 +66,7 @@ const SurveyStart = () => {
 
 const SurveyContent = () => {
   return (
-    <div className="px-10 pb-10" style={{ width: 800 }}>
+    <div className="px-10 pb-10 overflow-y-auto">
       <form>
         {/* steps */}
         <article className="relative mb-8">
@@ -140,7 +140,7 @@ const SurveyContent = () => {
 
 const SurveyLoading = () => {
   return (
-    <div className="px-10 pb-10" style={{ width: 800 }}>
+    <div className="px-10 pb-10 overflow-y-auto">
       <article className="text-center">
         <p>
           <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />

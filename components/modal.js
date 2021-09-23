@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 import Img from 'next/image'
 
-export default function Modal({ show, onClose, children, title }) {
+export default function Modal({ show, onClose, children, title, modalSize }) {
   const [isBrowser, setIsBrowser] = useState(false)
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function Modal({ show, onClose, children, title }) {
   const ModalLayout = show ? (
     <>
       <section className="modal-wrap overflow-hidden fixed inset-0 z-50 outline-none focus:outline-none p-6">
-        <article className="modal-size max-w-min mx-auto">
+        <article className={'w-full min-w-min mx-auto'}>
           <div className="rounded-large shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <ModalHeader title />
             {children}
