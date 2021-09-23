@@ -80,7 +80,7 @@ export default function Header() {
 
   return (
     <header className={'layout-header header border-b border-gray-200 relative'}>
-      <section className={'w-full px-6 container flex flex-wrap justify-between relative'}>
+      <section className={'w-full px-6 lg:px-0 container flex flex-wrap justify-between relative'}>
         <nav className={'hidden lg:block w-full flex-shrink-0 ml-auto mr-0'}>
           <ul className={'flex flex-wrap items-center justify-end'}>
             {/* Logout */}
@@ -125,7 +125,7 @@ export default function Header() {
             )}
           </ul>
         </nav>
-        <article className="relative w-full block lg:flex lg:justify-between items-center">
+        <article className="relative overflow-hidden w-full block lg:flex lg:justify-between items-center">
           {/* Brand */}
           <div className="flex items-center justify-between w-full py-4 lg:p-0 lg:justify-start lg:w-auto">
             <Link href="/">
@@ -144,13 +144,9 @@ export default function Header() {
 
           <nav className={`${active ? 'flex' : 'hidden'} lg:flex lg:p-0 lg:justify-end lg:w-auto lg:ml-auto`}>
             {/* menu */}
-            <ul
-              className={
-                'w-full lg:inline-flex lg:flex-grow lg:w-auto bg-primary-600 rounded-large lg:rounded-none lg:bg-none'
-              }
-            >
+            <ul className={'w-full lg:inline-flex lg:flex-grow lg:w-auto rounded-large lg:rounded-none lg:bg-none'}>
               {navs.pages.map((nav) => (
-                <li key={nav.path} className="p-4 text-white text-center lg:nav-item">
+                <li key={nav.path} className="p-4 text-center lg:nav-item">
                   <Link href={nav.path}>
                     <a className={nav.path === router.pathname ? 'nav-link active' : 'nav-link'}>{nav.title}</a>
                   </Link>

@@ -9,13 +9,10 @@ module.exports = {
   purge: ['./components/**/*.js', './pages/**/*.js'],
   theme: {
     screens: {
-      sm: '640px',
+      sm: '768px',
       // => @media (min-width: 639px) { ... }
 
-      md: '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      lg: '1280px',
+      lg: '1200px',
       // => @media (min-width: 1280px) { ... }
     },
     extend: {

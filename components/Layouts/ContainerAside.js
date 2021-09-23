@@ -2,7 +2,7 @@ import Sidebar from './Sidebar'
 
 export default function ContainerAside({ children }) {
   return (
-    <section className={'container flex flex-initial'}>
+    <section className={'container lg:flex lg:flex-initial'}>
       <Sidebar />
 
       <div className={'container py-12 px-6 lg:p-16'}>

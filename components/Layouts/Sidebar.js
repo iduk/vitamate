@@ -57,52 +57,72 @@ const mypage = {
 function Sidebar({ children, router }) {
   const { asPath } = useRouter()
   return (
-    <aside className="sidebar flex-shrink-0 py-16 my-0 text-center">
-      <nav>
-        {asPath.indexOf('news') === 1 && (
-          <>
-            <h3 className="text-xl font-bold">{news.title}</h3>
-            <ul className="mt-6">
-              {news.nav.map((nav) => (
-                <li className="py-3" key={nav.path}>
-                  <Link href={nav.path} as={nav.path}>
-                    <a className={('nav', nav.path === router.pathname ? 'text-primary-600' : '')}>{nav.title}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-        {asPath.indexOf('support') === 1 && (
-          <>
-            <h3 className="text-xl font-bold">{support.title}</h3>
-            <ul className="mt-6">
-              {support.nav.map((nav) => (
-                <li className="py-3" key={nav.path}>
-                  <Link href={nav.path} as={nav.path}>
-                    <a className={('nav', nav.path === router.pathname ? 'text-primary-600' : '')}>{nav.title}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-        {asPath.indexOf('mypage') === 1 && (
-          <>
-            <h3 className="text-xl font-bold">{mypage.title}</h3>
-            <ul className="mt-6">
-              {mypage.nav.map((nav) => (
-                <li className="py-3" key={nav.path}>
-                  <Link href={nav.path} as={nav.path}>
-                    <a className={('nav', nav.path === router.pathname ? 'text-primary-600' : '')}>{nav.title}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
+    <>
+      <aside className="hidden lg:table sidebar flex-shrink-0 py-16 my-0 text-center">
+        <nav>
+          {asPath.indexOf('news') === 1 && (
+            <>
+              <h3 className="text-xl font-bold">{news.title}</h3>
+              <ul className="mt-6">
+                {news.nav.map((nav) => (
+                  <li className="py-3" key={nav.path}>
+                    <Link href={nav.path} as={nav.path}>
+                      <a className={('nav', nav.path === router.pathname ? 'text-primary-600' : '')}>{nav.title}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          {asPath.indexOf('support') === 1 && (
+            <>
+              <h3 className="text-xl font-bold">{support.title}</h3>
+              <ul className="mt-6">
+                {support.nav.map((nav) => (
+                  <li className="py-3" key={nav.path}>
+                    <Link href={nav.path} as={nav.path}>
+                      <a className={('nav', nav.path === router.pathname ? 'text-primary-600' : '')}>{nav.title}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          {asPath.indexOf('mypage') === 1 && (
+            <>
+              <h3 className="text-xl font-bold">{mypage.title}</h3>
+              <ul className="mt-6">
+                {mypage.nav.map((nav) => (
+                  <li className="py-3" key={nav.path}>
+                    <Link href={nav.path} as={nav.path}>
+                      <a className={('nav', nav.path === router.pathname ? 'text-primary-600' : '')}>{nav.title}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </nav>
+      </aside>
+
+      <nav className="lg:hidden container overflow-hidden">
+        <ul className="flex flex-shrink-0">
+          {news.nav.map((nav) => (
+            <li key={nav.path}>
+              <Link href={nav.path} as={nav.path}>
+                <a
+                  className={`${
+                    nav.path === router.pathname ? 'bg-primary-100 font-extrabold' : null
+                  } block p-6 text-xl`}
+                >
+                  {nav.title}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
-    </aside>
+    </>
   )
 }
 export default withRouter(Sidebar)

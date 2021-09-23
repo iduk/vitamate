@@ -239,7 +239,7 @@ $sidebar-size: 230px;
 .sidebar {
   position: relative;
   width: $sidebar-size;
-  @apply hidden lg:table border-r border-gray-200;
+  @apply border-r border-gray-200;
 }
 
 // Modal
@@ -284,6 +284,19 @@ $modal-size: 500px;
 .hero-section {
   position: relative;
   height: calc(900px - 110px);
+}
+
+.header-content {
+  height: 400px;
+  @apply bg-gray-100 bg-cover;
+  background-position: 50% right;
+  &.dtc-content {
+    background-image: url('https://images.pexels.com/photos/4492103/pexels-photo-4492103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  }
+
+  .header {
+    @apply border-0;
+  }
 }
 
 // Common
