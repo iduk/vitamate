@@ -21,7 +21,7 @@ export default function Modal({ show, onClose, children, title, modalSize }) {
     return (
       <>
         {/*header*/}
-        <header className="flex items-center justify-between px-10 pt-8 rounded-t">
+        <header className="flex items-center justify-between rounded-t">
           <h3 className="text-3xl font-bold">{title}</h3>
           <button
             className="ml-auto bg-transparent border-0float-right text-3xl leading-none outline-none focus:outline-none"
@@ -36,11 +36,11 @@ export default function Modal({ show, onClose, children, title, modalSize }) {
 
   const ModalLayout = show ? (
     <>
-      <section className="modal-wrap overflow-hidden fixed inset-0 z-50 outline-none focus:outline-none p-6">
+      <section className="overflow-hidden fixed inset-0 top-4 lg:top-24 z-50 outline-none focus:outline-none p-4">
         <article className={'w-full lg:max-w-xl min-w-min mx-auto'}>
-          <div className="rounded-large shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
+          <div className="px-8 py-6 lg:p-8 rounded-large shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <ModalHeader title />
-            {children}
+            <div>{children}</div>
           </div>
         </article>
       </section>
