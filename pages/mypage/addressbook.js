@@ -1,9 +1,11 @@
 import ContainerAside from 'components/Layouts/ContainerAside'
 import Link from 'next/link'
 import { useState } from 'react'
+import Modal from 'components/Modal'
 
 export default function Addressbook() {
   const [isSelected, setIsSelected] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   const addressData = [
     {
@@ -31,8 +33,9 @@ export default function Addressbook() {
               onClick={() => setIsSelected(!isSelected)}
               className={`${
                 isSelected === true ? 'border-gray-600 shadow' : null
-              } grid place-content-between mt-6 p-6 border border-gray-300 rounded-lg transition duration-200 ease-in-out`}
+              } flex justify-between place-content-between mt-6 p-6 border border-gray-300 rounded-lg transition duration-200 ease-in-out`}
             >
+              <div></div>
               <dl>
                 <dt className="mb-2 flex justify-between items-center text-xl leading-none font-bold">
                   {/* -- 기본배송지 표기 -- */}
@@ -52,7 +55,10 @@ export default function Addressbook() {
                   {data.tel}
                 </dd>
                 <dd className="mt-4">
-                  <button className="py-1 px-4 rounded border text-base border-gray-300 text-gray-600 hover:bg-gray-100">
+                  <button
+                    onClick={() => setShowModal(true)}
+                    className="py-1 px-4 rounded border text-base border-gray-300 text-gray-600 hover:bg-gray-100"
+                  >
                     수정
                   </button>
                 </dd>
@@ -71,6 +77,11 @@ export default function Addressbook() {
           <button className="btn bg-primary-600 text-white hover:bg-primary-700 ml-3">신규 배송지 등록</button>
         </div>
       </div>
+
+      {/* ---- Show Modal ---- */}
+      <Modal title={'로그인'} onClose={() => setShowModal(false)} show={showModal}>
+        asdfasdf
+      </Modal>
     </ContainerAside>
   )
 }
