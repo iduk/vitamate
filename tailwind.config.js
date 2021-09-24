@@ -51,15 +51,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: [
-        '-apple-system',
-        'system-ui',
-        'Nanumsquare',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'sans-serif',
-      ],
+      sans: ['-apple-system', 'NanumSquare', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'sans-serif'],
       serif: ['serif'],
     },
     listStyleType: {

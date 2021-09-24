@@ -94,6 +94,12 @@ textarea {
       @apply bg-gray-100 border-gray-200;
     }
   }
+  input[type='password'] {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    &::placeholder {
+      font-family: 'NanumSquare';
+    }
+  }
   select {
     margin-right: 1.5rem;
   }
@@ -312,8 +318,9 @@ $modal-size: 500px;
   @apply bg-success-100;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top left;
-  background-image: url('https://images.pexels.com/photos/3786169/pexels-photo-3786169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-position: bottom right;
+  // background-attachment: fixed;
+  // background-image: url('https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 }
 
 .hero-title {
