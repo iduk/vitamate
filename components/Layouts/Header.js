@@ -129,8 +129,8 @@ export default function Header() {
           {/* Brand */}
           <div className="flex items-center justify-between w-full py-4 lg:p-0 lg:justify-start lg:w-auto">
             <Link href="/">
-              <a className="brand-logo">
-                <Img src={'/images/logo.svg'} width={162} height={30} objectFit={'contain'} alt="vitamate logo" />
+              <a className="brand-logo relative">
+                <Img src={'/images/logo.svg'} layout="fill" objectFit={'contain'} alt="vitamate logo" />
               </a>
             </Link>
             <button className={'absolute z-30 right-0 lg:hidden ml-auto mr-0 hover:outline-none'} onClick={handleClick}>
