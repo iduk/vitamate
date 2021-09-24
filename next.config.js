@@ -4,7 +4,7 @@ const withSass = require('@zeit/next-sass')
 module.exports = {
   trailingSlash: true,
   sassOptions: {
-    includePaths: [path.join(__dirname, '.')],
+    includePaths: [path.join(__dirname, 'styles')],
   },
   // webpack
   webpackDevMiddleware: (config) => {
