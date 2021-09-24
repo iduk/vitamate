@@ -63,17 +63,17 @@ export default function SignUp() {
           </div>
 
           <div className="form-group">
-            <div className="flex justify-between items-end w-full">
-              <TextInput type="text" label="주소 입력" placeholder="주소를 입력해주세요" id="userAddress" />
-              <span className="ml-4 flex-shrink-0">
+            <div className="flex place-items-end">
+              <div className="flex-1 mr-3">
+                <TextInput type="text" label="주소 입력" placeholder="주소를 입력해주세요" id="userAddress" />
+              </div>
+              <div className="flex-0">
                 <button className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
                   주소찾기
                 </button>
-              </span>
+              </div>
             </div>
-            <div className="mt-4">
-              <TextInput type="text" placeholder="나머지 주소를 입력해주세요" id="userAddress2" />
-            </div>
+            <TextInput type="text" placeholder="나머지 주소를 입력해주세요" id="userAddress2" className="mt-3" />
           </div>
 
           <hr className="mt-8" />
