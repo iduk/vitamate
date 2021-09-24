@@ -1,8 +1,6 @@
 import { useState } from 'react'
 
-const TextInput = ({ label, id, type, placeholder, disabled, children, className }) => {
-  const [value, setValue] = useState('')
-
+const TextInput = ({ label, id, type, value, placeholder, disabled, children, className, onChange }) => {
   return (
     <>
       <div className={'form-control w-full'}>
@@ -14,7 +12,7 @@ const TextInput = ({ label, id, type, placeholder, disabled, children, className
             id={id}
             placeholder={placeholder}
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={onChange}
             disabled={disabled}
           />
         </div>
