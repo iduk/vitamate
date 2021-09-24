@@ -26,18 +26,18 @@ export default function Support() {
           <Select label="유형" options={option} />
         </div>
         <div className="form-group">
-          <TextInput type="email" label="유형" placeholder="abc@mail.com" />
+          <TextInput label="이메일" type="email" placeholder="답변 받으실 이메일 주소를 입력해주세요" />
         </div>
         <div className="form-group">
           <label>연락처</label>
-          <ul className="flex justify-between" style={{ width: 400 }}>
-            <li className="flex-shrink-0">
+          <ul className="flex justify-between lg:justify-start">
+            <li className="w-full lg:w-40">
               <Select options={tel_type} />
             </li>
-            <li className="px-4">
+            <li className="w-full lg:w-40 mx-3">
               <TextInput type="tel" placeholder="0000" />
             </li>
-            <li className="">
+            <li className="w-full lg:w-40">
               <TextInput type="tel" placeholder="0000" />
             </li>
           </ul>

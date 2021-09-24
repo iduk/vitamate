@@ -146,9 +146,10 @@ function Sidebar({ children, router }) {
         </nav>
       ) : null}
 
+      {/* UI 다름 */}
       {asPath.indexOf('mypage') === 1 ? (
         <nav className="lg:hidden container overflow-hidden">
-          <ul className="flex flex-shrink-0">
+          <ul className="flex flex-shrink-0 flex-wrap">
             {mypage.nav.map((nav) => (
               <li key={nav.path}>
                 <Link href={nav.path} as={nav.path}>

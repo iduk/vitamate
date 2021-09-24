@@ -180,8 +180,11 @@ $sidebar-size: 230px;
         font-size: 17px;
         display: flex;
         align-items: center;
-        padding: 1.25rem 1rem;
+        padding: 1rem 1rem;
         color: black;
+        &:hover {
+          color: inherit;
+        }
 
         &::before {
           content: '';
@@ -232,7 +235,7 @@ $sidebar-size: 230px;
 
 .toggle-menu {
   position: relative;
-  width: 1.5rem;
+  width: 2.25rem;
   height: 2.25rem;
   overflow: hidden;
   display: block;
@@ -240,10 +243,10 @@ $sidebar-size: 230px;
     position: absolute;
     display: block;
     height: 2px;
-    width: 1.5rem;
-    left: 0;
+    width: 1.25rem;
+    left: 0.5rem;
     transition: transform 0.2s;
-    @apply bg-gray-600;
+    @apply bg-gray-900;
 
     &:nth-child(1) {
       top: 0.5rem;
@@ -273,10 +276,10 @@ $sidebar-size: 230px;
 }
 
 .brand-logo {
-  display: block;
+  display: inline-block;
   overflow: hidden;
-  width: $sidebar-size;
-  height: 30px;
+  width: 140px;
+  height: 26px;
 }
 
 .sidebar {

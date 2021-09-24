@@ -103,7 +103,7 @@ const SurveyContent = () => {
         <article>
           <ul>
             <li className="flex justify-between items-center">
-              <div className="form-checkbox">
+              <div className="form-checkbox flex-shrink-0">
                 <label htmlFor="survey-check1" className="inline-flex items-center py-2">
                   <input id="survey-check1" name="survery" type="checkbox" />
                   <p className="ml-3 text-lg">하루 12시간 이상의 업무 또는 학업을 일주일에 3일 이상해요</p>
@@ -111,7 +111,7 @@ const SurveyContent = () => {
               </div>
             </li>
             <li className="flex justify-between items-center">
-              <div className="form-checkbox">
+              <div className="form-checkbox flex-shrink-0">
                 <label htmlFor="survey-check2" className="inline-flex items-center py-2">
                   <input id="survey-check2" name="survery" type="checkbox" />
                   <p className="ml-3 text-lg">
