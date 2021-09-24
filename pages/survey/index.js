@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Img from 'next/image'
 import ModalFull from 'components/ModalFull'
 import TextInput from 'components/Forms/TextInput'
+import Checkbox from 'components/Forms/Checkbox'
 
 export default function Survey() {
   const [surveyStart, setSurveyStart] = useState(false)
@@ -42,7 +43,7 @@ export default function Survey() {
 
 const SurveyStart = () => {
   return (
-    <div className="px-10 pb-10 overflow-y-auto">
+    <div className="overflow-y-auto container">
       <article className="text-center">
         <p>
           <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
@@ -66,7 +67,7 @@ const SurveyStart = () => {
 
 const SurveyContent = () => {
   return (
-    <div className="px-10 pb-10 overflow-y-auto">
+    <div className="overflow-y-auto container">
       <form>
         {/* steps */}
         <article className="relative mb-8">
@@ -92,34 +93,33 @@ const SurveyContent = () => {
         {/* answer */}
         {/* answer - forms */}
         <article>
-          <div className="form-control lg mb-4">
-            <input type="text" placeholder="이름을 입력 해주세요" />
-          </div>
-          <div className="form-control lg mb-4">
-            <input type="text" placeholder="몸무게를 입력...ㅋ" />
-          </div>
+          <TextInput id="answer1" placeholder="이름을 입력해주세요" className="mb-4" />
+          <TextInput id="answer2" placeholder="몸무게를 입력해주세요" />
         </article>
         {/* answer - checkbox */}
         <article>
-          <ul>
-            <li className="flex justify-between items-center">
-              <div className="form-checkbox flex-shrink-0">
-                <label htmlFor="survey-check1" className="inline-flex items-center py-2">
-                  <input id="survey-check1" name="survery" type="checkbox" />
-                  <p className="ml-3 text-lg">하루 12시간 이상의 업무 또는 학업을 일주일에 3일 이상해요</p>
-                </label>
-              </div>
+          <ul className="my-6">
+            <li>
+              <Checkbox
+                id="survey-check1"
+                name="survey"
+                label="하루 12시간 이상의 업무 또는 학업을 일주일에 3일 이상해요"
+                labelClass="text-lg"
+              />
             </li>
-            <li className="flex justify-between items-center">
-              <div className="form-checkbox flex-shrink-0">
-                <label htmlFor="survey-check2" className="inline-flex items-center py-2">
-                  <input id="survey-check2" name="survery" type="checkbox" />
-                  <p className="ml-3 text-lg">
-                    보통 (좌식 중심의 일이지만, 직장 내에서 이동하거나 서서 일하는 활동 중심)
-                  </p>
-                </label>
-                <p className="mt-2 text-sm text-danger-500">*다시 입력해주세요</p>
-              </div>
+            <li className="">
+              <Checkbox
+                id="survey-check2"
+                name="survey"
+                label="보통 (좌식 중심의 일이지만, 직장 내에서 이동하거나 서서 일하는 활동 중심)"
+                labelClass="text-lg"
+              />
+            </li>
+            <li className="">
+              <Checkbox id="survey-check3" name="survey" label="세번째 답변입니다" labelClass="text-lg" />
+            </li>
+            <li className="">
+              <Checkbox id="survey-check4" name="survey" label="네번째 답변입니다" labelClass="text-lg" />
             </li>
           </ul>
         </article>
@@ -140,7 +140,7 @@ const SurveyContent = () => {
 
 const SurveyLoading = () => {
   return (
-    <div className="px-10 pb-10 overflow-y-auto">
+    <div className="overflow-y-auto container">
       <article className="text-center">
         <p>
           <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />

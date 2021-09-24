@@ -39,7 +39,7 @@ export default function Modal({ show, onClose, children, title, modalSize }) {
       <section className="overflow-hidden fixed inset-0 z-50">
         <article className={'w-screen h-screen bg-white mx-auto'}>
           <ModalHeader title />
-          <div className="p-8">{children}</div>
+          <div className="p-4 lg:p-8">{children}</div>
         </article>
       </section>
       <div id="backdrop"></div>

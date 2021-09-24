@@ -1,6 +1,7 @@
 // components/Layouts
 import Header from './Header'
 import Footer from './Footer'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const IndexPage = () => {
@@ -26,9 +27,10 @@ const IndexPage = () => {
             </p>
             <div className="mt-8 flex flex-shrink-0">
               <div className="inline-flex rounded-md shadow">
-                <a
-                  onClick={() => setShowModal(true)}
-                  className="
+                <Link href="">
+                  <a
+                    onClick={() => setShowModal(true)}
+                    className="
                     btn
                     inline-flex
                     items-center
@@ -38,18 +40,19 @@ const IndexPage = () => {
                     hover:bg-primary-600-800
                     focus:bg-primary-600-800
                   "
-                >
-                  회원 가입하기
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 ml-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
+                    회원 가입하기
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 ml-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

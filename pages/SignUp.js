@@ -109,7 +109,7 @@ export default function SignUp() {
         <button
           type="submit"
           onClick={() => setShowModal(false)}
-          className={'w-full py-5 bg-primary-600 text-white hover:bg-primary-700 text-xl font-bold rounded-none'}
+          className={'w-full py-5 bg-primary-600 text-white hover:bg-primary-700 text-xl font-bold rounded-md'}
           disabled
         >
           회원가입

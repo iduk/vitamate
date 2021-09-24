@@ -22,13 +22,13 @@ export default function SignIn() {
             </TextInput>
           </div>
         </div>
-      </form>
 
-      <footer className={'flex justify-center p-0'}>
-        <button className={'w-full py-5 bg-primary-600 text-white hover:bg-primary-700 text-xl font-bold rounded-none'}>
-          로그인하기
-        </button>
-      </footer>
+        <footer className={'flex justify-center p-0'}>
+          <button className={'w-full py-5 bg-primary-600 text-white hover:bg-primary-700 text-xl font-bold rounded-md'}>
+            로그인
+          </button>
+        </footer>
+      </form>
     </>
   )
 }

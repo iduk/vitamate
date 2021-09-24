@@ -168,13 +168,17 @@ export default function Header() {
                 </Link>
               </li>
               <li className={'text-center text-2xl lg:p-0 nav-item lg:hidden'}>
-                <Link href="">
-                  <a className={'nav-link'}>로그인</a>
+                <Link href=".">
+                  <a onClick={() => setShowSignin(showSignin)} className={'nav-link'}>
+                    로그인
+                  </a>
                 </Link>
               </li>
               <li className={'text-center text-2xl lg:p-0 nav-item lg:hidden'}>
-                <Link href="">
-                  <a className={'nav-link'}>회원가입</a>
+                <Link href=".">
+                  <a onClick={() => setShowSignup(showSignup)} className={'nav-link'}>
+                    회원가입
+                  </a>
                 </Link>
               </li>
             </ul>

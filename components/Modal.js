@@ -38,7 +38,7 @@ export default function Modal({ show, onClose, children, title, modalSize }) {
     <>
       <section className="overflow-hidden fixed inset-0 top-4 lg:top-24 z-50 outline-none focus:outline-none p-4">
         <article className={'w-full lg:max-w-xl min-w-min mx-auto'}>
-          <div className="px-8 py-6 lg:p-8 lg:pt-6 rounded-large shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
+          <div className="px-6 py-6 lg:p-8 rounded-large shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <ModalHeader title />
             <div className="pt-6">{children}</div>
           </div>

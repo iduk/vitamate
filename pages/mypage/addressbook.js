@@ -31,19 +31,24 @@ export default function Addressbook() {
           <Link key={id} href="#">
             <a
               onClick={() => setIsSelected(!isSelected)}
-              className={`${
-                isSelected === true ? 'border-gray-600 shadow' : null
-              } flex justify-between place-content-between mt-6 p-6 border border-gray-300 rounded-lg transition duration-200 ease-in-out`}
+              className={
+                'flex place-content-between mt-6 p-6 border border-gray-300 rounded-lg transition duration-200 ease-in-out'
+              }
             >
-              <div></div>
-              <dl>
-                <dt className="mb-2 flex justify-between items-center text-xl leading-none font-bold">
-                  {/* -- 기본배송지 표기 -- */}
+              <div className="form-checkbox mr-6">
+                <input type="checkbox" checked={isSelected === true ? true : false} />
+              </div>
+
+              <dl className="w-full">
+                <dt className="flex h-8 justify-between items-center text-xl leading-none font-bold">
                   <span>{data.addressName}</span>
                   <div>
-                    <span className="mb-1 inline-flex items-center justify-center px-2 py-1 text-sm font-bold leading-none text-primary-600 border border-primary-600 rounded">
-                      기본배송지
-                    </span>
+                    {/* -- 기본배송지 표기 -- */}
+                    {isSelected === true ? (
+                      <span className="inline-flex items-center justify-center px-2 py-1 text-sm font-bold leading-none text-primary-600 border border-primary-600 rounded">
+                        기본배송지
+                      </span>
+                    ) : null}
                   </div>
                 </dt>
                 <dd className="text-lg">
@@ -70,12 +75,10 @@ export default function Addressbook() {
 
       <div className="flex justify-end my-6">
         {/* ---- 기본배송지등록,신규배송지등록 ---- */}
-        <div>
-          <button className="btn border border-primary-600 text-primary-600 hover:border-primary-700 hover:text-primary-700 hover:shadow">
-            기본 배송지로 등록
-          </button>
-          <button className="btn bg-primary-600 text-white hover:bg-primary-700 ml-3">신규 배송지 등록</button>
-        </div>
+        <button className="btn border border-gray-300 text-gray-900 hover:border-gray-400 hover:bg-gray-100 hover:shadow mr-3">
+          기본 배송지 등록
+        </button>
+        <button className="btn bg-primary-600 text-white hover:bg-primary-700">신규 배송지 등록</button>
       </div>
 
       {/* ---- Show Modal ---- */}
