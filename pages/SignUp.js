@@ -2,6 +2,7 @@ import Select from '../components/Forms/Select'
 import TextInput from '../components/Forms/TextInput'
 import { useState } from 'react'
 import Link from 'next/link'
+import Checkbox from 'components/Forms/Checkbox'
 
 export default function SignUp() {
   const [isShowing, setIsShowing] = useState(false)
@@ -12,7 +13,7 @@ export default function SignUp() {
 
   return (
     <>
-      <article className={'p-10 min-h-full overflow-y-auto'} style={{ maxHeight: 500 }}>
+      <article className={'overflow-y-auto'} style={{ maxHeight: 540 }}>
         <form onSubmit={registerUser}>
           <div className="form-group">
             <TextInput type="text" label="휴대폰 번호" id="userPhone" placeholder="010-0000-0000" />
@@ -54,7 +55,8 @@ export default function SignUp() {
               type="password"
               label="비밀번호"
               id="userPassword"
-              placeholder="'숫자/문자/특수기호'를 포함한 8자리 이상 입력"
+              value="123456!@#&%"
+              placeholder="숫자/문자/특수기호를 포함한 8자리 이상 입력"
             >
               <p className="mt-2 text-sm text-danger-500">8자리 이상 입력해주세요.</p>
             </TextInput>
@@ -76,46 +78,26 @@ export default function SignUp() {
 
           <hr className="mt-8" />
 
-          <ul>
-            <li className="flex justify-between items-center">
-              <div className="form-checkbox flex-shrink-0">
-                <label htmlFor="check-all" className="inline-flex items-center py-5">
-                  <input id="check-all" type="checkbox" />
-                  <p className="ml-3 font-bold">전체 동의하기</p>
-                </label>
-              </div>
+          <ul className="pb-10">
+            <li className="flex justify-between items-center py-3">
+              <Checkbox id="check-all" name="agree" label-class="font-bold" label="전체 동의하기" />
             </li>
 
             <li className="flex justify-between items-center">
-              <div className="form-checkbox flex-shrink-0">
-                <label htmlFor="check-1" className="inline-flex items-center py-2">
-                  <input id="check-1" type="checkbox" />
-                  <p className="ml-3">[필수]이용약관</p>
-                </label>
-              </div>
+              <Checkbox id="check-1" name="agree" label="[필수]이용약관" />
               <Link href="/TermsOfService">
                 <a className="p-2 text-sm text-gray-500 underline">보기</a>
               </Link>
             </li>
             <li className="flex justify-between items-center">
-              <div className="form-checkbox flex-shrink-0">
-                <label htmlFor="check-2" className="inline-flex items-center py-2">
-                  <input id="check-2" type="checkbox" />
-                  <p className="ml-3">[필수]개인정보 수집 동의 약관</p>
-                </label>
-              </div>
+              <Checkbox id="check-2" name="agree" label="[필수]개인정보 수집 동의 약관" />
               <Link href="/PrivacyPolicy">
                 <a className="p-2 text-sm text-gray-500 underline">보기</a>
               </Link>
             </li>
             <li className="flex justify-between items-center">
-              <div className="form-checkbox flex-shrink-0">
-                <label htmlFor="check-3" className="inline-flex items-center py-2">
-                  <input id="check-3" type="checkbox" />
-                  <p className="ml-3">[선택]마케팅 수집 동의</p>
-                </label>
-              </div>
-              <Link href=".">
+              <Checkbox id="check-3" name="agree" label="[선택]마케팅 수집 동의" />
+              <Link href="/TermsOfService">
                 <a className="p-2 text-sm text-gray-500 underline">보기</a>
               </Link>
             </li>
