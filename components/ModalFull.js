@@ -7,10 +7,12 @@ export default function Modal({ show, onClose, children, title, modalSize }) {
 
   useEffect(() => {
     setIsBrowser(true)
-    window.setTimeout(function () {
-      document.body.scrollTop = null
-    }, 0)
-  }, [])
+    if (show) {
+      document.body.className = 'scroll-lock'
+    } else {
+      document.body.className = ''
+    }
+  }, [show])
 
   const handleCloseClick = (e) => {
     e.preventDefault()
@@ -21,7 +23,7 @@ export default function Modal({ show, onClose, children, title, modalSize }) {
     return (
       <>
         {/*header*/}
-        <header className="flex items-center justify-between px-10 pt-8">
+        <header className="flex items-center justify-between">
           <h3 className="text-3xl font-bold">{title}</h3>
           <button
             className="ml-auto bg-transparent border-0float-right text-3xl leading-none outline-none focus:outline-none"
@@ -37,7 +39,7 @@ export default function Modal({ show, onClose, children, title, modalSize }) {
   const ModalLayout = show ? (
     <>
       <section className="overflow-hidden fixed inset-0 z-50">
-        <article className={'w-screen h-screen bg-white mx-auto'}>
+        <article className={'w-full h-full bg-white mx-auto'}>
           <ModalHeader title />
           <div className="p-4 lg:p-8">{children}</div>
         </article>

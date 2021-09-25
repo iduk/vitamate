@@ -1,21 +1,33 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Modal from 'components/Modal'
 import Img from 'next/image'
 import SignUp from 'pages/SignUp'
 import SignIn from 'pages/SignIn'
 
-export default function Header() {
+export default function Header({ onClose }) {
   const router = useRouter()
   const [isLoggin, setIsLoggin] = useState(false)
   const [showSignin, setShowSignin] = useState(false)
   const [showSignup, setShowSignup] = useState(false)
   const [active, setActive] = useState(false)
 
+  useEffect(() => {
+    if (active) {
+      document.body.className = 'scroll-lock'
+    } else {
+      document.body.className = ''
+    }
+  }, [active])
+
   const handleClick = () => {
     setActive(!active)
+  }
+  const handleCloseClick = (e) => {
+    e.preventDefault()
+    onClose()
   }
 
   const navs = {
@@ -134,7 +146,7 @@ export default function Header() {
               </a>
             </Link>
             <button className={'absolute z-30 right-0 lg:hidden ml-auto mr-0 hover:outline-none'} onClick={handleClick}>
-              <span className={'toggle-menu ' + (active === true ? 'active' : null)}>
+              <span className={'toggle-menu ' + (active === true ? 'active' : '')}>
                 <i></i>
                 <i></i>
                 <i></i>
@@ -146,7 +158,7 @@ export default function Header() {
           <nav
             className={`${
               active ? 'flex' : 'hidden'
-            } w-full h-screen bg-white text-black border shadow fixed top-0 left-0 justify-center items-center z-20 lg:relative lg:flex lg:p-0 lg:justify-end lg:w-auto lg:h-auto lg:ml-auto lg:bg-opacity-0 lg:shadow-none lg:border-none`}
+            } w-full h-full bg-white text-black overflow-hidden shadow fixed top-0 left-0 justify-center items-center z-20 lg:relative lg:flex lg:p-0 lg:justify-end lg:w-auto lg:h-auto lg:ml-auto lg:bg-opacity-0 lg:shadow-none lg:border-none`}
           >
             {/* menu */}
             <ul
