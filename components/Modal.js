@@ -7,10 +7,12 @@ export default function Modal({ show, onClose, children, title, modalSize }) {
 
   useEffect(() => {
     setIsBrowser(true)
-    window.setTimeout(function () {
-      document.body.scrollTop = null
-    }, 0)
-  }, [])
+    if (show) {
+      document.body.className = 'scroll-lock'
+    } else {
+      document.body.className = ''
+    }
+  }, [show])
 
   const handleCloseClick = (e) => {
     e.preventDefault()
@@ -36,7 +38,7 @@ export default function Modal({ show, onClose, children, title, modalSize }) {
 
   const ModalLayout = show ? (
     <>
-      <section className="overflow-hidden fixed inset-0 top-4 lg:top-24 z-50 outline-none focus:outline-none p-4">
+      <section className="w-full h-full grid grid-cols-1 place-content-stretch lg:place-content-center fixed inset-0 z-50 outline-none focus:outline-none">
         <article className={'w-full lg:max-w-xl min-w-min mx-auto'}>
           <div className="p-4 pt-6 lg:p-8 lg:pt-6 rounded-large shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <ModalHeader title />
