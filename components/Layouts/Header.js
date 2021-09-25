@@ -72,7 +72,7 @@ export default function Header() {
         title: '배송지 관리',
       },
       {
-        path: '/mypage/calendar',
+        path: '/mypage/vita-calendar',
         title: '비타 캘린더',
       },
     ],
