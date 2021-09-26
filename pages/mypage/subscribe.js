@@ -42,7 +42,7 @@ const TabOne = () => {
         </h2>
       </article>
 
-      <aside className="product-cart w-1/3 p-5 bg-gray-100 rounded-md">
+      <aside className="hidden lg:block product-cart w-1/3 p-5 bg-gray-100 rounded-md">
         <h2 className="text-base">구독 예정 상품</h2>
         <ul>
           <li className="flex flex-1 my-6">
