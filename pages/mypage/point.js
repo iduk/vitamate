@@ -5,19 +5,19 @@ export default function Point() {
   const pointList = [
     {
       pointUseDate: '2020-09-09',
-      pointUseTitle: '포인트 사용 내용ㅋ',
+      pointUseTitle: '가입축하 포인트 적립',
       pointUseState: '+', // 적립 +, 차감 -
       pointNumber: '1,000',
     },
     {
-      pointUseDate: '2019-11-11',
-      pointUseTitle: '내 포인트는 어디로 갔을까',
+      pointUseDate: '2019-09-11',
+      pointUseTitle: '2019년 09월 정기 결제 금액',
       pointUseState: '-',
       pointNumber: '500',
     },
     {
       pointUseDate: '2017-01-26',
-      pointUseTitle: '이 포인트 어디서 났어!!',
+      pointUseTitle: '이벤트 상품 구매',
       pointUseState: '+',
       pointNumber: '999,909',
     },

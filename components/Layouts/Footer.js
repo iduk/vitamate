@@ -29,41 +29,18 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-
-            <address className="not-italic mt-4">
-              <h6 className="text-lg font-extrabold mb-1">Address</h6>
-              <p>527, 12th Floor, Eonju-ro, Gangnam-gu, Seoul, Republic of Korea</p>
-              <p>대한민국 서울시 강남구 ​언주로 527,강남텔레피아빌딩 12층</p>
-            </address>
           </article>
 
-          <article className="lg:w-4/12 w-full mt-10">
+          <article className="lg:w-4/12 w-full">
             <div>
-              <h6 className="text-lg font-extrabold mb-2">메일링 구독 서비스</h6>
-              <TextInput id="mailing" type="text" placeholder="이메일을 남겨주세요" />
-            </div>
-            <div className="mt-8">
-              <h6 className="text-lg font-extrabold mb-2">SNS</h6>
-              <div className="flex items-center">
-                <Link href=".">
-                  <a className="mr-3">
-                    <Img src="/images/ic-twitter.svg" width={32} height={32} alt="twitter" />
-                  </a>
-                </Link>
-                <Link href=".">
-                  <a className="mr-3">
-                    <Img src="/images/ic-instagram.svg" width={32} height={32} alt="twitter" />
-                  </a>
-                </Link>
-                <Link href=".">
-                  <a className="mr-3">
-                    <Img src="/images/ic-facebook.svg" width={32} height={32} alt="twitter" />
-                  </a>
-                </Link>
-              </div>
+              <address className="not-italic">
+                <h6 className="text-lg font-extrabold mb-1">Address</h6>
+                <p>527, 12th Floor, Eonju-ro, Gangnam-gu, Seoul, Republic of Korea</p>
+                <p>대한민국 서울시 강남구 ​언주로 527,강남텔레피아빌딩 12층</p>
+              </address>
             </div>
           </article>
-          <div className="mt-8 border-t border-gray-200 text-gray-500">
+          <div className="mt-8 w-full border-t border-gray-200 text-gray-500">
             <article className="container py-4 text-sm block w-full lg:flex lg:justify-between lg:items-center">
               <div className="flex">
                 <Link href="/TermsOfService">

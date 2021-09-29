@@ -1,7 +1,7 @@
 import ContainerFluid from 'components/Layouts/ContainerFluid'
 import { useState } from 'react'
 import Img from 'next/image'
-import ModalFull from 'components/ModalFull'
+import Modal from 'components/Modal'
 import TextInput from 'components/Forms/TextInput'
 import Checkbox from 'components/Forms/Checkbox'
 
@@ -12,12 +12,7 @@ export default function Survey() {
 
   return (
     <ContainerFluid>
-      <div className="h-72 bg-gray-200 flex justify-center items-center">
-        <div>
-          <p>하하핳ㅎㅎㅎㅎ하..........</p>
-        </div>
-      </div>
-      <div className=" w-full h-48 mx-auto flex justify-between items-center">
+      <div className=" w-3/6 h-48 mx-auto flex justify-between items-center">
         <button onClick={() => setSurveyStart(true)} className="btn bg-primary-600 text-white focus:bg-primary-700">
           건강설문 시작
         </button>
@@ -28,15 +23,15 @@ export default function Survey() {
           건강설문 종료
         </button>
       </div>
-      <ModalFull onClose={() => setSurveyStart(false)} show={surveyStart}>
+      <Modal onClose={() => setSurveyStart(false)} show={surveyStart}>
         <SurveyStart />
-      </ModalFull>
-      <ModalFull onClose={() => setSurveyContent(false)} show={surveyContent}>
+      </Modal>
+      <Modal onClose={() => setSurveyContent(false)} show={surveyContent}>
         <SurveyContent />
-      </ModalFull>
-      <ModalFull onClose={() => setSurveyEnd(false)} show={surveyEnd}>
+      </Modal>
+      <Modal onClose={() => setSurveyEnd(false)} show={surveyEnd}>
         <SurveyLoading />
-      </ModalFull>
+      </Modal>
     </ContainerFluid>
   )
 }

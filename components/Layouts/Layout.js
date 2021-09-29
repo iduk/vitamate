@@ -3,10 +3,23 @@ import Header from './Header'
 import Footer from './Footer'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 const IndexPage = () => {
+  const [randomIMG, setRandomIMG] = useState(undefined)
+
+  let Images = [
+    'https://images.pexels.com/photos/4040564/pexels-photo-4040564.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1000',
+    'https://images.pexels.com/photos/4040564/pexels-photo-4040564.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1000',
+    'https://images.pexels.com/photos/3683049/pexels-photo-3683049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1000',
+  ]
+
+  useEffect(() => {
+    setRandomIMG(Math.floor(Math.random() * Images.length))
+  }, [])
+
   return (
-    <section className={'bg-hero'}>
+    <section className={'bg-hero'} style={{ background: `${randomIMG}` }}>
       <Header />
       <article className={'container'}>
         <div className="pt-20 text-right">

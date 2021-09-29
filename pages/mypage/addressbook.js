@@ -69,7 +69,7 @@ export default function Addressbook() {
                 </dd>
                 <dd className="text-base mt-2">
                   <span className="mr-2">수령인</span>
-                  <span className="text-gray-500">김수겸</span>
+                  <span className="text-gray-500">이병윤</span>
                 </dd>
                 <dd className="mt-1">
                   <span className="mr-2">연락처</span>

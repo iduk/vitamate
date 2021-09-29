@@ -77,6 +77,14 @@ textarea {
   }
 }
 
+.tab {
+  &:disabled,
+  &.disabled {
+    @apply border-gray-200  text-gray-400;
+    cursor: no-drop;
+  }
+}
+
 // forms
 .form-group {
   & + .form-group {
@@ -225,7 +233,9 @@ $sidebar-size: 230px;
     height: 400px;
     overflow: hidden;
     background-position: center;
-    @apply bg-gray-100 bg-cover flex flex-col justify-between;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @apply bg-gray-100 flex flex-col justify-between;
 
     &--description {
       position: absolute;
@@ -236,6 +246,9 @@ $sidebar-size: 230px;
 
     &.dtc {
       background-image: url('https://images.pexels.com/photos/3786169/pexels-photo-3786169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    }
+    &.survey {
+      background-image: url('https://images.pexels.com/photos/3923169/pexels-photo-3923169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
     }
   }
 }
@@ -326,8 +339,7 @@ $modal-size: 500px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom right;
-  // background-attachment: fixed;
-  // background-image: url('https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-attachment: fixed;
 }
 
 .hero-title {
@@ -470,5 +482,22 @@ $half: round($loops / 2);
     height: 2px;
     width: 100%;
     @apply bg-primary-600;
+  }
+}
+
+.cart-btn {
+  position: absolute;
+  right: 1rem;
+  bottom: 2rem;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40px;
+  height: 40px;
+  &.plus {
+    background-image: url('/images/btn-plus.svg');
+  }
+  &.minus {
+    background-image: url('/images/btn-minus.svg');
   }
 }
