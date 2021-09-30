@@ -9,9 +9,9 @@ const IndexPage = () => {
   const [randomIMG, setRandomIMG] = useState(undefined)
 
   let Images = [
-    'https://images.pexels.com/photos/4040564/pexels-photo-4040564.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1000',
-    'https://images.pexels.com/photos/4040564/pexels-photo-4040564.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1000',
     'https://images.pexels.com/photos/3683049/pexels-photo-3683049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1000',
+    'https://images.pexels.com/photos/7615465/pexels-photo-7615465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    'https://images.pexels.com/photos/4492098/pexels-photo-4492098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   ]
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const IndexPage = () => {
   }, [])
 
   return (
-    <section className={'bg-hero'} style={{ background: `${randomIMG}` }}>
+    <section className={'bg-hero'} style={{ backgroundImage: `url(${Images[randomIMG]})` }}>
       <Header />
       <article className={'container'}>
         <div className="pt-20 text-right">

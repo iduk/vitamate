@@ -242,7 +242,7 @@ const TabOne = ({}) => {
 const TabTwo = () => {
   return (
     <div>
-      <p>나는 탭2222입니다</p>
+      <p>작업예정</p>
     </div>
   )
 }
