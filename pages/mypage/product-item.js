@@ -55,7 +55,7 @@ export default function productItem() {
               </div>
             </li>
             <li className="col-span-4 lg:col-span-3">
-              <div className="rounded-lg lg:rounded-r-none bg-primary-100 p-4">
+              <div className="rounded-lg rounded-r-none bg-primary-100 p-4">
                 <h6 className="font-normal text-gray-500 mb-5">1년 약정시</h6>
                 <p>
                   <span className="font-bold text-xl">30,000</span>
@@ -64,7 +64,7 @@ export default function productItem() {
               </div>
             </li>
             <li className="col-span-4 lg:col-span-3">
-              <div className="rounded-lg lg:rounded-none bg-primary-100 p-4">
+              <div className="rounded-none bg-primary-100 p-4">
                 <h6 className="font-normal text-gray-500 mb-5">2년 약정시</h6>
                 <p>
                   <span className="font-bold text-xl">30,000</span>
@@ -73,7 +73,7 @@ export default function productItem() {
               </div>
             </li>
             <li className="col-span-4 lg:col-span-3">
-              <div className="rounded-lg lg:rounded-l-none bg-primary-100 p-4">
+              <div className="rounded-lg rounded-l-none bg-primary-100 p-4">
                 <h6 className="font-normal text-gray-500 mb-5">3년 약정시</h6>
                 <p>
                   <span className="font-bold text-xl">30,000</span>
