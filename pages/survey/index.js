@@ -38,7 +38,7 @@ export default function Survey() {
 
 const SurveyStart = () => {
   return (
-    <div className="overflow-y-auto container">
+    <div className="container">
       <article className="text-center">
         <p>
           <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
@@ -62,8 +62,8 @@ const SurveyStart = () => {
 
 const SurveyContent = () => {
   return (
-    <div className="overflow-y-auto container">
-      <form>
+    <form className="grid grid-row-2 h-full">
+      <div className="overflow-y-auto lg:h-auto" style={{ maxHeight: '70vh' }}>
         {/* steps */}
         <article className="relative mb-8">
           <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-100">
@@ -77,7 +77,7 @@ const SurveyContent = () => {
         {/* question */}
         <article className="survey-q mb-10">
           <span className="text-lg text-gray-400">[질문1]</span>
-          <h1 className="mb-4 text-4xl leading-snug">
+          <h1 className="mb-4 text-2xl lg:text-4xl leading-snug">
             술을 많이 마신 다음날,
             <br />
             머리가 깨질 듯이 아픈 경험
@@ -118,24 +118,24 @@ const SurveyContent = () => {
             </li>
           </ul>
         </article>
+      </div>
 
-        {/* footer buttons */}
-        <div className="mt-20 flex justify-between">
-          <button className="max-w-xs px-10 py-5 text-xl ease-out rounded-md border border-primary-600 text-primary-600 hover:bg-primary-100">
-            이전
-          </button>
-          <button className="max-w-xs px-10 py-5 text-xl ease-out rounded-md bg-primary-600 text-white hover:bg-primary-700">
-            다음
-          </button>
-        </div>
-      </form>
-    </div>
+      {/* footer buttons */}
+      <div className="mt-6 flex justify-between">
+        <button className="max-w-xs px-10 py-5 text-xl ease-out rounded-md border border-primary-600 text-primary-600 hover:bg-primary-100">
+          이전
+        </button>
+        <button className="max-w-xs px-10 py-5 text-xl ease-out rounded-md bg-primary-600 text-white hover:bg-primary-700">
+          다음
+        </button>
+      </div>
+    </form>
   )
 }
 
 const SurveyLoading = () => {
   return (
-    <div className="overflow-y-auto container">
+    <div className="container">
       <article className="text-center">
         <p>
           <Img src="/images/logo.svg" width="162" height="30" alt="vitamate logo" />
