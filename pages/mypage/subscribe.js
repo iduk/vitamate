@@ -6,6 +6,8 @@ import { withRouter } from 'next/router'
 import Modal from 'components/Modal'
 import Select from 'components/Forms/Select'
 
+import ProductItem from './product-item'
+
 // 구독 상품
 const productData = [
   {
@@ -97,11 +99,13 @@ function Subscribe({ router }) {
 }
 export default withRouter(Subscribe)
 
-const TabOne = ({}) => {
+const TabOne = () => {
   const [showModal, setShowModal] = useState(false)
-  const [toCart, setToCart] = useState(0)
+  const [toCart, setToCart] = useState(false)
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    setShowModal(true)
+  }, [])
 
   return (
     <div className="flex justify-between items-start">
@@ -113,7 +117,7 @@ const TabOne = ({}) => {
 
           <ul>
             {productData.map((product, id) => (
-              <li key="id" className={'flex py-5 border-b border-gray-200 relative'}>
+              <li key={id} className={'flex py-5 border-b border-gray-200 relative'}>
                 <Link href="#">
                   <a onClick={() => setShowModal(true)} className="thumb flex-shrink-0">
                     <Img className="rounded-md" src={product.thumbImg} width={100} height={100} alt={product.name} />
@@ -152,36 +156,38 @@ const TabOne = ({}) => {
 
           <ul>
             {productData.map((product, id) => (
-              <li key={id} className={'flex p-5 relative rounded-lg bg-white mt-4'}>
-                <Link href="#">
-                  <a onClick={() => setShowModal(true)} className="thumb flex-shrink-0">
-                    <Img className="rounded-md" src={product.thumbImg} width={100} height={100} alt={product.name} />
-                  </a>
-                </Link>
-                <dl className="ml-5 flex-1">
-                  <dt className="text-base text-gray-500 mb-2">{product.name}</dt>
-                  <dd>
-                    <div className="flex items-end">
-                      <p className="text-xl font-bold">
-                        <span>{product.price}</span>원
-                      </p>
-                      <p className={'text-base ml-3 line-through text-gray-400'}>
-                        <span>{product.listPrice}</span>원
-                      </p>
-                    </div>
-                  </dd>
-                </dl>
-                <div className="flex-shrink-0 flex items-end justify-end">
-                  <button onClick={() => setToCart(!toCart)} type="button">
-                    <Img
-                      src={`/images/btn-${toCart === true ? 'plus' : 'minus'}.svg`}
-                      width={40}
-                      height={40}
-                      alt="plus"
-                    />
-                  </button>
-                </div>
-              </li>
+              <>
+                <li key={id} className={'flex p-5 relative rounded-lg bg-white mt-4'}>
+                  <Link href="#">
+                    <a onClick={() => setShowModal(true)} className="thumb flex-shrink-0">
+                      <Img className="rounded-md" src={product.thumbImg} width={100} height={100} alt={product.name} />
+                    </a>
+                  </Link>
+                  <dl className="ml-5 flex-1">
+                    <dt className="text-base text-gray-500 mb-2">{product.name}</dt>
+                    <dd>
+                      <div className="flex items-end">
+                        <p className="text-xl font-bold">
+                          <span>{product.price}</span>원
+                        </p>
+                        <p className={'text-base ml-3 line-through text-gray-400'}>
+                          <span>{product.listPrice}</span>원
+                        </p>
+                      </div>
+                    </dd>
+                  </dl>
+                  <div className="flex-shrink-0 flex items-end justify-end">
+                    <button onClick={() => setToCart(!toCart)} type="button">
+                      <Img
+                        src={`/images/btn-${toCart === true ? 'plus' : 'minus'}.svg`}
+                        width={40}
+                        height={40}
+                        alt="plus"
+                      />
+                    </button>
+                  </div>
+                </li>
+              </>
             ))}
           </ul>
         </article>
@@ -191,29 +197,31 @@ const TabOne = ({}) => {
         <h2 className="text-base">구독 예정 상품</h2>
         <ul>
           {productEstData.map((product, id) => (
-            <li key="id" className="py-3 flex border-b border-gray-200">
-              <Link href="#">
-                <a onClick={() => setShowModal(true)} className="thumb thumb-mini flex-shrink-0">
-                  <Img className="rounded-md" src={product.thumbImg} width={64} height={64} alt={product.name} />
-                </a>
-              </Link>
+            <>
+              <li key={id} className="py-3 flex border-b border-gray-200">
+                <Link href="#">
+                  <a onClick={() => setShowModal(true)} className="thumb thumb-small flex-shrink-0">
+                    <Img className="rounded-md" src={product.thumbImg} width={64} height={64} alt={product.name} />
+                  </a>
+                </Link>
 
-              <dl className="ml-4 flex-1">
-                <dt className="text-xs leading-tight text-gray-500 mb-2">{product.name}</dt>
-                <dd>
-                  <div className="flex items-end">
-                    <p className="text-base font-bold">
-                      <span>{product.price}</span>원
-                    </p>
-                  </div>
-                </dd>
-              </dl>
-              <div className="flex-shrink-0 flex items-center justify-end">
-                <button className="relative p-1">
-                  <Img src="/images/btn-popup-cancel.svg" width={24} height={24} alt="remove" />
-                </button>
-              </div>
-            </li>
+                <dl className="ml-4 flex-1">
+                  <dt className="text-xs leading-tight text-gray-500 mb-2">{product.name}</dt>
+                  <dd>
+                    <div className="flex items-end">
+                      <p className="text-base font-bold">
+                        <span>{product.price}</span>원
+                      </p>
+                    </div>
+                  </dd>
+                </dl>
+                <div className="flex-shrink-0 flex items-center justify-end">
+                  <button className="relative p-1">
+                    <Img src="/images/btn-popup-cancel.svg" width={24} height={24} alt="remove" />
+                  </button>
+                </div>
+              </li>
+            </>
           ))}
           <li className="mt-3">
             <Select options={paymentType} />
@@ -254,8 +262,26 @@ const TabOne = ({}) => {
           </div>
         </footer>
       </aside>
-      <Modal title={'퓨어코어 종합 멀티 비타민 미네랄'} onClose={() => setShowModal(false)} show={showModal}>
-        ㅁㅇㄴㄹㅁㄴㅇㄹㄴㅇ
+
+      <Modal title={'제품보기'} onClose={() => setShowModal(false)} show={showModal} size={'md'}>
+        <div>
+          {/* content */}
+          <ProductItem />
+
+          {/* footer */}
+          <footer className="mt-8 flex justify-between flex-row items-end">
+            <div className="w-2/5 mr-3">
+              <button className="w-full py-4 px-3 rounded border border-primary-600 text-primary-600 hover:border-primary-600 hover:text-primary-600 hover:bg-primary-50">
+                구독취소
+              </button>
+            </div>
+            <div className="w-3/5">
+              <button className="w-full py-4 px-3 rounded border border-primary-600 flex-shrink-0  bg-primary-600 text-white hover:bg-primary-700 hover:border-primary-700">
+                구독하기
+              </button>
+            </div>
+          </footer>
+        </div>
       </Modal>
     </div>
   )
