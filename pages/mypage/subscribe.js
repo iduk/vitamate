@@ -103,9 +103,7 @@ const TabOne = () => {
   const [showModal, setShowModal] = useState(false)
   const [toCart, setToCart] = useState(false)
 
-  useEffect(() => {
-    setShowModal(true)
-  }, [])
+  useEffect(() => {}, [])
 
   return (
     <div className="flex justify-between items-start">
