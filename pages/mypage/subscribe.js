@@ -147,7 +147,7 @@ const TabOne = ({}) => {
           </ul>
         </article>
 
-        <article className="mb-10 lg:mr-10 p-6 h-auto rounded-lg bg-secondary-200">
+        <article className="mb-10 lg:mr-10 p-6 h-auto rounded-lg bg-primary-100">
           <h2 className="text-xl mb-2">그 밖의 훌륭한 상품!</h2>
 
           <ul>
