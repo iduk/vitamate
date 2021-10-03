@@ -55,13 +55,31 @@ export default function SignUp() {
               label="비밀번호"
               id="userPassword"
               value="123456!@#&%"
-              placeholder="숫자/문자/특수기호를 포함한 8자리 이상 입력"
+              placeholder="영어 대문자, 소문자, 숫자, 특수문자 중 2종류 이상을 조합하여 최소 8자리 이상 입력"
             >
               <p className="mt-2 text-sm text-danger-500">8자리 이상 입력해주세요.</p>
             </TextInput>
+            <TextInput
+              type="password"
+              id="userPassword2"
+              value=""
+              placeholder="비밀번호 재입력"
+              className="mt-3"
+            ></TextInput>
           </div>
 
           <div className="form-group">
+            <div className="flex justify-between items-end">
+              <TextInput label="추천인 코드" type="text" id="userRecommend" value="" placeholder="추천인"></TextInput>
+              <div className=" flex-shrink-0 ml-4">
+                <button className={'btn border border-gray-300 hover:border-gray-500 hover:bg-gray-100'}>확인</button>
+              </div>
+            </div>
+            <p className="mt-2 text-sm text-gray-400">회원가입이 완료 된 이후에는 추천인 코드 입력이 불가합니다</p>
+          </div>
+
+          {/* 주소입력 */}
+          {/* <div className="form-group">
             <div className="flex place-items-end">
               <div className="flex-1 mr-3">
                 <TextInput type="text" label="주소 입력" placeholder="주소를 입력해주세요" id="userAddress" />
@@ -73,7 +91,7 @@ export default function SignUp() {
               </div>
             </div>
             <TextInput type="text" placeholder="나머지 주소를 입력해주세요" id="userAddress2" className="mt-3" />
-          </div>
+          </div> */}
 
           <hr className="mt-8" />
 
