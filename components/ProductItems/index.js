@@ -6,8 +6,8 @@ export default function productItems() {
     <article className="" style={{ maxHeight: '65vh' }}>
       <div className="flex justify-between">
         <div className="w-full">
-          <h6 className="text-xl font-bold text-primary-600 mb-1">퓨어코어 종합 멀티 비타민 미네랄</h6>
-          <h4 className="text-base leading-normal text-gray-600 mb-2">
+          <h6 className="text-xl text-primary-600 mb-2">C메이트</h6>
+          <h4 className="text-base leading-normal text-gray-600 mb-3">
             자연 유래 건조효모를 주원료로 빈틈없이 채운 11가지 기능성을 한번에!
           </h4>
           <p className="text-sm text-gray-400">
@@ -47,36 +47,36 @@ export default function productItems() {
           <ul className="grid lg:grid-cols-12">
             <li className="mb-3 lg:mr-3 col-span-12 lg:col-span-3">
               <div className="rounded-lg bg-gray-100 p-4">
-                <h6 className="font-normal text-gray-500 mb-5">정가</h6>
+                <h6 className="font-normal text-gray-600 mb-5">정가</h6>
                 <p className="text-right lg:text-left">
-                  <span className="font-bold text-xl">30,000</span>
+                  <span className="font-bold text-xl">35,000</span>
                   <span className="text-sm ml-1 text-gray-400">원</span>
                 </p>
               </div>
             </li>
             <li className="col-span-4 lg:col-span-3">
               <div className="rounded-lg rounded-r-none bg-primary-100 p-4">
-                <h6 className="font-normal text-gray-500 mb-5">1년 약정시</h6>
+                <h6 className="font-normal text-primary-600 mb-5">1년 약정시</h6>
                 <p>
-                  <span className="font-bold text-xl">30,000</span>
+                  <span className="font-bold text-xl">30,500</span>
                   <span className="text-sm ml-1 text-gray-400">원</span>
                 </p>
               </div>
             </li>
             <li className="col-span-4 lg:col-span-3">
               <div className="rounded-none bg-primary-100 p-4">
-                <h6 className="font-normal text-gray-500 mb-5">2년 약정시</h6>
+                <h6 className="font-normal text-primary-600 mb-5">2년 약정시</h6>
                 <p>
-                  <span className="font-bold text-xl">30,000</span>
+                  <span className="font-bold text-xl">28,500</span>
                   <span className="text-sm ml-1 text-gray-400">원</span>
                 </p>
               </div>
             </li>
             <li className="col-span-4 lg:col-span-3">
               <div className="rounded-lg rounded-l-none bg-primary-100 p-4">
-                <h6 className="font-normal text-gray-500 mb-5">3년 약정시</h6>
+                <h6 className="font-normal text-primary-600 mb-5">3년 약정시</h6>
                 <p>
-                  <span className="font-bold text-xl">30,000</span>
+                  <span className="font-bold text-xl">26,500</span>
                   <span className="text-sm ml-1 text-gray-400">원</span>
                 </p>
               </div>

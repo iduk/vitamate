@@ -94,47 +94,34 @@ export default function Header({ onClose }) {
     <header className={'layout-header header relative'}>
       <section className={'w-full px-6 lg:px-0 container flex flex-wrap justify-between relative'}>
         <nav className={'hidden lg:block w-full flex-shrink-0 ml-auto mr-0'}>
-          <ul className={'flex flex-wrap items-center justify-end'}>
-            {/* Logout */}
-            {isLoggin === true ? (
-              <>
-                <li>
-                  <Link href=".">
-                    <a onClick={() => setShowSignin(true)} className={'block p-2 text-sm focus:text-primary'}>
-                      로그인
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <span className={'block text-sm'}>・</span>
-                </li>
-                <li>
-                  <Link href=".">
-                    <a onClick={() => setShowSignup(true)} className={'block p-2 text-sm focus:text-primary'}>
-                      회원가입
-                    </a>
-                  </Link>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <Link href="/mypage">
-                    <a className={'block p-2 text-sm hover:text-primary-600'}>MY비타</a>
-                  </Link>
-                </li>
-                <li>
-                  <span className={'block text-sm'}>・</span>
-                </li>
-                <li>
-                  <Link href=".">
-                    <a onClick={() => setIsLoggin(true)} className={'block p-2 text-sm hover:text-primary-600'}>
-                      로그아웃
-                    </a>
-                  </Link>
-                </li>
-              </>
-            )}
+          <ul className={'top-nav text-gray-600 flex flex-wrap items-center justify-end'}>
+            <li>
+              <Link href="/products">
+                <a className={'block p-3 text-sm hover:text-primary-600'}>영양제 소개</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/mypage">
+                <a className={'block px-2 py-3 text-sm hover:text-primary-600'}>MY비타</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="#">
+                <a onClick={() => setShowSignin(true)} className={'block px-2 py-3 text-sm hover:text-primary'}>
+                  로그인
+                </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="#">
+                <a onClick={() => setShowSignup(true)} className={'block px-2 py-3 text-sm hover:text-primary'}>
+                  회원가입
+                </a>
+              </Link>
+            </li>
           </ul>
         </nav>
         <article className="relative overflow-hidden w-full block lg:flex lg:justify-between items-center">
