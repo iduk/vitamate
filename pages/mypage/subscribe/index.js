@@ -6,7 +6,8 @@ import { withRouter } from 'next/router'
 import Modal from 'components/Modal'
 import Select from 'components/Forms/Select'
 
-import ProductItem from './product-item'
+import ProductItems from 'components/ProductItems'
+import Unsubscribe from './unsubscribe'
 
 // 구독 상품
 const productData = [
@@ -84,9 +85,7 @@ function Subscribe({ router }) {
           <a className={`${isTabOne ? 'active text-black' : 'text-gray-500'} tab px-1 py-4 mr-3 text-lg`}>구독</a>
         </Link>
         <Link href={{ pathname: '/mypage/subscribe', query: { tab: '2' } }}>
-          <a className={`${isTabTwo ? 'disabled active text-black' : 'text-gray-500'} tab px-1 py-4  mr-3 text-lg`}>
-            해지
-          </a>
+          <a className={`${isTabTwo ? 'active text-black' : 'text-gray-500'} tab px-1 py-4  mr-3 text-lg`}>해지</a>
         </Link>
       </div>
 
@@ -264,7 +263,7 @@ const TabOne = () => {
       <Modal title={'제품보기'} onClose={() => setShowModal(false)} show={showModal} size={'md'}>
         <div>
           {/* content */}
-          <ProductItem />
+          <ProductItems />
 
           {/* footer */}
           <footer className="mt-8 flex justify-between flex-row items-end">
@@ -286,9 +285,5 @@ const TabOne = () => {
 }
 
 const TabTwo = () => {
-  return (
-    <div>
-      <p>작업예정</p>
-    </div>
-  )
+  return <Unsubscribe />
 }

@@ -1,13 +1,13 @@
 import Img from 'next/image'
 import Link from 'next/link'
 
-export default function productItem() {
+export default function productItems() {
   return (
     <article className="" style={{ maxHeight: '65vh' }}>
       <div className="flex justify-between">
         <div className="w-full">
-          <h6 className="text-sm font-normal text-primary-600 mb-1">퓨어코어 종합 멀티 비타민 미네랄</h6>
-          <h4 className="text-lg leading-normal text-gray-600 mb-2">
+          <h6 className="text-xl font-bold text-primary-600 mb-1">퓨어코어 종합 멀티 비타민 미네랄</h6>
+          <h4 className="text-base leading-normal text-gray-600 mb-2">
             자연 유래 건조효모를 주원료로 빈틈없이 채운 11가지 기능성을 한번에!
           </h4>
           <p className="text-sm text-gray-400">
@@ -30,7 +30,7 @@ export default function productItem() {
         <li className="mt-8">
           <h6 className="text-sm font-normal mb-1">상품 성분</h6>
           <p className="text-sm font-normal text-gray-400">
-            치커리뿌리 추출물, 전지분유, 유기농 과채17종, 곡물발효 효소 15종, 베리농축분말 7종, 식물 혼합추출물 19종,
+            치커리뿌리추출물, 전지분유, 유기농과채 17종, 곡물발효효소 15종, 베리농축분말 7종, 식물혼합추출물 19종,
             허브추출물 6종
           </p>
         </li>
