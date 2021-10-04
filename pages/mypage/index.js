@@ -2,17 +2,77 @@ import ContainerAside from 'components/Layouts/ContainerAside'
 import Link from 'next/link'
 import Img from 'next/image'
 import { useState, useEffect } from 'react'
+import Modal from 'components/Modal'
+import TextInput from 'components/Forms/TextInput'
 
-const UserInfo = () => {
+const UserInfo = ({ show }) => {
+  const [userEdit, setUserEdit] = useState(false)
+
   return (
     <article className="w-full rounded-large bg-white shadow-lg">
       <ul>
         <li className={'px-8 py-2 h-20 flex justify-between items-center border-b border-gray-200'}>
           <h6 className="w-6/12 font-bold text-lg">내 정보</h6>
           <div className="w-6/12 text-right">
-            <button className="text-primary-600 px-4 py-2 rounded-md text-sm bg-primary-50 hover:bg-primary-600 hover:text-white transition-all">
-              회원정보수정
+            <button
+              onClick={() => setUserEdit(true)}
+              className="text-primary-600 px-4 py-2 rounded-md text-sm bg-primary-50 hover:bg-primary-600 hover:text-white transition-all"
+            >
+              정보 수정
             </button>
+
+            <Modal title="정보 수정" size="md" onClose={() => setUserEdit(false)} show={userEdit}>
+              <article>
+                <div className="form-group flex justify-between items-end w-full">
+                  <TextInput label="휴대폰 번호" id="userPhone" type="text" placeholder="010-0000-0000" disabled />
+                  <span className="flex-shrink-0 ml-3">
+                    <button className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
+                      변경하기
+                    </button>
+                  </span>
+                </div>
+
+                <div className="form-group flex justify-between items-end w-full">
+                  <TextInput label="이메일" id="userEmail" type="text" placeholder="이메일을 입력해주세요" />
+                  <span className="flex-shrink-0 ml-3">
+                    <button className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
+                      변경하기
+                    </button>
+                  </span>
+                </div>
+
+                <div className="form-group flex justify-between items-end w-full">
+                  <TextInput
+                    label="기본 배송지"
+                    id="addressList"
+                    type="text"
+                    value="서울특별시 강남구 삼성1동 영동대로 564"
+                  />
+                  <span className="flex-shrink-0 ml-3">
+                    <button className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
+                      변경하기
+                    </button>
+                  </span>
+                </div>
+
+                <div className="form-group">
+                  <div class="inline-flex shadow-sm rounded-md" role="group">
+                    <button
+                      class="w-16 rounded-l-md border border-gray-200 bg-white text-sm font-medium px-4 py-3 text-gray-900"
+                      type="button"
+                    >
+                      ON
+                    </button>
+                    <button
+                      class="w-16 rounded-r-md border border-l-0 border-gray-200 bg-white text-sm font-medium px-4 py-3 text-gray-900 focus:border-primary-600 focus:text-primary-600 focus:border-l-1"
+                      type="button"
+                    >
+                      OFF
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </Modal>
           </div>
         </li>
         {/* ------- 
