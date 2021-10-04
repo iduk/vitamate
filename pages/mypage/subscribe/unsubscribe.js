@@ -10,7 +10,7 @@ export default function Unsubscribe() {
         <CancelPlanMonthly />
       </div>
       <div className="mb-10">
-        <CancelYearly />
+        <CancelPlanYearly />
       </div>
     </>
   )
