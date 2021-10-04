@@ -127,13 +127,13 @@ const UserInfo = ({ show }) => {
 
 const UserBanner = () => {
   return (
-    <article className="flex-shrink-0 w-full h-64 lg:h-80 lg:w-80 rounded-large bg-primary-600 text-white lg:ml-6 relative overflow-hidden user-banner">
+    <article className="flex-shrink-0 w-full h-64 mt-6 lg:mt-0 lg:h-80 lg:w-80 rounded-large bg-primary-600 text-white lg:ml-6 relative overflow-hidden user-banner">
       <div className="z-0 absolute inset-0 w-full h-full flex flex-col justify-between p-8">
         <h1 className="text-2xl">
           <p>더 많은 혜택</p>
           <p>더 저렴한 금액</p>
         </h1>
-        <div>
+        <div className="ml-auto lg:ml-0">
           <Link href="/">
             <a className="flex items-center">
               약정 계약으로 변경하기
