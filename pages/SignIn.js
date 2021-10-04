@@ -12,7 +12,7 @@ export default function SignIn() {
         <div className="form-group">
           <TextInput type="password" id="userPassword" label="비밀번호" placeholder="비밀번호를 입력해 주세요">
             <div className="text-right">
-              <Link href=".">
+              <Link href="/">
                 <a className="inline-block p-2 text-sm text-gray-600 hover:text-gray-900">비밀번호를 잊어버리셨나요?</a>
               </Link>
             </div>

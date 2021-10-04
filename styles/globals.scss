@@ -502,7 +502,6 @@ $half: round($loops / 2);
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  height: 1.5em;
 }
 
 .ellipsis-content {
@@ -600,5 +599,23 @@ $half: round($loops / 2);
   }
   circle {
     fill: #4ab7b7;
+  }
+}
+
+// calendar items
+.calendar-types {
+  &-label {
+    @apply rounded-full inline-flex items-baseline;
+
+    padding: 6px 8px 4px 8px;
+    font-size: 12px;
+    line-height: 1;
+
+    .dot {
+      font-family: sans-serif;
+      display: inline-block;
+      padding-right: 4px;
+      font-size: 10px;
+    }
   }
 }
