@@ -7,6 +7,7 @@ import TextInput from 'components/Forms/TextInput'
 
 const UserInfo = ({ show }) => {
   const [userEdit, setUserEdit] = useState(false)
+  const [isToggleOn, setIsToggleOn] = useState(false)
 
   return (
     <article className="w-full rounded-large bg-white shadow-lg">
@@ -22,7 +23,7 @@ const UserInfo = ({ show }) => {
             </button>
 
             <Modal title="정보 수정" size="md" onClose={() => setUserEdit(false)} show={userEdit}>
-              <article>
+              <form>
                 <div className="form-group flex justify-between items-end w-full">
                   <TextInput label="휴대폰 번호" id="userPhone" type="text" placeholder="010-0000-0000" disabled />
                   <span className="flex-shrink-0 ml-3">
@@ -56,22 +57,30 @@ const UserInfo = ({ show }) => {
                 </div>
 
                 <div className="form-group">
-                  <div class="inline-flex shadow-sm rounded-md" role="group">
-                    <button
-                      class="w-16 rounded-l-md border border-gray-200 bg-white text-sm font-medium px-4 py-3 text-gray-900"
-                      type="button"
-                    >
+                  <label className="mb-2">마케팅 동의</label>
+
+                  <div className="form-switch inline-flex shadow-sm rounded-md" role="group">
+                    <button className="active" type="button">
                       ON
                     </button>
-                    <button
-                      class="w-16 rounded-r-md border border-l-0 border-gray-200 bg-white text-sm font-medium px-4 py-3 text-gray-900 focus:border-primary-600 focus:text-primary-600 focus:border-l-1"
-                      type="button"
-                    >
-                      OFF
-                    </button>
+                    <button type="button">OFF</button>
                   </div>
+                  <p className="inline-flex ml-5 text-sm text-gray-500">2021.10.04 12:54</p>
                 </div>
-              </article>
+                <footer className="mt-6">
+                  <button
+                    type="submit"
+                    onClose={() => setUserEdit(false)}
+                    show={userEdit}
+                    className={
+                      'w-full py-5 bg-primary-600 text-white hover:bg-primary-700 text-xl font-bold rounded-md'
+                    }
+                    disabled
+                  >
+                    회원가입
+                  </button>
+                </footer>
+              </form>
             </Modal>
           </div>
         </li>
