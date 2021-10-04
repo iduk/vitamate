@@ -7,17 +7,17 @@ export default function Unsubscribe() {
   return (
     <>
       <div className="mb-10">
-        <CancelSubscribe />
+        <CancelPlanMonthly />
       </div>
       <div className="mb-10">
-        <CancelContract />
+        <CancelYearly />
       </div>
     </>
   )
 }
 
-// 정기결제(구독) 취소시
-const CancelSubscribe = () => {
+// 월간 구독 취소시
+const CancelPlanMonthly = () => {
   return (
     <section className="rounded-lg py-10 px-4 lg:p-10 bg-gray-100 flex flex-col items-center justify-between text-center">
       <div className="w-full max-w-lg">
@@ -43,8 +43,8 @@ const CancelSubscribe = () => {
   )
 }
 
-// 약정 계약 취소시
-const CancelContract = () => {
+// 연간 구독(약정) 취소시
+const CancelPlanYearly = () => {
   return (
     <section className="rounded-lg py-10 px-4 lg:p-10 bg-gray-100 flex flex-col items-center justify-between text-center">
       <div className="w-full max-w-lg">

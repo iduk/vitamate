@@ -567,3 +567,21 @@ $half: round($loops / 2);
     @apply bg-primary-300;
   }
 }
+
+.user-banner {
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5%;
+    right: -25%;
+    width: 18em;
+    height: 18em;
+    border-radius: 50%;
+    background-color: #4ab7b7;
+  }
+  circle {
+    fill: #4ab7b7;
+  }
+}
