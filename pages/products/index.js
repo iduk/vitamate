@@ -78,62 +78,64 @@ export default function Products() {
 
   return (
     <ContainerFluid>
-      <h1 className="page-title">영양제 소개</h1>
-      <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {productList.map((item) => (
-          <article
-            key={item.id}
-            className="rounded-large border border-gray-100 p-8 shadow transition-shadow hover:shadow-lg flex flex-col justify-between"
-          >
-            <div className="flex justify-between">
-              <div className="w-full">
-                <h6 className="text-xl font-bold leading-snug mb-3">{item.productName}</h6>
+      <div className={'container px-6 py-12 lg:px-0 lg:py-24'}>
+        <h1 className="page-title">영양제 소개</h1>
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {productList.map((item) => (
+            <article
+              key={item.id}
+              className="rounded-large border border-gray-100 p-8 shadow transition-shadow hover:shadow-lg flex flex-col justify-between"
+            >
+              <div className="flex justify-between">
+                <div className="w-full">
+                  <h6 className="text-xl font-bold leading-snug mb-3">{item.productName}</h6>
 
-                <div className="text-sm leading-normal text-gray-500 h-11 overflow-hidden">
-                  <p className="ellipsis">{item.productTake1}</p>
-                  <p className="ellipsis">{item.productTake2}</p>
+                  <div className="text-sm leading-normal text-gray-500 h-11 overflow-hidden">
+                    <p className="ellipsis">{item.productTake1}</p>
+                    <p className="ellipsis">{item.productTake2}</p>
+                  </div>
+                </div>
+                <div className="ml-8 flex-shrink-0">
+                  <span
+                    className="thumb bg-cover bg-no-repeat bg-center"
+                    style={{
+                      backgroundImage: `url(${item.productImg})`,
+                    }}
+                  ></span>
                 </div>
               </div>
-              <div className="ml-8 flex-shrink-0">
-                <span
-                  className="thumb bg-cover bg-no-repeat bg-center"
-                  style={{
-                    backgroundImage: `url(${item.productImg})`,
-                  }}
-                ></span>
+
+              <ul className="product-list text-lg leading-relaxed pt-6">
+                <li>
+                  <span className={'mr-3'}>
+                    <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
+                  </span>
+                  {item.productEff1}
+                </li>
+                <li>
+                  <span className={`mr-3 ${item.productEff2 === null && 'hidden'}`}>
+                    <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
+                  </span>
+                  {item.productEff2}
+                </li>
+              </ul>
+
+              <div className="mt-6">
+                <button
+                  onClick={showModal}
+                  className="w-full p-3 rounded-md text-primary-600 border border-primary-600 hover:bg-primary-600 hover:text-white transition-all"
+                >
+                  상세보기
+                </button>
               </div>
-            </div>
+            </article>
+          ))}
 
-            <ul className="product-list text-lg leading-relaxed pt-6">
-              <li>
-                <span className={'mr-3'}>
-                  <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
-                </span>
-                {item.productEff1}
-              </li>
-              <li>
-                <span className={`mr-3 ${item.productEff2 === null && 'hidden'}`}>
-                  <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
-                </span>
-                {item.productEff2}
-              </li>
-            </ul>
-
-            <div className="mt-6">
-              <button
-                onClick={showModal}
-                className="w-full p-3 rounded-md text-primary-600 border border-primary-600 hover:bg-primary-600 hover:text-white transition-all"
-              >
-                상세보기
-              </button>
-            </div>
-          </article>
-        ))}
-
-        <Modal title={'C메이트'} onClose={(e) => setIsShowing(false)} show={isShowing} size={'md'}>
-          <ProductItems />
-        </Modal>
-      </section>
+          <Modal title={'C메이트'} onClose={(e) => setIsShowing(false)} show={isShowing} size={'md'}>
+            <ProductItems />
+          </Modal>
+        </section>
+      </div>
     </ContainerFluid>
   )
 }
