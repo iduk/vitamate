@@ -1,34 +1,47 @@
-import React from 'react'
-import Link from 'next/link'
-import { withRouter } from 'next/router'
+import { useState } from 'react'
 
-const Tabs = ({ router }) => {
-  const {
-    query: { tab },
-  } = router
+const Data = [
+  {
+    question: 'What 1?',
+    answer: 'answer 1',
+  },
+  {
+    question: 'What 2',
+    answer: 'answer 2',
+  },
+  {
+    question: 'What 3?',
+    answer: 'answer 3',
+  },
+]
 
-  const isTabOne = tab === '1' || tab == null
-  const isTabTwo = tab === '2'
+const Test = () => {
+  const [faq, setFaq] = useState(null)
+
+  const toggle = (index) => {
+    // If the clicked qn is already active, then collapse it
+    if (faq === index) {
+      return setFaq(null)
+    }
+    // Otherwise show the answer to the clicked qn
+    setFaq(index)
+  }
 
   return (
     <div>
-      <div selected={isTabOne}>
-        <Link href={{ pathname: '/mypage/subscribe', query: { tab: '1' } }}>
-          <a>Tab 1</a>
-        </Link>
-      </div>
-      <div selected={isTabTwo}>
-        <Link href={{ pathname: '/mypage/unsubscribe', query: { tab: '2' } }}>
-          <a>Tab 2</a>
-        </Link>
-      </div>
-
-      <section className="mt-10">
-        {isTabOne && <React.Fragment>This is tab one content</React.Fragment>}
-        {isTabTwo && <React.Fragment>This is tab two content</React.Fragment>}
-      </section>
+      {Data.map((item, index) => {
+        return (
+          <div key={index}>
+            <h1 onClick={() => toggle(index)}>{item.question}</h1>
+            {faq === index ? (
+              <div>
+                <p>{item.answer}</p>
+              </div>
+            ) : null}
+          </div>
+        )
+      })}
     </div>
   )
 }
-
-export default withRouter(Tabs)
+export default Test
