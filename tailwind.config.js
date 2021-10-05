@@ -19,6 +19,7 @@ module.exports = {
       borderRadius: {
         large: '20px',
       },
+      padding: { 'fluid-video': '56.25%' },
     },
     container: {
       center: true,

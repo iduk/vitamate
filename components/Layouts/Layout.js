@@ -4,6 +4,9 @@ import Footer from './Footer'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import Modal from 'components/Modal'
+import SurveyStart from 'pages/survey/survey-start'
+import SignUp from 'pages/SignUp'
 
 const IndexPage = () => {
   const [randomIMG, setRandomIMG] = useState(undefined)
@@ -76,27 +79,57 @@ const IndexPage = () => {
 }
 
 const DtcPage = () => {
+  const [signup, setSignup] = useState(false)
   return (
     <section className={'subpage dtc'}>
       <Header />
       {/* sub text */}
-      <div className="container lg:px-0 px-6 pb-16 subpage--description">
-        <h1 className="text-4xl font-extrabold pb-6">유전자 검사</h1>
-        <p>조건이 참이면 실행하고 거짓이라면 실행하지 않는다.</p>
+      <div className="container lg:px-0 px-6 subpage--description">
+        {/* <h1 className="text-4xl font-extrabold pb-6">유전자 검사</h1> */}
+        <h1 className="font-light text-3xl leading-normal">
+          정확도 높은 유전자 검사를 통해
+          <br />
+          <b>나에게 맞는 맞춤 영양소</b>를 추천 받아보세요
+        </h1>
+        <div className="mt-8">
+          <button onClick={() => setSignup(true)} className="rounded-md bg-primary-600 text-white text-lg py-3 px-6">
+            가입 후 시작하기
+          </button>
+        </div>
       </div>
+      <Modal title="회원가입" onClose={() => setSignup(false)} show={signup}>
+        <SignUp />
+      </Modal>
     </section>
   )
 }
 
 const SurveyPage = () => {
+  const [surveyStart, setSurveyStart] = useState(false)
+
   return (
     <section className={'subpage survey'}>
       <Header />
       {/* sub text */}
       <div className="container lg:px-0 px-6 pb-16 subpage--description">
-        <h1 className="text-4xl font-extrabold pb-6">건강 설문</h1>
-        <p>조건이 참이면 실행하고 거짓이라면 실행하지 않는다.</p>
+        <h1 className="font-light text-3xl leading-normal">
+          현재 몸 상태에 맞는 영양소를 찾아 드립니다
+          <br />
+          <b>설문을 통해</b> 보다 정확한 <b>나만을 위한 영양제</b>를 추천 받으세요
+        </h1>
+        <div className="mt-8">
+          <button
+            onClick={() => setSurveyStart(true)}
+            className="rounded-md bg-primary-600 text-white text-lg py-3 px-6"
+          >
+            설문 시작하기
+          </button>
+        </div>
       </div>
+
+      <Modal onClose={() => setSurveyStart(false)} show={surveyStart} size="lg">
+        <SurveyStart />
+      </Modal>
     </section>
   )
 }
