@@ -3,7 +3,7 @@ import { ConfigProvider, Calendar, Badge } from 'antd'
 import koKR from 'antd/lib/locale/ko_KR'
 import Modal from 'components/Modal'
 import React, { useState } from 'react'
-import PopUp from './pop-up'
+
 import moment from 'moment'
 import Img from 'next/image'
 import Link from 'next/link'
@@ -116,7 +116,7 @@ export default function VitaCalendar() {
         show={showCalendarPop}
         onPanelChange={onPanelChange}
       >
-        <PopUp dataList={dataList} />
+        
       </Modal>
     </>
   )
