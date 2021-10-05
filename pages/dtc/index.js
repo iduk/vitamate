@@ -100,7 +100,7 @@ export default function Dtc() {
           <article className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
             <ul className="grid grid-cols-3 grid-rows-2 gap-6">
               {dtcCategories.map((item, index) => (
-                <li className="rounded-large py-5 px-4 text-center bg-primary-100">
+                <li key={index} className="rounded-large py-5 px-4 text-center bg-primary-100">
                   <div className="relative mb-4">
                     <Img width={60} height={60} src={`/images/${item.icon}.svg`} alt="icon" />
                   </div>
