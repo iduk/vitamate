@@ -70,10 +70,14 @@ export default function Dtc() {
           <ul className="proccess-list flex justify-between">
             {dtcProccess.map((item, index) => (
               <li key={index} className="text-center p-2 w-1/6">
-                <h3 className=" z-10 w-12 h-12 rounded-full bg-gray-100 border-2 border-gray-300 grid place-content-center text-lg mx-auto">
+                <h3
+                  className={`z-10 w-12 h-12 rounded-full bg-gray-100 border-2 border-gray-300 grid place-content-center text-lg mx-auto ${
+                    index === 5 && 'border-primary-600 bg-primary-600 text-white'
+                  } `}
+                >
                   {index + 1}
                 </h3>
-                <dl className="mt-5">
+                <dl className={`${index === 5 && 'text-primary-600'} mt-5`}>
                   <dt className="font-bold text-xl mb-2">{item.title}</dt>
                   <dd>{item.content}</dd>
                 </dl>

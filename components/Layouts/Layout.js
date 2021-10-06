@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Modal from 'components/Modal'
 import SurveyStart from 'pages/survey/survey-start'
-import SignUp from 'pages/SignUp'
+import Subscription from 'pages/dtc/subscription'
 
 const IndexPage = () => {
   const [randomIMG, setRandomIMG] = useState(undefined)
@@ -79,7 +79,7 @@ const IndexPage = () => {
 }
 
 const DtcPage = () => {
-  const [signup, setSignup] = useState(false)
+  const [isShowing, setIsShowing] = useState(false)
   return (
     <section className={'subpage dtc'}>
       <Header />
@@ -92,13 +92,13 @@ const DtcPage = () => {
           <b>나에게 맞는 맞춤 영양소</b>를 추천 받아보세요
         </h1>
         <div className="mt-8">
-          <button onClick={() => setSignup(true)} className="rounded-md bg-primary-600 text-white text-lg py-3 px-6">
-            가입 후 시작하기
+          <button onClick={() => setIsShowing(true)} className="rounded-md bg-primary-600 text-white text-lg py-3 px-6">
+            유전자 검사 신청하기
           </button>
         </div>
       </div>
-      <Modal title="회원가입" onClose={() => setSignup(false)} show={signup}>
-        <SignUp />
+      <Modal title="유전자 검사 신청하기" onClose={() => setIsShowing(false)} show={isShowing}>
+        <Subscription />
       </Modal>
     </section>
   )

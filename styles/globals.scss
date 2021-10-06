@@ -674,3 +674,6 @@ $half: round($loops / 2);
     @apply bg-gray-300;
   }
 }
+.numbers.active {
+  @apply bg-primary-600 text-white border-primary-600;
+}
