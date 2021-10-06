@@ -108,9 +108,10 @@ label {
       @apply outline-none bg-white border-gray-500 text-black;
     }
     // disabled
+    &.disabled,
     &:disabled {
       cursor: no-drop;
-      @apply bg-gray-100 border-gray-200;
+      @apply bg-gray-100 border-gray-200 text-gray-400;
     }
   }
   input[type='password'] {

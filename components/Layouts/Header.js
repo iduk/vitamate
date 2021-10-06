@@ -3,15 +3,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Modal from 'components/Modal'
-import Img from 'next/image'
 import SignUp from 'pages/SignUp'
+import Img from 'next/image'
 import SignIn from 'pages/SignIn'
 
 export default function Header({ onClose }) {
   const router = useRouter()
   const [isLoggin, setIsLoggin] = useState(false)
   const [showSignin, setShowSignin] = useState(false)
-  const [showSignup, setShowSignup] = useState(false)
   const [active, setActive] = useState(false)
 
   useEffect(() => {
@@ -41,6 +40,10 @@ export default function Header({ onClose }) {
         path: '/survey',
       },
       {
+        title: '비타 테크',
+        path: '/teck',
+      },
+      {
         title: '비타 소식',
         path: '/news',
         subpages: [
@@ -49,8 +52,8 @@ export default function Header({ onClose }) {
             title: '비타 뉴스',
           },
           {
-            path: '/news/whitepaper',
-            title: '비타 백서',
+            path: '/news/press',
+            title: '언론 보도',
           },
         ],
       },
@@ -67,25 +70,6 @@ export default function Header({ onClose }) {
             title: '1:1문의',
           },
         ],
-      },
-    ],
-
-    mypage: [
-      {
-        path: '/mypage',
-        title: '내 정보',
-      },
-      {
-        path: '/mypage/subscribe',
-        title: '구독 관리',
-      },
-      {
-        path: '/mypage/addressbook',
-        title: '배송지 관리',
-      },
-      {
-        path: '/mypage/vita-calendar',
-        title: '비타 캘린더',
       },
     ],
   }
@@ -111,14 +95,6 @@ export default function Header({ onClose }) {
               <Link href="#">
                 <a onClick={() => setShowSignin(true)} className={'block px-2 py-3 text-sm hover:text-primary'}>
                   로그인
-                </a>
-              </Link>
-            </li>
-
-            <li>
-              <Link href="#">
-                <a onClick={() => setShowSignup(true)} className={'block px-2 py-3 text-sm hover:text-primary'}>
-                  회원가입
                 </a>
               </Link>
             </li>
@@ -173,13 +149,6 @@ export default function Header({ onClose }) {
                   </a>
                 </Link>
               </li>
-              <li className={'text-center text-2xl lg:p-0 nav-item lg:hidden'}>
-                <Link href="/">
-                  <a onClick={() => setShowSignup(showSignup)} className={'nav-link'}>
-                    회원가입
-                  </a>
-                </Link>
-              </li>
             </ul>
           </nav>
         </article>
@@ -187,10 +156,6 @@ export default function Header({ onClose }) {
 
       <Modal title={'로그인'} onClose={() => setShowSignin(false)} show={showSignin}>
         <SignIn />
-      </Modal>
-
-      <Modal title={'회원가입'} onClose={() => setShowSignup(false)} show={showSignup}>
-        <SignUp />
       </Modal>
     </header>
   )

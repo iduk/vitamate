@@ -32,6 +32,9 @@ const UserInfo = ({ show }) => {
                     </button>
                   </span>
                 </div>
+                <div className="form-group">
+                  <TextInput type="password" label="비밀번호" id="userPassword" placeholder="비밀번호를 입력하세요" />
+                </div>
 
                 <div className="form-group flex justify-between items-end w-full">
                   <TextInput label="이메일" id="userEmail" type="text" placeholder="이메일을 입력해주세요" />
@@ -77,7 +80,7 @@ const UserInfo = ({ show }) => {
                     }
                     disabled
                   >
-                    회원가입
+                    수정하기
                   </button>
                 </footer>
               </form>

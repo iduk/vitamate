@@ -131,17 +131,11 @@ export default function Addressbook() {
 
           <div className="form-group">
             <label>연락처</label>
-            <ul className="flex justify-between lg:justify-start">
-              <li className="w-28 flex-shrink-0">
-                <Select options={tel_type} />
-              </li>
-              <li className="w-full mx-3">
-                <TextInput type="tel" placeholder="0000" />
-              </li>
-              <li className="w-full">
-                <TextInput type="tel" placeholder="0000" />
-              </li>
-            </ul>
+            <div className="grid grid-cols-3 gap-3">
+              <Select options={tel_type} />
+              <TextInput type="tel" placeholder="0000" />
+              <TextInput type="tel" placeholder="0000" />
+            </div>
           </div>
 
           <div className="form-group">

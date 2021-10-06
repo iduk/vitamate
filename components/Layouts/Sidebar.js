@@ -9,8 +9,8 @@ const news = {
       title: '비타 뉴스',
     },
     {
-      path: '/news/whitepaper',
-      title: '비타 백서',
+      path: '/news/press',
+      title: '언론 보도',
     },
   ],
 }
@@ -38,6 +38,10 @@ const mypage = {
     {
       path: '/mypage/subscribe',
       title: '구독 관리',
+    },
+    {
+      path: '/mypage/payment',
+      title: '결제 관리',
     },
     {
       path: '/mypage/addressbook',

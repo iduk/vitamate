@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Img from 'next/image'
 
-const Select = ({ id, label, value, option, options, onChange, className, children }) => {
+const Select = ({ id, label, value, option, options, onChange, className, children, disabled }) => {
   const [select, setSelect] = useState('')
 
   return (
@@ -10,7 +10,7 @@ const Select = ({ id, label, value, option, options, onChange, className, childr
         <label>{label}</label>
       </div>
       <div className="relative">
-        <select value={value} onChange={(e) => setSelect(e.target.value)}>
+        <select value={value} onChange={(e) => setSelect(e.target.value)} disabled={disabled}>
           {options.map((option) => (
             <option key={option.id} value={option.value}>
               {option.label}

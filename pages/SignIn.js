@@ -1,7 +1,11 @@
 import TextInput from 'components/Forms/TextInput'
 import Link from 'next/link'
+import Modal from 'components/Modal'
+import SignUp from 'pages/SignUp'
+import { useState } from 'react'
 
 export default function SignIn() {
+  const [showSignup, setShowSignup] = useState(false)
   return (
     <>
       <form action="">
@@ -32,6 +36,7 @@ export default function SignIn() {
           </p>
           <div>
             <button
+              onClick={() => setShowSignup(true)}
               className={
                 'w-full py-5 border border-primary-600 text-primary-600 bg-primary-100  hover:border-primary-700 hover:text-primary-700 hover:bg-primary-200 text-xl font-bold rounded-md'
               }
@@ -41,6 +46,10 @@ export default function SignIn() {
           </div>
         </footer>
       </form>
+
+      <Modal title={'회원가입'} onClose={() => setShowSignup(false)} show={showSignup}>
+        <SignUp />
+      </Modal>
     </>
   )
 }

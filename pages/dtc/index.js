@@ -123,11 +123,19 @@ export default function Dtc() {
           <h2 className="text-3xl text-center leading-normal pb-10">유전자 검사 영상</h2>
           <article className="max-w-xl mx-auto">
             <div id="responsiveVideoWrapper" className="relative h-0 pb-fluid-video">
-              <iframe
+              {/* <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/zihoyz0u_cs"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+              ></iframe> */}
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/qEE5rAcDupU"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
               ></iframe>
             </div>
           </article>
