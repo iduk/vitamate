@@ -4,14 +4,14 @@ export default function TermsOfService() {
   return (
     <ContainerFluid>
       <div className={'container py-12 px-6 lg:px-0 lg:py-16'}>
-        <h1 className="page-title _sub">개인정보취급방침</h1>
+        <h1 className="page-title">개인정보취급방침</h1>
         <div>
-          <p className="my-6">
+          <p className="mb-6">
             주식회사 비타메이트 (이하 ‘회사’는) 고객님의 개인정보를 중요시하며 개인정보보호법 등 관련 법령을 준수하고
             있습니다.
           </p>
           <div className="mb-8">
-            <h2 className="text-xl py-6 mb-6 font-extrabold border-b border-gray-200">
+            <h2 className="text-lg py-4 mb-4 font-extrabold border-b border-gray-200">
               1. 개인 정보의 수집 및 이용목적
             </h2>
             <p>
@@ -33,7 +33,7 @@ export default function TermsOfService() {
             </ol>
           </div>
           <div className="mb-8">
-            <h2 className="text-xl py-6 mb-6 font-extrabold border-b border-gray-200">
+            <h2 className="text-lg py-4 mb-4 font-extrabold border-b border-gray-200">
               2. 개인정보 수집항목 및 수집 방법
             </h2>
             <h3 className="text-base font-extrabold pt-4">가. 개인정보 수집 항목</h3>
@@ -58,7 +58,7 @@ export default function TermsOfService() {
             </ol>
           </div>
           <div className="mb-8">
-            <h2 className="text-xl py-6 mb-6 font-extrabold border-b border-gray-200">
+            <h2 className="text-lg py-4 mb-4 font-extrabold border-b border-gray-200">
               3. 개인정보의 보유 및 이용기간
             </h2>
             <p>
@@ -90,7 +90,7 @@ export default function TermsOfService() {
             </ol>
           </div>
           <div className="mb-8">
-            <h2 className="text-xl py-6 mb-6 font-extrabold border-b border-gray-200">
+            <h2 className="text-lg py-4 mb-4 font-extrabold border-b border-gray-200">
               4. 개인정보의 파기절차 및 방법
             </h2>
             <p>
@@ -110,7 +110,7 @@ export default function TermsOfService() {
             </ol>
           </div>
           <div className="mb-8">
-            <h2 className="text-xl py-6 mb-6 font-extrabold border-b border-gray-200">5. 개인정보 제공</h2>
+            <h2 className="text-lg py-4 mb-4 font-extrabold border-b border-gray-200">5. 개인정보 제공</h2>
             <p>여기 할 차례</p>
           </div>
         </div>

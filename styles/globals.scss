@@ -51,7 +51,8 @@ ol {
     content: '✔︎';
     display: table-cell; /* aha! */
     text-align: right;
-    @apply pr-3 text-primary-600;
+    font-family: sans-serif;
+    @apply pr-2 text-primary-600 text-sm;
   }
 }
 p {

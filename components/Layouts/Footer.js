@@ -17,7 +17,7 @@ export default function Footer() {
             <Link href="/PrivacyPolicy">
               <a className="block lg:inline-flex text-base hover:text-primary-600  ml-4">개인정보취급방침</a>
             </Link>
-            <Link href="/Marketing">
+            <Link href="/MarketingAgree">
               <a className="block lg:inline-flex text-base hover:text-primary-600  ml-4">마케팅수신동의</a>
             </Link>
           </div>
