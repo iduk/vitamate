@@ -41,7 +41,7 @@ export default function Header({ onClose }) {
       },
       {
         title: '비타 테크',
-        path: '/teck',
+        path: '#',
       },
       {
         title: '비타 소식',
