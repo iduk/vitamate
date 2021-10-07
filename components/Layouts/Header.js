@@ -86,8 +86,8 @@ export default function Header({ onClose }) {
             </li>
 
             <li>
-              <Link href="/mypage">
-                <a className={'block px-2 py-3 text-sm hover:text-primary-600'}>MY비타</a>
+              <Link href="/mypage/subscribe">
+                <a className={'block px-2 py-3 text-sm hover:text-primary-600'}>구독 관리</a>
               </Link>
             </li>
 
@@ -138,8 +138,8 @@ export default function Header({ onClose }) {
 
               {/* 일단 아무데나 넣자 */}
               <li className={'text-center text-2xl lg:p-0 nav-item lg:hidden'}>
-                <Link href="/mypage">
-                  <a className={'nav-link'}>MY비타</a>
+                <Link href="/mypage/subscribe">
+                  <a className={'nav-link'}>구독 관리</a>
                 </Link>
               </li>
               <li className={'text-center text-2xl lg:p-0 nav-item lg:hidden'}>
