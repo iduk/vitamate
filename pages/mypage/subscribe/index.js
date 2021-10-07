@@ -278,11 +278,17 @@ const TabOne = () => {
           </div>
         </article>
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <Link href="#">
-            <a className="p-3 place-self-center mr-auto text-gray-600 underline hover:text-black">
-              정기구독을 <b>일시 중지</b>하시겠습니까?
-            </a>
-          </Link>
+          <div>
+            <Link href="#">
+              <a className="block py-4 ml-0 mr-auto text-gray-600 underline hover:text-black text-lg">
+                정기구독을 <b>일시 중지</b>하시겠습니까? <br />
+              </a>
+            </Link>
+            <p className="text-xs text-gray-600">
+              ※ 정기 구독 회원에 한해 구독 일시 중지가 가능하며, 1회 일시 중지 기간은 1개월 단위이며, 구독 일시 중지
+              횟수에는 제한이 없습니다.
+            </p>
+          </div>
           <div className="text-right">
             <button className="rounded px-6 py-4 w-full lg:w-56 bg-primary-600 text-white text-lg">결제하기</button>
           </div>
