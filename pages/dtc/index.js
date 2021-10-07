@@ -134,9 +134,9 @@ export default function Dtc() {
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/dp7VTLhjHHE"
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
           </article>
