@@ -55,6 +55,10 @@ const mypage = {
       path: '/mypage/point',
       title: '포인트',
     },
+    {
+      path: '/mypage/',
+      title: '회원 탈퇴',
+    },
   ],
 }
 

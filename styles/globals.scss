@@ -41,13 +41,12 @@ ol {
   display: table;
   li {
     display: table-row;
-    @apply text-gray-600;
   }
   li::before {
     content: '✔︎';
-    @apply pr-3 text-primary-600;
     display: table-cell; /* aha! */
     text-align: right;
+    @apply pr-3 text-primary-600;
   }
 }
 p {
