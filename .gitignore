@@ -40,11 +40,5 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# lock file
-yarn.lock
-package-lock.json
-
 # vercel
 .vercel
-	
-.next/cache/**
