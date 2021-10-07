@@ -16,6 +16,8 @@ export default function Subscription() {
     { id: 'hahaha', value: 'HOHOHO', label: '010' },
   ]
   const birthdayType = [{ label: '양력' }, { label: '음력' }]
+  const birthdayMonth = [{ label: '1월' }, { label: '2월' }]
+  const birthdayDay = [{ label: '1일' }, { label: '2일' }]
 
   return (
     <>
@@ -39,8 +41,11 @@ export default function Subscription() {
           <div className="form-group">
             <label>생년월일</label>
             <div className="grid grid-cols-12 gap-3">
-              <div className="col-span-8">
-                <TextInput type="text" placeholder="0000" value="1234" />
+              <div className="col-span-4">
+                <Select options={birthdayMonth} />
+              </div>
+              <div className="col-span-4">
+                <Select options={birthdayDay} />
               </div>
               <div className="col-span-4">
                 <Select options={birthdayType} />

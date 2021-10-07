@@ -36,8 +36,9 @@ export default function Dtc() {
           <article className="my-4 px-4 w-full overflow-hidden lg:w-1/2">
             <div className="py-10 lg:px-8">
               <h2 className="text-3xl leading-normal font-light">
-                비타메이트는 <b>마크로젠과 제휴</b>하여 변하지 않는 <b>고객의 유전 정보 분석</b>을 통해{' '}
-                <b>맞춤 영양소</b>를 찾고 있습니다.
+                개인 맞춤 영양소를 추천하기 위해
+                <br />
+                국내 <b>정밀의학분야 선도기업인 마크로젠과 협력</b>하고 있습니다.
               </h2>
               <ul className="product-list text-lg leading-10 pt-8">
                 <li>
@@ -123,13 +124,6 @@ export default function Dtc() {
           <h2 className="text-3xl text-center leading-normal pb-10">유전자 검사 영상</h2>
           <article className="max-w-xl mx-auto">
             <div id="responsiveVideoWrapper" className="relative h-0 pb-fluid-video">
-              {/* <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/zihoyz0u_cs"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe> */}
-
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/dp7VTLhjHHE"

@@ -32,17 +32,23 @@ const UserInfo = ({ show }) => {
                     </button>
                   </span>
                 </div>
-                <div className="form-group">
-                  <TextInput type="password" label="비밀번호" id="userPassword" placeholder="비밀번호를 입력하세요" />
+                <div className="form-group grid lg:grid-cols-2 gap-4">
+                  <TextInput
+                    type="password"
+                    label="기존 비밀번호"
+                    id="userPassword"
+                    placeholder="기존 비밀번호를 입력하세요"
+                  />
+                  <TextInput
+                    type="password"
+                    label="새 비밀번호"
+                    id="userPassword"
+                    placeholder="새 비밀번호를 입력하세요"
+                  />
                 </div>
 
-                <div className="form-group flex justify-between items-end w-full">
+                <div className="form-group">
                   <TextInput label="이메일" id="userEmail" type="text" placeholder="이메일을 입력해주세요" />
-                  <span className="flex-shrink-0 ml-3">
-                    <button className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
-                      변경하기
-                    </button>
-                  </span>
                 </div>
 
                 <div className="form-group flex justify-between items-end w-full">
@@ -114,7 +120,7 @@ const UserInfo = ({ show }) => {
             <span className="inline-flex flex-shrink-0 mr-2">
               <Img src="/images/ic-card.svg" width={24} height={24} alt="icon" />
             </span>
-            <span>매달 결제 금액</span>
+            <span>정기 결제 금액</span>
           </div>
           <div className="text-right text-gray-600">19,800원</div>
         </li>
@@ -201,7 +207,7 @@ export default function Mypage() {
                 <dt className="text-lg font-bold mb-1">건강 설문</dt>
                 <dd className="text-gray-500">
                   모든 설문을 완료하였습니다. <br />
-                  작성한 설문을 확인해보시겠습니까?
+                  내가 작성한 설문을 확인해 보세요.
                 </dd>
               </dl>
             </div>
@@ -218,9 +224,7 @@ export default function Mypage() {
               </span>
               <dl>
                 <dt className="text-lg font-bold mb-1">유전자 검사</dt>
-                <dd className="text-gray-500">
-                  유전자 검사를 통해 보다 완벽한 비타메이트 상품의 추천을 받아보시고, 건강한 생명력을 유지해보세요
-                </dd>
+                <dd className="text-gray-500">내 안의 유전자 정보를 확인해 보세요.</dd>
               </dl>
             </div>
             <div className="lg:w-5/12 lg:text-right mt-8 lg:mt-0 flex-shrink-0">
@@ -234,11 +238,11 @@ export default function Mypage() {
                 <>
                   <div className="flex justify-between lg:block">
                     <button className="w-full lg:w-auto py-3 px-5 rounded-md  text-primary-600 border border-primary-600 hover:bg-primary-50 transition-all">
-                      분석 결과 받기
+                      요약 정보
                     </button>
                     <span className="mx-1"></span>
                     <button className="w-full lg:w-auto py-3 px-5 rounded-md text-white border border-primary-600 bg-primary-600 hover:bg-primary-700 hover:border-primary-700 transition-all">
-                      요약 정보
+                      상세 정보
                     </button>
                   </div>
                 </>
@@ -250,10 +254,10 @@ export default function Mypage() {
             <li
               className={'w-full px-8 py-8 block lg:flex lg:justify-between lg:items-center border-t border-gray-200'}
             >
-              <article className="w-full flex justify-between rounded-xl bg-white text-lg p-8">
-                <p>건강설문, 유전자검사결과에 맞는 영양제를 구독해보세요!</p>
+              <article className="w-full lg:flex lg:justify-between rounded-xl bg-white text-lg text-center lg:text-justify p-8">
+                <p className="mb-6 lg:m-0">건강설문, 유전자검사결과에 맞는 영양제를 구독해보세요!</p>
                 <Link href="/">
-                  <a className="text-primary-600">구독 신청하러 가기</a>
+                  <a className="text-right text-primary-600">구독 신청하러 가기</a>
                 </Link>
               </article>
             </li>
