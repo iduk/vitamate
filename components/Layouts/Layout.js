@@ -85,7 +85,6 @@ const DtcPage = () => {
       <Header />
       {/* sub text */}
       <div className="container lg:px-0 px-6 subpage--description">
-        {/* <h1 className="text-4xl font-extrabold pb-6">유전자 검사</h1> */}
         <h1 className="font-light text-3xl leading-normal">
           나를 알게되는 유전자 검사를 통해
           <br />
