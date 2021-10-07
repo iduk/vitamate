@@ -19,8 +19,11 @@ export default function Subscription() {
 
   return (
     <>
-      <article className={'overflow-y-auto'} style={{ maxHeight: 540 }}>
+      <article className={'overflow-y-auto'}>
         <form onSubmit={registerUser}>
+          <div className="mb-4 p-4 leading-normal text-secondary-700 bg-secondary-50 rounded-lg" role="alert">
+            <p>1년 이상 약정 선택시 유전자검사 비용 전액을 페이백 해드립니다.</p>
+          </div>
           <div className="form-group">
             <TextInput type="text" label="이름" id="userPhone" placeholder="이름을 입력해주세요" />
           </div>
@@ -28,10 +31,8 @@ export default function Subscription() {
           <div className="form-group">
             <label>성별</label>
             <div className="grid grid-cols-2 gap-4">
-              <button className={'w-full btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
-                남자
-              </button>
-              <button className={'btn border border-gray-300 text-gray-600 hover:bg-primary-100'}>여자</button>
+              <button className={'w-full p-3 rounded-md border border-primary-600 text-primary-600 '}>남자</button>
+              <button className={'p-3 rounded-md border border-gray-300 text-gray-600 '}>여자</button>
             </div>
           </div>
 
@@ -70,6 +71,14 @@ export default function Subscription() {
             </div>
             <TextInput type="text" placeholder="나머지 주소를 입력해주세요" id="userAddress2" className="mt-3" />
           </div>
+
+          <ul className="grid grid-cols-2 p-4 mt-6 border-t border-b border-gray-200 bg-gray-100">
+            <li>
+              <h5 className="text-lg font-bold">유전자 검사</h5>
+              <p className="text-sm">검사 키트 + 총 50가지 검사 항목</p>
+            </li>
+            <li className="font-extrabold text-right place-self-end text-primary-600">60,000 원</li>
+          </ul>
 
           <ul className="py-6">
             <li className="flex justify-between items-center">

@@ -87,10 +87,11 @@ const DtcPage = () => {
       <div className="container lg:px-0 px-6 subpage--description">
         {/* <h1 className="text-4xl font-extrabold pb-6">유전자 검사</h1> */}
         <h1 className="font-light text-3xl leading-normal">
-          정확도 높은 유전자 검사를 통해
+          나를 알게되는 유전자 검사를 통해
           <br />
-          <b>나에게 맞는 맞춤 영양소</b>를 추천 받아보세요
+          <b>'맞춤 영양소'</b>를 추천 받아보세요
         </h1>
+
         <div className="mt-8">
           <button onClick={() => setIsShowing(true)} className="rounded-md bg-primary-600 text-white text-lg py-3 px-6">
             유전자 검사 신청하기
