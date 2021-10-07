@@ -71,6 +71,10 @@ export default function Header({ onClose }) {
           },
         ],
       },
+      {
+        title: 'MY비타',
+        path: '/mypage',
+      },
     ],
   }
 
