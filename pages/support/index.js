@@ -69,7 +69,7 @@ export default function Support() {
                   <a className="flex justify-between items-center cursor-pointer" onClick={() => toggle(id)}>
                     <h3 className="w-10/12 font-normal">{item.title}</h3>
                     <span>
-                      {faq === 0 ? (
+                      {faq === id ? (
                         <Img width={40} height={40} src="/images/ic-arrowup.svg" alt="up" />
                       ) : (
                         <Img width={40} height={40} src="/images/ic-arrowdown.svg" alt="down" />
