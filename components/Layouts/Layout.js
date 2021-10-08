@@ -12,9 +12,9 @@ const IndexPage = () => {
   const [randomIMG, setRandomIMG] = useState(undefined)
 
   let Images = [
-    'https://images.pexels.com/photos/3683049/pexels-photo-3683049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1000',
-    'https://images.pexels.com/photos/7615465/pexels-photo-7615465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    'https://images.pexels.com/photos/4492098/pexels-photo-4492098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    'https://images.pexels.com/photos/9250013/pexels-photo-9250013.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1200',
+    'https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1200',
+    'https://images.pexels.com/photos/2549027/pexels-photo-2549027.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1200',
   ]
 
   useEffect(() => {

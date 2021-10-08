@@ -56,7 +56,7 @@ const mypage = {
       title: '포인트',
     },
     {
-      path: '/mypage/',
+      path: '/mypage/delete-account',
       title: '회원 탈퇴',
     },
   ],
