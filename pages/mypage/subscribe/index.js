@@ -12,52 +12,58 @@ import Unsubscribe from './unsubscribe'
 // 구독 상품
 const productData = [
   {
-    thumbImg: '/images/product-bio.png',
-    name: '프로바이옴메이트',
-    property: '300mg 1캡슐',
-    content: '유익균 증식과 유해균 억제, 장건강 개선',
+    id: 0,
+    name: '오메가메이트',
+    property: '760mg 2캡슐',
+    thumbImage: '/images/product-bio.png',
+    content: ['혈행 개선에 도움', '기억력 개선', '눈 건강 개선에 도움'],
     price: '7,500',
     listPrice: '9,000',
   },
   {
-    thumbImg: '/images/product-lutein.png',
+    id: 1,
     name: '루테인메이트',
     property: '150mg 1캡슐',
-    content: '눈 건강 개선에 도움',
-    price: '8,000',
-    listPrice: '9,500',
+    thumbImage: '/images/product-lutein.png',
+    content: ['눈 건강 개선에 도움'],
+    price: '7,500',
+    listPrice: '9,000',
   },
   {
-    thumbImg: '/images/product-magnesium.png',
+    id: 2,
+    name: '프로바이옴메이트',
+    property: '300mg 1캡슐',
+    thumbImage: '/images/product-lutein.png',
+    content: ['유익균 증식과 유해균 억제', '장건강 개선'],
+    price: '7,500',
+    listPrice: '9,000',
+  },
+  {
+    id: 3,
+    name: '코엔자임메이트',
+    property: '300mg 1정',
+    thumbImage: '/images/product-Q10.png',
+    content: ['고혈압 개선에 도움', '힝산화 효과'],
+    price: '7,500',
+    listPrice: '9,000',
+  },
+  {
+    id: 4,
     name: '마그네슘메이트',
     property: '1000mg 1정',
-    content: '인체 에너지 이용, 신경과 근육 기능 유지에 필요',
-    price: '8,000',
-    listPrice: '9,500',
+    thumbImage: '/images/product-magnesium.png',
+    content: ['인체 에너지 이용', '신경과 근육 기능 유지에 필요'],
+    price: '7,500',
+    listPrice: '9,000',
   },
   {
-    thumbImg: '/images/product-omega.png',
-    name: '오메가메이트',
-    property: '760mg 2캡슐',
-    content: '혈행 개선에 도움, 기억력 개선, 눈 건강 개선에 도움',
-    price: '8,000',
-    listPrice: '9,500',
-  },
-  {
-    thumbImg: '/images/product-Q10.png',
-    name: '코엔자임메이트',
-    property: '300mg 1캡슐',
-    content: '고혈압 개선에 도움, 항산화효과',
-    price: '8,000',
-    listPrice: '9,500',
-  },
-  {
-    thumbImg: '/images/product-theanine.png',
+    id: 5,
     name: '테아닌메이트',
     property: '1000mg 1정',
-    content: '긴장 완화에 도움',
-    price: '8,000',
-    listPrice: '9,500',
+    thumbImage: '/images/product-theanine.png',
+    content: ['긴장 완화에 도움'],
+    price: '7,500',
+    listPrice: '9,000',
   },
 ]
 
@@ -125,6 +131,9 @@ const TabOne = () => {
     setShowModal({ ...showModal, id: e.target.id })
   }
 
+  const productData1 = productData.slice(0, 4)
+  const productData2 = productData.slice(-2)
+
   return (
     <div>
       <section className="w-full">
@@ -143,14 +152,14 @@ const TabOne = () => {
         </article>
 
         <ul className="mt-5">
-          {productData.map((product, id) => (
+          {productData1.map((product, id) => (
             <li key={id} className={'flex py-5 border-b border-gray-200 relative'}>
               <Link href="#">
                 <a
                   onClick={() => setShowModal(true)}
                   className="thumb thumb-large border overflow-hidden relative flex-shrink-0"
                 >
-                  <Img className="rounded-md" src={product.thumbImg} layout="fill" alt={product.name} />
+                  <Img className="rounded-md" src={product.thumbImage} layout="fill" alt={product.name} />
                 </a>
               </Link>
               <dl className="ml-8 py-2 flex-1">
@@ -205,7 +214,7 @@ const TabOne = () => {
         <article className="my-10 p-6 h-auto rounded-lg bg-primary-100">
           <h2 className="text-xl mb-6">그 밖의 훌륭한 상품!</h2>
           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {productData.map((product, id) => (
+            {productData2.map((product, id) => (
               <li key={id} className="rounded-large bg-white p-8">
                 <div className="flex justify-between">
                   <div className="w-full">
@@ -224,7 +233,7 @@ const TabOne = () => {
                     <span
                       className="thumb bg-cover bg-no-repeat bg-center"
                       style={{
-                        backgroundImage: `url(${product.thumbImg})`,
+                        backgroundImage: `url(${product.thumbImage})`,
                       }}
                     ></span>
                   </div>

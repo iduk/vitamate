@@ -6,21 +6,21 @@ export default function productItems() {
     <article className="" style={{ maxHeight: '65vh' }}>
       <div className="flex justify-between">
         <div className="w-full">
-          <h6 className="text-xl text-primary-600 mb-2">C메이트</h6>
-          <h4 className="text-base leading-normal text-gray-600 mb-3">
-            자연 유래 건조효모를 주원료로 빈틈없이 채운 11가지 기능성을 한번에!
+          <h6 className="text-3xl font-bold mb-2">오메가메이트</h6>
+          <h4 className="text-base text-primary-600 leading-normal text-gray-600 mb-5">
+            혈행 개선에 도움, 기억력 개선, 눈 건강 개선에 도움
           </h4>
-          <p className="text-sm text-gray-400">
-            ADK는 그냥 단순한 비타민A, D, K가 아닙니다. 비타민A, D, K는 힘을 합쳐 더욱 큰 효과를 낼 수 있습니다. 다양한
-            비타민이 융합된 제품입니다.
-          </p>
+          <div className="text-sm leading-normal">
+            <h6 className="text-black mb-1">일일섭취량 / 복용법</h6>
+            <p className="text-gray-500">760mg 2캡슐</p>
+            <p className="text-sm text-gray-500">1일 1회 2캡슐 또는 1일 1캡슐씩 2회 물과 함께 섭취</p>
+          </div>
         </div>
         <div className="ml-8 flex-shrink-0">
           <span
             className="rounded-lg thumb-large block bg-cover bg-no-repeat bg-center"
             style={{
-              backgroundImage:
-                'url(https://images.pexels.com/photos/4058370/pexels-photo-4058370.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750)',
+              backgroundImage: 'url(/images/product-lutein.png)',
             }}
           ></span>
         </div>
