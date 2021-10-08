@@ -11,8 +11,13 @@ export default function Footer() {
             <Img src={'/images/logo.svg'} layout="fill" objectFit={'contain'} alt="vitamate logo" />
           </a>
           <div className="flex lg:justify-end leading-snug mb-5 lg:mt-0">
+            <Link href="https://www.vitamate.kr/">
+              <a target="_blank" className="lg:inline-flex text-base hover:text-primary-600">
+                회사소개
+              </a>
+            </Link>
             <Link href="/TermsOfService">
-              <a className="lg:inline-flex text-base hover:text-primary-600">이용약관</a>
+              <a className="lg:inline-flex text-base hover:text-primary-600 ml-4">이용약관</a>
             </Link>
             <Link href="/PrivacyPolicy">
               <a className="block lg:inline-flex text-base hover:text-primary-600  ml-4">개인정보취급방침</a>
