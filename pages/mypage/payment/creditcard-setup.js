@@ -18,12 +18,12 @@ export default function CreditcardSetup() {
               className="inline-flex"
               id="credit-card"
               type="tel"
-              inputmode="numeric"
+              inputMode="numeric"
               pattern="[0-9\s]{13,19}"
-              autocomplete="cc-number"
-              autocorrect="off"
-              spellcheck="false"
-              maxlength="19"
+              autoComplete="cc-number"
+              autoCorrect="off"
+              spellCheck="false"
+              maxLength="19"
               placeholder="0000 0000 0000 0000"
             />
           </div>
