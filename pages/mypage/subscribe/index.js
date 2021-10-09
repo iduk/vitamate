@@ -304,7 +304,7 @@ const TabOne = () => {
         </div>
       </footer>
 
-      <Modal title={'제품보기'} onClose={() => setShowModal(false)} show={showModal} size={'md'}>
+      <Modal onClose={() => setShowModal(false)} show={showModal} size={'md'}>
         <div>
           {/* content */}
           <ProductItems />
@@ -312,7 +312,7 @@ const TabOne = () => {
           {/* footer */}
           <footer className="mt-8 flex justify-between flex-row items-end">
             <div className="w-2/5 mr-3">
-              <button className="w-full py-4 px-3 rounded border border-primary-600 text-primary-600 hover:border-primary-600 hover:text-primary-600 hover:bg-primary-50">
+              <button className="w-full py-4 px-3 rounded border border-gray-300 text-gray-500 hover:border-gray-400 hover:bg-gray-100">
                 구독취소
               </button>
             </div>
