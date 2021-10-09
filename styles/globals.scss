@@ -1,9 +1,9 @@
 // tailwind css
-@import './calendar.css';
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'tailwindcss/screens';
+@import './calendar.css';
 
 .container {
   @apply mx-auto;
@@ -642,14 +642,14 @@ $half: round($loops / 2);
   }
 }
 
-.check-list {
-  li {
-    &::before {
-      content: '';
-      background: no-repeat url('/images/');
-    }
-  }
-}
+// .check-list {
+//   li {
+//     &::before {
+//       content: '';
+//       background: no-repeat url('/images/');
+//     }
+//   }
+// }
 
 .section-bg {
   position: relative;
