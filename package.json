@@ -22,6 +22,7 @@
     "antd": "^4.16.13",
     "autoprefixer": "^9",
     "babel-plugin-inline-react-svg": "^2.0.1",
+    "babel-plugin-styled-components": "^1.13.2",
     "classnames": "^2.3.1",
     "date-fns": "^2.24.0",
     "eslint": "7.32.0",
@@ -37,8 +38,10 @@
     "postcss-preset-env": "^6.7.0",
     "precss": "^4.0.0",
     "prettier": "^2.4.1",
+    "react-input-mask": "^2.0.4",
     "styled-components": "^5.3.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "styled-jsx-plugin-postcss": "^4.0.1",
+    "tailwindcss": "^2.2.16"
   },
   "browserslist": [
     ">0.3%",

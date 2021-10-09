@@ -24,7 +24,7 @@ export default function Modal({ show, onClose, children, title, size }) {
       <>
         {/*header*/}
         <header className="flex items-start justify-between rounded-t">
-          <h3 className="modal-title text-3xl font-bold mt-2">{title}</h3>
+          <h3 className="modal-title text-2xl font-bold mt-2">{title}</h3>
           <button
             className="flex-shrink-0 bg-transparent leading-none outline-none focus:outline-none"
             onClick={handleCloseClick}
