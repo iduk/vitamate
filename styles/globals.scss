@@ -5,46 +5,44 @@
 @import 'tailwindcss/utilities';
 @import 'tailwindcss/screens';
 
-@layer base {
-  .container {
-    @apply mx-auto;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-weight: bolder;
-    line-height: 1.5;
-    letter-spacing: -0.4px;
+.container {
+  @apply mx-auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bolder;
+  line-height: 1.5;
+  letter-spacing: -0.4px;
+  word-break: keep-all;
+}
+ol,
+ul {
+  li {
     word-break: keep-all;
   }
-  ol,
-  ul {
-    li {
-      word-break: keep-all;
-    }
+}
+ol {
+  list-style-position: inside;
+  display: table;
+  li {
+    display: table-row;
   }
-  ol {
-    list-style-position: inside;
-    display: table;
-    li {
-      display: table-row;
-    }
-    li::before {
-      content: '✔︎';
-      display: table-cell; /* aha! */
-      text-align: right;
-      font-family: sans-serif;
-      @apply pr-2 text-primary-600 text-sm;
-    }
+  li::before {
+    content: '✔︎';
+    display: table-cell; /* aha! */
+    text-align: right;
+    font-family: sans-serif;
+    @apply pr-2 text-primary-600 text-sm;
   }
-  p {
-    word-break: keep-all;
-  }
-  b {
-    font-weight: 600;
-  }
+}
+p {
+  word-break: keep-all;
+}
+b {
+  font-weight: 600;
 }
 
 .scroll-lock {
