@@ -686,5 +686,12 @@ $half: round($loops / 2);
 }
 
 .credit-card {
-  @apply bg-gray-50 border border-dashed border-gray-200 grid place-content-center rounded-md p-4 w-80 h-52 mx-auto text-center;
+  @apply bg-gray-50 border border-dashed border-gray-200 grid place-content-center rounded-2xl p-4 w-80 h-52 mx-auto text-center;
+
+  &--action {
+    @apply bg-primary-600 border-solid border-primary-600 text-white flex flex-col justify-between p-6;
+    background-image: url('/images/bubbles.svg');
+    background-position: 100% 50%;
+    background-size: cover;
+  }
 }
