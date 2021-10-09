@@ -42,7 +42,7 @@ export default function deleteAccount() {
       <ul className="block lg:flex">
         <li className="flex items-center text-gray-500">
           <span className="pr-2 text-gray-700">⋅</span>
-          <span className="pr-4">약정 할인 혜택</span>
+          <span className="pr-4">약정 할인</span>
           <span className="text-gray-800 font-extrabold">20%</span>
         </li>
         <li className="flex items-center text-gray-500 lg:mx-6">
