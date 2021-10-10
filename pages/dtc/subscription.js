@@ -105,13 +105,7 @@ export default function Subscription() {
               <li className="pl-4 border-l-4 border-primary-300 mt-2">
                 <p>
                   당사의 데이터가 삭제되었더라도 회원님이 필요 시 마크로젠의 마이지놈스토리(
-                  <Link href="https://www.my-genomestory.com">
-                    <a className="underline" target="_blank">
-                      https://www.my-genomestory.com
-                    </a>
-                    )
-                  </Link>
-                  에서 검사결과 열람 할 수 있습니다.
+                  https://www.my-genomestory.com) 에서 검사결과 열람 할 수 있습니다.
                 </p>
               </li>
             </ul>
