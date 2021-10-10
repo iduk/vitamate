@@ -17,7 +17,7 @@ const UserInfo = ({ show }) => {
           <div className="w-6/12 text-right">
             <button
               onClick={() => setUserEdit(true)}
-              className="text-primary-600 px-4 py-2 rounded-md text-sm bg-primary-50 hover:bg-primary-600 hover:text-white transition-all"
+              className="text-primary-600 px-4 py-2 rounded-md text-sm bg-primary-50 hover:bg-primary-200 transition ease-linear"
             >
               정보 수정
             </button>
@@ -170,12 +170,13 @@ export default function Mypage() {
   return (
     <ContainerAside>
       {/* 임시 버튼, */}
-      <div className="text-right">
+      {/* <div className="text-right">
         <button onClick={() => setPlanType(!planType)} className="px-4 py-2 border rounded">
           약정계약 케이스
         </button>
         <hr className="border-dashed border-danger-400 py-4 my-4" />
-      </div>
+      </div> */}
+
       {/* 인트로 텍스트 */}
       <h1 className="text-3xl font-light leading-normal pb-7">
         <b>이병윤</b>

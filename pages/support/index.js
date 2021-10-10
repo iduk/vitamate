@@ -5,14 +5,31 @@ import Link from 'next/link'
 
 export default function Support() {
   const [faq, setFaq] = useState(null)
+  const [faqNav, setFaqNav] = useState(null)
 
   const toggle = (id) => {
     if (faq === id) {
       return setFaq(null)
     }
-
     setFaq(id)
   }
+
+  const toggleNav = (id) => {
+    if (faqNav === id) {
+      return setFaqNav(null)
+    }
+    setFaqNav(id)
+  }
+
+  const faqCategories = [
+    { title: '회원', link: '' },
+    { title: '설문', link: '' },
+    { title: '검사', link: '' },
+    { title: '제품', link: '' },
+    { title: '구독/결제', link: '' },
+    { title: '배송', link: '' },
+    { title: '기타', link: '' },
+  ]
 
   const faqContent = [
     {
@@ -60,6 +77,24 @@ export default function Support() {
     <ContainerAside>
       <h1 className="page-title _sub">FAQ</h1>
       <div className="container mx-auto">
+        <ul className="flex justify-between">
+          {faqCategories.map((item, id) => (
+            <li key={id} className="w-full text-center">
+              <Link href="#">
+                <a
+                  onClick={toggleNav}
+                  className={`${
+                    faqNav == true
+                      ? 'border-b-2 border-primary-600 text-black text-bold'
+                      : 'border-b-2 border-gray-200 text-gray-500'
+                  } grid py-3 hover:border-primary-600 hover:text-black`}
+                >
+                  {item.title}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
         <div className="w-full mx-auto">
           <ul>
             {faqContent.map((item, id) => (
