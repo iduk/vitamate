@@ -95,6 +95,23 @@ export default function Subscription() {
 
           <div className="form-group">
             <Select label="유전자검사 결과지 보관기간 선택" options={store_date} />
+            <ul className="text-sm mt-2 text-gray-600 py-2">
+              <li className="pl-4 border-l-4 border-primary-300">
+                <p>
+                  회원님께서 선택하신 기간에 비타메이트에서 보관하는 데이터는 완전히 삭제되지만 유전자검사 전문기관
+                  마크로젠에서는 데이터를 10년간 의무 보관합니다.
+                </p>
+              </li>
+              <li className="pl-4 border-l-4 border-primary-300 mt-2">
+                <p>
+                  당사의 데이터가 삭제되었더라도 회원님이 필요 시 마크로젠의 마이지놈스토리(
+                  <a className="underline" href="https://www.my-genomestory.com" target="_blank">
+                    https://www.my-genomestory.com
+                  </a>
+                  )에서 검사결과 열람 할 수 있습니다.
+                </p>
+              </li>
+            </ul>
           </div>
 
           <ul className="grid grid-cols-2 p-4 mt-6 border-t border-b border-gray-200 bg-gray-100">
