@@ -9,14 +9,14 @@ export default function Home() {
 
   return (
     <>
-      <section className="w-full relative py-24">
+      <section className="w-full relative py-32">
         {/* bg */}
         <article className="absolute inset-0 w-full h-full z-0">
           <div className="relative w-full h-full overflow-hidden">
             <span className="inline-block absolute -bottom-1/4 -left-32">
               <Img src="/images/circle-border-primary.svg" width={500} height={500} alt="bg image" />
             </span>
-            <span className="inline-block absolute -top-20 -right-24">
+            <span className="inline-block absolute -top-48 -right-32">
               <Img src="/images/circle-primary.svg" width={400} height={400} alt="bg image" />
             </span>
           </div>
@@ -24,14 +24,14 @@ export default function Home() {
         {/* content */}
         <div className="container text-center">
           <h2 className="text-4xl leading-snug font-normal mb-8">
-            <b>비타메이트</b>
+            <b className="text-primary-600 font-extrabold">비타메이트</b>
             <br />
             개인 맞춤 영양제 서비스
           </h2>
           <ul className="grid grid-rows-3 lg:grid-rows-none lg:grid-cols-3 gap-4 place-content-center">
             <li>
               <div className="p-20 flex items-center justify-center">
-                <span className="w-24 h-24 inline-flex relative">
+                <span className="w-24 h-20 inline-flex relative">
                   <Img src="/images/main-icon-1.svg" layout="fill" alt="건강정보 AI 알고리즘 추천 아이콘" />
                 </span>
               </div>
@@ -43,7 +43,7 @@ export default function Home() {
             </li>
             <li>
               <div className="p-20 flex items-center justify-center">
-                <span className="w-24 h-24 inline-flex relative">
+                <span className="w-24 h-20 inline-flex relative">
                   <Img src="/images/main-icon-2.svg" layout="fill" alt="분석결과에 맞는 영양소 추천 아이콘" />
                 </span>
               </div>
@@ -54,7 +54,7 @@ export default function Home() {
             </li>
             <li>
               <div className="p-20 flex items-center justify-center">
-                <span className="w-24 h-24 inline-flex relative">
+                <span className="w-24 h-20 inline-flex relative">
                   <Img src="/images/main-icon-3.svg" layout="fill" alt="고객이 선택한 영양제 정기배송 아이콘" />
                 </span>
               </div>
@@ -67,7 +67,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full relative py-24" style={{ backgroundColor: '#f2f2f2' }}>
+      <section className="w-full relative py-20" style={{ backgroundColor: '#f2f2f2' }}>
         {/* bg */}
         <article className="absolute inset-0 w-full h-full z-0">
           <div className="relative w-full h-full overflow-hidden">
@@ -81,7 +81,7 @@ export default function Home() {
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <h2 className="text-4xl leading-snug font-normal mb-8">
-                <b className="text-primary-600">알고리즘</b> 맞춤 추천
+                <b className="text-primary-600 font-extrabold">알고리즘</b> 맞춤 추천
               </h2>
               <p>
                 50항목의 유전자 검사와 식습관, 운동, 수면패턴 등 건강 설문을 통해 개인의 몸 상태에 맞는 나만을 위한
@@ -98,7 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full relative py-24 z-0" style={{ backgroundColor: '#E0E0E0' }}>
+      <section className="w-full relative py-20 z-0" style={{ backgroundColor: '#E0E0E0' }}>
         {/* bg */}
         <article className="absolute inset-0 w-full h-full" style={{ zIndex: '-1' }}>
           <div className="relative w-full h-full">
@@ -108,7 +108,7 @@ export default function Home() {
           </div>
         </article>
         {/* content */}
-        <div className={'container px-6 py-12 lg:px-0 lg:py-24'}>
+        <div className={'container px-6 py-12 lg:px-0 lg:py-20'}>
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <div className="w-full relative">
@@ -118,7 +118,7 @@ export default function Home() {
 
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <h2 className="text-4xl leading-snug font-normal mb-8">
-                <b className="text-primary-600">단일 성분</b> 제제
+                <b className="text-primary-600 font-extrabold">단일 성분</b> 제제
               </h2>
               <p>
                 일반적으로 종합 영양제 또는 2~3종의 영양소가 혼합된 영양제를 섭취하여 특정 성분의 오남용 또는 과부족을
@@ -130,7 +130,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full relative py-24" style={{ backgroundColor: '#f2f2f2' }}>
+      <section className="w-full relative py-20" style={{ backgroundColor: '#f2f2f2' }}>
         {/* content */}
         <div className={'container px-6 py-12 lg:px-0 lg:py-24 relative z-0'}>
           {/* bg */}
@@ -144,7 +144,7 @@ export default function Home() {
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <h2 className="text-4xl leading-snug font-normal mb-8">
-                <b className="text-primary-600">상시 고객</b> 관리
+                <b className="text-primary-600 font-extrabold">상시 고객</b> 관리
               </h2>
               <p>
                 비타메이트는 고객의 영양제 섭취를 꾸준히 할 수 있도록 지원하고 있습니다. 고객이 원하는 시간에 알람
