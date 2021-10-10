@@ -83,7 +83,7 @@ export default function Home() {
               <h2 className="text-4xl leading-snug font-normal mb-8">
                 <b className="text-primary-600 font-extrabold">알고리즘</b> 맞춤 추천
               </h2>
-              <p>
+              <p className="text-base lg:text-lg">
                 50항목의 유전자 검사와 식습관, 운동, 수면패턴 등 건강 설문을 통해 개인의 몸 상태에 맞는 나만을 위한
                 영양제를 추천합니다.
               </p>
@@ -120,7 +120,7 @@ export default function Home() {
               <h2 className="text-4xl leading-snug font-normal mb-8">
                 <b className="text-primary-600 font-extrabold">단일 성분</b> 제제
               </h2>
-              <p>
+              <p className="text-base lg:text-lg">
                 일반적으로 종합 영양제 또는 2~3종의 영양소가 혼합된 영양제를 섭취하여 특정 성분의 오남용 또는 과부족을
                 초래합니다. 비타메이트는 이런 문제를 해결하기 위해 단일 성분만으로 제조하여 내 몸에 꼭 맞는 영양소를
                 섭취하도록 돕습니다.
@@ -146,7 +146,7 @@ export default function Home() {
               <h2 className="text-4xl leading-snug font-normal mb-8">
                 <b className="text-primary-600 font-extrabold">상시 고객</b> 관리
               </h2>
-              <p>
+              <p className="text-base lg:text-lg">
                 비타메이트는 고객의 영양제 섭취를 꾸준히 할 수 있도록 지원하고 있습니다. 고객이 원하는 시간에 알람
                 서비스를 제공하며, 모바일 또는 웹사이트에서 섭취체크를 진행 할 수 있습니다.
               </p>
