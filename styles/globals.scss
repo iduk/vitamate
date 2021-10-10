@@ -695,3 +695,33 @@ $half: round($loops / 2);
     background-size: cover;
   }
 }
+
+// tabs
+.tabs {
+  @apply border-b-2 border-gray-200 flex;
+  .tab {
+    @apply block relative mr-5 px-1 py-3 text-gray-400 text-base;
+
+    &.active {
+      @apply text-black;
+    }
+
+    &.active::before {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      @apply bg-primary-600;
+    }
+
+    > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: inherit;
+    }
+  }
+}

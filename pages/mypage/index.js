@@ -166,6 +166,41 @@ const UserBanner = () => {
 
 export default function Mypage() {
   const [planType, setPlanType] = useState(false)
+  const [isAnalyze, setIsAnalyze] = useState(false)
+  const [isCategory, setIsCategory] = useState(null)
+
+  const categoryToggle = (id) => {
+    if (isCategory === id) {
+      return setIsCategory(null)
+    }
+    setIsCategory(id)
+  }
+
+  const categories = [
+    { titie: '영양소' },
+    { titie: '운동' },
+    { titie: '피부/모발' },
+    { titie: '식습관' },
+    { titie: '개인특성' },
+    { titie: '건강관리' },
+  ]
+
+  const level_a = '안심'
+  const level_b = '보통'
+  const level_c = '주의'
+  const tung = '-'
+
+  const table_column = [
+    { item: '비타민 C 농도', level: level_a, score: 92, perm: tung },
+    { item: '비타민 D 농도', level: level_b, score: 65, perm: '70~77' },
+    { item: '코엔자임Q 10 농도', level: level_c, score: 28, perm: '17~27' },
+    { item: '비타민 C 농도', level: level_a, score: 92, perm: tung },
+    { item: '비타민 D 농도', level: level_b, score: 65, perm: '70~77' },
+    { item: '코엔자임Q 10 농도', level: level_c, score: 28, perm: '17~27' },
+    { item: '비타민 C 농도', level: level_a, score: 92, perm: tung },
+    { item: '비타민 D 농도', level: level_b, score: 65, perm: '70~77' },
+    { item: '코엔자임Q 10 농도', level: level_c, score: 28, perm: '17~27' },
+  ]
 
   return (
     <ContainerAside>
@@ -238,7 +273,10 @@ export default function Mypage() {
               ) : (
                 <>
                   <div className="flex justify-between lg:block">
-                    <button className="w-full lg:w-auto py-3 px-5 rounded-md  text-primary-600 border border-primary-600 hover:bg-primary-50 transition-all">
+                    <button
+                      onClick={() => setIsAnalyze(true)}
+                      className="w-full lg:w-auto py-3 px-5 rounded-md  text-primary-600 border border-primary-600 hover:bg-primary-50 transition-all"
+                    >
                       요약 정보
                     </button>
                     <span className="mx-1"></span>
@@ -246,6 +284,86 @@ export default function Mypage() {
                       상세 정보
                     </button>
                   </div>
+
+                  {/* 요약 정보 팝업 */}
+                  <Modal title="요약 정보" size="md" onClose={() => setIsAnalyze(false)} show={isAnalyze}>
+                    <>
+                      <article className="mb-4">
+                        <div className="pb-2">
+                          <h5 className="font-normal mb-1">
+                            <span>김홍구</span>
+                            <span>님의 유전자 분석 결과</span>
+                          </h5>
+                        </div>
+
+                        <ul className="w-full grid grid-cols-4 gap-4 px-4 py-4 rounded-md border bg-gray-50">
+                          <li>
+                            <h6 className="text-gray-500 text-xs mb-2">성별/출생년도</h6>
+                            <p className="text-sm">남성 / 1980</p>
+                          </li>
+                          <li>
+                            <h6 className="text-gray-500 text-xs mb-1">생년월일</h6>
+                            <p className="text-sm">1990.12.31</p>
+                          </li>
+                          <li>
+                            <h6 className="text-gray-500 text-xs mb-1">채취일</h6>
+                            <p className="text-sm">1990.12.31</p>
+                          </li>
+                          <li>
+                            <h6 className="text-gray-500 text-xs mb-1">접수일</h6>
+                            <p className="text-sm">1990.12.31</p>
+                          </li>
+                        </ul>
+                      </article>
+
+                      <ul className="flex tabs">
+                        {categories.map((cat, id) => (
+                          <li key={id} className={`${isCategory === id ? 'active' : ''} tab`}>
+                            <Link href="#">
+                              <a onClick={() => categoryToggle(id)}>{cat.titie}</a>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="h-72 overflow-y-auto relative">
+                        <section className="absolute inset-0 w-full h-full">
+                          <h5 className="inline-block text-xl text-highlight my-5">스트레스 관리형</h5>
+                          <div>
+                            <table className="w-full text-left">
+                              <thead>
+                                <tr>
+                                  <th className="px-3 py-2">관리 항목</th>
+                                  <th className="px-3 py-2">등급・점수</th>
+                                  <th className="px-3 py-2">유전율(%)</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {table_column.map((cell, id) => (
+                                  <tr key={id}>
+                                    <td className="px-3 py-2">{cell.item}</td>
+                                    <td className="px-3 py-2">
+                                      <div
+                                        className={`${
+                                          (cell.level === level_a && 'text-green-500') ||
+                                          (cell.level === level_b && 'text-warning-500') ||
+                                          (cell.level === level_c && 'text-danger-500')
+                                        }`}
+                                      >
+                                        <span>{cell.level}</span>
+                                        <span className="ml-1">{cell.score}</span>
+                                      </div>
+                                    </td>
+                                    <td className="px-3 py-2">{cell.perm}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </section>
+                      </div>
+                    </>
+                  </Modal>
                 </>
               )}
             </div>
