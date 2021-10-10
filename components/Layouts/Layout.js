@@ -11,11 +11,7 @@ import Subscription from 'pages/dtc/subscription'
 const IndexPage = () => {
   const [randomIMG, setRandomIMG] = useState(undefined)
 
-  let Images = [
-    'https://images.pexels.com/photos/9250013/pexels-photo-9250013.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1200',
-    'https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1200',
-    'https://images.pexels.com/photos/2549027/pexels-photo-2549027.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1200',
-  ]
+  let Images = ['/images/main_cover.png']
 
   useEffect(() => {
     setRandomIMG(Math.floor(Math.random() * Images.length))

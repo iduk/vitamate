@@ -306,7 +306,11 @@ $sidebar-size: 230px;
     }
   }
 }
-.bg-hero,
+.bg-hero {
+  .header {
+    background-color: white;
+  }
+}
 .subpage {
   .header {
     border-color: transparent;
@@ -398,12 +402,11 @@ $modal-size-lg: 800px;
 // home
 .bg-hero {
   width: 100%;
-  height: 800px;
+  height: 900px;
   @apply bg-success-100;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom right;
-  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: bottom center;
 }
 
 .hero-title {
