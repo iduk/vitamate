@@ -36,7 +36,7 @@ export default function Payment() {
 
   const title = {
     isPay: '카드 등록/변경',
-    isReceipt: '결제 내역',
+    isReceipt: '결제 내역 상세',
   }
 
   return (
@@ -88,12 +88,16 @@ export default function Payment() {
       </article>
 
       <article>
-        <h2 className="pb-4 font-bold text-xl">결제 이력</h2>
-        <ul className="border-b border-gray-200 overflow-hidden">
+        <h2 className="pb-4 font-bold text-xl border-b border-gray-200">결제 내역</h2>
+        {/* 결제 내역 0개일때, 현재 className 'hidden' 처리됨 */}
+        <div className="hidden text-center py-12 text-gray-400">결제한 내역이 없습니다.</div>
+
+        {/* 결제 내역 */}
+        <ul className="overflow-hidden">
           {payList.map((pay, id) => (
             <li
               key="id"
-              className="py-4 lg:py-6 lg:grid lg:grid-cols-2 items-end place-content-between border-t border-gray-200"
+              className="py-4 lg:py-6 lg:grid lg:grid-cols-2 items-end place-content-between border-b border-gray-200"
             >
               <div className="mb-3 lg:mb-0">
                 <h6 className="text-base text-gray-400 mb-1">{pay.useDate}</h6>
