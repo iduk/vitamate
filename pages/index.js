@@ -78,7 +78,7 @@ export default function Home() {
         </article>
         {/* content */}
         <div className={'container px-6 py-12 lg:px-0 lg:py-24'}>
-          <article className="flex flex-wrap overflow-hidden items-center">
+          <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <h2 className="text-4xl leading-snug font-normal mb-8">
                 <b className="text-primary-600">알고리즘</b> 맞춤 추천
@@ -90,17 +90,17 @@ export default function Home() {
             </div>
 
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <div className="w-full h-80 relative">
-                <Img className="" src="/images/main-image01.png" layout={'fill'} alt="bg image" />
+              <div className="w-full relative">
+                <Img src="/images/main-image01.png" width={600} height={400} alt="bg image" />
               </div>
             </div>
           </article>
         </div>
       </section>
 
-      <section className="w-full relative py-24" style={{ backgroundColor: '#E0E0E0' }}>
+      <section className="w-full relative py-24 z-0" style={{ backgroundColor: '#E0E0E0' }}>
         {/* bg */}
-        <article className="absolute inset-0 w-full h-full z-0">
+        <article className="absolute inset-0 w-full h-full" style={{ zIndex: '-1' }}>
           <div className="relative w-full h-full">
             <span className="inline-block absolute -bottom-1/3 -left-32">
               <Img src="/images/circle-border-light.svg" width={650} height={650} alt="bg image" />
@@ -109,10 +109,10 @@ export default function Home() {
         </article>
         {/* content */}
         <div className={'container px-6 py-12 lg:px-0 lg:py-24'}>
-          <article className="flex flex-wrap overflow-hidden items-center">
+          <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <div className="w-full h-80 relative">
-                <Img src="/images/main-image02.png" layout={'fill'} alt="bg image" />
+              <div className="w-full relative">
+                <Img src="/images/main-image02.png" width={600} height={400} alt="bg image" />
               </div>
             </div>
 
@@ -132,16 +132,16 @@ export default function Home() {
 
       <section className="w-full relative py-24" style={{ backgroundColor: '#f2f2f2' }}>
         {/* content */}
-        <div className={'container px-6 py-12 lg:px-0 lg:py-24 relative'}>
+        <div className={'container px-6 py-12 lg:px-0 lg:py-24 relative z-0'}>
           {/* bg */}
-          <article className="absolute inset-0 w-full h-full z-0">
+          <article className="absolute inset-0 w-full h-full" style={{ zIndex: '-1' }}>
             <div className="relative w-full h-full">
               <span className="inline-block absolute -top-8 -right-10">
                 <Img src="/images/circle-border-gray.svg" width={300} height={300} alt="bg image" />
               </span>
             </div>
           </article>
-          <article className="flex flex-wrap overflow-hidden items-center">
+          <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <h2 className="text-4xl leading-snug font-normal mb-8">
                 <b className="text-primary-600">상시 고객</b> 관리
@@ -153,8 +153,8 @@ export default function Home() {
             </div>
 
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <div className="w-full h-80 relative">
-                <Img src="/images/main-image03.png" layout={'fill'} alt="bg image" />
+              <div className="w-full relative">
+                <Img src="/images/main-image03.png" width={600} height={400} alt="bg image" />
               </div>
             </div>
           </article>
