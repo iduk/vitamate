@@ -17,6 +17,6 @@ module.exports = {
     return config
   },
   images: {
-    domains: ['images.pexels.com'],
+    domains: ['images.pexels.com', 'my-genomestory.com'],
   },
 }
