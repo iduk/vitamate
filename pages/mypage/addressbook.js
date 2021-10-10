@@ -37,69 +37,85 @@ export default function Addressbook() {
   return (
     <ContainerAside>
       <h1 className="page-title _sub">배송지 관리</h1>
+
       <article>
-        {addressData.map((data, id) => (
-          <Link key={id} href="#">
-            <a
-              onClick={() => setIsSelected(!isSelected)}
-              className={
-                'flex place-content-between mt-6 px-6 py-4 border border-gray-300 rounded-lg transition duration-200 ease-in-out'
-              }
-            >
-              <div className="form-checkbox mr-3 mt-1">
-                <input type="checkbox" checked={isSelected === true ? true : false} />
-              </div>
+        {/* 0개일때, 현재 className 'hidden' 처리됨 */}
+        <div className="hidden text-center py-12 text-gray-400">등록한 배송지가 없습니다.</div>
 
-              <dl className="w-full">
-                <dt className="flex h-8 justify-between items-center text-xl leading-none font-bold">
-                  <span>{data.addressName}</span>
-                  <div>
-                    {/* -- 기본배송지 표기 -- */}
-                    {isSelected === true ? (
-                      <span className="inline-flex items-center justify-center px-2 py-1 text-sm font-bold leading-none text-primary-600 border border-primary-600 rounded">
-                        기본배송지
-                      </span>
-                    ) : null}
-                  </div>
-                </dt>
+        {/* 1개이상 */}
+        <div>
+          {addressData.map((data, id) => (
+            <Link key={id} href="#">
+              <a
+                onClick={() => setIsSelected(!isSelected)}
+                className={
+                  'flex place-content-between mt-6 px-6 py-4 border border-gray-300 rounded-lg transition duration-200 ease-in-out'
+                }
+              >
+                <div className="form-checkbox mr-3 mt-1">
+                  <input type="checkbox" checked={isSelected === true ? true : false} />
+                </div>
 
-                <dd className="text-lg mt-3">
-                  <span className="text-gray-600 mr-2">[{data.zipcode}]</span>
-                  {data.address}
-                </dd>
-                <dd className="text-base mt-2">
-                  <span className="mr-2">수령인</span>
-                  <span className="text-gray-500">이병윤</span>
-                </dd>
-                <dd className="mt-1">
-                  <span className="mr-2">연락처</span>
-                  <span className="text-gray-500">{data.tel}</span>
-                </dd>
-                <dd className="mt-4">
-                  <button
-                    onClick={() => setShowModal(true)}
-                    className="py-1 px-4 rounded border text-base border-gray-300 text-gray-600 hover:bg-gray-100"
-                  >
-                    수정
-                  </button>
-                </dd>
-              </dl>
-            </a>
-          </Link>
-        ))}
+                <dl className="w-full">
+                  <dt className="flex h-8 justify-between items-center text-xl leading-none font-bold">
+                    <span>{data.addressName}</span>
+                    <div>
+                      {/* -- 기본배송지 표기 -- */}
+                      {isSelected === true ? (
+                        <span className="inline-flex items-center justify-center px-2 py-1 text-sm font-bold leading-none text-primary-600 border border-primary-600 rounded">
+                          기본배송지
+                        </span>
+                      ) : null}
+                    </div>
+                  </dt>
+
+                  <dd className="text-lg mt-3">
+                    <span className="text-gray-600 mr-2">[{data.zipcode}]</span>
+                    {data.address}
+                  </dd>
+                  <dd className="text-base mt-2">
+                    <span className="mr-2">수령인</span>
+                    <span className="text-gray-500">이병윤</span>
+                  </dd>
+                  <dd className="mt-1">
+                    <span className="mr-2">연락처</span>
+                    <span className="text-gray-500">{data.tel}</span>
+                  </dd>
+                  <dd className="mt-4">
+                    <button
+                      onClick={() => setShowModal(true)}
+                      className="py-1 px-4 rounded border text-base border-gray-300 text-gray-600 hover:bg-gray-100"
+                    >
+                      수정
+                    </button>
+                  </dd>
+                </dl>
+              </a>
+            </Link>
+          ))}
+        </div>
       </article>
 
-      <div className="flex justify-end my-6">
-        {/* ---- 기본배송지등록,신규배송지등록 ---- */}
+      <div className="flex justify-between my-6">
         <button
           onClick={handleClickAlert}
-          className="btn border border-gray-300 text-gray-900 hover:border-gray-400 hover:bg-gray-100 hover:shadow mr-3"
+          className="btn border border-gray-300 text-gray-900 hover:border-gray-400 hover:bg-gray-100 hover:shadow"
         >
-          기본 배송지 등록
+          선택 삭제
         </button>
-        <button onClick={() => setShowModal(true)} className="btn bg-primary-600 text-white hover:bg-primary-700">
-          신규 배송지 등록
-        </button>
+
+        {/* ---- 기본배송지등록,신규배송지등록 ---- */}
+        <div>
+          <button
+            onClick={handleClickAlert}
+            className="btn border border-gray-300 text-gray-900 hover:border-gray-400 hover:bg-gray-100 hover:shadow mr-3"
+          >
+            기본 배송지 등록
+          </button>
+          <button onClick={() => setShowModal(true)} className="btn bg-primary-600 text-white hover:bg-primary-700">
+            신규 배송지 등록
+          </button>
+        </div>
       </div>
 
       {/* ---- Show Modal ---- */}
