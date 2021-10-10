@@ -10,12 +10,44 @@ const dtcProccess = [
   { title: '결과 확인', content: '분석이 완료되면 2주 이내에 안내를 드립니다' },
 ]
 const dtcCategories = [
-  { icon: 'ic-nutrient', title: '영양소', qtt: 24 },
-  { icon: 'ic-skin', title: '피부/모발', qtt: 24 },
-  { icon: 'ic-exercise', title: '운동특성', qtt: 24 },
-  { icon: 'ic-eating', title: '식습관', qtt: 24 },
-  { icon: 'ic-nicotine', title: '카페인/알코올/니코틴 반응', qtt: 24 },
-  { icon: 'ic-healthcare', title: '건강관리', qtt: 24 },
+  {
+    icon: 'ic-nutrient',
+    title: '영양소',
+    qtt: 17,
+    content:
+      '비타민A/B6/B12 / C/D/E/K, 코엔자임Q10, 마그네슘, 루테인&지아잔틴, 아연, 칼륨, 칼슘, 아르기닌, 오메가3, 셀레늄',
+  },
+  {
+    icon: 'ic-exercise',
+    title: '운동특성',
+    qtt: 6,
+    content: '근력/유산소/지구력 운동적합성, 근육발달능력, 발목부상 위험도,운동 후 회복능력',
+  },
+  {
+    icon: 'ic-skin',
+    title: '피부/모발',
+    qtt: 5,
+    content: '기미/주근깨,  피부노화, 피부염증,(아토피피부염), 남성형탈모, 모발굵기',
+  },
+  {
+    icon: 'ic-eating',
+    title: '식습관',
+    qtt: 4,
+    content: '식욕, 포만감, 단맛/짠맛 민감도',
+  },
+  {
+    icon: 'ic-nicotine',
+    title: '개인특성',
+    qtt: 5,
+    content: '카페인 대사, 니코틴 의존성, 알코올 대사/의존성, 불면증',
+  },
+  {
+    icon: 'ic-healthcare',
+    title: '건강관리',
+    qtt: 13,
+    content:
+      '퇴행성 관절염증 감수성, 비만, 요산지, 중성지방도, 체지방률,콜레스테롤 HDLc/LDLc), 혈당 (공복), 혈압 (평균), 골질량, 복부비만 (엉덩이허리비율), 운동에 의한  체중감량효과, 요요가능성',
+  },
 ]
 
 export default function Dtc() {
@@ -103,15 +135,20 @@ export default function Dtc() {
             </div>
           </article>
           <article className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-            <ul className="grid grid-cols-3 grid-rows-2 gap-6">
+            <ul>
               {dtcCategories.map((item, index) => (
-                <li key={index} className="rounded-large py-5 px-4 text-center bg-primary-100">
-                  <div className="relative mb-4">
-                    <Img width={60} height={60} src={`/images/${item.icon}.svg`} alt="icon" />
+                <li key={index} className="py-4 px-4 text-center">
+                  <div className="flex text-left">
+                    <span className="relative w-20 flex-shrink-0">
+                      <Img width={56} height={56} src={`/images/${item.icon}.svg`} alt="icon" />
+                    </span>
+                    <div>
+                      <h4 className="text-lg">
+                        {item.title}({item.qtt})
+                      </h4>
+                      <p className="text-gray-500 text-sm mt-1">{item.content}</p>
+                    </div>
                   </div>
-                  <h4>
-                    {item.title}({item.qtt})
-                  </h4>
                 </li>
               ))}
             </ul>
