@@ -771,7 +771,8 @@ $half: round($loops * 0.5);
     &::after {
       @include types_before;
       z-index: -2;
-      @apply rounded-full border-2 border-primary-600 w-10 h-10;
+      border: 2px solid rgba(92, 187, 187, 1);
+      @apply rounded-full w-10 h-10;
     }
   }
   // 섭취
@@ -781,7 +782,8 @@ $half: round($loops * 0.5);
 
     &::before {
       @include types_before;
-      @apply rounded-full bg-green-600 w-8 h-8;
+      background-color: rgba(5, 150, 105, 1);
+      @apply rounded-full w-8 h-8;
     }
   }
   // 미섭취
@@ -791,7 +793,8 @@ $half: round($loops * 0.5);
 
     &::before {
       @include types_before;
-      @apply rounded-full bg-yellow-400 w-8 h-8;
+      background-color: rgba(251, 191, 36, 1);
+      @apply rounded-full w-8 h-8;
     }
   }
 }
