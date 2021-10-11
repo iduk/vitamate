@@ -185,6 +185,9 @@ label {
       @apply border-danger-500;
     }
   }
+  p {
+    @apply mt-2 text-sm text-danger-500;
+  }
 }
 .success {
   input,
@@ -193,6 +196,9 @@ label {
     &:focus {
       @apply border-success-500;
     }
+  }
+  p {
+    @apply mt-2 text-sm text-success-500;
   }
 }
 
