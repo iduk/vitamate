@@ -1,12 +1,10 @@
 import Head from 'next/head'
 import Img from 'next/image'
-import Modal from 'components/Modal'
+
 import { useState } from 'react'
-import Header from 'components/Layouts/Header'
+import 작 from 'components/Layouts/Header'
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(false)
-
   return (
     <>
       <section className="w-full relative py-32">
@@ -136,7 +134,7 @@ export default function Home() {
 
       <section className="w-full relative" style={{ backgroundColor: '#f2f2f2' }}>
         {/* content */}
-        <div className={'container px-6 pb-12 lg:px-0 relative z-0'}>
+        <div className={'container px-6 pb-16 lg:px-0 relative z-0'}>
           {/* bg */}
           <article className="absolute inset-0 w-full h-full" style={{ zIndex: '-1' }}>
             <div className="relative w-full h-full">
@@ -178,8 +176,8 @@ export default function Home() {
           </div>
 
           <div>
-            <div className=" relative">
-              <Img src="/images/img-main-serviceflow@2x.png" width={1200} height={609} alt="서비스 순서" />
+            <div className="relative" style={{ height: 500 }}>
+              <Img src="/images/img-main-serviceflow.svg" layout="fill" objectFit="contain" alt="서비스 순서" />
             </div>
           </div>
         </article>

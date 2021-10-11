@@ -7,8 +7,11 @@ import { useEffect, useState } from 'react'
 import Modal from 'components/Modal'
 import SurveyStart from 'pages/survey/survey-start'
 import Subscription from 'pages/dtc/subscription'
+import SignUp from 'pages/SignUp'
 
 const IndexPage = () => {
+  const [showModal, setShowModal] = useState(false)
+
   let Images = ['/images/hero-bg.png']
 
   return (
@@ -61,6 +64,9 @@ const IndexPage = () => {
           </div>
         </div>
       </article>
+      <Modal title="회원가입" onClose={() => setShowModal(false)} show={showModal} size="md">
+        <SignUp />
+      </Modal>
     </section>
   )
 }

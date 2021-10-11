@@ -43,7 +43,7 @@ export default function Footer() {
                 </span>
                 <p>
                   <b className="text-black">비타메이트 고객센터</b> 1588-1588
-                  <span class="ml-2">help@vitamate.kr</span>
+                  <span className="ml-2">help@vitamate.kr</span>
                 </p>
               </li>
               <li className="flex">
