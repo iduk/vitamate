@@ -9,16 +9,10 @@ import SurveyStart from 'pages/survey/survey-start'
 import Subscription from 'pages/dtc/subscription'
 
 const IndexPage = () => {
-  const [randomIMG, setRandomIMG] = useState(undefined)
-
   let Images = ['/images/main_cover.png']
 
-  useEffect(() => {
-    setRandomIMG(Math.floor(Math.random() * Images.length))
-  }, [])
-
   return (
-    <section className={'bg-hero'} style={{ backgroundImage: `url(${Images[randomIMG]})` }}>
+    <section className={'bg-hero'} style={{ backgroundImage: `url(${Images})` }}>
       <Header />
       <article className={'container'}>
         <div className="pt-20 text-right">
