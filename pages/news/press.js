@@ -16,7 +16,7 @@ export default function Press() {
             <Link href="https://www.fnnews.com/news/202108261011010605">
               <a target="_blank" className="w-10/12 font-normal">
                 <div className="flex items-center cursor-pointer">
-                  <span className="w-28 text-sm text-gray-500">2021.08.25</span>
+                  <span className="w-28 text-sm text-gray-500">2021.08.26</span>
                   <p>비타메이트, 유전자 분석으로 맞춤 영양제 제공 서비스 출시</p>
                 </div>
               </a>
