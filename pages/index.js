@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <section className="w-full relative py-32">
         {/* bg */}
-        <article className="absolute inset-0 w-full h-full z-0">
+        <article className="absolute inset-0 w-full h-full z-10">
           <div className="relative w-full h-full overflow-hidden">
             <span className="inline-block absolute -bottom-1/4 -left-32">
               <Img src="/images/circle-border-primary.svg" width={500} height={500} alt="bg image" />
@@ -69,17 +69,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full relative " style={{ backgroundColor: '#f2f2f2' }}>
+      <section className="w-full relative" style={{ backgroundColor: '#f2f2f2' }}>
         {/* bg */}
-        <article className="absolute inset-0 w-full h-full z-0">
-          <div className="relative w-full h-full overflow-hidden">
-            <span className="inline-block absolute -bottom-1/4 -right-32">
-              <Img src="/images/circle-border-gray.svg" width={450} height={450} alt="bg image" />
+        <article className="absolute inset-0 w-full max-w-7xl mx-auto h-full" style={{ zIndex: -1 }}>
+          <div className="relative w-full h-full">
+            <span className="inline-block absolute -top-16 -right-48">
+              <Img src="/images/circle-border-gray.svg" width={300} height={300} alt="bg image" />
+            </span>
+            <span className="inline-block absolute top-1/4 -left-56">
+              <Img src="/images/circle-border-gray.svg" width={600} height={600} alt="bg image" />
             </span>
           </div>
         </article>
+
         {/* content */}
-        <div className={'container px-6 pt-16 lg:px-0'}>
+        <div className={'container px-6 pt-16 lg:px-0 z-0'}>
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <h2 className="text-4xl leading-snug font-normal mb-5">
@@ -90,7 +94,6 @@ export default function Home() {
                 영양제를 추천합니다.
               </p>
             </div>
-
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <div className="w-full relative">
                 <Img src="/images/main-image01.png" width={400} height={250} alt="bg image" />
@@ -98,26 +101,15 @@ export default function Home() {
             </div>
           </article>
         </div>
-      </section>
 
-      <section className="w-full relative z-0" style={{ backgroundColor: '#f2f2f2' }}>
-        {/* bg */}
-        <article className="absolute inset-0 w-full h-full" style={{ zIndex: '-1' }}>
-          <div className="relative w-full h-full">
-            <span className="inline-block absolute -bottom-1/3 -left-32">
-              <Img src="/images/circle-border-light.svg" width={650} height={650} alt="bg image" />
-            </span>
-          </div>
-        </article>
         {/* content */}
-        <div className={'container px-6 py-12 lg:px-0'}>
+        <div className={'container px-6 py-16 lg:px-0 z-0'}>
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <div className="w-full relative">
                 <Img src="/images/main-image02.png" width={400} height={250} alt="bg image" />
               </div>
             </div>
-
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <h2 className="text-4xl leading-snug font-normal mb-5">
                 <b className="text-primary-600 font-extrabold">단일 성분</b> 제제
@@ -129,37 +121,35 @@ export default function Home() {
               </p>
             </div>
           </article>
-        </div>
-      </section>
 
-      <section className="w-full relative" style={{ backgroundColor: '#f2f2f2' }}>
-        {/* content */}
-        <div className={'container px-6 pb-16 lg:px-0 relative z-0'}>
-          {/* bg */}
-          <article className="absolute inset-0 w-full h-full" style={{ zIndex: '-1' }}>
-            <div className="relative w-full h-full">
-              <span className="inline-block absolute -top-8 -right-10">
-                <Img src="/images/circle-border-gray.svg" width={300} height={300} alt="bg image" />
-              </span>
-            </div>
-          </article>
-          <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
-            <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <h2 className="text-4xl leading-snug font-normal mb-5">
-                <b className="text-primary-600 font-extrabold">상시 고객</b> 관리
-              </h2>
-              <p className="text-base lg:text-lg">
-                비타메이트는 고객의 영양제 섭취를 꾸준히 할 수 있도록 지원하고 있습니다. 고객이 원하는 시간에 알람
-                서비스를 제공하며, 모바일 또는 웹사이트에서 섭취체크를 진행 할 수 있습니다.
-              </p>
-            </div>
-
-            <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <div className="w-full relative">
-                <Img src="/images/main-image03.png" width={400} height={250} alt="bg image" />
+          {/* content */}
+          <div className={'container px-6 pb-16 lg:px-0 z-0 relative'}>
+            {/* bg */}
+            <article className="absolute inset-0 w-full h-full">
+              <div className="relative w-full h-full">
+                <span className="inline-block absolute -bottom-24 right-16">
+                  <Img src="/images/circle-border-gray.svg" width={250} height={250} alt="bg image" />
+                </span>
               </div>
-            </div>
-          </article>
+            </article>
+            <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
+              <div className="my-4 px-12 w-full lg:w-1/2">
+                <h2 className="text-4xl leading-snug font-normal mb-5">
+                  <b className="text-primary-600 font-extrabold">상시 고객</b> 관리
+                </h2>
+                <p className="text-base lg:text-lg">
+                  비타메이트는 고객의 영양제 섭취를 꾸준히 할 수 있도록 지원하고 있습니다. 고객이 원하는 시간에 알람
+                  서비스를 제공하며, 모바일 또는 웹사이트에서 섭취체크를 진행 할 수 있습니다.
+                </p>
+              </div>
+
+              <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
+                <div className="w-full relative">
+                  <Img src="/images/main-image03.png" width={400} height={250} alt="bg image" />
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
