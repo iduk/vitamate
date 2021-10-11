@@ -599,7 +599,7 @@ $half: round($loops * 0.5);
 }
 // thumbnail no-image
 .thumb {
-  @apply block bg-gray-200 relative rounded-xl;
+  @apply block relative rounded-xl;
   width: 100px;
   height: 100px;
 

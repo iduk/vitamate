@@ -158,9 +158,9 @@ const TabOne = () => {
               <Link href="#">
                 <a
                   onClick={() => setShowModal(true)}
-                  className="thumb thumb-large border overflow-hidden relative flex-shrink-0"
+                  className="thumb-large border overflow-hidden relative flex-shrink-0 flex items-center justify-center"
                 >
-                  <Img className="rounded-md" src={product.thumbImage} layout="fill" alt={product.name} />
+                  <Img className="rounded-md" src={product.thumbImage} width={130} height={130} alt={product.name} />
                 </a>
               </Link>
               <dl className="ml-8 py-2 flex-1">

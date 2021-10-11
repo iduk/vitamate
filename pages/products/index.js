@@ -53,7 +53,7 @@ export default function Products({ prodItemList }) {
                 </div>
               </div>
 
-              <ul className="product-list text-lg leading-relaxed">
+              <ul className="product-list text-base leading-normal">
                 <li>
                   <span className={'mr-3'}>
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
@@ -65,6 +65,12 @@ export default function Products({ prodItemList }) {
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
                   </span>
                   {Item.content[1]}
+                </li>
+                <li className={`${!Item.content[2] ? 'hidden' : ''}`}>
+                  <span className={'mr-3'}>
+                    <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
+                  </span>
+                  {Item.content[2]}
                 </li>
               </ul>
 
