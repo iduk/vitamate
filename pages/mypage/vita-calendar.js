@@ -3,7 +3,6 @@ import { ConfigProvider, Calendar, Badge } from 'antd'
 import koKR from 'antd/lib/locale/ko_KR'
 import Modal from 'components/Modal'
 import React, { useState } from 'react'
-
 import moment from 'moment'
 import Img from 'next/image'
 import Link from 'next/link'
@@ -14,20 +13,63 @@ moment.updateLocale('koKR', {
 
 export default function VitaCalendar() {
   const [showCalendarPop, setShowCalendarPop] = useState(false)
-  const [dataList, setDataList] = useState([])
+  const [dataList, setDataList] = useState(null)
+  const [currentMonth, setCurrentMonth] = useState([])
 
-  const onPanelChange = (value, mode) => {
-    console.log(value.format('YYYY-MM-DD'), mode)
+  const headerRender = ({ value, type, onChange, onTypeChange }) => {
+    const month = value.month()
+    const year = value.year()
+    setCurrentMonth(month)
+    const onChangeButton = (type) => {
+      console.log('type : ', month - 1)
+
+      if (type === 'left') {
+        const newValue = value.clone()
+        newValue.month(parseInt(month - 1, 10))
+        onChange(newValue)
+      } else {
+        const newValue = value.clone()
+        newValue.month(parseInt(month + 1, 10))
+        onChange(newValue)
+      }
+      setShowCalendarPop(false)
+    }
+    return (
+      <header className="lg:flex lg:justify-between lg:items-center block">
+        <div className="w-full lg:max-w-xs flex justify-between items-center">
+          <button className="p-3" onClick={() => onChangeButton('left')}>
+            <Img src="/images/ic-arrow-back.svg" width={32} height={32} alt="left" />
+          </button>
+          <p className="text-xl leading-snug">
+            {year}. {month + 1}
+          </p>
+          <button className="p-3" onClick={() => onChangeButton('right')}>
+            <Img src="/images/ic-arrow-next.svg" width={32} height={32} alt="right" />
+          </button>
+        </div>
+
+        <ul className="w-full lg:max-w-sm flex justify-between items-baseline">
+          {Legend.map((item) => (
+            <>
+              <li key={item.id} className="calendar-types">
+                <div className={`calendar-types-label text-${item.color}-600`}>
+                  <span className="dot">●</span>
+                  <span>{item.title}</span>
+                </div>
+              </li>
+            </>
+          ))}
+        </ul>
+      </header>
+    )
   }
 
   const onSelect = (value) => {
     // const data = getListData(value.date())
-    console.log('data : ', value.date())
-    console.log('data : ', value.format('YYYY-MM-DD'))
+    // console.log('data : ', value.format('YYYY-MM-DD'))
     const datalist = getListData(value)
-    setDataList(datalist)
-    console.log('data : ', datalist)
-    setShowCalendarPop(false)
+    setDataList(...datalist)
+    setShowCalendarPop(true)
   }
 
   const getListData = (value) => {
@@ -46,6 +88,7 @@ export default function VitaCalendar() {
         listData = [{ type: 'warning', content: '' }]
         break
       default:
+        listData = []
     }
     return listData || []
   }
@@ -56,23 +99,34 @@ export default function VitaCalendar() {
     { id: 2, title: '섭취', color: 'green' },
     { id: 3, title: '미섭취', color: 'yellow' },
     { id: 4, title: '구독시작', color: 'blue' },
-    { id: 5, title: '구독종료', color: 'red' },
+    { id: 4, title: '구독종료', color: 'red' },
   ]
 
   const dateCellRender = (value) => {
     const listData = getListData(value)
     return (
-      <ul className="events">
-        {listData.map((item) => (
-          <li key={item.type} className="calendar-types text-center mt-3">
-            {/* <Badge status={item.type} text={item.content} /> */}
-            <div className={`calendar-types-label bg-${item.type}-100 text-${item.type}-700`}>
-              <span className="dot">●</span>
-              <span>{item.content}</span>
-            </div>
+      value.month() === currentMonth && (
+        <ul className="events" key={value.date()}>
+          <li className="calendar-types text-center mt-3">
+            {/* 
+              상태별 날짜 표기 클래스명
+              오늘:  calendar-types--today
+              섭취:  calendar-types--action
+              미섭취: calendar-types--action-not
+            */}
+            <div className="">{value.date()}</div>
+            <br />
+            {listData.map((item) => (
+              <>
+                <div key={item.type} className={`calendar-types-label bg-${item.type}-100 text-${item.type}-700`}>
+                  <span className="dot">●</span>
+                  <span>{item.content}</span>
+                </div>
+              </>
+            ))}
           </li>
-        ))}
-      </ul>
+        </ul>
+      )
     )
   }
   return (
@@ -80,43 +134,39 @@ export default function VitaCalendar() {
       <ContainerAside>
         <h1 className="page-title _sub">비타캘린더</h1>
         <section>
-          <header className="lg:flex lg:justify-between lg:items-center block">
-            <div className="w-full lg:max-w-xs flex justify-between items-center">
-              <button className="p-3">
-                <Img src="/images/ic-arrow-back.svg" width={32} height={32} alt="left" />
-              </button>
-              <p className="text-xl leading-snug">2021. 10</p>
-              <button className="p-3">
-                <Img src="/images/ic-arrow-next.svg" width={32} height={32} alt="right" />
-              </button>
-            </div>
-
-            <ul className="w-full lg:max-w-sm flex justify-between items-baseline">
-              {Legend.map((item) => (
-                <>
-                  <li key={item.id} className="calendar-types">
-                    <div className={`calendar-types-label text-${item.color}-600`}>
-                      <span className="dot">●</span>
-                      <span>{item.title}</span>
-                    </div>
-                  </li>
-                </>
-              ))}
-            </ul>
-          </header>
-
           <ConfigProvider locale={koKR}>
-            <Calendar dateCellRender={dateCellRender} onPanelChange={onPanelChange} onSelect={onSelect} />
+            <Calendar dateCellRender={dateCellRender} onSelect={onSelect} headerRender={headerRender} />
           </ConfigProvider>
         </section>
       </ContainerAside>
-      <Modal
-        title={'팝업창'}
-        onClose={() => setShowCalendarPop(false)}
-        show={showCalendarPop}
-        onPanelChange={onPanelChange}
-      >
-        
+      <Modal onClose={() => setShowCalendarPop(false)} show={showCalendarPop} size="sm">
+        {/* <div>{dataList?.type}</div> */}
+        {/* <div>{dataList?.content}</div> */}
+        <form>
+          <div className="text-center">
+            <span className="mx-auto w-16 h-16 rounded-full bg-gray-100 grid place-items-center">
+              <Img src="/images/ic-vitamin.svg" width={32} height={32} alt="vitamin icon" />
+            </span>
+            <p className="text-xl py-4">영양제를 모두 먹었나요?</p>
+          </div>
+
+          <div className="border-t border-gray-200 pt-4 mt-4">
+            <h6 className="mb-3">결제 정보</h6>
+            <div className="flex items-center text-sm">
+              <span className=" text-gray-400 w-20 flex-shrink-0">카드번호</span>
+              <p className="leading-none text-gray-600">●●●●-●●●●-●●●●-1234</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 mt-10">
+            <button type="submit" className="rounded-md p-4 w-full border border-primary-600 bg-primary-600 text-white">
+              섭취
+            </button>
+            <button type="cancel" className="rounded-md p-4 w-full border border-primary-600  text-primary-600">
+              미섭취
+            </button>
+          </div>
+        </form>
       </Modal>
     </>
   )

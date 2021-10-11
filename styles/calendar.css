@@ -95,8 +95,13 @@
 .ant-picker-calendar-full .ant-picker-panel .ant-picker-cell-selected:hover .ant-picker-calendar-date,
 .ant-picker-calendar-full .ant-picker-panel .ant-picker-cell-selected .ant-picker-calendar-date-today,
 .ant-picker-calendar-full .ant-picker-panel .ant-picker-cell-selected:hover .ant-picker-calendar-date-today {
-  background: rgba(92, 187, 187, 0.15);
+  /* background: rgba(92, 187, 187, 0.15); */
+  background-color: transparent;
 }
+.ant-picker-calendar-date-value {
+  display: none;
+}
+
 .ant-picker-calendar-full
   .ant-picker-panel
   .ant-picker-cell-selected

@@ -1,4 +1,6 @@
 // tailwind css
+@use 'sass:math';
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -432,9 +434,9 @@ $backColor: #e5e7eb;
 $progress-size: 72px;
 $progress-status-size: calc($progress-size - 8px);
 $step: 1;
-$loops: round(100 / $step);
-$increment: 360 / $loops;
-$half: round($loops / 2);
+$loops: round(math.div(100, $step));
+$increment: math.div(360, $loops);
+$half: round($loops * 0.5);
 
 @for $i from 0 through $loops {
   .progress--bar.progress--#{$i * $step}::after {
@@ -722,6 +724,54 @@ $half: round($loops / 2);
       width: 100%;
       height: 100%;
       color: inherit;
+    }
+  }
+}
+
+@mixin types {
+  position: relative;
+  z-index: 0;
+}
+
+@mixin types_before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: -1;
+}
+
+.calendar-types {
+  // 오늘날짜
+  &--today {
+    @include types;
+
+    &::after {
+      @include types_before;
+      z-index: -2;
+      @apply rounded-full border-2 border-primary-600 w-10 h-10;
+    }
+  }
+  // 섭취
+  &--action {
+    @include types;
+    @apply text-white;
+
+    &::before {
+      @include types_before;
+      @apply rounded-full bg-green-600 w-8 h-8;
+    }
+  }
+  // 미섭취
+  &--action-not {
+    @include types;
+    @apply text-white;
+
+    &::before {
+      @include types_before;
+      @apply rounded-full bg-yellow-400 w-8 h-8;
     }
   }
 }
