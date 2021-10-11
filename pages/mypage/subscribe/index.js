@@ -158,7 +158,7 @@ const TabOne = () => {
               <Link href="#">
                 <a
                   onClick={() => setShowModal(true)}
-                  className="thumb-large border overflow-hidden relative flex-shrink-0 flex items-center justify-center"
+                  className="thumb-large border overflow-hidden relative flex-shrink-0 flex items-center justify-center rounded-xl"
                 >
                   <Img className="rounded-md" src={product.thumbImage} width={130} height={130} alt={product.name} />
                 </a>
