@@ -128,11 +128,13 @@ export default function Dtc() {
                 <b>50가지 유전항목 분석</b>으로 <br />
                 자신의 취약한 <b>영양소</b>를<br /> 미리 보충하세요.
               </h2>
-              <p className="mt-6 p-3 bg-primary-100">
-                유전자 검사 결과는 질병의 진단 및 치료의 목적으로 사용될 수 없으며,
-                <br />
-                질병 및 암 관련 유전자 결과는 제공하지 않습니다.
-              </p>
+              <div>
+                <p className="inline-block mt-6 p-3 bg-primary-100">
+                  유전자 검사 결과는 질병의 진단 및 치료의 목적으로 사용될 수 없으며,
+                  <br />
+                  질병 및 암 관련 유전자 결과는 제공하지 않습니다.
+                </p>
+              </div>
             </div>
           </article>
           <article className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
