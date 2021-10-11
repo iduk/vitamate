@@ -9,7 +9,7 @@ import SurveyStart from 'pages/survey/survey-start'
 import Subscription from 'pages/dtc/subscription'
 
 const IndexPage = () => {
-  let Images = ['/images/main_cover.png']
+  let Images = ['/images/hero-bg.png']
 
   return (
     <section className={'bg-hero'} style={{ backgroundImage: `url(${Images})` }}>
@@ -27,10 +27,7 @@ const IndexPage = () => {
               <br />
               My Vital Balance.
             </h2>
-            <p className="text-lg mt-8">
-              건강 설문 작성하고,
-              <br />내 몸에 맞는 영양소를 확인해 보세요!
-            </p>
+            <p className="text-lg mt-8">내 몸에 맞는 영양소를 확인해 보세요!</p>
             <div className="mt-8 flex flex-shrink-0">
               <div className="inline-flex rounded-md shadow">
                 <Link href="">
@@ -47,7 +44,7 @@ const IndexPage = () => {
                     focus:bg-primary-600-800
                   "
                   >
-                    회원 가입하기
+                    시작하기
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6 ml-4"
@@ -76,9 +73,9 @@ const DtcPage = () => {
       {/* sub text */}
       <div className="container lg:px-0 px-6 subpage--description">
         <h1 className="font-light text-3xl leading-normal">
-          나를 알게되는 유전자 검사를 통해
+          <span className="text-xl">나를 알게되는 유전자 검사를 통해</span>
           <br />
-          <b>'맞춤 영양소'</b>를 추천 받아보세요
+          <b>'맞춤 영양소'를 추천 받아보세요</b>
         </h1>
 
         <div className="mt-8">
@@ -103,9 +100,9 @@ const SurveyPage = () => {
       {/* sub text */}
       <div className="container lg:px-0 px-6 pb-16 subpage--description">
         <h1 className="font-light text-3xl leading-normal">
-          현재 몸 상태에 맞는 영양소를 찾아 드립니다
+          <span className="text-xl">현재 몸 상태에 맞는 영양소를 찾아 드립니다</span>
           <br />
-          <b>설문을 통해</b> 보다 정확한 <b>나만을 위한 영양제</b>를 추천 받으세요
+          <b>설문을 통해 보다 정확한 나만을 위한 영양제를 추천 받으세요</b>
         </h1>
         <div className="mt-8">
           <button

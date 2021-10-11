@@ -23,11 +23,15 @@ export default function Home() {
         </article>
         {/* content */}
         <div className="container text-center">
-          <h2 className="text-4xl leading-snug font-normal mb-8">
+          <h2 className="text-4xl leading-snug font-normal mb-5">
             <b className="text-primary-600 font-extrabold">비타메이트</b>
-            <br />
-            개인 맞춤 영양제 서비스
+            {/* <br />
+            개인 맞춤 영양제 서비스 */}
           </h2>
+          <p className="text-base lg:text-lg max-w-2xl text-center mx-auto">
+            비타메이트의 '개인 맞춤 영양제 서비스'는 건강정보를 AI (인공지능) 알고리즘으로 분석하여 '맞춤 영양소'를
+            추천, 고객이 선택한 영양제를 정기배송하는 서비스입니다
+          </p>
           <ul className="grid grid-rows-3 lg:grid-rows-none lg:grid-cols-3 gap-4 place-content-center">
             <li>
               <div className="p-20 flex items-center justify-center">
@@ -36,9 +40,9 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-2xl">
-                건강정보
+                건강정보기반
                 <br />
-                AI 알고리즘 추천
+                AI 알고리즘 분석
               </p>
             </li>
             <li>
@@ -49,7 +53,7 @@ export default function Home() {
               </div>
               <p className="text-2xl">
                 분석결과에 맞는
-                <br /> 영양소 추천
+                <br /> 개인맞춤 영양제 추천
               </p>
             </li>
             <li>
@@ -59,15 +63,15 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-2xl">
-                고객이 선택한 영양제
-                <br /> 정기배송
+                고객이 선택한
+                <br /> 영양제 정기배송
               </p>
             </li>
           </ul>
         </div>
       </section>
 
-      <section className="w-full relative py-20" style={{ backgroundColor: '#f2f2f2' }}>
+      <section className="w-full relative " style={{ backgroundColor: '#f2f2f2' }}>
         {/* bg */}
         <article className="absolute inset-0 w-full h-full z-0">
           <div className="relative w-full h-full overflow-hidden">
@@ -77,10 +81,10 @@ export default function Home() {
           </div>
         </article>
         {/* content */}
-        <div className={'container px-6 py-12 lg:px-0 lg:py-24'}>
+        <div className={'container px-6 pt-16 lg:px-0'}>
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <h2 className="text-4xl leading-snug font-normal mb-8">
+              <h2 className="text-4xl leading-snug font-normal mb-5">
                 <b className="text-primary-600 font-extrabold">알고리즘</b> 맞춤 추천
               </h2>
               <p className="text-base lg:text-lg">
@@ -91,14 +95,14 @@ export default function Home() {
 
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <div className="w-full relative">
-                <Img src="/images/main-image01.png" width={600} height={400} alt="bg image" />
+                <Img src="/images/main-image01.png" width={400} height={250} alt="bg image" />
               </div>
             </div>
           </article>
         </div>
       </section>
 
-      <section className="w-full relative py-20 z-0" style={{ backgroundColor: '#E0E0E0' }}>
+      <section className="w-full relative z-0" style={{ backgroundColor: '#f2f2f2' }}>
         {/* bg */}
         <article className="absolute inset-0 w-full h-full" style={{ zIndex: '-1' }}>
           <div className="relative w-full h-full">
@@ -108,16 +112,16 @@ export default function Home() {
           </div>
         </article>
         {/* content */}
-        <div className={'container px-6 py-12 lg:px-0 lg:py-20'}>
+        <div className={'container px-6 py-12 lg:px-0'}>
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <div className="w-full relative">
-                <Img src="/images/main-image02.png" width={600} height={400} alt="bg image" />
+                <Img src="/images/main-image02.png" width={400} height={250} alt="bg image" />
               </div>
             </div>
 
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <h2 className="text-4xl leading-snug font-normal mb-8">
+              <h2 className="text-4xl leading-snug font-normal mb-5">
                 <b className="text-primary-600 font-extrabold">단일 성분</b> 제제
               </h2>
               <p className="text-base lg:text-lg">
@@ -130,9 +134,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full relative py-20" style={{ backgroundColor: '#f2f2f2' }}>
+      <section className="w-full relative" style={{ backgroundColor: '#f2f2f2' }}>
         {/* content */}
-        <div className={'container px-6 py-12 lg:px-0 lg:py-24 relative z-0'}>
+        <div className={'container px-6 pb-12 lg:px-0 relative z-0'}>
           {/* bg */}
           <article className="absolute inset-0 w-full h-full" style={{ zIndex: '-1' }}>
             <div className="relative w-full h-full">
@@ -143,7 +147,7 @@ export default function Home() {
           </article>
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <h2 className="text-4xl leading-snug font-normal mb-8">
+              <h2 className="text-4xl leading-snug font-normal mb-5">
                 <b className="text-primary-600 font-extrabold">상시 고객</b> 관리
               </h2>
               <p className="text-base lg:text-lg">
@@ -154,7 +158,7 @@ export default function Home() {
 
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
               <div className="w-full relative">
-                <Img src="/images/main-image03.png" width={600} height={400} alt="bg image" />
+                <Img src="/images/main-image03.png" width={400} height={250} alt="bg image" />
               </div>
             </div>
           </article>

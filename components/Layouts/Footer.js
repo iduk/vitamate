@@ -43,6 +43,7 @@ export default function Footer() {
                 </span>
                 <p>
                   <b className="text-black">비타메이트 고객센터</b> 1588-1588
+                  <span class="ml-2">help@vitamate.kr</span>
                 </p>
               </li>
               <li className="flex">
@@ -50,11 +51,11 @@ export default function Footer() {
                   <Img src="/images/ic-at.svg" width={20} height={20} alt="대표번호" />
                 </span>
                 <div className="leading-snug">
-                  <p className="block lg:inline-block">help@vitamate.kr</p>
-                  <span className="mx-1 hidden lg:inline-block text-gray-500">⋅</span>
-                  <p className="block lg:inline-block">biz@vitamate.kr(영업)</p>
-                  <span className="mx-1 hidden lg:inline-block">⋅</span>
-                  <p className="block lg:inline-block">partners@vitamate.kr(제휴)</p>
+                  <b className="text-black mr-1">비타메이트 영업</b>
+                  <p className="block lg:inline-block">biz@vitamate.kr</p>
+                  <span className="mx-1"></span>
+                  <b className="text-black mr-1">비타메이트 제휴</b>
+                  <p className="block lg:inline-block">partners@vitamate.kr</p>
                 </div>
               </li>
             </ul>

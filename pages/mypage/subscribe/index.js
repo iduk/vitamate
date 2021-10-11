@@ -17,8 +17,8 @@ const productData = [
     property: '760mg 2캡슐',
     thumbImage: '/images/product-bio.png',
     content: ['혈행 개선에 도움', '기억력 개선', '눈 건강 개선에 도움'],
-    price: '7,500',
-    listPrice: '9,000',
+    price: '20,000',
+    listPrice: '30,000',
   },
   {
     id: 1,
@@ -26,8 +26,8 @@ const productData = [
     property: '150mg 1캡슐',
     thumbImage: '/images/product-lutein.png',
     content: ['눈 건강 개선에 도움'],
-    price: '7,500',
-    listPrice: '9,000',
+    price: '20,000',
+    listPrice: '30,000',
   },
   {
     id: 2,
@@ -35,8 +35,8 @@ const productData = [
     property: '300mg 1캡슐',
     thumbImage: '/images/product-lutein.png',
     content: ['유익균 증식과 유해균 억제', '장건강 개선'],
-    price: '7,500',
-    listPrice: '9,000',
+    price: '20,000',
+    listPrice: '30,000',
   },
   {
     id: 3,
@@ -44,8 +44,8 @@ const productData = [
     property: '300mg 1정',
     thumbImage: '/images/product-Q10.png',
     content: ['고혈압 개선에 도움', '힝산화 효과'],
-    price: '7,500',
-    listPrice: '9,000',
+    price: '20,000',
+    listPrice: '30,000',
   },
   {
     id: 4,
@@ -53,8 +53,8 @@ const productData = [
     property: '1000mg 1정',
     thumbImage: '/images/product-magnesium.png',
     content: ['인체 에너지 이용', '신경과 근육 기능 유지에 필요'],
-    price: '7,500',
-    listPrice: '9,000',
+    price: '15,000',
+    listPrice: '20,000',
   },
   {
     id: 5,
@@ -62,8 +62,8 @@ const productData = [
     property: '1000mg 1정',
     thumbImage: '/images/product-theanine.png',
     content: ['긴장 완화에 도움'],
-    price: '7,500',
-    listPrice: '9,000',
+    price: '15,000',
+    listPrice: '20,000',
   },
 ]
 
@@ -141,9 +141,10 @@ const TabOne = () => {
           <div>
             <h2 className="text-2xl font-bold mb-4">
               <span>이병윤</span>님을 위한 <br />
-              알고리즘 추천 영양제!
+              알고리즘 추천 영양제
             </h2>
-            <p className="text-sm text-primary-600">*1년 이상 약정 선택시 유전자검사 비용 전액을 페이백 해드립니다 </p>
+            <p className="text-sm text-primary-600">1년이상 약정 선택시 유전자 검사 비용 전액을 페이백 해드립니다.</p>
+            <p className="text-sm text-primary-600">단, 추천영양제를 모두 선택한 경우에 한 합니다.</p>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <Select options={paymentType} />
@@ -212,7 +213,7 @@ const TabOne = () => {
         </ul>
 
         <article className="my-10 p-6 h-auto rounded-lg bg-primary-100">
-          <h2 className="text-xl mb-6">그 밖의 훌륭한 상품!</h2>
+          <h2 className="text-xl mb-6">함께 섭취하면 좋은 영양제</h2>
           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {productData2.map((product, id) => (
               <li key={id} className="rounded-large bg-white p-8">
@@ -265,37 +266,33 @@ const TabOne = () => {
             <h6 className={'font-bold'}>총 구독상품</h6>
 
             <p>
-              <span>2</span>개<span className="px-2">/</span>
-              <span>19,600</span>원
+              <span>4</span>개<span className="px-2">/</span>
+              <span>80,000</span>원
             </p>
           </div>
           <div className="flex justify-between mt-2">
             <h6 className={'font-bold'}>약정기간</h6>
-            <p>1년</p>
+            <p>2년</p>
           </div>
           <div className="flex justify-between mt-2">
             <h6 className={'font-bold'}>할인금액</h6>
             <p>
-              <span>10,000</span>원
+              <span>6,000</span>원
             </p>
           </div>
           <div className="flex justify-between mt-2">
             <h6 className={'font-bold'}>매월 지불 금액</h6>
             <p className="text-xl font-bold text-primary-600">
-              <span>10,000</span>원
+              <span>74,000</span>원
             </p>
           </div>
         </article>
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
-            <Link href="#">
-              <a className="block py-4 ml-0 mr-auto text-gray-600 underline hover:text-black text-lg">
-                정기구독을 <b>일시 중지</b>하시겠습니까? <br />
-              </a>
-            </Link>
+            <p className="block py-2 ml-0 mr-auto text-gray-700 text-lg">주문할 영양제를 한꺼번에 받기를 원하십니까?</p>
             <p className="text-xs text-gray-600">
-              ※ 정기 구독 회원에 한해 구독 일시 중지가 가능하며, 1회 일시 중지 기간은 1개월 단위이며, 구독 일시 중지
-              횟수에는 제한이 없습니다.
+              ※ 비타메이트는 매달 1개월분의 영양제를 배송합니다. <br />
+              만약 한꺼번에 배송받기를 원하실 경우 고객센터로 연락주시기 바랍니다.
             </p>
           </div>
           <div className="text-right">

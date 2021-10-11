@@ -68,9 +68,9 @@ export default function Dtc() {
           <article className="my-4 px-4 w-full overflow-hidden lg:w-1/2">
             <div className="py-10 lg:px-8">
               <h2 className="text-3xl leading-normal font-light">
-                개인 맞춤 영양소를 추천하기 위해
+                개인 맞춤 영양소 추천을 위해
                 <br />
-                국내 <b>정밀의학분야 선도기업인 마크로젠과 협력</b>하고 있습니다.
+                <b>정밀의학분야 선도기업인 마크로젠과 협력</b>하고 있습니다.
               </h2>
               <ul className="product-list text-lg leading-10 pt-8">
                 <li>
@@ -128,9 +128,10 @@ export default function Dtc() {
                 <b>50가지 유전항목 분석</b>으로 <br />
                 자신의 취약한 <b>영양소</b>를<br /> 미리 보충하세요.
               </h2>
-              <p className="mt-6 text-gray-400">
-                유전자 검사 결과는 질병의 진단 및 치료의 목적으로 사용될 수 없으며, 질병 및 암 관련 유전자 결과는
-                제공하지 않습니다.
+              <p className="mt-6 p-3 bg-primary-100">
+                유전자 검사 결과는 질병의 진단 및 치료의 목적으로 사용될 수 없으며,
+                <br />
+                질병 및 암 관련 유전자 결과는 제공하지 않습니다.
               </p>
             </div>
           </article>
@@ -158,7 +159,7 @@ export default function Dtc() {
 
       <section className="rounded-large bg-gray-100 px-8 py-24 relative">
         <div className="container">
-          <h2 className="text-3xl text-center leading-normal pb-10">유전자 검사 영상</h2>
+          <h2 className="text-3xl text-center leading-normal pb-10">유전자 키트 사용 설명</h2>
           <article className="max-w-xl mx-auto">
             <div id="responsiveVideoWrapper" className="relative h-0 pb-fluid-video">
               <iframe

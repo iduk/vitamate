@@ -17,20 +17,20 @@ export default function Payment() {
       types: '결제',
       useTitle: '01회차',
       mod: '', // 적립 +, 차감 -
-      cash: '1,000',
+      cash: '74,000',
     },
     {
       useDate: '2019-09-11',
       types: '취소',
       useTitle: '2019년 09월 정기 결제 금액',
       mod: '-',
-      cash: '500',
+      cash: '50,000',
     },
     {
       useDate: '2017-01-26',
       useTitle: '이벤트 상품 구매',
       mod: '',
-      cash: '999,909',
+      cash: '100,000',
     },
   ]
 

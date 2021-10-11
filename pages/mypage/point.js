@@ -5,22 +5,22 @@ export default function Point() {
   const pointList = [
     {
       pointUseDate: '2020-09-09',
-      pointUseTitle: '가입축하 포인트 적립',
+      pointUseTitle: '추천인 제품 구매 적립',
       pointUseState: '+', // 적립 +, 차감 -
-      pointNumber: '1,000',
+      pointNumber: '10,000',
     },
-    {
-      pointUseDate: '2019-09-11',
-      pointUseTitle: '2019년 09월 정기 결제 금액',
-      pointUseState: '-',
-      pointNumber: '500',
-    },
-    {
-      pointUseDate: '2017-01-26',
-      pointUseTitle: '이벤트 상품 구매',
-      pointUseState: '+',
-      pointNumber: '999,909',
-    },
+    // {
+    //   pointUseDate: '2019-09-11',
+    //   pointUseTitle: '2019년 09월 정기 결제 금액',
+    //   pointUseState: '-',
+    //   pointNumber: '500',
+    // },
+    // {
+    //   pointUseDate: '2017-01-26',
+    //   pointUseTitle: '이벤트 상품 구매',
+    //   pointUseState: '+',
+    //   pointNumber: '999,909',
+    // },
   ]
   return (
     <ContainerAside>
@@ -33,8 +33,8 @@ export default function Point() {
             </i>
           </span>
           <p className="mt-5 mb-3 text-base lg:m-0 lg:flex-1 lg:text-xl leading-none">사용 가능한 포인트</p>
-          <p className="inline-block lg:flex-none lg:flex items-center ">
-            <span className="font-bold text-3xl lg:text-2xl">909,267</span>
+          <p className="inline-block lg:flex-none lg:flex items-center">
+            <span className="font-bold text-3xl lg:text-2xl">10,000</span>
             <span className="font-bold text-xl text-gray-400 ml-2">P</span>
           </p>
         </article>

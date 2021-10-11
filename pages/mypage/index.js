@@ -241,10 +241,7 @@ export default function Mypage() {
               </span>
               <dl>
                 <dt className="text-lg font-bold mb-1">건강 설문</dt>
-                <dd className="text-gray-500">
-                  모든 설문을 완료하였습니다. <br />
-                  내가 작성한 설문을 확인해 보세요.
-                </dd>
+                <dd className="text-gray-500">내가 작성한 설문을 확인해 보세요.</dd>
               </dl>
             </div>
             <div className="lg:w-5/12 lg:text-right mt-8 lg:mt-0">
