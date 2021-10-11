@@ -235,7 +235,7 @@ export default function Mypage() {
       <article className="rounded-large bg-gray-100 mt-6">
         <ul>
           <li className={'px-8 py-8 block lg:flex lg:justify-between lg:items-center'}>
-            <div className="flex lg:w-7/12">
+            <div className="flex lg:w-7/12 items-center">
               <span className="pr-6 flex-shrink-0">
                 <Img src="/images/ic-health-survey.svg" width={76} height={76} alt="icon" />
               </span>
@@ -251,7 +251,7 @@ export default function Mypage() {
             </div>
           </li>
           <li className={'px-8 py-8 block lg:flex lg:justify-between lg:items-center border-t border-gray-200'}>
-            <div className="flex lg:w-7/12">
+            <div className="flex lg:w-7/12 items-center">
               <span className="pr-6 flex-shrink-0">
                 <Img src="/images/ic-dna-test.svg" width={76} height={76} alt="icon" />
               </span>
