@@ -107,11 +107,11 @@ const UserInfo = ({ show }) => {
           <div className=" text-right text-gray-600">
             <p>
               <span>정상가</span>
-              <span className="ml-3 line-through text-gray-400">288,000원</span>
+              <span className="ml-3 line-through text-gray-400">624,000원/년</span>
             </p>
             <p>
               <span>총 할인가</span>
-              <span className="ml-3">248,000원 (-20%)</span>
+              <span className="ml-3">499,200원/년</span>
             </p>
           </div>
         </li>
@@ -122,7 +122,7 @@ const UserInfo = ({ show }) => {
             </span>
             <span>정기 결제 금액</span>
           </div>
-          <div className="text-right text-gray-600">19,800원</div>
+          <div className="text-right text-gray-600">월 52,000원</div>
         </li>
         <li className={'px-8 py-2 h-20 flex justify-between items-center border-b border-gray-200'}>
           <div className="flex items-center">
@@ -136,7 +136,7 @@ const UserInfo = ({ show }) => {
               </a>
             </Link>
           </div>
-          <div className="text-right text-gray-600">500점</div>
+          <div className="text-right text-gray-600">10,000 P</div>
         </li>
       </ul>
     </article>
@@ -172,6 +172,8 @@ export default function Mypage() {
   const categoryToggle = (id) => {
     if (isCategory === id) {
       return setIsCategory(null)
+    } else {
+      isCategory == id[0] && setIsCategory(true)
     }
     setIsCategory(id)
   }
@@ -288,7 +290,7 @@ export default function Mypage() {
                       <article className="mb-4">
                         <div className="pb-2">
                           <h5 className="font-normal mb-1">
-                            <span>김홍구</span>
+                            <span>김태훈</span>
                             <span>님의 유전자 분석 결과</span>
                           </h5>
                         </div>
@@ -323,7 +325,7 @@ export default function Mypage() {
                         ))}
                       </ul>
 
-                      <div className="h-72 overflow-y-auto relative">
+                      <div className="h-96 overflow-y-auto relative">
                         <section className="absolute inset-0 w-full h-full">
                           <h5 className="inline-block text-xl text-highlight my-5">스트레스 관리형</h5>
                           <div>

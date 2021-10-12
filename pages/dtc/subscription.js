@@ -16,8 +16,8 @@ export default function Subscription() {
     { id: 'hahaha', value: 'HOHOHO', label: '010' },
   ]
   const store_date = [
-    { id: 'store-date1', value: 'store1', label: '유전자 검사 분석 후 폐기해 주세요 ' },
-    { id: 'store-date2', value: 'store2', label: '회원 탈퇴시 자동 폐기해 주세요 ' },
+    { id: 'store-date1', value: 'store1', label: '회원 탈퇴시 자동 폐기해 주세요 ' },
+    { id: 'store-date2', value: 'store2', label: '유전자 검사 분석 후 폐기해 주세요 ' },
   ]
   const sheet_types = [
     { id: 'type1', value: 'type1', label: '무료 PDF 보기' },
@@ -27,6 +27,15 @@ export default function Subscription() {
   const birthdayType = [{ label: '양력' }, { label: '음력' }]
   const birthdayMonth = [{ label: '1월' }, { label: '2월' }]
   const birthdayDay = [{ label: '1일' }, { label: '2일' }]
+
+  const Sample = {
+    userName: '김태훈',
+    dataOfBirth: '1970. 2. 18.',
+    userPhoneNumber: '010-7390-0206',
+    userAddress1: '서울시 노원구 동일로 227길',
+    userAddress2: '상계주공아파트 1613동 808호',
+    checked: 'checked',
+  }
 
   return (
     <div className="flex flex-col justify-between">
@@ -38,7 +47,13 @@ export default function Subscription() {
 
           <div className="form-group grid grid-cols-8 gap-4">
             <div className=" col-span-5">
-              <TextInput type="text" label="이름" id="userPhone" placeholder="이름을 입력해주세요" />
+              <TextInput
+                type="text"
+                value={Sample.userName}
+                label="이름"
+                id="userPhone"
+                placeholder="이름을 입력해주세요"
+              />
             </div>
 
             <div className=" col-span-3">
@@ -52,33 +67,31 @@ export default function Subscription() {
 
           <div className="form-group">
             <label>생년월일</label>
-            <div className="grid grid-cols-12 gap-3">
-              <div className="col-span-4">
-                <Select options={birthdayMonth} />
+            <div className="grid grid-cols-12 gap-2">
+              <div className="col-span-8">
+                <TextInput type="text" value={Sample.dataOfBirth} />
               </div>
-              <div className="col-span-4">
-                <Select options={birthdayDay} />
-              </div>
-              <div className="col-span-4">
+              <div className="col-auto">
                 <Select options={birthdayType} />
               </div>
             </div>
           </div>
 
           <div className="form-group">
-            <label>연락처</label>
-            <div className="grid grid-cols-3 gap-3">
-              <Select options={tel_type} disabled="disabled" />
-              <TextInput type="tel" placeholder="0000" value="1234" disabled="disabled" />
-              <TextInput type="tel" placeholder="0000" value="5678" disabled="disabled" />
-            </div>
+            <TextInput type="tel" placeholder="000-0000-0000" value={Sample.userPhoneNumber} disabled="disabled" />
           </div>
 
           {/* 주소입력 */}
           <div className="form-group">
             <div className="flex place-items-end">
               <div className="flex-1 mr-3">
-                <TextInput type="text" label="주소 입력" placeholder="주소를 입력해주세요" id="userAddress" />
+                <TextInput
+                  type="text"
+                  value={Sample.userAddress1}
+                  label="주소 입력"
+                  placeholder="주소를 입력해주세요"
+                  id="userAddress"
+                />
               </div>
               <div className="flex-0">
                 <button className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
@@ -86,7 +99,13 @@ export default function Subscription() {
                 </button>
               </div>
             </div>
-            <TextInput type="text" placeholder="나머지 주소를 입력해주세요" id="userAddress2" className="mt-3" />
+            <TextInput
+              type="text"
+              value={Sample.userAddress2}
+              placeholder="나머지 주소를 입력해주세요"
+              id="userAddress2"
+              className="mt-3"
+            />
           </div>
 
           <div className="form-group">
@@ -121,13 +140,13 @@ export default function Subscription() {
 
           <ul className="py-6">
             <li className="flex justify-between items-center">
-              <Checkbox id="check-1" name="agree" label="[필수] 제 3자 정보제공동의 약관" />
+              <Checkbox checked={Sample.checked} id="check-1" name="agree" label="[필수] 제 3자 정보제공동의 약관" />
               <Link href="/TermsOfService">
                 <a className="p-2 text-sm text-gray-500 underline">보기</a>
               </Link>
             </li>
             <li className="flex justify-between items-center">
-              <Checkbox id="check-2" name="agree" label="[선택] 검사 결과 보관 여부 확인" />
+              <Checkbox checked={Sample.checked} id="check-2" name="agree" label="[선택] 검사 결과 보관 여부 확인" />
               <Link href="/PrivacyPolicy">
                 <a className="p-2 text-sm text-gray-500 underline">보기</a>
               </Link>
@@ -140,14 +159,16 @@ export default function Subscription() {
       </article>
 
       <footer className={'flex justify-center pt-6'}>
-        <button
-          type="submit"
-          onClick={() => setShowModal(false)}
-          className={'w-full py-5 bg-primary-600 text-white hover:bg-primary-700 text-xl font-bold rounded-md'}
-          disabled
-        >
-          결제하기
-        </button>
+        <Link href="/survey">
+          <a
+            className={
+              'w-full py-5 bg-primary-600 text-white hover:bg-primary-700 text-xl font-bold rounded-md text-center'
+            }
+            disabled
+          >
+            결제하기
+          </a>
+        </Link>
       </footer>
     </div>
   )
