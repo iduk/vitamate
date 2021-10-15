@@ -69,7 +69,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full relative z-0" style={{ backgroundColor: '#f2f2f2' }}>
+      <section className="w-full relative z-0 overflow-hidden" style={{ backgroundColor: '#f2f2f2' }}>
         {/* bg */}
         <article className="absolute inset-0 w-full max-w-7xl mx-auto h-full" style={{ zIndex: '-1' }}>
           <div className="relative h-full">
@@ -95,7 +95,7 @@ export default function Home() {
               </p>
             </div>
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <div className="w-full relative">
+              <div className="w-full relative text-center px-6 lg:p-0">
                 <Img src="/images/main-image01.png" width={400} height={250} alt="bg image" />
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function Home() {
         <div className={'container px-6 py-16 lg:px-0 z-0'}>
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2 order-2">
-              <div className="w-full relative">
+              <div className="w-full relative text-center px-6 lg:p-0">
                 <Img src="/images/main-image02.png" width={400} height={250} alt="bg image" />
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function Home() {
             </div>
 
             <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <div className="w-full relative">
+              <div className="w-full relative text-center px-6 lg:p-0">
                 <Img src="/images/main-image03.png" width={400} height={250} alt="bg image" />
               </div>
             </div>

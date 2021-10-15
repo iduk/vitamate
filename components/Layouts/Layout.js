@@ -18,19 +18,23 @@ const IndexPage = () => {
     <section className={'bg-hero'} style={{ backgroundImage: `url(${Images})` }}>
       <Header />
       <article className={'container'}>
-        <div className="pt-20 text-right">
-          <div className="inline-block text-left bg-white rounded-xl shadow py-14 px-14">
+        <div className="h-full flex justify-center items-start pt-24 lg:items-end lg:justify-end">
+          <div className="inline-block text-left bg-white rounded-xl shadow p-10 lg:p-14">
             <h6 className="text-3xl tracking-tight text-gray-900">
-              <span className="text-xl mb-2 block">내 몸의 영양 발란스!</span>
+              <span className="text-lg lg:text-xl mb-2 block">내 몸의 영양 발란스!</span>
             </h6>
-            <h2 className="hero-title text-5xl leading-tight">
-              유전자가 읽어주고,
-              <br />
-              AI가 말해주는
-              <br />
-              My Vital Balance.
+            <h2 className="font-light text-4xl leading-tight lg:text-5xl lg:leading-tight">
+              <p>
+                <b>유전자</b>가 읽어주고,
+              </p>
+              <p>
+                <b>AI</b>가 말해주는
+              </p>
+              <p>
+                <b>My Vital Balance.</b>
+              </p>
             </h2>
-            <p className="text-lg mt-8">내 몸에 맞는 영양소를 확인해 보세요!</p>
+            <p className="font-light text-base lg:text-lg mt-4 lg:mt-8">내 몸에 맞는 영양소를 확인해 보세요!</p>
             <div className="mt-8 flex flex-shrink-0">
               <div className="inline-flex rounded-md shadow">
                 <Link href="">
@@ -38,6 +42,7 @@ const IndexPage = () => {
                     onClick={() => setShowModal(true)}
                     className="
                     btn
+                    shadow-none
                     inline-flex
                     items-center
                     justify-center
@@ -108,7 +113,8 @@ const SurveyPage = () => {
         <h1 className="font-light text-3xl leading-normal">
           <span className="text-xl">현재 몸 상태에 맞는 영양소를 찾아 드립니다</span>
           <br />
-          <b>설문을 통해 보다 정확한 나만을 위한 영양제를 추천 받으세요</b>
+          {/* <b>설문을 통해 보다 정확한 나만을 위한 영양제를 추천 받으세요</b> */}
+          <b>설문을 통해 나만을 위한 영양제를 추천 받으세요</b>
         </h1>
         <div className="mt-8">
           <button

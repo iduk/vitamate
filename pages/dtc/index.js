@@ -53,43 +53,43 @@ const dtcCategories = [
 export default function Dtc() {
   return (
     <ContainerFluid>
-      <div className={'container px-6 py-12 lg:px-0 lg:py-24'}>
-        <section className="flex flex-wrap -mx-12 overflow-hidden">
-          <article className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-            <div className="w-auto h-96 relative">
+      <div className={'container px-8 lg:px-0 py-24'}>
+        <section className="flex flex-wrap justify-center overflow-hidden">
+          <article className="mt-10 lg:my-4 w-full overflow-hidden lg:w-1/2 order-2 lg:order-1">
+            <div className="relative">
               <Img
-                className=" rounded-large shadow"
-                layout="fill"
+                className="rounded-large shadow"
+                width={500}
+                height={350}
                 src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
               />
             </div>
           </article>
 
-          <article className="my-4 px-4 w-full overflow-hidden lg:w-1/2">
-            <div className="py-10 lg:px-8">
+          <article className="lg:my-4 w-full overflow-hidden lg:w-1/2 order-1 lg:order-2">
+            <div className="lg:py-10 lg:px-8">
               <h2 className="text-3xl leading-normal font-light">
                 개인 맞춤 영양소 추천을 위해
-                <br />
-                <b>정밀의학분야 선도기업인 마크로젠과 협력</b>하고 있습니다.
+                <br className="hidden lg:block" /> <b>정밀의학분야 선도기업인 마크로젠과 협력</b>하고 있습니다.
               </h2>
-              <ul className="product-list text-lg leading-10 pt-8">
-                <li>
-                  <span className={'mr-3'}>
+              <ul className="product-list text-base lg:text-lg lg:leading-10 pt-8">
+                <li className="flex">
+                  <span className={'mr-3 relative'} style={{ zIndex: -1 }}>
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
                   </span>
-                  글로벌 최정상 수준급 유전체 분석 인프라 보유
+                  <p>글로벌 최정상 수준급 유전체 분석 인프라 보유</p>
                 </li>
-                <li>
-                  <span className={'mr-3'}>
+                <li className="flex">
+                  <span className={'mr-3 relative'} style={{ zIndex: -1 }}>
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
                   </span>
-                  현존하는 가장 정밀한 아시아인 표준 게놈 지도 구축
+                  <p>현존하는 가장 정밀한 아시아인 표준 게놈 지도 구축</p>
                 </li>
-                <li>
-                  <span className={'mr-3'}>
+                <li className="flex">
+                  <span className={'mr-3 relative'} style={{ zIndex: -1 }}>
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
                   </span>
-                  믿을 수 있는 데이터 관리 체계
+                  <p>믿을 수 있는 데이터 관리 체계</p>
                 </li>
               </ul>
             </div>
@@ -97,22 +97,22 @@ export default function Dtc() {
         </section>
       </div>
 
-      <section className="rounded-large bg-gray-100 px-8 py-24 relative">
-        <div className="container">
+      <section className="bg-gray-100 py-24 relative">
+        <div className="container px-10">
           <h2 className="text-3xl text-center leading-normal pb-10">유전자 검사 순서</h2>
-          <ul className="proccess-list flex justify-between">
+          <ul className="proccess-list lg:flex lg:justify-between">
             {dtcProccess.map((item, index) => (
-              <li key={index} className="text-center p-2 w-1/6">
+              <li key={index} className="lg:text-center lg:p-2 lg:w-1/6 lg:block flex  text-left py-3">
                 <h3
-                  className={`z-10 w-12 h-12 rounded-full bg-gray-100 border-2 border-gray-300 grid place-content-center text-lg mx-auto ${
+                  className={`z-10 flex-shrink-0 w-12 h-12 rounded-full bg-gray-100 border-2 border-gray-300 grid place-content-center text-lg lg:mx-auto ${
                     index === 5 && 'border-primary-600 bg-primary-600 text-white'
                   } `}
                 >
                   {index + 1}
                 </h3>
-                <dl className={`${index === 5 && 'text-primary-600'} mt-5`}>
-                  <dt className="font-bold text-xl mb-2">{item.title}</dt>
-                  <dd>{item.content}</dd>
+                <dl className={`${index === 5 && 'text-primary-600'} w-full ml-5 lg:ml-0 lg:mt-5`}>
+                  <dt className="font-bold text-xl lg:mb-2">{item.title}</dt>
+                  <dd className="text-sm lg:text-base text-gray-600">{item.content}</dd>
                 </dl>
               </li>
             ))}
@@ -120,9 +120,9 @@ export default function Dtc() {
         </div>
       </section>
 
-      <div className={'container px-6 py-24 lg:px-0'}>
-        <section className="flex flex-wrap -mx-12 overflow-hidden">
-          <article className="my-4 px-12 w-full overflow-hidden lg:w-1/2 flex flex-col justify-center">
+      <div className={'container py-24'}>
+        <section className="flex flex-wrap overflow-hidden">
+          <article className="my-4 px-8 lg:px-12 w-full overflow-hidden lg:w-1/2 flex flex-col justify-center">
             <div className="py-10">
               <h2 className="text-3xl leading-normal font-light">
                 <b>50가지 유전항목 분석</b>으로 <br />
@@ -130,14 +130,13 @@ export default function Dtc() {
               </h2>
               <div>
                 <p className="inline-block mt-6 p-3 bg-primary-100">
-                  유전자 검사 결과는 질병의 진단 및 치료의 목적으로 사용될 수 없으며,
-                  <br />
-                  질병 및 암 관련 유전자 결과는 제공하지 않습니다.
+                  유전자 검사 결과는 질병의 진단 및 치료의 목적으로 사용될 수 없으며, 질병 및 암 관련 유전자 결과는
+                  제공하지 않습니다.
                 </p>
               </div>
             </div>
           </article>
-          <article className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
+          <article className="lg:my-4 px-8 lg:px-12 w-full overflow-hidden lg:w-1/2">
             <ul>
               {dtcCategories.map((item, index) => (
                 <li key={index} className="py-4 px-4 text-center">

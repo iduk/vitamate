@@ -112,7 +112,11 @@ export default function Header({ onClose }) {
                 <Img src={'/images/logo.svg'} layout="fill" objectFit={'contain'} alt="vitamate logo" />
               </a>
             </Link>
-            <button className={'absolute z-30 right-0 lg:hidden ml-auto mr-0 hover:outline-none'} onClick={handleClick}>
+            <button
+              id="toggle-btn"
+              className={'absolute right-0 lg:hidden ml-auto mr-0 hover:outline-none'}
+              onClick={handleClick}
+            >
               <span className={'toggle-menu ' + (active === true ? 'active' : '')}>
                 <i></i>
                 <i></i>
@@ -123,15 +127,13 @@ export default function Header({ onClose }) {
 
           {/* Nav List */}
           <nav
+            id="nav-wrap"
             className={`${
               active ? 'flex' : 'hidden'
-            } w-full h-full bg-white text-black overflow-hidden shadow fixed top-0 left-0 justify-center items-center z-20 lg:relative lg:flex lg:p-0 lg:justify-end lg:w-auto lg:h-auto lg:ml-auto lg:bg-opacity-0 lg:shadow-none lg:border-none`}
+            } w-full h-full bg-white text-black overflow-hidden shadow fixed top-0 left-0 justify-center items-center lg:relative lg:flex lg:p-0 lg:justify-end lg:w-auto lg:h-auto lg:ml-auto lg:bg-opacity-0 lg:shadow-none lg:border-none`}
           >
             {/* menu */}
-            <ul
-              style={{ zIndex: 100 }}
-              className={'w-full lg:inline-flex lg:flex-grow lg:w-auto lg:rounded-none  lg:text-black'}
-            >
+            <ul className={'w-full lg:inline-flex lg:flex-grow lg:w-auto lg:rounded-none  lg:text-black'}>
               {navs.pages.map((nav) => (
                 <li key={nav.path} className={'text-center text-2xl lg:p-0 nav-item'}>
                   <Link href={nav.path}>
