@@ -137,10 +137,10 @@ const TabOne = () => {
   return (
     <div>
       <section className="w-full">
-        <article className="grid grid-cols-2 gap-8">
+        <article className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl font-bold mb-4">
-              <span>이병윤</span>님을 위한 <br />
+              <span>김태훈</span>님을 위한 <br />
               알고리즘 추천 영양제
             </h2>
             <p className="text-sm text-primary-600">1년이상 약정 선택시 유전자 검사 비용 전액을 페이백 해드립니다.</p>
@@ -154,42 +154,45 @@ const TabOne = () => {
 
         <ul className="mt-5">
           {productData1.map((product, id) => (
-            <li key={id} className={'flex py-5 border-b border-gray-200 relative'}>
-              <Link href="#">
-                <a
-                  onClick={() => setShowModal(true)}
-                  className="thumb-large border overflow-hidden relative flex-shrink-0 flex items-center justify-center rounded-xl"
-                >
-                  <Img className="rounded-md" src={product.thumbImage} width={130} height={130} alt={product.name} />
-                </a>
-              </Link>
-              <dl className="ml-8 py-2 flex-1">
-                <dt className="text-xl flex align-items-center">
-                  <p>{product.name}</p>
-                  <div className="grid place-content-center ml-2">
-                    <span className="px-1 py-1 text-xs font-bold leading-none text-primary-600 border border-primary-600 rounded">
-                      구독중
-                    </span>
-                  </div>
-                </dt>
-                <dd className="text-sm my-1">{product.property}</dd>
-                <dd className="text-base text-gray-400 mb-3">{product.content}</dd>
-                <dd>
-                  <div className="flex items-baseline">
-                    <p className="text-lg font-bold">
-                      <span>{product.price}</span>원
-                    </p>
-                    <p className={'text-base ml-2 line-through text-gray-400'}>
-                      <span>{product.listPrice}</span>원
-                    </p>
-                  </div>
-                </dd>
-              </dl>
-              <div className="flex-shrink-0 flex items-center justify-end lg:ml-5">
+            <li key={id} className={'block lg:flex py-5 border-b border-gray-200 relative'}>
+              <div className="flex w-full">
+                <Link href="#">
+                  <a
+                    onClick={() => setShowModal(true)}
+                    className="thumb lg:thumb-large border overflow-hidden relative flex-shrink-0 inline-flex lg:flex items-center justify-center rounded-xl"
+                  >
+                    <Img className="rounded-md" src={product.thumbImage} width={130} height={130} alt={product.name} />
+                  </a>
+                </Link>
+                <dl className="ml-4 lg:ml-8 py-2 flex-1">
+                  <dt className="text-xl flex align-items-center">
+                    <p>{product.name}</p>
+                    <div className="grid place-content-center ml-2">
+                      <span className="px-1 py-1 text-xs font-bold leading-none text-primary-600 border border-primary-600 rounded">
+                        구독중
+                      </span>
+                    </div>
+                  </dt>
+                  <dd className="text-sm my-1">{product.property}</dd>
+                  <dd className="text-base text-gray-400 mb-3">{product.content}</dd>
+                  <dd>
+                    <div className="flex items-baseline">
+                      <p className="text-lg font-bold">
+                        <span>{product.price}</span>원
+                      </p>
+                      <p className={'text-base ml-2 line-through text-gray-400'}>
+                        <span>{product.listPrice}</span>원
+                      </p>
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+
+              <div className="flex-shrink-0 grid lg:flex items-center lg:justify-end lg:ml-5 mt-3 lg:mt-0">
                 {toCart === true ? (
                   <button
                     onClick={() => setToCart(!toCart)}
-                    className={'btn border border-gray-300 text-gray-400 hover:bg-gray-50'}
+                    className={'btn border border-gray-300 text-gray-400 hover:bg-gray-50 lg:w-auto w-full'}
                   >
                     <>
                       <span className="pr-2">-</span>
@@ -212,7 +215,7 @@ const TabOne = () => {
           ))}
         </ul>
 
-        <article className="my-10 p-6 h-auto rounded-lg bg-primary-100">
+        <article className="my-10 p-6 h-auto rounded-lg bg-primary-100 -mx-6 lg:m-0">
           <h2 className="text-xl mb-6">함께 섭취하면 좋은 영양제</h2>
           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {productData2.map((product, id) => (
@@ -221,22 +224,19 @@ const TabOne = () => {
                   <div className="w-full">
                     <h6 className="text-xl font-bold leading-snug">{product.name}</h6>
                     <p className="text-sm">{product.property}</p>
-                    <div className="flex items-baseline mt-3">
-                      <p className="text-lg font-bold">
+                    <div className="block lg:flex items-baseline mt-3">
+                      <p className="text-base lg:text-lg font-bold">
                         <span>{product.price}</span>원
                       </p>
-                      <p className={'text-base ml-3 line-through text-gray-400'}>
+                      <p className={'text-sm lg:ml-3 line-through text-gray-400'}>
                         <span>{product.listPrice}</span>원
                       </p>
                     </div>
                   </div>
-                  <div className="ml-8 flex-shrink-0">
-                    <span
-                      className="thumb bg-cover bg-no-repeat bg-center"
-                      style={{
-                        backgroundImage: `url(${product.thumbImage})`,
-                      }}
-                    ></span>
+                  <div className="ml-4 ">
+                    <span className="relative rounded-xl">
+                      <Img src={product.thumbImage} width={120} height={120} alt="" />
+                    </span>
                   </div>
                 </div>
 

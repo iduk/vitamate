@@ -19,18 +19,18 @@ export default function Unsubscribe() {
 // 월간 구독 취소시
 const CancelPlanMonthly = () => {
   return (
-    <section className="rounded-lg py-10 px-4 lg:p-10 bg-gray-100 flex flex-col items-center justify-between text-center">
+    <section className="rounded-lg py-10 px-4 lg:p-10 bg-gray-100 flex flex-col items-center justify-between text-center lg:mx-0 -mx-4">
       <div className="w-full max-w-lg">
         <span className="block mb-5">
           <Img src={'/images/ic-check.svg'} width={56} height={56} alt="icon" />
         </span>
         <h2 className="text-2xl font-normal mb-4">구독이 취소되었습니다</h2>
-        <p className="text-sm text-gray-500 px-8 lg:px-0">
+        <p className="text-sm text-gray-500 px-4 lg:px-0">
           다음 달 결제부터 취소되어 배송이 중지됩니다. <br />
           당월 결제 취소는 고객 센터에 문의바랍니다.
         </p>
 
-        <div className="mx-6 lg:mx-0">
+        <div className="mx-2 lg:mx-0">
           <article className="p-8 my-6 bg-white text-center">
             <h3 className="font-normal mb-3">구독 취소 이력</h3>
             <p className="font-bold text-2xl text-black">
@@ -46,18 +46,18 @@ const CancelPlanMonthly = () => {
 // 연간 구독(약정) 취소시
 const CancelPlanYearly = () => {
   return (
-    <section className="rounded-lg py-10 px-4 lg:p-10 bg-gray-100 flex flex-col items-center justify-between text-center">
+    <section className="rounded-lg py-10 px-4 lg:p-10 bg-gray-100 flex flex-col items-center justify-between text-center lg:mx-0 -mx-4">
       <div className="w-full max-w-lg">
         <span className="block mb-5">
           <Img src={'/images/ic-error.svg'} width={56} height={56} alt="icon" />
         </span>
         <h2 className="text-2xl font-normal mb-4">구독 취소 시 위약금이 발생할 수 있습니다</h2>
-        <p className="text-sm text-gray-500 px-8 lg:px-0">
+        <p className="text-sm text-gray-500 px-4 lg:px-0">
           고객님은 <span>2년 약정 (24개월)중, 총 12회차 구독</span>을 진행하였습니다. 구독 취소 시, 약정 할인된 20%
           비용에 대하여 다음과 같은 위약금이 발생합니다
         </p>
 
-        <div className="mx-6 lg:mx-0">
+        <div className="mx-2 lg:mx-0">
           <article className="p-8 my-6 bg-white text-center">
             <h3 className="font-normal mb-3">위약금 금액</h3>
             <p className="font-bold text-2xl text-secondary-600">
@@ -126,7 +126,11 @@ const CancelPlanYearly = () => {
               <span className="text-black font-normal">'취소에 따른 위약금 발생을 확인하였습니다'</span> 를 입력해
               주세요
             </h4>
-            <TextInput className="p-4 text-lg" type="text" placeholder="취소에 따른 위약금 발생을 확인하였습니다" />
+            <TextInput
+              className="p-4 text-base lg:text-lg"
+              type="text"
+              placeholder="취소에 따른 위약금 발생을 확인하였습니다"
+            />
           </div>
           <button className="w-full p-4 rounded text-xl text-white bg-primary-600 hover:bg-primary-700">
             구독 취소 진행하기
