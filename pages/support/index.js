@@ -22,13 +22,13 @@ export default function Support() {
   }
 
   const faqCategories = [
-    { title: '회원', link: '' },
-    { title: '설문', link: '' },
-    { title: '검사', link: '' },
-    { title: '제품', link: '' },
-    { title: '구독/결제', link: '' },
-    { title: '배송', link: '' },
-    { title: '기타', link: '' },
+    { id: 0, title: '회원', link: '' },
+    { id: 1, title: '설문', link: '' },
+    { id: 2, title: '검사', link: '' },
+    { id: 3, title: '제품', link: '' },
+    { id: 4, title: '구독/결제', link: '' },
+    { id: 5, title: '배송', link: '' },
+    { id: 6, title: '기타', link: '' },
   ]
 
   const faqContent = [
@@ -77,24 +77,18 @@ export default function Support() {
     <ContainerAside>
       <h1 className="page-title _sub">FAQ</h1>
       <div className="container mx-auto">
-        <ul className="flex justify-between">
+        <ul className="tabs-faq">
           {faqCategories.map((item, id) => (
-            <li key={id} className="w-full text-center">
+            <li key={id} className={`${faqNav === id ? 'active' : ''} tabs-faq--tab w-1/4 lg:w-auto`}>
               <Link href="#">
-                <a
-                  onClick={toggleNav}
-                  className={`${
-                    faqNav == true
-                      ? 'border-b-2 border-primary-600 text-black text-bold'
-                      : 'border-b-2 border-gray-200 text-gray-500'
-                  } grid py-3 hover:border-primary-600 hover:text-black`}
-                >
+                <a onClick={() => toggleNav(id)} className="">
                   {item.title}
                 </a>
               </Link>
             </li>
           ))}
         </ul>
+
         <div className="w-full mx-auto">
           <ul>
             {faqContent.map((item, id) => (
