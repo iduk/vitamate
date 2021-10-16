@@ -41,17 +41,17 @@ ul {
   }
 }
 ol {
-  list-style-position: inside;
-  display: table;
   li {
-    display: table-row;
+    list-style-type: decimal;
+    list-style-position: outside;
+    @apply ml-4 leading-snug pl-2;
+
+    > ol li {
+      list-style-type: lower-latin;
+    }
   }
-  li::before {
-    content: '✔︎';
-    display: table-cell; /* aha! */
-    text-align: right;
-    font-family: sans-serif;
-    @apply pr-2 text-primary-600 text-sm;
+  li + li {
+    @apply pt-2;
   }
 }
 p {
