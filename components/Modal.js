@@ -38,7 +38,7 @@ export default function Modal({ show, onClose, children, title, size }) {
 
   const ModalLayout = show ? (
     <>
-      <section className="w-full h-full fixed inset-0 z-50 outline-none focus:outline-none">
+      <section className="w-full h-full fixed inset-0 outline-none focus:outline-none" style={{ zIndex: 100 }}>
         <article
           className={`grid grid-cols-1 place-content-center lg:place-content-center h-full w-full lg:max-w-xl mx-auto modal-size-${size} p-2 lg:p-0`}
         >
