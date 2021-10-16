@@ -15,6 +15,7 @@ export default function SignUp() {
     phoneNumber: '010-7390-0206',
     authSample: '584565',
     userPassword: '********',
+    userPassword2: '********',
     userRecommendCode: '010-5550-7788',
     checked: 'checked',
   }
@@ -82,7 +83,7 @@ export default function SignUp() {
             <TextInput
               type="password"
               id="userPassword2"
-              value={signupData.userPassword}
+              value={signupData.userPassword2}
               placeholder="비밀번호 재입력"
               className="mt-3"
             ></TextInput>

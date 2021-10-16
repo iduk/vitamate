@@ -10,7 +10,9 @@ export default function deleteAccount() {
 
       <article className="mt-6 p-6 bg-red-50 rounded-large">
         <div className="flex items-start mb-4">
-          <Img src="/images/ic-notification.svg" width={32} height={32} alt="notification" />
+          <span className="relative flex-shrink-0">
+            <Img src="/images/ic-notification.svg" width={32} height={32} alt="notification" />
+          </span>
           <div className="ml-4">
             <h2 className="text-xl pt-1 pb-4">회원 탈퇴 시 주의사항</h2>
             <ul className="list-disc ml-3 text-gray-600">
@@ -65,10 +67,10 @@ export default function deleteAccount() {
       </p>
       <TextInput type="text" placeholder="탈퇴 사유를 입력해 주세요" className="text-lg" />
 
-      <div className="text-right mt-8">
+      <div className="lg:text-right mt-8">
         <button
           onClick={() => alert('회원 탈퇴가 정상 처리되었습니다.')}
-          className="rounded-md p-4 w-48 text-xl bg-gray-500 text-white hover:bg-gray-600 transition-colors ease-linear"
+          className="rounded-md p-4 w-full lg:w-48 text-xl bg-gray-400 text-white hover:bg-gray-600 transition-colors ease-linear"
         >
           탈퇴하기
         </button>

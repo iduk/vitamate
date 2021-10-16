@@ -7,7 +7,7 @@ export default function productItems() {
       <div className="flex justify-between">
         <div className="w-full">
           <h6 className="text-3xl font-bold mb-2">오메가메이트</h6>
-          <h4 className="text-base text-primary-600 leading-normal text-gray-600 mb-5">
+          <h4 className="text-base leading-normal text-gray-600 mb-5">
             혈행 개선에 도움, 기억력 개선, 눈 건강 개선에 도움
           </h4>
           <div className="text-base leading-normal">
@@ -18,9 +18,9 @@ export default function productItems() {
             </div>
           </div>
         </div>
-        <div className="ml-8 lg:flex-shrink-0">
+        <div className="ml-4 lg:ml-8 lg:flex-shrink-0">
           <span
-            className="rounded-lg thumb-large block bg-cover bg-no-repeat bg-center"
+            className="rounded-lg thumb lg:thumb-large block bg-cover bg-no-repeat bg-center"
             style={{
               backgroundImage: 'url(/images/product-lutein.png)',
             }}

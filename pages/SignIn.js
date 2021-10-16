@@ -31,7 +31,7 @@ export default function SignIn() {
               로그인
             </button>
           </div>
-          <p className="my-2 text-center text-sm text-gray-500">
+          <p className="my-3 text-center text-sm text-gray-500">
             아직 비타메이트의 <b className="text-primary-600">회원</b>이 아니신가요?
           </p>
           <div>
