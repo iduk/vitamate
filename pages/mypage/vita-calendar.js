@@ -35,8 +35,8 @@ export default function VitaCalendar() {
       setShowCalendarPop(false)
     }
     return (
-      <header className="lg:flex lg:justify-between lg:items-center block">
-        <div className="w-full lg:max-w-xs flex justify-between items-center">
+      <header className="lg:flex lg:justify-between lg:items-center block ">
+        <div className="w-full lg:max-w-xs flex justify-between items-center relative">
           <button className="p-3" onClick={() => onChangeButton('left')}>
             <Img src="/images/ic-arrow-back.svg" width={32} height={32} alt="left" />
           </button>
@@ -52,8 +52,8 @@ export default function VitaCalendar() {
           {Legend.map((item) => (
             <>
               <li key={item.id} className="calendar-types">
-                <div className={`calendar-types-label text-${item.color}-600`}>
-                  <span className="dot">●</span>
+                <div className={`text-${item.color}-600`}>
+                  <span className="dot mr-1">●</span>
                   <span>{item.title}</span>
                 </div>
               </li>
@@ -118,9 +118,16 @@ export default function VitaCalendar() {
             <br />
             {listData.map((item) => (
               <>
-                <div key={item.type} className={`calendar-types-label bg-${item.type}-100 text-${item.type}-700`}>
+                <div
+                  key={item.type}
+                  className={`hidden lg:inline-flex calendar-types-label bg-${item.type}-100 text-${item.type}-700`}
+                >
                   <span className="dot">●</span>
                   <span>{item.content}</span>
+                </div>
+
+                <div key={item.type} className={`lg:hidden calendar-types-label mobile text-${item.type}-700`}>
+                  <span className="dot">●</span>
                 </div>
               </>
             ))}

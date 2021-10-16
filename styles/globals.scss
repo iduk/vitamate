@@ -656,8 +656,7 @@ $half: round($loops * 0.5);
 // calendar items
 .calendar-types {
   &-label {
-    @apply rounded-full inline-flex items-baseline;
-
+    @apply rounded-full items-baseline;
     padding: 6px 8px 4px 8px;
     font-size: 12px;
     line-height: 1;
@@ -667,6 +666,15 @@ $half: round($loops * 0.5);
       display: inline-block;
       padding-right: 4px;
       font-size: 10px;
+    }
+  }
+
+  &-label.mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    .dot {
+      font-size: 14px;
     }
   }
 }
