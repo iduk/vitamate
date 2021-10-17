@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Img from 'next/image'
-
 import { useState } from 'react'
-import 작 from 'components/Layouts/Header'
 
 export default function Home() {
   return (
@@ -33,11 +31,11 @@ export default function Home() {
           <ul className="grid grid-rows-3 lg:grid-rows-none lg:grid-cols-3 gap-4 place-content-center">
             <li>
               <div className="p-12 lg:p-20 flex items-center justify-center">
-                <span className="w-20 h-20 lg:w-24 lg:h-20 inline-flex relative">
+                <span className="w-28 h-28 lg:w-24 lg:h-20 inline-flex relative">
                   <Img src="/images/main-icon-1.svg" layout="fill" alt="건강정보 AI 알고리즘 추천 아이콘" />
                 </span>
               </div>
-              <p className="text-xl lg:text-2xl">
+              <p className="text-2xl">
                 건강정보기반
                 <br />
                 AI 알고리즘 분석
@@ -45,22 +43,22 @@ export default function Home() {
             </li>
             <li>
               <div className="p-12 lg:p-20 flex items-center justify-center">
-                <span className="w-20 h-20 lg:w-24 lg:h-20 inline-flex relative">
+                <span className="w-28 h-28 lg:w-24 lg:h-20 inline-flex relative">
                   <Img src="/images/main-icon-2.svg" layout="fill" alt="분석결과에 맞는 영양소 추천 아이콘" />
                 </span>
               </div>
-              <p className="text-xl lg:text-2xl">
+              <p className="text-2xl">
                 분석결과에 맞는
                 <br /> 개인맞춤 영양제 추천
               </p>
             </li>
             <li>
               <div className="p-12 lg:p-20 flex items-center justify-center">
-                <span className="w-20 h-20 lg:w-24 lg:h-20 inline-flex relative">
+                <span className="w-28 h-28 lg:w-24 lg:h-20 inline-flex relative">
                   <Img src="/images/main-icon-3.svg" layout="fill" alt="고객이 선택한 영양제 정기배송 아이콘" />
                 </span>
               </div>
-              <p className="text-xl lg:text-2xl">
+              <p className="text-2xl">
                 고객이 선택한
                 <br /> 영양제 정기배송
               </p>
@@ -83,10 +81,10 @@ export default function Home() {
         </article>
 
         {/* content */}
-        <div className={'container px-6 pt-16 lg:px-0 z-30'}>
+        <div className={'container pt-16 z-30'}>
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
-            <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <h2 className="text-3xl lg:text-4xl font-normal mb-5">
+            <div className="my-4 px-16 w-full overflow-hidden lg:w-1/2 order-2 lg:order-1">
+              <h2 className="text-3xl lg:text-4xl font-normal mb-4">
                 <b className="text-primary-600 font-extrabold">알고리즘</b> 맞춤 추천
               </h2>
               <p className="text-base lg:text-lg">
@@ -94,8 +92,8 @@ export default function Home() {
                 영양제를 추천합니다.
               </p>
             </div>
-            <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <div className="w-full relative text-center px-6 lg:p-0">
+            <div className="my-4 px-16 w-full overflow-hidden lg:w-1/2 order-1 lg:order-2">
+              <div className="w-full relative  lg:p-0">
                 <Img src="/images/main-image01.png" width={400} height={250} alt="bg image" />
               </div>
             </div>
@@ -103,15 +101,15 @@ export default function Home() {
         </div>
 
         {/* content */}
-        <div className={'container px-6 py-16 lg:px-0 z-0'}>
+        <div className={'container py-16 z-0'}>
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
-            <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2 order-2">
-              <div className="w-full relative text-center px-6 lg:p-0">
+            <div className="my-4 px-16 w-full overflow-hidden lg:w-1/2 order-1">
+              <div className="w-full relative lg:text-right lg:p-0">
                 <Img src="/images/main-image02.png" width={400} height={250} alt="bg image" />
               </div>
             </div>
-            <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2 order-1">
-              <h2 className="text-3xl lg:text-4xl leading-snug font-normal mb-5">
+            <div className="my-4 px-16 w-full overflow-hidden lg:w-1/2 order-2">
+              <h2 className="text-3xl lg:text-4xl leading-snug font-normal mb-4">
                 <b className="text-primary-600 font-extrabold">단일 성분</b> 제제
               </h2>
               <p className="text-base lg:text-lg">
@@ -123,18 +121,18 @@ export default function Home() {
           </article>
         </div>
         {/* content */}
-        <div className={'container px-6 pb-16 lg:px-0 z-0 relative'}>
+        <div className={'container pb-16 z-0 relative'}>
           {/* bg */}
           <article className="absolute inset-0 w-full h-full">
             <div className="relative w-full h-full">
-              <span className="inline-block absolute -bottom-24 right-16">
+              <span className="inline-block absolute -bottom-24 right-16" style={{ zIndex: -1 }}>
                 <Img src="/images/circle-border-gray.svg" width={250} height={250} alt="bg image" />
               </span>
             </div>
           </article>
           <article className="flex flex-wrap -mx-6 overflow-hidden items-center">
-            <div className="my-4 px-12 w-full lg:w-1/2">
-              <h2 className="text-3xl lg:text-4xl leading-snug font-normal mb-5">
+            <div className="my-4 px-16 w-full lg:w-1/2 order-2 lg:order-1">
+              <h2 className="text-3xl lg:text-4xl leading-snug font-normal mb-4">
                 <b className="text-primary-600 font-extrabold">상시 고객</b> 관리
               </h2>
               <p className="text-base lg:text-lg">
@@ -143,8 +141,8 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="my-4 px-12 w-full overflow-hidden lg:w-1/2">
-              <div className="w-full relative text-center px-6 lg:p-0">
+            <div className="my-4 px-16 w-full overflow-hidden lg:w-1/2 order-1 lg:order-2">
+              <div className="w-full relative  lg:p-0">
                 <Img src="/images/main-image03.png" width={400} height={250} alt="bg image" />
               </div>
             </div>
@@ -153,9 +151,9 @@ export default function Home() {
       </section>
 
       {/* section last */}
-      <section className={'container px-6 pb-16 lg:px-0 z-0 relative'}>
-        <article className="py-36">
-          <div className="text-center mb-20">
+      <section className={'container px-6 py-16 lg:py-28 lg:px-0 z-0 relative'}>
+        <article>
+          <div className="text-center mb-12">
             <p className="text-base lg:text-lg mb-4">50가지 DNA 분석 & 30여가지 건강 설문 분석</p>
             <h2 className="text-3xl lg:text-4xl leading-snug lg:leading-snug font-normal">
               당신에게 딱 맞는 <b className="font-extrabold">맞춤 영양제</b>를
@@ -164,13 +162,18 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* <div className="relative mx-auto h-full" style={{ width: 'auto', minHeight: '38vh' }}>
-            <Img src="/images/img-main-serviceflow.svg" layout="fill" objectFit="contain" alt="서비스 순서" />
-          </div> */}
+          {/* lg screen */}
           <div
-            className="relative w-full bg-contain bg-no-repeat bg-top"
+            className=" hidden lg:block relative w-full bg-contain bg-no-repeat bg-top"
             style={{ backgroundImage: 'url(/images/img-main-serviceflow.svg)', height: '36vh' }}
           ></div>
+
+          {/* sm screen */}
+          <div className="block lg:hidden text-center">
+            <span className="relative">
+              <Img src="/images/img-main-serviceflow-m.svg" width={335} height={1280} alt="서비스 흐름" />
+            </span>
+          </div>
         </article>
       </section>
     </>
