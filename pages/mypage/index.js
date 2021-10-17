@@ -4,10 +4,17 @@ import Img from 'next/image'
 import { useState, useEffect } from 'react'
 import Modal from 'components/Modal'
 import TextInput from 'components/Forms/TextInput'
+import Select from 'components/Forms/Select'
 
 const UserInfo = ({ show }) => {
   const [userEdit, setUserEdit] = useState(false)
   const [isToggleOn, setIsToggleOn] = useState(false)
+
+  const userBank = [
+    { id: 'bank1', value: 'a', label: '은행선택' },
+    { id: 'bank2', value: 'b', label: '카카오뱅크' },
+    { id: 'bank3', value: 'c', label: 'KB국민은행' },
+  ]
 
   return (
     <article className="w-full rounded-large bg-white shadow-lg">
@@ -24,58 +31,70 @@ const UserInfo = ({ show }) => {
 
             <Modal title="정보 수정" size="md" onClose={() => setUserEdit(false)} show={userEdit}>
               <form>
-                <div className="form-group flex justify-between items-end w-full">
-                  <TextInput label="휴대폰 번호" id="userPhone" type="text" placeholder="010-0000-0000" disabled />
-                  <span className="flex-shrink-0 ml-3">
-                    <button className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
-                      변경하기
-                    </button>
-                  </span>
-                </div>
-                <div className="form-group grid lg:grid-cols-2 gap-4">
-                  <TextInput
-                    type="password"
-                    label="기존 비밀번호"
-                    id="userPassword"
-                    placeholder="기존 비밀번호를 입력하세요"
-                  />
-                  <TextInput
-                    type="password"
-                    label="새 비밀번호"
-                    id="userPassword"
-                    placeholder="새 비밀번호를 입력하세요"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <TextInput label="이메일" id="userEmail" type="text" placeholder="이메일을 입력해주세요" />
-                </div>
-
-                <div className="form-group flex justify-between items-end w-full">
-                  <TextInput
-                    label="기본 배송지"
-                    id="addressList"
-                    type="text"
-                    value="서울특별시 강남구 삼성1동 영동대로 564"
-                  />
-                  <span className="flex-shrink-0 ml-3">
-                    <button className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
-                      변경하기
-                    </button>
-                  </span>
-                </div>
-
-                <div className="form-group">
-                  <label className="mb-2">마케팅 동의</label>
-
-                  <div className="form-switch inline-flex shadow-sm rounded-md" role="group">
-                    <button className="active" type="button">
-                      ON
-                    </button>
-                    <button type="button">OFF</button>
+                <article className="overflow-x-auto" style={{ maxHeight: 'calc(100vh - 300px)' }}>
+                  <div className="form-group flex justify-between items-end w-full">
+                    <TextInput label="휴대폰 번호" id="userPhone" type="text" placeholder="010-0000-0000" disabled />
+                    <span className="flex-shrink-0 ml-3">
+                      <button className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
+                        변경하기
+                      </button>
+                    </span>
                   </div>
-                  <p className="inline-flex ml-5 text-sm text-gray-500">2021.10.04 12:54</p>
-                </div>
+                  <div className="form-group grid lg:grid-cols-2 gap-4">
+                    <TextInput
+                      type="password"
+                      label="기존 비밀번호"
+                      id="userPassword"
+                      placeholder="기존 비밀번호를 입력하세요"
+                    />
+                    <TextInput
+                      type="password"
+                      label="새 비밀번호"
+                      id="userPassword"
+                      placeholder="새 비밀번호를 입력하세요"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <TextInput label="이메일" id="userEmail" type="text" placeholder="이메일을 입력해주세요" />
+                  </div>
+
+                  <div className="form-group flex justify-between items-end w-full">
+                    <TextInput
+                      label="기본 배송지"
+                      id="addressList"
+                      type="text"
+                      value="서울특별시 강남구 삼성1동 영동대로 564"
+                    />
+                    <span className="flex-shrink-0 ml-3">
+                      <button className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}>
+                        변경하기
+                      </button>
+                    </span>
+                  </div>
+
+                  {/* 포인트 계좌이체용 */}
+                  <hr className="my-8" />
+                  <div className="form-group grid grid-cols-2 gap-4">
+                    <Select label="입금 은행명" options={userBank} />
+                    <TextInput label="예금주명" id="userBankName" type="text" placeholder="예금주명" />
+                  </div>
+                  <div className="form-group">
+                    <TextInput label="입금 계좌번호" id="userBankNumber" type="text" placeholder="계좌번호" />
+                  </div>
+
+                  <div className="form-group">
+                    <label className="mb-2">마케팅 동의</label>
+
+                    <div className="form-switch inline-flex shadow-sm rounded-md" role="group">
+                      <button className="active" type="button">
+                        ON
+                      </button>
+                      <button type="button">OFF</button>
+                    </div>
+                    <p className="inline-flex ml-5 text-sm text-gray-500">2021.10.04 12:54</p>
+                  </div>
+                </article>
                 <footer className="mt-6">
                   <button
                     type="submit"
