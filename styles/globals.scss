@@ -653,32 +653,6 @@ $half: round($loops * 0.5);
   }
 }
 
-// calendar items
-.calendar-types {
-  &-label {
-    @apply rounded-full items-baseline;
-    padding: 6px 8px 4px 8px;
-    font-size: 12px;
-    line-height: 1;
-
-    .dot {
-      font-family: sans-serif;
-      display: inline-block;
-      padding-right: 4px;
-      font-size: 10px;
-    }
-  }
-
-  &-label.mobile {
-    position: absolute;
-    top: 0;
-    right: 0;
-    .dot {
-      font-size: 14px;
-    }
-  }
-}
-
 .section-bg {
   position: relative;
   z-index: 0;
@@ -814,7 +788,35 @@ $half: round($loops * 0.5);
   }
 }
 
+// calendar items
+
 .calendar-types {
+  &-label {
+    @apply rounded-full items-baseline;
+    padding: 6px 8px 4px 8px;
+    font-size: 12px;
+    line-height: 1;
+
+    .dot {
+      font-family: sans-serif;
+      display: inline-block;
+      padding-right: 4px;
+      font-size: 10px;
+    }
+  }
+
+  &-label.mobile {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    padding: 0;
+    .dot {
+      transform: translateX(-50%);
+      font-size: 14px;
+      padding: 0;
+    }
+  }
+
   // 오늘날짜
   &--today {
     @include types;

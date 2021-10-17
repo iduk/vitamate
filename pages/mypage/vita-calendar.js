@@ -48,13 +48,13 @@ export default function VitaCalendar() {
           </button>
         </div>
 
-        <ul className="w-full lg:max-w-sm flex justify-between items-baseline">
+        <ul className="grid grid-cols-4 gap-1 mx-6 lg:mx-0 lg:flex lg:justify-end lg:items-baseline">
           {Legend.map((item) => (
             <>
-              <li key={item.id} className="calendar-types">
+              <li key={item.id} className="calendar-types lg:ml-4">
                 <div className={`text-${item.color}-600`}>
                   <span className="dot mr-1">●</span>
-                  <span>{item.title}</span>
+                  <span className="text-xs">{item.title}</span>
                 </div>
               </li>
             </>
@@ -115,7 +115,7 @@ export default function VitaCalendar() {
               미섭취: calendar-types--action-not
             */}
             <div className="">{value.date()}</div>
-            <br />
+
             {listData.map((item) => (
               <>
                 <div

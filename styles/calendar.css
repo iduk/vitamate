@@ -143,11 +143,15 @@
 .ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-content {
   position: static;
   width: auto;
-  height: 86px;
   overflow-y: auto;
   color: rgba(0, 0, 0, 0.85);
-  line-height: 1.5715;
   text-align: left;
+  height: 60px;
+}
+@media (min-width: 1200px) {
+  .ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-content {
+    height: 80px;
+  }
 }
 .ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-today {
   border-color: #5cbbbb;
@@ -1727,6 +1731,7 @@ textarea.ant-picker-input > input {
   line-height: 30px;
 }
 .ant-picker-cell {
+  vertical-align: top;
   padding: 3px 0;
   color: rgba(0, 0, 0, 0.25);
   cursor: pointer;

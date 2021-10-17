@@ -234,7 +234,7 @@ export default function Mypage() {
       </div> */}
 
       {/* 인트로 텍스트 */}
-      <h1 className="text-3xl font-light leading-normal pb-7">
+      <h1 className="text-3xl font-light leading-normal pb-5">
         <b>이병윤</b>
         님은 현재
         <br />
@@ -245,6 +245,8 @@ export default function Mypage() {
         ) : null}
         <b>14개월째 구독진행중</b>입니다.
       </h1>
+
+      <IconNav />
 
       <div className="block lg:flex lg:justify-between">
         {/* ---- 내 정보 ---- */}
@@ -402,5 +404,58 @@ export default function Mypage() {
         </ul>
       </article>
     </ContainerAside>
+  )
+}
+
+const IconNav = () => {
+  const IconNavList = [
+    {
+      Path: '/mypage/subscribe',
+      Icon: 'subscribe',
+      Name: '구독 관리',
+    },
+    {
+      Path: '/mypage/payment',
+      Icon: 'pay',
+      Name: '결제 관리',
+    },
+    {
+      Path: '/mypage/addressbook',
+      Icon: 'delive',
+      Name: '배송지 관리',
+    },
+    {
+      Path: '/mypage/vita-calendar',
+      Icon: 'calendar',
+      Name: '비타 캘린더',
+    },
+    {
+      Path: '/mypage/point',
+      Icon: 'point',
+      Name: '포인트',
+    },
+    {
+      Path: '/mypage/delete-account',
+      Icon: 'logout',
+      Name: '회원 탈퇴',
+    },
+  ]
+  return (
+    <div className="my-4">
+      <ul className="grid grid-cols-4 grid-rows-2 gap-4 lg:hidden">
+        {IconNavList.map((nav, id) => (
+          <li className="text-center">
+            <Link href={nav.Path}>
+              <a>
+                <span className="relative">
+                  <Img src={`/images/ic-myvita-${nav.Icon}.svg`} width={50} height={50} alt="구독관리" />
+                </span>
+                <p className="text-sm">{nav.Name}</p>
+              </a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }

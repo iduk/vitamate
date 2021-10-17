@@ -154,17 +154,19 @@ function Sidebar({ children, router }) {
         </nav>
       ) : null}
 
-      {/* UI 다름 */}
+      {/*
+       Mypage 모바일에서 'mypage/index' 제외
+      */}
       {asPath.indexOf('mypage') === 1 ? (
-        <nav className="lg:hidden container overflow-hidden">
-          <ul className="flex flex-shrink-0 flex-wrap">
+        <nav className="lg:hidden container overflow-hidden mt-6 w-screen">
+          <ul className="flex flex-nowrap border-b border-gray-200 px-4 w-full overflow-x-auto">
             {mypage.nav.map((nav) => (
-              <li key={nav.path}>
+              <li key={nav.path} className="mx-3 relative">
                 <Link href={nav.path} as={nav.path}>
                   <a
                     className={`${
-                      nav.path === router.pathname ? 'bg-primary-100 font-extrabold' : null
-                    } block p-6 text-xl`}
+                      nav.path === router.pathname ? 'font-extrabold border-b-2 border-primary-600 -mb-px' : null
+                    } block px-1 py-4 text-xl font-normal -mb-px whitespace-nowrap`}
                   >
                     {nav.title}
                   </a>
