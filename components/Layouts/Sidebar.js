@@ -115,15 +115,15 @@ function Sidebar({ children, router }) {
 
       {/* mobile */}
       {asPath.indexOf('news') === 1 ? (
-        <nav className="lg:hidden container overflow-hidden">
-          <ul className="flex flex-shrink-0">
+        <nav className="lg:hidden container overflow-hidden mt-6">
+          <ul className="flex flex-shrink-0 border-b border-gray-200 px-4">
             {news.nav.map((nav) => (
-              <li key={nav.path}>
+              <li key={nav.path} className="mx-3 relative">
                 <Link href={nav.path} as={nav.path}>
                   <a
                     className={`${
-                      nav.path === router.pathname ? 'bg-primary-100 font-extrabold' : null
-                    } block p-6 text-xl`}
+                      nav.path === router.pathname ? 'font-extrabold border-b-2 border-primary-600' : null
+                    } block px-1 py-4 text-xl font-normal -mb-px`}
                   >
                     {nav.title}
                   </a>
@@ -135,15 +135,15 @@ function Sidebar({ children, router }) {
       ) : null}
 
       {asPath.indexOf('support') === 1 ? (
-        <nav className="lg:hidden container overflow-hidden">
-          <ul className="flex flex-shrink-0">
+        <nav className="lg:hidden container overflow-hidden mt-6">
+          <ul className="flex flex-shrink-0 border-b border-gray-200 px-4">
             {support.nav.map((nav) => (
-              <li key={nav.path}>
+              <li key={nav.path} className="mx-3 relative">
                 <Link href={nav.path} as={nav.path}>
                   <a
                     className={`${
-                      nav.path === router.pathname ? 'bg-primary-100 font-extrabold' : null
-                    } block p-6 text-xl`}
+                      nav.path === router.pathname ? 'font-extrabold border-b-2 border-primary-600' : null
+                    } block px-1 py-4 text-xl font-normal -mb-px`}
                   >
                     {nav.title}
                   </a>

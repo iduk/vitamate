@@ -78,15 +78,17 @@ export default function Support() {
     <ContainerAside>
       <h1 className="page-title _sub">FAQ</h1>
       <div className="container mx-auto">
-        <ul className="tabs-faq">
-          {faqCategories.map((item, id) => (
-            <li key={id} className={`${faqNav === id ? 'active' : ''} tabs-faq--tab w-1/4 lg:w-auto`}>
-              <Link href="#">
-                <a onClick={() => toggleNav(id)}>{item.title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="overflow-hidden" style={{ width: 'calc(100vw - 48px)' }}>
+          <ul className="tabs-faq">
+            {faqCategories.map((item, id) => (
+              <li key={id} className={`${faqNav === id ? 'active' : ''} tabs-faq--tab w-1/4 lg:w-auto`}>
+                <Link href="#">
+                  <a onClick={() => toggleNav(id)}>{item.title}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="w-full mx-auto">
           <ul>
