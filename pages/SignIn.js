@@ -3,9 +3,12 @@ import Link from 'next/link'
 import Modal from 'components/Modal'
 import SignUp from 'pages/SignUp'
 import { useState } from 'react'
+import ResetPassword from 'pages/ResetPassword'
 
 export default function SignIn() {
   const [showSignup, setShowSignup] = useState(false)
+  const [resetPW, setResetPW] = useState(false)
+
   return (
     <>
       <form action="">
@@ -17,7 +20,12 @@ export default function SignIn() {
           <TextInput type="password" id="userPassword" label="비밀번호" placeholder="비밀번호를 입력해 주세요">
             <div className="text-right">
               <Link href="/">
-                <a className="inline-block p-2 text-sm text-gray-600 hover:text-gray-900">비밀번호를 잊어버리셨나요?</a>
+                <a
+                  onClick={() => setResetPW(true)}
+                  className="inline-block p-2 text-sm text-gray-600 hover:text-gray-900"
+                >
+                  비밀번호를 잊어버리셨나요?
+                </a>
               </Link>
             </div>
           </TextInput>
@@ -49,6 +57,10 @@ export default function SignIn() {
 
       <Modal title={'회원가입'} onClose={() => setShowSignup(false)} show={showSignup}>
         <SignUp />
+      </Modal>
+
+      <Modal title={'새 비밀번호 발급'} onClose={() => setResetPW(false)} show={resetPW}>
+        <ResetPassword />
       </Modal>
     </>
   )
