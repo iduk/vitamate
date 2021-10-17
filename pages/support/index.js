@@ -77,7 +77,7 @@ export default function Support() {
   return (
     <ContainerAside>
       <h1 className="page-title _sub">FAQ</h1>
-      <div className="container mx-auto">
+      <div className="container mx-auto overflow-hidden">
         <div className="overflow-hidden" style={{ width: 'calc(100vw - 48px)' }}>
           <ul className="tabs-faq">
             {faqCategories.map((item, id) => (

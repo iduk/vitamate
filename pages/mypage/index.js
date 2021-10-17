@@ -316,7 +316,7 @@ export default function Mypage() {
                           </h5>
                         </div>
 
-                        <ul className="w-full grid grid-cols-4 gap-4 px-4 py-4 rounded-md border bg-gray-50 text-sm">
+                        <ul className="w-full grid grid-cols-2 grid-rows-2 lg:grid-rows-none lg:grid-cols-4 gap-4 px-4 py-4 rounded-md border bg-gray-50 text-sm">
                           <li>
                             <h6 className="text-gray-500 mb-2">성별/출생년도</h6>
                             <p>남성 1970</p>
@@ -336,15 +336,22 @@ export default function Mypage() {
                         </ul>
                       </article>
 
-                      <ul className="flex tabs">
-                        {categories.map((cat, id) => (
-                          <li key={id} className={`${isCategory === id ? 'active' : ''} tab`}>
-                            <Link href="#">
-                              <a onClick={() => categoryToggle(id)}>{cat.titie}</a>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                      <article className="overflow-hidden">
+                        <div className="overflow-hidden" style={{ width: 'calc(100vw - 64px)' }}>
+                          <ul className="tabs-faq">
+                            {categories.map((cat, id) => (
+                              <li
+                                key={id}
+                                className={`${isCategory === id ? 'active' : ''} tabs-faq--tab w-1/4 lg:w-auto`}
+                              >
+                                <Link href="#">
+                                  <a onClick={() => categoryToggle(id)}>{cat.titie}</a>
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </article>
 
                       <div className="h-96 overflow-y-auto relative">
                         <section className="absolute inset-0 w-full h-full">
