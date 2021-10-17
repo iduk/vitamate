@@ -24,7 +24,10 @@ export default function Subscription() {
     { id: 'type2', value: 'type2', label: '유료 책자 신청 15,000원' },
   ]
 
-  const birthdayType = [{ label: '양력' }, { label: '음력' }]
+  const birthdayType = [
+    { id: '0', value: '0', label: '양력' },
+    { id: '1', value: '1', label: '음력' },
+  ]
   const birthdayMonth = [{ label: '1월' }, { label: '2월' }]
   const birthdayDay = [{ label: '1일' }, { label: '2일' }]
 
@@ -71,7 +74,7 @@ export default function Subscription() {
               <div className="col-span-8">
                 <TextInput type="text" value={Sample.dataOfBirth} />
               </div>
-              <div className="col-auto">
+              <div className="col-span-4">
                 <Select options={birthdayType} />
               </div>
             </div>
