@@ -146,7 +146,7 @@ const UserInfo = ({ show }) => {
         <li className={'px-8 py-2 h-20 flex justify-between items-center border-b border-gray-200'}>
           <div className="flex items-center">
             <span className="inline-flex flex-shrink-0 mr-2">
-              <Img src="/images/ic-card.svg" width={24} height={24} alt="icon" />
+              <Img src="/images/ic-point.svg" width={24} height={24} alt="icon" />
             </span>
             <Link href="/mypage/point">
               <a className="flex items-center">
