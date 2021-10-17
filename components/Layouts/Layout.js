@@ -83,11 +83,12 @@ const DtcPage = () => {
       <Header />
       {/* sub text */}
       <div className="container lg:px-0 px-6 subpage--description">
-        <h1 className="font-light text-3xl leading-normal">
-          <span className="text-xl">나를 알게되는 유전자 검사를 통해</span>
-          <br />
-          <b>'맞춤 영양소'를 추천 받아보세요</b>
-        </h1>
+        <div>
+          <p className="text-base lg:text-xl leading-snug pb-2">나를 알게되는 유전자 검사를 통해</p>
+          <h1 className="font-light text-2xl lg:text-4xl leading-normal">
+            <b>'맞춤 영양소'를 추천 받아보세요</b>
+          </h1>
+        </div>
 
         <div className="mt-8">
           <button onClick={() => setIsShowing(true)} className="rounded-md bg-primary-600 text-white text-lg py-3 px-6">
@@ -110,12 +111,13 @@ const SurveyPage = () => {
       <Header />
       {/* sub text */}
       <div className="container lg:px-0 px-6 pb-16 subpage--description">
-        <h1 className="font-light text-3xl leading-normal">
-          <span className="text-xl">현재 몸 상태에 맞는 영양소를 찾아 드립니다</span>
-          <br />
-          {/* <b>설문을 통해 보다 정확한 나만을 위한 영양제를 추천 받으세요</b> */}
-          <b>설문을 통해 나만을 위한 영양제를 추천 받으세요</b>
-        </h1>
+        <div>
+          <p className="text-base lg:text-xl leading-snug pb-2">현재 몸 상태에 맞는 영양소를 찾아드립니다</p>
+          <h1 className="font-light text-2xl leading-snug lg:text-4xl lg:leading-normal">
+            {/* <b>설문을 통해 보다 정확한 나만을 위한 영양제를 추천 받으세요</b> */}
+            <b>설문을 통해 나만을 위한 영양제를 추천 받으세요</b>
+          </h1>
+        </div>
         <div className="mt-8">
           <button
             onClick={() => setSurveyStart(true)}

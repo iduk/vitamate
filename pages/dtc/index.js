@@ -53,7 +53,7 @@ const dtcCategories = [
 export default function Dtc() {
   return (
     <ContainerFluid>
-      <div className={'container px-8 lg:px-0 py-24'}>
+      <div className={'container px-4 lg:px-0 py-24'}>
         <section className="flex flex-wrap justify-center overflow-hidden">
           <article className="mt-10 lg:my-4 w-full overflow-hidden lg:w-1/2 order-2 lg:order-1">
             <div className="relative">
@@ -68,7 +68,7 @@ export default function Dtc() {
 
           <article className="lg:my-4 w-full overflow-hidden lg:w-1/2 order-1 lg:order-2">
             <div className="lg:py-10 lg:px-8">
-              <h2 className="text-3xl leading-normal font-light">
+              <h2 className="text-3xl leading-snug lg:text-4xl lg:leading-snug font-light">
                 개인 맞춤 영양소 추천을 위해
                 <br className="hidden lg:block" /> <b>정밀의학분야 선도기업인 마크로젠과 협력</b>하고 있습니다.
               </h2>
@@ -99,7 +99,7 @@ export default function Dtc() {
 
       <section className="bg-gray-100 py-24 relative">
         <div className="container px-10">
-          <h2 className="text-3xl text-center leading-normal pb-10">유전자 검사 순서</h2>
+          <h2 className="text-3xl leading-snug lg:text-4xl lg:leading-snug text-center pb-10">유전자 검사 순서</h2>
           <ul className="proccess-list lg:flex lg:justify-between">
             {dtcProccess.map((item, index) => (
               <li key={index} className="lg:text-center lg:p-2 lg:w-1/6 lg:block flex  text-left py-3">
@@ -124,7 +124,7 @@ export default function Dtc() {
         <section className="flex flex-wrap overflow-hidden">
           <article className="my-4 px-8 lg:px-12 w-full overflow-hidden lg:w-1/2 flex flex-col justify-center">
             <div className="py-10">
-              <h2 className="text-3xl leading-normal font-light">
+              <h2 className="text-3xl leading-snug lg:text-4xl lg:leading-snug font-light">
                 <b>50가지 유전항목 분석</b>으로 <br />
                 자신의 취약한 <b>영양소</b>를<br /> 미리 보충하세요.
               </h2>

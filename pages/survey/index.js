@@ -14,7 +14,7 @@ export default function Survey() {
 
           <article className="lg:my-4 w-full overflow-hidden lg:w-1/2 order-1 lg:order-2">
             <div className="lg:py-10 lg:px-8">
-              <h2 className="text-3xl leading-normal lg:text-4xl lg:leading-normal font-light">
+              <h2 className="text-3xl leading-snug lg:text-4xl lg:leading-snug font-light">
                 건강 전문가들과 함께 설계한
                 <br /> <b>건강 설문</b>
               </h2>
