@@ -22,13 +22,14 @@ export default function Support() {
   }
 
   const faqCategories = [
-    { id: 0, title: '회원', link: '' },
-    { id: 1, title: '설문', link: '' },
-    { id: 2, title: '검사', link: '' },
-    { id: 3, title: '제품', link: '' },
-    { id: 4, title: '구독/결제', link: '' },
-    { id: 5, title: '배송', link: '' },
-    { id: 6, title: '기타', link: '' },
+    { id: 0, title: '전체', link: '' },
+    { id: 1, title: '회원', link: '' },
+    { id: 2, title: '설문', link: '' },
+    { id: 3, title: '검사', link: '' },
+    { id: 4, title: '제품', link: '' },
+    { id: 5, title: '구독/결제', link: '' },
+    { id: 6, title: '배송', link: '' },
+    { id: 7, title: '기타', link: '' },
   ]
 
   const faqContent = [
@@ -81,9 +82,7 @@ export default function Support() {
           {faqCategories.map((item, id) => (
             <li key={id} className={`${faqNav === id ? 'active' : ''} tabs-faq--tab w-1/4 lg:w-auto`}>
               <Link href="#">
-                <a onClick={() => toggleNav(id)} className="">
-                  {item.title}
-                </a>
+                <a onClick={() => toggleNav(id)}>{item.title}</a>
               </Link>
             </li>
           ))}
