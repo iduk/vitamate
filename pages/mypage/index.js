@@ -451,7 +451,7 @@ const IconNav = () => {
     <div className="my-4">
       <ul className="grid grid-cols-4 grid-rows-2 gap-4 lg:hidden">
         {IconNavList.map((nav, id) => (
-          <li className="text-center">
+          <li key={id} className="text-center">
             <Link href={nav.Path}>
               <a>
                 <span className="relative">
