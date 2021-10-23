@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Modal from 'components/Modal'
-import SurveyStart from 'pages/survey/survey-start'
+import SurveyStart from 'pages/survey/survey-form'
 import Subscription from 'pages/dtc/subscription'
 import SignUp from 'pages/SignUp'
 

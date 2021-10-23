@@ -87,7 +87,8 @@ textarea {
 }
 
 // buttons
-.btn {
+.btn,
+button {
   &:hover {
     @apply shadow;
   }
