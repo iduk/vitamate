@@ -139,12 +139,12 @@ const TabOne = () => {
       <section className="w-full">
         <article className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-3xl leading-normal font-bold mb-4">
               <span>김태훈</span>님을 위한 <br />
               알고리즘 추천 영양제
             </h2>
-            <p className="text-sm text-primary-600">1년이상 약정 선택시 유전자 검사 비용 전액을 페이백 해드립니다.</p>
-            <p className="text-sm text-primary-600">단, 추천영양제를 모두 선택한 경우에 한 합니다.</p>
+            <p className="text-sm text-primary-600">1년 이상 약정 선택 시 유전자 검사 비용 전액을 페이백 해드립니다.</p>
+            <p className="text-sm text-primary-600">단, ‘알고리즘 추천영양제’ 를 모두 선택한 경우에 한 합니다.</p>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <Select options={paymentType} />
@@ -152,47 +152,44 @@ const TabOne = () => {
           </div>
         </article>
 
-        <ul className="mt-5">
+        <ul className="my-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {productData1.map((product, id) => (
-            <li key={id} className={'block lg:flex py-5 border-b border-gray-200 relative'}>
-              <div className="flex w-full">
-                <Link href="#">
-                  <a
-                    onClick={() => setShowModal(true)}
-                    className="thumb lg:thumb-large border overflow-hidden relative flex-shrink-0 inline-flex lg:flex items-center justify-center rounded-xl"
-                  >
-                    <Img className="rounded-md" src={product.thumbImage} width={130} height={130} alt={product.name} />
-                  </a>
-                </Link>
-                <dl className="ml-4 lg:ml-8 py-2 flex-1">
-                  <dt className="text-xl flex align-items-center">
-                    <p>{product.name}</p>
-                    <div className="grid place-content-center ml-2">
-                      <span className="px-1 py-1 text-xs font-bold leading-none text-primary-600 border border-primary-600 rounded">
-                        구독중
-                      </span>
-                    </div>
-                  </dt>
-                  <dd className="text-sm my-1">{product.property}</dd>
-                  <dd className="text-base text-gray-400 mb-3">{product.content}</dd>
-                  <dd>
-                    <div className="flex items-baseline">
-                      <p className="text-lg font-bold">
-                        <span>{product.price}</span>원
-                      </p>
-                      <p className={'text-base ml-2 line-through text-gray-400'}>
-                        <span>{product.listPrice}</span>원
-                      </p>
-                    </div>
-                  </dd>
-                </dl>
+            <li key={id} className="rounded-large bg-white p-8 border border-gray-200">
+              <div className="flex justify-between">
+                <div className="w-full">
+                  <div className="flex items-center">
+                    <h6 className="text-xl font-bold leading-snug mr-2">{product.name}</h6>
+                    <span className="px-1 py-1 text-xs font-bold leading-none text-primary-600 border border-primary-600 rounded mb-1">
+                      구독중
+                    </span>
+                  </div>
+                  <div className="grid place-content-center ml-2"></div>
+                  <p className="text-sm">{product.property}</p>
+                  <div className="block lg:flex items-baseline mt-3">
+                    <p className="text-base lg:text-lg font-bold">
+                      <span>{product.price}</span>원
+                    </p>
+                    <p className={'text-sm lg:ml-3 line-through text-gray-400'}>
+                      <span>{product.listPrice}</span>원
+                    </p>
+                  </div>
+                </div>
+                <div className="ml-4 ">
+                  <span className="relative rounded-xl">
+                    <Img src={product.thumbImage} width={120} height={120} alt="" />
+                  </span>
+                </div>
+              </div>
+
+              <div className="text-base leading-normal text-gray-500 mt-6 overflow-hidden">
+                <p className="h-11">{product.content}</p>
               </div>
 
               <div className="flex-shrink-0 grid lg:flex items-center lg:justify-end lg:ml-5 mt-3 lg:mt-0">
                 {toCart === true ? (
                   <button
                     onClick={() => setToCart(!toCart)}
-                    className={'btn border border-gray-300 text-gray-400 hover:bg-gray-50 lg:w-auto w-full'}
+                    className="w-full p-3 rounded-md border border-gray-300 text-gray-400 hover:bg-gray-50 transition-all"
                   >
                     <>
                       <span className="pr-2">-</span>
@@ -203,7 +200,7 @@ const TabOne = () => {
                   <>
                     <button
                       onClick={() => setToCart(!toCart)}
-                      className={'btn border border-primary-600 text-primary-600 hover:bg-primary-100'}
+                      className="w-full p-3 rounded-md text-primary-600 border border-primary-600 hover:bg-primary-600 hover:text-white transition-all"
                     >
                       <span className="pr-2">+</span>
                       <span>구독하기</span>
@@ -215,11 +212,15 @@ const TabOne = () => {
           ))}
         </ul>
 
-        <article className="my-10 p-6 h-auto rounded-lg bg-primary-100 -mx-6 lg:m-0">
-          <h2 className="text-xl mb-6">함께 섭취하면 좋은 영양제</h2>
+        <hr className="lg:-mx-16 border-gray-200 mt-16 mb-8" />
+
+        <article className="py-10 h-auto">
+          <h2 className="text-3xl font-bold mb-10 text-center">
+            <span className="text-highlight">함께 섭취하면 좋은 영양제</span>
+          </h2>
           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {productData2.map((product, id) => (
-              <li key={id} className="rounded-large bg-white p-8">
+              <li key={id} className="rounded-large p-8 border border-gray-200">
                 <div className="flex justify-between">
                   <div className="w-full">
                     <h6 className="text-xl font-bold leading-snug">{product.name}</h6>
