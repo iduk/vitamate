@@ -95,36 +95,38 @@ export default function Payment() {
         {/* 결제 내역 */}
         <ul className="overflow-hidden">
           {payList.map((pay, id) => (
-            <li
-              key="id"
-              className="py-4 lg:py-6 lg:grid lg:grid-cols-2 items-end place-content-between border-b border-gray-200"
-            >
-              <div className="mb-3 lg:mb-0">
-                <h6 className="text-base text-gray-400 mb-1">{pay.useDate}</h6>
-                <p className="text-base lg:text-lg leading-snug">
-                  <span className={`${pay.mod === '-' && 'text-gray-400'} mr-1`}>
-                    [{pay.mod === '' ? '결제' : '취소'}]
-                  </span>
-                  {pay.useTitle}
-                </p>
-              </div>
-
-              <div className="flex justify-between lg:justify-end items-center text-gray-500">
-                <span
-                  className={'text-2xl font-normal leading-snug ' + (pay.mod === '' ? 'text-black' : 'text-gray-400')}
+            <li key="id">
+              <Link href="#">
+                <a
+                  onClick={() => setIsReceipt(true)}
+                  className="block py-4 lg:py-6 lg:grid lg:grid-cols-2 items-end place-content-between border-b border-gray-200"
                 >
-                  {pay.mod} {pay.cash}
-                  <i className="not-italic text-base leading-none ml-1">원</i>
-                </span>
+                  <div className="mb-3 lg:mb-0">
+                    <h6 className="text-base text-gray-400 mb-1">{pay.useDate}</h6>
+                    <p className="text-base lg:text-lg leading-snug">
+                      <span className={`${pay.mod === '-' && 'text-gray-400'} mr-1`}>
+                        [{pay.mod === '' ? '결제' : '취소'}]
+                      </span>
+                      {pay.useTitle}
+                    </p>
+                  </div>
 
-                <span className="justify-self-end">
-                  <Link href="#">
-                    <a onClick={() => setIsReceipt(true)} className="p-3">
+                  <div className="flex justify-between lg:justify-end items-center text-gray-500">
+                    <span
+                      className={
+                        'text-2xl font-normal leading-snug ' + (pay.mod === '' ? 'text-black' : 'text-gray-400')
+                      }
+                    >
+                      {pay.mod} {pay.cash}
+                      <i className="not-italic text-base leading-none ml-1">원</i>
+                    </span>
+
+                    <span className="justify-self-end p-3">
                       <Img src="/images/ic-arrow-next-gray.svg" width={30} height={30} alt="right icon" />
-                    </a>
-                  </Link>
-                </span>
-              </div>
+                    </span>
+                  </div>
+                </a>
+              </Link>
             </li>
           ))}
         </ul>
