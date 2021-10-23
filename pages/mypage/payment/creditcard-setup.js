@@ -29,11 +29,13 @@ export default function CreditcardSetup() {
           </div>
         </div>
 
-        <div className="form-group grid grid-cols-2 gap-4">
+        <div className="form-group grid grid-cols-3 gap-4">
           <TextInput label="유효기간" type="tel" placeholder="MM / YY" />
-          <div className="w-24">
+          <div>
             <TextInput label="CVC" type="tel" placeholder="CVC" />
           </div>
+
+          <TextInput label="카드 비밀번호" type="password" placeholder="앞두자리" />
         </div>
 
         <div className="form-group">
