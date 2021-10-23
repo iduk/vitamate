@@ -91,6 +91,13 @@ const paymentType_a = [
   { id: 'paymentType-a3', value: 'paymentType-a3', label: '3년' },
 ]
 
+const paymentDay = [
+  { id: 'paymentday-a1', value: 'paymentday-a1', label: '매월 결제일' },
+  { id: 'paymentday-a2', value: 'paymentday-a2', label: '5일' },
+  { id: 'paymentday-a3', value: 'paymentday-a3', label: '10일' },
+  { id: 'paymentday-a4', value: 'paymentday-a4', label: '15일' },
+]
+
 const paymentType_b = [{ id: 'paymentType-a1', value: 'paymentType-a1', label: '매월' }]
 
 function Subscribe({ router }) {
@@ -146,9 +153,12 @@ const TabOne = () => {
             <p className="text-sm text-primary-600">1년 이상 약정 선택 시 유전자 검사 비용 전액을 페이백 해드립니다.</p>
             <p className="text-sm text-primary-600">단, ‘알고리즘 추천영양제’ 를 모두 선택한 경우에 한 합니다.</p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-rows-2 grid-cols-2 lg:grid-rows-none lg:grid-cols-3 gap-3">
             <Select options={paymentType} />
             <Select options={paymentType_a} />
+            <div className="col-span-2 lg:col-auto">
+              <Select options={paymentDay} />
+            </div>
           </div>
         </article>
 
