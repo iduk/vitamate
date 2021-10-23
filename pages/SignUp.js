@@ -25,13 +25,20 @@ export default function SignUp() {
       <article className={'overflow-y-auto'} style={{ maxHeight: 540 }}>
         <form onSubmit={registerUser}>
           <div className="form-group">
-            <TextInput
-              type="text"
-              label="휴대폰 번호"
-              value={signupData.phoneNumber}
-              id="userPhone"
-              placeholder="010-0000-0000"
-            />
+            <div className="flex justify-between items-end w-full">
+              <TextInput
+                type="text"
+                label="휴대폰 번호"
+                value={signupData.phoneNumber}
+                id="userPhone"
+                placeholder="010-0000-0000"
+              />
+              <span className="flex-shrink-0 ml-4">
+                <button className={'btn border border-gray-300 hover:border-gray-500 hover:bg-gray-100'}>
+                  인증번호 전송
+                </button>
+              </span>
+            </div>
           </div>
           {/* 인증번호 */}
           <div className="form-group">
@@ -48,7 +55,7 @@ export default function SignUp() {
                   onClick={() => setIsShowing((isShowing) => !isShowing)}
                   className={'btn border border-gray-300 hover:border-gray-500 hover:bg-gray-100'}
                 >
-                  인증하기
+                  인증확인
                 </button>
               </span>
             </div>
