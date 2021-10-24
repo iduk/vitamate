@@ -435,6 +435,10 @@ $modal-size-lg: 800px;
   @apply p-5 pt-6 lg:p-8 lg:pt-6 rounded-large shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none mx-auto max-w-lg;
 
   max-height: calc(100% - 48px);
+
+  @media (min-width: 1200px) {
+    height: auto;
+  }
 }
 
 // home

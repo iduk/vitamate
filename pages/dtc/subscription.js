@@ -42,9 +42,9 @@ export default function Subscription() {
 
   return (
     <div className="flex flex-col justify-between">
-      <article className="overflow-y-auto border-b" style={{ height: '65vh' }}>
+      <article>
         <form onSubmit={registerUser}>
-          <div className="mb-4 p-4 leading-normal text-secondary-700 bg-secondary-50 rounded-lg" role="alert">
+          <div className="my-4 p-4 leading-normal text-secondary-700 bg-secondary-50 rounded-lg" role="alert">
             <p>1년 이상 약정 선택시 유전자검사 비용 전액을 페이백 해드립니다.</p>
           </div>
 
@@ -133,7 +133,7 @@ export default function Subscription() {
             </ul>
           </div>
 
-          <ul className="grid grid-cols-2 p-4 mt-6 border-t border-b border-gray-200 bg-gray-100">
+          <ul className="grid grid-cols-2 p-4 mt-4 border-t border-b border-gray-200 bg-gray-100">
             <li>
               <h5 className="text-lg font-bold">유전자 검사</h5>
               <p className="text-sm">검사 키트 + 총 50가지 검사 항목</p>
@@ -141,7 +141,7 @@ export default function Subscription() {
             <li className="font-extrabold text-right place-self-end text-primary-600">60,000 원</li>
           </ul>
 
-          <ul className="py-6">
+          <ul className="pt-4">
             <li className="flex justify-between items-center">
               <Checkbox checked={Sample.checked} id="check-1" name="agree" label="[필수] 제 3자 정보제공동의 약관" />
               <Link href="/TermsOfService">
@@ -161,7 +161,7 @@ export default function Subscription() {
         </form>
       </article>
 
-      <footer className={'flex justify-center pt-6'}>
+      <footer className={'flex justify-center mt-4'}>
         <Link href="/survey">
           <a
             className={
