@@ -22,7 +22,7 @@ export default function SignUp() {
 
   return (
     <>
-      <article className={'overflow-y-auto'} style={{ maxHeight: 540 }}>
+      <article>
         <form onSubmit={registerUser}>
           <div className="form-group">
             <div className="flex justify-between items-end w-full">
