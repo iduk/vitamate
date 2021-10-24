@@ -89,9 +89,6 @@ textarea {
 // buttons
 .btn,
 button {
-  &:hover {
-    @apply shadow;
-  }
   &:disabled,
   &.disabled {
     @apply border-gray-200 bg-gray-100 text-gray-400;

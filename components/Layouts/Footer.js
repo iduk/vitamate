@@ -5,76 +5,72 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <>
-      <footer className="footer border-t border-gray-200 bg-white text-gray-900 py-10 text-center lg:text-left text-sm lg:text-base">
-        <div className="container px-6 lg:px-0 block lg:grid lg:grid-cols-2 place-content-center align-items-center">
-          <a className="brand-logo relative mb-5">
-            <Img src={'/images/logo.svg'} layout="fill" objectFit={'contain'} alt="vitamate logo" />
-          </a>
-
-          <div className="leading-snug mb-6 grid grid-cols-2 grid-rows-2 gap-3 lg:gap-2 lg:flex lg:justify-between lg:w-full lg:max-w-md lg:ml-auto lg:mr-0">
-            <Link href="https://www.vitamate.kr/">
-              <a target="_blank" className="lg:inline-flex hover:text-primary-600">
-                회사소개
-              </a>
-            </Link>
-            <Link href="/TermsOfService">
-              <a className="lg:inline-flex hover:text-primary-600">이용약관</a>
-            </Link>
-            <Link href="/PrivacyPolicy">
-              <a className="lg:inline-flex hover:text-primary-600">개인정보취급방침</a>
-            </Link>
-            <Link href="/MarketingAgree">
-              <a className="lg:inline-flex hover:text-primary-600">마케팅수신동의</a>
-            </Link>
+      <footer className="footer border-t border-gray-200 bg-white text-gray-900 py-6 text-center lg:text-left text-sm lg:text-base">
+        <div className="container">
+          <div>
+            <a className="brand-logo relative">
+              <Img src={'/images/logo.svg'} layout="fill" objectFit={'contain'} alt="vitamate logo" />
+            </a>
           </div>
+          <ul className="flex justify-center lg:justify-start py-6 font-bold text-center lg:text-left">
+            <li>
+              <Link href="https://www.vitamate.kr/">
+                <a target="_blank" className="lg:inline-flex hover:text-primary-600">
+                  회사소개
+                </a>
+              </Link>
+            </li>
+            <li className="ml-5">
+              <Link href="/TermsOfService">
+                <a className="lg:inline-flex hover:text-primary-600">이용약관</a>
+              </Link>
+            </li>
+            <li className="ml-5">
+              <Link href="/PrivacyPolicy">
+                <a className="lg:inline-flex hover:text-primary-600">개인정보취급방침</a>
+              </Link>
+            </li>
+            <li className="ml-5">
+              <Link href="/MarketingAgree">
+                <a className="lg:inline-flex hover:text-primary-600">마케팅수신동의</a>
+              </Link>
+            </li>
+          </ul>
         </div>
 
-        {/* address */}
-
-        <hr className="lg:hidden w-12 mx-auto border-none" />
-        <div className="container px-6 lg:px-0 block lg:grid lg:grid-cols-2 leading-snug mt-3">
-          <article className="w-full">
-            <address className="not-italic mb-4 leading-tight">
-              <p>(06221) 대한민국 서울시 강남구 테헤란로 222, 도원빌딩 2층</p>
-              <p className="pt-1 text-sm text-gray-600 leading-snug">
-                222, 2nd Floor, Teheran-ro, Gangnam-gu, Seoul,
-                <br />
-                Republic of Korea
-              </p>
-            </address>
-
-            <ul className="text-sm pt-3 lg:pt-0 text-left max-w-xs mx-auto lg:max-w-none lg:mr-auto text-gray-600">
-              <li className="flex mb-1">
-                <span className="mr-2">
-                  <Img src="/images/ic-tel.svg" width={20} height={20} alt="대표번호" />
-                </span>
-                <p>
-                  <b>고객센터</b> 1588-1588
-                  <span className="ml-2">help@vitamate.kr</span>
-                </p>
-              </li>
-              <li className="flex">
-                <span className="mr-2">
-                  <Img src="/images/ic-at.svg" width={20} height={20} alt="대표번호" />
-                </span>
-                <ul className="leading-snug">
-                  <li className="">
-                    <b className=" mr-1">비타메이트 영업문의</b>
-                    <p className="inline-block">biz@vitamate.kr</p>
-                  </li>
-                  <li>
-                    <b className=" mr-1">비타메이트 제휴문의</b>
-                    <p className="inline-block">partners@vitamate.kr</p>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </article>
-
-          <article className="w-full lg:text-right mt-8 lg:mt-0">
-            <p className="text-sm block text-gray-400 leading-snug">
+        <div className="container grid lg:grid-cols-3 gap-4 lg:gap-8 text-gray-600">
+          <address className="not-italic mb-5 lg:col-span-2">
+            <p className="font-bold">주식회사 비타메이트</p>
+            <p>
+              <span>대표자 김용만</span>
+              <span className="px-3">사업자등록번호 305-88-01896</span>
+              <span>통신판매신고번호제 2021-서울강남-06003호</span>
+            </p>
+            <p>(06221) 대한민국 서울시 강남구 테헤란로 222, 도원빌딩 2층</p>
+            <p>222, 2nd Floor, Teheran-ro, Gangnam-gu, Seoul, Republic of Korea</p>
+            <p className="text-sm block text-gray-400 pt-3">
               COPYRIGHT © <b className="text-gray-500">VITAMATE</b> Corp. All Rights Reserved.
             </p>
+          </address>
+
+          <article className="w-full">
+            <ul>
+              <li className="flex justify-center lg:justify-start">
+                <h6 className="mr-3">고객센터</h6>
+                <p>
+                  1588-1588 <span className=" text-gray-400">/</span> help@vitamate.kr
+                </p>
+              </li>
+              <li className="flex justify-center lg:justify-start">
+                <h6 className="mr-3">비타메이트 영업문의</h6>
+                <p>biz@vitamate.kr</p>
+              </li>
+
+              <li className="flex justify-center lg:justify-start">
+                <h6 className="mr-3">비타메이트 제휴문의</h6>
+                <p>partners@vitamate.kr</p>
+              </li>
+            </ul>
           </article>
         </div>
       </footer>
