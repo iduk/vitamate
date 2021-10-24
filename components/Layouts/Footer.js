@@ -12,25 +12,25 @@ export default function Footer() {
               <Img src={'/images/logo.svg'} layout="fill" objectFit={'contain'} alt="vitamate logo" />
             </a>
           </div>
-          <ul className="flex justify-center lg:justify-start py-6 font-bold text-center lg:text-left">
-            <li>
+          <ul className="flex flex-wrap justify-center lg:justify-start py-6 font-bold text-center lg:text-left">
+            <li className="lg:p-0 p-1">
               <Link href="https://www.vitamate.kr/">
                 <a target="_blank" className="lg:inline-flex hover:text-primary-600">
                   회사소개
                 </a>
               </Link>
             </li>
-            <li className="ml-5">
+            <li className="lg:ml-5 lg:p-0 p-1">
               <Link href="/agree">
                 <a className="lg:inline-flex hover:text-primary-600">이용약관</a>
               </Link>
             </li>
-            <li className="ml-5">
+            <li className="lg:ml-5 lg:p-0 p-1">
               <Link href="/agree">
                 <a className="lg:inline-flex hover:text-primary-600">개인정보취급방침</a>
               </Link>
             </li>
-            <li className="ml-5">
+            <li className="lg:ml-5 lg:p-0 p-1">
               <Link href="/agree">
                 <a className="lg:inline-flex hover:text-primary-600">마케팅수신동의</a>
               </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="container grid lg:grid-cols-3 gap-4 lg:gap-8 text-gray-600">
+        <div className="container grid grid-cols-1 lg:grid-cols-3 lg:gap-8 text-gray-600">
           <address className="not-italic mb-5 lg:col-span-2">
             <p className="font-bold">주식회사 비타메이트</p>
             <p>
