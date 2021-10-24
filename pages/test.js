@@ -1,55 +1,38 @@
-import { useRouter } from 'next/router'
-import { NextPageContext } from 'next'
+import React from 'react'
+import { Modal } from 'react-responsive-modal'
+import Img from 'next/image'
+import SurveyForm from './survey/survey-form'
 
 export default function Test() {
-  const { push } = useRouter()
+  const [openFirst, setOpenFirst] = React.useState(false)
+  const [openSecond, setOpenSecond] = React.useState(false)
 
-  function pushOnlyUrl() {
-    push('/mypage?id')
-  }
-
-  function pushWithAs() {
-    push('/mypage/[id]?', '/mypage/1')
-  }
-
-  function shallowPush() {
-    push('/?mypage=id', undefined, { shallow: true })
-  }
-
-  function notShallowPush() {
-    push('/?mypage=1')
-  }
-
-  function pushUrl() {
-    push('/mypage')
-  }
-
-  function pushUrlAndAs() {
-    push('/mypage', '/mypage')
-  }
+  const closeIcon = (
+    <button>
+      <Img src="/images/btn-popup-cancel.svg" width={44} height={44} alt="닫기" />
+    </button>
+  )
 
   return (
     <>
-      <ul>
-        <li>
-          <button onClick={() => pushOnlyUrl()}>1번. Push only URL</button>
-        </li>
-        <li>
-          <button onClick={() => pushWithAs()}>2번. Push with as</button>
-        </li>
-        <li>
-          <button onClick={() => shallowPush()}>3번. shallow push</button>
-        </li>
-        <li>
-          <button onClick={() => notShallowPush()}>4번. not shallow push</button>
-        </li>
-        <li>
-          <button onClick={() => pushUrl()}>5번. push route</button>
-        </li>
-        <li>
-          <button onClick={() => pushUrlAndAs()}>6번. push route with as</button>
-        </li>
-      </ul>
+      <button className="button" onClick={() => setOpenFirst(true)}>
+        Open first modal
+      </button>
+
+      <Modal
+        open={openFirst}
+        onClose={() => setOpenFirst(false)}
+        classNames={{
+          modal: 'customModal',
+        }}
+        closeIcon={closeIcon}
+      >
+        <header className="pr-12">
+          <h3 className="modal-title text-2xl font-bold mt-2">{title}</h3>
+        </header>
+
+        <div className="modal-content"></div>
+      </Modal>
     </>
   )
 }
