@@ -21,17 +21,17 @@ export default function Footer() {
               </Link>
             </li>
             <li className="ml-5">
-              <Link href="/TermsOfService">
+              <Link href="/agreement">
                 <a className="lg:inline-flex hover:text-primary-600">이용약관</a>
               </Link>
             </li>
             <li className="ml-5">
-              <Link href="/PrivacyPolicy">
+              <Link href="/agreement">
                 <a className="lg:inline-flex hover:text-primary-600">개인정보취급방침</a>
               </Link>
             </li>
             <li className="ml-5">
-              <Link href="/MarketingAgree">
+              <Link href="/agreement">
                 <a className="lg:inline-flex hover:text-primary-600">마케팅수신동의</a>
               </Link>
             </li>
