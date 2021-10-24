@@ -8,6 +8,16 @@
 @import './calendar.css';
 @import './modal.css';
 
+body {
+  @media (max-width: 1199px) {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 .container {
   @apply mx-auto;
 }
@@ -404,9 +414,9 @@ $sidebar-size: 230px;
 
 // Modal
 
-$modal-size-sm: 500px;
-$modal-size-md: 600px;
-$modal-size-lg: 800px;
+$modal-size-sm: 500px !important;
+$modal-size-md: 600px !important;
+$modal-size-lg: 800px !important;
 
 .modal-wrap {
   display: flex;
@@ -679,8 +689,6 @@ $half: round($loops * 0.5);
 }
 
 // dtc
-.product-list {
-}
 .proccess-list {
   position: relative;
   z-index: 1;
@@ -785,7 +793,7 @@ $half: round($loops * 0.5);
   }
 
   &--tab {
-    @apply m-0 border-none whitespace-nowrap text-base text-center py-4;
+    @apply m-0 border-none whitespace-nowrap text-base text-center py-3;
 
     > a {
       color: inherit;
