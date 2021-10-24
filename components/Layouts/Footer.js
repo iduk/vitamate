@@ -8,7 +8,7 @@ export default function Footer() {
       <footer className="footer border-t border-gray-200 bg-white text-gray-900 py-6 px-6 lg:px-0 text-center lg:text-left text-sm lg:text-base">
         <div className="container">
           <div>
-            <a className="brand-logo relative" style={{ zIndex: '-1' }}>
+            <a className="brand-logo relative">
               <Img src={'/images/logo.svg'} layout="fill" objectFit={'contain'} alt="vitamate logo" />
             </a>
           </div>
