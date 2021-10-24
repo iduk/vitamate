@@ -96,16 +96,18 @@ export default function Addressbook() {
         </div>
       </article>
 
-      <div className="flex justify-between my-6">
-        <button
-          onClick={handleClickAlert}
-          className="btn border border-gray-300 text-gray-900 hover:border-gray-400 hover:bg-gray-100 hover:shadow"
-        >
-          선택 삭제
-        </button>
+      <div className="grid grid-cols-1 grid-rows-2 lg:grid-rows-none lg:grid-cols-2 gap-4 lg:justify-between my-6">
+        <div>
+          <button
+            onClick={handleClickAlert}
+            className="w-full lg:w-auto btn border border-gray-300 text-gray-900 hover:border-gray-400 hover:bg-gray-100 hover:shadow"
+          >
+            선택 삭제
+          </button>
+        </div>
 
         {/* ---- 기본배송지등록,신규배송지등록 ---- */}
-        <div>
+        <div className="grid grid-cols-2 w-full">
           <button
             onClick={handleClickAlert}
             className="btn border border-gray-300 text-gray-900 hover:border-gray-400 hover:bg-gray-100 hover:shadow mr-3"
