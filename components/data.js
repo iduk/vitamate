@@ -4,7 +4,11 @@ export const ProductData = [
     name: '오메가메이트',
     property: '760mg 2캡슐',
     thumbImage: '/images/product-bio.png',
-    content: ['혈행 개선에 도움', '기억력 개선', '눈 건강 개선에 도움'],
+    content: [
+      '8가지 종류의 비타민B 성분으로 구성',
+      '체내 에너지 생성과 탄수화물 등 각종 대사에 필요',
+      '눈 건강 개선에 도움',
+    ],
     price: '7,500',
     listPrice: '9,000',
   },

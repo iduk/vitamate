@@ -55,22 +55,22 @@ export default function Products({ prodItemList }) {
 
               <ul className="product-list text-base leading-normal">
                 <li>
-                  <span className={'mr-3'}>
+                  <span>
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
                   </span>
-                  {Item.content[0]}
+                  <p>{Item.content[0]}</p>
                 </li>
                 <li className={`${!Item.content[1] ? 'hidden' : ''}`}>
-                  <span className={'mr-3'}>
+                  <span>
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
                   </span>
-                  {Item.content[1]}
+                  <p>{Item.content[1]}</p>
                 </li>
                 <li className={`${!Item.content[2] ? 'hidden' : ''}`}>
-                  <span className={'mr-3'}>
+                  <span>
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
                   </span>
-                  {Item.content[2]}
+                  <p>{Item.content[2]}</p>
                 </li>
               </ul>
 

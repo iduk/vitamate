@@ -698,7 +698,15 @@ $half: round($loops * 0.5);
     z-index: -1;
   }
 }
-
+// products
+.product-list {
+  > li {
+    > span {
+      width: 24px;
+    }
+    @apply flex;
+  }
+}
 // dtc
 .proccess-list {
   position: relative;
