@@ -195,7 +195,7 @@ const TabOne = () => {
                 <p className="h-11">{product.content}</p>
               </div>
 
-              <div className="flex-shrink-0 grid lg:flex items-center lg:justify-end lg:ml-5 mt-3 lg:mt-0">
+              <div className="mt-6">
                 {toCart === true ? (
                   <button
                     onClick={() => setToCart(!toCart)}
