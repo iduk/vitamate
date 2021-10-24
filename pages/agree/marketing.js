@@ -1,4 +1,4 @@
-export default function TermsOfService() {
+function Marketing() {
   return (
     <>
       <h1 className="page-title">마케팅 수신 동의</h1>
@@ -61,3 +61,5 @@ export default function TermsOfService() {
     </>
   )
 }
+
+export default Marketing

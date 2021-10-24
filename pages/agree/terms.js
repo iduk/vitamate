@@ -1,6 +1,6 @@
-export default function TermsOfService() {
+function Terms() {
   return (
-    <>
+    <div>
       <div className="my-8">
         <h2 className="text-lg py-4 mb-4 font-extrabold border-b border-gray-200">제 1조 목적</h2>
         <p>
@@ -620,9 +620,11 @@ export default function TermsOfService() {
         </ol>
       </div>
       <p className="mt-8">
-        이 약관은 2021년 O월 O일부터 시행됩니다. <br />
+        이 약관은 2021년 O월 O일부터 시행됩니다.
+        <br />
         단, 본 약관의 공지 이후 시행일 이전에 본 약관에 동의한 경우에는 동의 시부터 본 약관이 적용됩니다.
       </p>
-    </>
+    </div>
   )
 }
+export default Terms

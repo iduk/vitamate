@@ -1,27 +1,25 @@
 import ContainerFluid from 'components/Layouts/ContainerFluid'
 import { useState } from 'react'
 import Link from 'next/link'
-import TermsOfService from './TermsOfService'
-import PrivacyPolicy from './PrivacyPolicy'
-import MarketingAgree from './MarketingAgree'
+import Terms from './terms'
+import Privacy from './privacy'
+import Marketing from './marketing'
 
-export default function Agreement() {
-  const [agree, setAgree] = useState(false)
-
+function Agree() {
   const serviceTab = [
     {
       id: 0,
-      path: '/TermsOfService',
+      href: '/agree/terms',
       title: '이용약관',
     },
     {
       id: 1,
-      path: '/PrivacyPolicy',
+      href: '/agree/privacy',
       title: '개인정보취급방침',
     },
     {
       id: 2,
-      path: '/MarketingAgree',
+      href: '/agree/marketing',
       title: '마케팅수신동의',
     },
   ]
@@ -30,14 +28,13 @@ export default function Agreement() {
     <ContainerFluid>
       <div className={'container py-12 px-6 lg:px-0 lg:py-16 overflow-hidden'}>
         <div className="overflow-hidden" style={{ width: 'calc(100vw - 48px)' }}>
-          <ul className=" flex flex-nowrap lg:justify-start w-full overflow-y-hidden overflow-x-auto scrollbar-none">
-            {serviceTab.map((tab) => (
+          <ul className="border-b border-gray-300 flex flex-nowrap lg:justify-start w-full overflow-y-hidden overflow-x-auto scrollbar-none">
+            {serviceTab.map((tab, id) => (
               <li key={tab.id} className="mr-10 relative">
-                <Link href=".">
+                <Link href="#">
                   <a
-                    href={tab.path}
                     className={`${
-                      tab.id === 0 ? 'font-extrabold border-b-4 border-primary-600' : null
+                      tab.id === 0 ? 'font-bold border-b-4 border-primary-600' : null
                     } block py-4 text-lg lg:text-2xl font-light`}
                   >
                     {tab.title}
@@ -47,8 +44,15 @@ export default function Agreement() {
             ))}
           </ul>
         </div>
-        <TermsOfService />
+
+        <div className="container">
+          {serviceTab.id === 0 ? '' : <Terms />}
+          {serviceTab.id === 1 ? '' : <Privacy />}
+          {serviceTab.id === 2 ? '' : <Marketing />}
+        </div>
       </div>
     </ContainerFluid>
   )
 }
+
+export default Agree

@@ -1,4 +1,4 @@
-export default function TermsOfService() {
+function Privacy() {
   return (
     <>
       <h1 className="page-title">개인정보취급방침</h1>
@@ -245,3 +245,4 @@ export default function TermsOfService() {
     </>
   )
 }
+export default Privacy
