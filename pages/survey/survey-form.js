@@ -4,8 +4,8 @@ import Checkbox from 'components/Forms/Checkbox'
 
 export default function SurveyForm() {
   return (
-    <form className="grid grid-row-2 h-full">
-      <div className="overflow-y-auto lg:h-auto">
+    <form className="grid grid-row-2">
+      <div className="overflow-y-auto h-full lg:h-auto">
         {/* steps */}
         <article className="relative mb-8">
           <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-100">
@@ -30,7 +30,7 @@ export default function SurveyForm() {
         </header>
 
         {/* answer */}
-        <article className="h-full overflow-y-auto" style={{ maxHeight: 270 }}>
+        <article className="lg:overflow-y-auto lg:max-h-72">
           <ul className="my-6">
             <li>
               <Checkbox

@@ -30,7 +30,7 @@ export default function Modals({ show, onClose, children, size, title }) {
     >
       <ModalHeader />
 
-      <div className="modal-content overflow-y-auto">{children}</div>
+      <div className="modal-content">{children}</div>
     </Modal>
   )
 }
