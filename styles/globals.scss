@@ -455,12 +455,15 @@ $modal-size-lg: 800px !important;
 .customModal {
   @apply p-5 pt-6 lg:p-8 lg:pt-6 rounded-large shadow-lg overflow-hidden relative flex flex-col w-full bg-white outline-none focus:outline-none mx-auto max-w-lg;
 
-  max-height: calc(100% - 48px);
-  overflow-x: hidden;
-  overflow-y: auto;
-
   @media (min-width: 1200px) {
     height: auto;
+  }
+}
+.modal-content {
+  @media (max-width: 1199px) {
+    max-height: calc(100vh - 138px);
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }
 
