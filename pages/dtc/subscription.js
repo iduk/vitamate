@@ -62,8 +62,8 @@ export default function Subscription() {
             <div className=" col-span-3">
               <label>성별</label>
               <div className="grid grid-cols-2 gap-2">
-                <button className={'w-full p-3 rounded-md border border-primary-600 text-primary-600 '}>남자</button>
-                <button className={'p-3 rounded-md border border-gray-300 text-gray-600 '}>여자</button>
+                <button className={'w-full p-3 rounded-md border border-primary-600 text-primary-600 '}>남</button>
+                <button className={'p-3 rounded-md border border-gray-300 text-gray-600 '}>여</button>
               </div>
             </div>
           </div>
