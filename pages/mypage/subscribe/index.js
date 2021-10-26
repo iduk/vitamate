@@ -13,7 +13,7 @@ import Unsubscribe from './unsubscribe'
 const productData = [
   {
     id: 0,
-    name: '오메가메이트',
+    name: '감마리놀렌산 메이트',
     property: '760mg 2캡슐',
     thumbImage: '/images/product-bio.png',
     content: ['혈행 개선에 도움', '기억력 개선', '눈 건강 개선에 도움'],
@@ -22,7 +22,7 @@ const productData = [
   },
   {
     id: 1,
-    name: '루테인메이트',
+    name: '루테인 메이트',
     property: '150mg 1캡슐',
     thumbImage: '/images/product-lutein.png',
     content: ['눈 건강 개선에 도움'],
@@ -31,7 +31,7 @@ const productData = [
   },
   {
     id: 2,
-    name: '프로바이옴메이트',
+    name: '프로바이옴 메이트',
     property: '300mg 1캡슐',
     thumbImage: '/images/product-lutein.png',
     content: ['유익균 증식과 유해균 억제', '장건강 개선'],
@@ -40,7 +40,7 @@ const productData = [
   },
   {
     id: 3,
-    name: '코엔자임메이트',
+    name: '코엔자임 메이트',
     property: '300mg 1정',
     thumbImage: '/images/product-Q10.png',
     content: ['고혈압 개선에 도움', '힝산화 효과'],
@@ -49,7 +49,7 @@ const productData = [
   },
   {
     id: 4,
-    name: '마그네슘메이트',
+    name: '마그네슘 메이트',
     property: '1000mg 1정',
     thumbImage: '/images/product-magnesium.png',
     content: ['인체 에너지 이용', '신경과 근육 기능 유지에 필요'],
@@ -58,7 +58,7 @@ const productData = [
   },
   {
     id: 5,
-    name: '테아닌메이트',
+    name: '테아닌 메이트',
     property: '1000mg 1정',
     thumbImage: '/images/product-theanine.png',
     content: ['긴장 완화에 도움'],
@@ -138,17 +138,17 @@ const TabOne = () => {
     setShowModal({ ...showModal, id: e.target.id })
   }
 
-  const productData1 = productData.slice(0, 4)
-  const productData2 = productData.slice(-2)
+  const productData1 = productData.slice(0, 6)
+  const productData2 = productData.slice(-3)
 
   return (
     <div>
       <section className="w-full">
         <article className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-3xl leading-normal font-bold mb-4">
+            <h2 className="text-4xl leading-normal font-bold mb-4">
               <span>김태훈</span>님을 위한 <br />
-              알고리즘 추천 영양제
+              <span className="text-highlight">맞춤 추천</span>
             </h2>
             <p className="text-sm text-primary-600">1년 이상 약정 선택 시 유전자 검사 비용 전액을 페이백 해드립니다.</p>
             <p className="text-sm text-primary-600">단, ‘알고리즘 추천영양제’ 를 모두 선택한 경우에 한 합니다.</p>
@@ -162,37 +162,70 @@ const TabOne = () => {
           </div>
         </article>
 
-        <ul className="my-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <footer className="my-12">
+          {/* ----- 정산 ----- */}
+          <article className="w-full p-5 bg-gray-100 rounded-md lg:flex-shrink-0 lg:shadow">
+            <div className="flex justify-between">
+              <h6 className={'font-bold'}>총 구독상품</h6>
+
+              <p>
+                <span>4</span>개<span className="px-2">/</span>
+                <span>80,000</span>원
+              </p>
+            </div>
+            <div className="flex justify-between mt-2">
+              <h6 className={'font-bold'}>약정기간</h6>
+              <p>2년</p>
+            </div>
+            <div className="flex justify-between mt-2">
+              <h6 className={'font-bold'}>할인금액</h6>
+              <p>
+                <span>6,000</span>원
+              </p>
+            </div>
+            <div className="flex justify-between mt-2">
+              <h6 className={'font-bold'}>매월 지불 금액</h6>
+              <p className="text-xl font-bold text-primary-600">
+                <span>74,000</span>원
+              </p>
+            </div>
+          </article>
+          <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <p className="block py-2 ml-0 mr-auto text-gray-700 text-lg">
+                주문할 영양제를 한꺼번에 받기를 원하십니까?
+              </p>
+              <p className="text-xs text-gray-600">
+                ※ 비타메이트는 매달 1개월분의 영양제를 배송합니다. <br />
+                만약 한꺼번에 배송받기를 원하실 경우 고객센터로 연락주시기 바랍니다.
+              </p>
+            </div>
+            <div className="text-right">
+              <button className="rounded px-6 py-4 w-full lg:w-56 bg-primary-600 text-white text-lg">결제하기</button>
+            </div>
+          </div>
+        </footer>
+
+        <ul className="my-8 grid grid-cols-1 lg:grid-cols-3 gap-5">
           {productData1.map((product, id) => (
-            <li key={id} className="rounded-large bg-white p-8 border border-gray-200">
+            <li key={id} className="rounded-large bg-white p-8 border border-gray-200 relative">
               <div className="flex justify-between">
                 <div className="w-full">
-                  <div className="flex items-center">
-                    <h6 className="text-xl font-bold leading-snug mr-2">{product.name}</h6>
+                  <div className="absolute top-4 right-4">
                     <span className="px-1 py-1 text-xs font-bold leading-none text-primary-600 border border-primary-600 rounded mb-1">
                       구독중
                     </span>
                   </div>
+                  <h6 className="text-xl font-bold leading-snug mr-2">{product.name}</h6>
+
                   <div className="grid place-content-center ml-2"></div>
                   <p className="text-sm">{product.property}</p>
-                  <div className="block lg:flex items-baseline mt-3">
-                    <p className="text-base lg:text-lg font-bold">
+                  <div className="block lg:flex mt-3">
+                    <p className="text-base lg:text-lg">
                       <span>{product.price}</span>원
-                    </p>
-                    <p className={'text-sm lg:ml-3 line-through text-gray-400'}>
-                      <span>{product.listPrice}</span>원
                     </p>
                   </div>
                 </div>
-                <div className="ml-4 ">
-                  <span className="relative rounded-xl">
-                    <Img src={product.thumbImage} width={120} height={120} alt="" />
-                  </span>
-                </div>
-              </div>
-
-              <div className="text-base leading-normal text-gray-500 mt-6 overflow-hidden">
-                <p className="h-11">{product.content}</p>
               </div>
 
               <div className="mt-6">
@@ -228,31 +261,19 @@ const TabOne = () => {
           <h2 className="text-3xl font-bold mb-10 text-center">
             <span className="text-highlight">함께 섭취하면 좋은 영양제</span>
           </h2>
-          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <ul className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             {productData2.map((product, id) => (
               <li key={id} className="rounded-large p-8 border border-gray-200">
                 <div className="flex justify-between">
                   <div className="w-full">
-                    <h6 className="text-xl font-bold leading-snug">{product.name}</h6>
+                    <h6 className="text-xl font-bold leading-snug mr-2">{product.name}</h6>
                     <p className="text-sm">{product.property}</p>
-                    <div className="block lg:flex items-baseline mt-3">
-                      <p className="text-base lg:text-lg font-bold">
+                    <div className="block lg:flex mt-3">
+                      <p className="text-base lg:text-lg">
                         <span>{product.price}</span>원
-                      </p>
-                      <p className={'text-sm lg:ml-3 line-through text-gray-400'}>
-                        <span>{product.listPrice}</span>원
                       </p>
                     </div>
                   </div>
-                  <div className="ml-4 ">
-                    <span className="relative rounded-xl">
-                      <Img src={product.thumbImage} width={120} height={120} alt="" />
-                    </span>
-                  </div>
-                </div>
-
-                <div className="text-base leading-normal text-gray-500 mt-6 overflow-hidden">
-                  <p className="h-11">{product.content}</p>
                 </div>
 
                 <div className="mt-6">
@@ -269,48 +290,6 @@ const TabOne = () => {
           </ul>
         </article>
       </section>
-
-      <footer>
-        {/* ----- 정산 ----- */}
-        <article className="w-full p-5 bg-gray-100 rounded-md lg:flex-shrink-0 lg:shadow">
-          <div className="flex justify-between">
-            <h6 className={'font-bold'}>총 구독상품</h6>
-
-            <p>
-              <span>4</span>개<span className="px-2">/</span>
-              <span>80,000</span>원
-            </p>
-          </div>
-          <div className="flex justify-between mt-2">
-            <h6 className={'font-bold'}>약정기간</h6>
-            <p>2년</p>
-          </div>
-          <div className="flex justify-between mt-2">
-            <h6 className={'font-bold'}>할인금액</h6>
-            <p>
-              <span>6,000</span>원
-            </p>
-          </div>
-          <div className="flex justify-between mt-2">
-            <h6 className={'font-bold'}>매월 지불 금액</h6>
-            <p className="text-xl font-bold text-primary-600">
-              <span>74,000</span>원
-            </p>
-          </div>
-        </article>
-        <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div>
-            <p className="block py-2 ml-0 mr-auto text-gray-700 text-lg">주문할 영양제를 한꺼번에 받기를 원하십니까?</p>
-            <p className="text-xs text-gray-600">
-              ※ 비타메이트는 매달 1개월분의 영양제를 배송합니다. <br />
-              만약 한꺼번에 배송받기를 원하실 경우 고객센터로 연락주시기 바랍니다.
-            </p>
-          </div>
-          <div className="text-right">
-            <button className="rounded px-6 py-4 w-full lg:w-56 bg-primary-600 text-white text-lg">결제하기</button>
-          </div>
-        </div>
-      </footer>
 
       <Modal onClose={() => setShowModal(false)} show={showModal} size={'md'}>
         <div>
