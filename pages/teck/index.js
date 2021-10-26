@@ -34,6 +34,9 @@ export default function Teck() {
               <h2 className="text-3xl leading-snug lg:text-4xl lg:leading-snug font-light">
                 MAX는 최적의 조합을 위해 <b>8천여 편의 논문 조사 및 분석 자료</b>를 적용하였습니다.
               </h2>
+              <div className="mt-6 text-center lg:text-left">
+                <button className="rounded-md bg-primary-600 text-white text-lg py-3 px-6">참고자료 더 알아보기</button>
+              </div>
             </div>
           </article>
 
@@ -60,6 +63,9 @@ export default function Teck() {
                 활용하고 있습니다.
               </h2>
               <p className="text-base lg:text-lg mt-4">SNP : Single Nucleotide Polymorphism</p>
+              <div className="mt-6 text-center lg:text-left">
+                <button className="rounded-md bg-primary-600 text-white text-lg py-3 px-6">SNP 더 알아보기</button>
+              </div>
             </div>
           </article>
         </section>
