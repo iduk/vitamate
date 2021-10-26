@@ -12,7 +12,7 @@ export default function Modals({ show, onClose, children, size, title }) {
   const ModalHeader = () => {
     return (
       <>
-        <header className="flex items-start justify-between rounded-t h-12 pr-12">
+        <header className="modal-header">
           <h3 className="modal-title text-2xl font-bold">{title}</h3>
         </header>
       </>
@@ -30,7 +30,9 @@ export default function Modals({ show, onClose, children, size, title }) {
     >
       <ModalHeader />
 
-      <div className="modal-content">{children}</div>
+      <section className="modal-content-wrap">
+        <div className="modal-content">{children}</div>
+      </section>
     </Modal>
   )
 }

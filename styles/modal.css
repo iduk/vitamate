@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  overflow: hidden;
 }
 
 .react-responsive-modal-overlay {
@@ -18,9 +19,9 @@
 }
 
 .react-responsive-modal-container {
-  /* height: 100%;
-  overflow-y: auto; */
   outline: 0;
+  height: 100%;
+  /* overflow-y: auto; */
   overflow-x: hidden;
   text-align: center;
 }
@@ -36,12 +37,11 @@
 
 .react-responsive-modal-modal {
   width: 100%;
-  min-height: 150px;
   display: inline-block;
   text-align: left;
   vertical-align: middle;
   background: #ffffff;
-  margin: 1.5rem;
+  /* margin: 1.5rem; */
   padding: 2rem;
   position: relative;
   /* height: 100%; */

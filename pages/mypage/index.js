@@ -31,7 +31,7 @@ const UserInfo = ({ show }) => {
 
             <Modal title="정보 수정" size="md" onClose={() => setUserEdit(false)} show={userEdit}>
               <form>
-                <article className="overflow-x-auto" style={{ maxHeight: 'calc(100vh - 300px)' }}>
+                <article>
                   <div className="form-group flex justify-between items-end w-full">
                     <TextInput label="휴대폰 번호" id="userPhone" type="text" placeholder="010-0000-0000" disabled />
                     <span className="flex-shrink-0 ml-3">
