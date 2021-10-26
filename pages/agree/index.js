@@ -22,6 +22,16 @@ function Agree() {
       href: '/agree/marketing',
       title: '마케팅수신동의',
     },
+    {
+      id: 3,
+      href: '/agree/aaa',
+      title: '개인정보제공동의',
+    },
+    {
+      id: 4,
+      href: '/agree/bbb',
+      title: '개인정보제공미동의',
+    },
   ]
 
   return (

@@ -8,7 +8,12 @@ export default function Survey() {
         <section className="flex flex-wrap justify-center items-center overflow-hidden">
           <article className="mt-10 lg:my-4 w-full overflow-hidden lg:w-1/2 order-2 lg:order-1">
             <div className="relative" style={{ zIndex: -1 }}>
-              <Img className="rounded-large shadow" width={500} height={350} src="/images/survey-content-img1.png" />
+              <Img
+                className="rounded-large shadow"
+                width={500}
+                height={350}
+                src="https://image.shutterstock.com/image-photo/closeup-businessman-filling-customer-survey-600w-172082504.jpg"
+              />
             </div>
           </article>
 
