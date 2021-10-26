@@ -12,7 +12,7 @@ export default function Survey() {
                 className="rounded-large shadow"
                 width={500}
                 height={350}
-                src="https://image.shutterstock.com/image-photo/closeup-businessman-filling-customer-survey-600w-172082504.jpg"
+                src="/images/pexels-kindel-media-7979436.jpg"
               />
             </div>
           </article>
