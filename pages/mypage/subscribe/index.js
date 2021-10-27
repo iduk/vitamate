@@ -144,9 +144,9 @@ const TabOne = () => {
   return (
     <div>
       <section className="w-full">
-        <article className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <article className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
-            <h2 className="text-4xl leading-normal font-bold mb-4">
+            <h2 className="text-4xl leading-normal font-bold mb-2">
               <span>김태훈</span>님을 위한 <br />
               <span className="text-highlight">맞춤 추천</span>
             </h2>
@@ -162,9 +162,9 @@ const TabOne = () => {
           </div>
         </article>
 
-        <footer className="my-12">
+        <footer className="my-6">
           {/* ----- 정산 ----- */}
-          <article className="w-full p-5 bg-gray-100 rounded-md lg:flex-shrink-0 lg:shadow">
+          <article className="w-full px-5 py-4 bg-gray-100 rounded-md lg:flex-shrink-0 lg:shadow">
             <div className="flex justify-between">
               <h6 className={'font-bold'}>총 구독상품</h6>
 
@@ -173,24 +173,24 @@ const TabOne = () => {
                 <span>80,000</span>원
               </p>
             </div>
-            <div className="flex justify-between mt-2">
+            <div className="flex justify-between mt-1">
               <h6 className={'font-bold'}>약정기간</h6>
               <p>2년</p>
             </div>
-            <div className="flex justify-between mt-2">
+            <div className="flex justify-between mt-1">
               <h6 className={'font-bold'}>할인금액</h6>
               <p>
                 <span>6,000</span>원
               </p>
             </div>
-            <div className="flex justify-between mt-2">
+            <div className="flex justify-between mt-1">
               <h6 className={'font-bold'}>매월 지불 금액</h6>
               <p className="text-xl font-bold text-primary-600">
                 <span>74,000</span>원
               </p>
             </div>
           </article>
-          <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <p className="block py-2 ml-0 mr-auto text-gray-700 text-lg">
                 주문할 영양제를 한꺼번에 받기를 원하십니까?
@@ -206,7 +206,7 @@ const TabOne = () => {
           </div>
         </footer>
 
-        <ul className="my-8 grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <ul className="my-6 grid grid-cols-1 lg:grid-cols-3 gap-5">
           {productData1.map((product, id) => (
             <li key={id} className="rounded-large bg-white p-8 border border-gray-200 relative">
               <div className="flex justify-between">
@@ -255,9 +255,9 @@ const TabOne = () => {
           ))}
         </ul>
 
-        <hr className="lg:-mx-16 border-gray-200 mt-16 mb-8" />
+        <hr className="lg:-mx-16 border-gray-200 mt-10 mb-4" />
 
-        <article className="py-10 h-auto">
+        <article className="py-6 h-auto">
           <h2 className="text-3xl font-bold mb-10 text-center">
             <span className="text-highlight">함께 섭취하면 좋은 영양제</span>
           </h2>
