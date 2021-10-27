@@ -157,6 +157,10 @@ export default function VitaCalendar() {
             <div className="py-5">
               <TextInput type="time" placeholder="12:00" label="알림 시간 설정" />
             </div>
+
+            <button type="submit" className="rounded-md p-4 w-full border border-primary-600 bg-primary-600 text-white">
+              확인
+            </button>
           </Modal>
         </header>
         <section>
