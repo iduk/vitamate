@@ -27,6 +27,8 @@ export default function Modals({ show, onClose, children, size, title }) {
         modal: `customModal modal-size-${size}`,
       }}
       closeIcon={closeIcon}
+      center
+      blockScroll
     >
       <ModalHeader />
 

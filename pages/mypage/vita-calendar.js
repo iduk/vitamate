@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 import moment from 'moment'
 import Img from 'next/image'
 import Link from 'next/link'
+import TextInput from 'components/Forms/TextInput'
 
 moment.updateLocale('koKR', {
   weekdaysMin: ['일', '월', '화', '수', '목', '금', '토'],
@@ -15,6 +16,7 @@ export default function VitaCalendar() {
   const [showCalendarPop, setShowCalendarPop] = useState(false)
   const [dataList, setDataList] = useState(null)
   const [currentMonth, setCurrentMonth] = useState([])
+  const [timePick, setTimePick] = useState(false)
 
   const headerRender = ({ value, type, onChange, onTypeChange }) => {
     const month = value.month()
@@ -139,7 +141,24 @@ export default function VitaCalendar() {
   return (
     <>
       <ContainerAside>
-        <h1 className="page-title _sub">비타캘린더</h1>
+        <header className="relative">
+          <h1 className="page-title _sub">비타캘린더</h1>
+          <div className="absolute top-2 right-0 text-sm text-gray-600">
+            <Link href="#">
+              <a
+                onClick={() => setTimePick(true)}
+                className="font-bold border border-primary-600 bg-primary-50 px-3 py-1 rounded-full"
+              >
+                00시 00분 <b className="text-primary-600 ml-1">알림설정</b>
+              </a>
+            </Link>
+          </div>
+          <Modal title="알림설정" onClose={() => setTimePick(false)} show={timePick}>
+            <div className="py-5">
+              <TextInput type="time" placeholder="12:00" label="알림 시간 설정" />
+            </div>
+          </Modal>
+        </header>
         <section>
           <ConfigProvider locale={koKR}>
             <Calendar dateCellRender={dateCellRender} onSelect={onSelect} headerRender={headerRender} />
