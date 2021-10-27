@@ -32,20 +32,20 @@ export default function Products({ prodItemList }) {
             <article
               key={Item.id}
               className={
-                'rounded-large border border-gray-100 p-8 shadow transition-shadow hover:shadow-lg grid grid-rows-2 place-items-between'
+                'rounded-large border border-gray-100 p-8 shadow transition-shadow hover:shadow-lg flex flex-col justify-between h-80'
               }
             >
-              <div className="flex justify-between ">
-                <div className="w-full">
-                  <h6 className="text-2xl leading-snug mb-2">{Item.name}</h6>
+              <div className="flex items-center justify-between">
+                <div className="inline-block">
+                  <h6 className="text-xl lg:text-2xl leading-snug mb-1">{Item.name}</h6>
 
-                  <div className="text-base leading-normal text-gray-500">
+                  <div className="text-sm leading-normal text-gray-500">
                     <p>{Item.property}</p>
                   </div>
                 </div>
-                <div className="ml-8 flex-shrink-0">
+                <div className="flex-shrink-0 inline-block ml-4 mr-0">
                   <span
-                    className="thumb bg-cover bg-no-repeat bg-center"
+                    className="thumb lg:thumb-medium thumb-small bg-cover bg-no-repeat bg-center"
                     style={{
                       backgroundImage: `url(${Item.thumbImage})`,
                     }}
@@ -53,21 +53,21 @@ export default function Products({ prodItemList }) {
                 </div>
               </div>
 
-              <ul className="product-list text-base leading-normal">
-                <li>
-                  <span>
+              <ul className="product-list text-sm lg:text-base lg:leading-normal overflow-hidden my-4">
+                <li className="flex">
+                  <span className="bullet relative inline-block w-6">
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
                   </span>
                   <p>{Item.content[0]}</p>
                 </li>
-                <li className={`${!Item.content[1] ? 'hidden' : ''}`}>
-                  <span>
+                <li className={`${!Item.content[1] ? 'hidden' : 'flex'}`}>
+                  <span className="bullet relative inline-block w-6">
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
                   </span>
                   <p>{Item.content[1]}</p>
                 </li>
-                <li className={`${!Item.content[2] ? 'hidden' : ''}`}>
-                  <span>
+                <li className={`${!Item.content[2] ? 'hidden' : 'flex'}`}>
+                  <span className="bullet relative inline-block w-6">
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
                   </span>
                   <p>{Item.content[2]}</p>

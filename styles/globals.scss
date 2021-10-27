@@ -706,6 +706,10 @@ $half: round($loops * 0.5);
     width: 64px;
     height: 64px;
   }
+  &-medium {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .highlight {
@@ -757,12 +761,12 @@ $half: round($loops * 0.5);
 }
 // products
 .product-list {
-  > li {
-    > span {
-      width: 20px;
-    }
-    @apply flex;
-  }
+  // p {
+  //   text-overflow: ellipsis;
+  //   white-space: nowrap;
+  //   width: 100%;
+  //   overflow: hidden;
+  // }
 }
 // dtc
 .proccess-list {
