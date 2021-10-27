@@ -9,6 +9,13 @@
 @import './modal.css';
 
 body {
+  // notch safe area - header
+  padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
+  padding-top: env(safe-area-inset-top); /* iOS 11.2 */
+  // notch safe area - footer
+  padding-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+  padding-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
+
   @media (max-width: 1199px) {
     &::-webkit-scrollbar {
       display: none;
