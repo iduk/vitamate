@@ -511,7 +511,8 @@ $modal-header-size: 70px;
       overflow: hidden;
       overflow-y: auto;
       height: 100vh;
-      max-height: calc(100% - $modal-header-size);
+      height: calc(var(--vh, 1vh) * 100);
+      max-height: calc(100vh - $modal-header-size);
     }
     .modal-content {
       @apply p-5 lg:p-8 lg:pt-0;
