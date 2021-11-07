@@ -504,8 +504,8 @@ $modal-header-size: 70px;
     }
   }
   .modal-content {
-    @apply p-5 pt-0 lg:p-8 lg:pt-0;
-    height: 100%;
+    @apply p-5 lg:p-8 lg:pt-0;
+    height: 100vh;
     max-height: calc(100vh - $modal-header-size);
     overflow: hidden;
     overflow-y: auto;

@@ -36,7 +36,6 @@ export default function Modals({ show, onClose, children, size, title }) {
       }}
       closeIcon={closeIcon}
       center
-      blockScroll
     >
       <ModalHeader />
 

@@ -21,8 +21,8 @@
 .react-responsive-modal-container {
   outline: 0;
   height: 100%;
+  overflow: hidden;
   /* overflow-y: auto; */
-  overflow-x: hidden;
   text-align: center;
 }
 
