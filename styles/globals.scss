@@ -503,29 +503,14 @@ $modal-header-size: 70px;
     height: $modal-header-size;
     @apply flex items-start justify-between rounded-t p-5 pt-6 lg:p-8 lg:pt-6 pr-12;
   }
-  .modal-content-wrap {
-    position: relative;
-    height: 100%;
 
-    @media (max-width: 1199px) {
-      position: relative;
-      height: 100%;
-      max-height: calc(100% - $modal-header-size);
-      background-color: green;
-    }
+  .modal-content-wrap {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 90%;
+
     .modal-content {
       @apply p-5 lg:p-8 lg:pt-0;
-      @media (max-width: 1199px) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        background-color: yellow;
-      }
     }
   }
 }
