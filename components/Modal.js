@@ -1,8 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Modal } from 'react-responsive-modal'
 import Img from 'next/image'
 
 export default function Modals({ show, onClose, children, size, title }) {
+  useEffect(() => {
+    if (show) {
+      document.body.className = 'scroll-lock'
+    } else {
+      document.body.className = ''
+    }
+  }, [show])
+
   const closeIcon = (
     <button>
       <Img src="/images/btn-popup-cancel.svg" width={44} height={44} alt="닫기" />
