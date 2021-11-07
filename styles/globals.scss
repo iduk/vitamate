@@ -497,7 +497,7 @@ $modal-size-lg: 800px !important;
 $modal-header-size: 70px;
 
 .customModal {
-  @apply p-0 rounded-large shadow-lg overflow-hidden w-full bg-white outline-none focus:outline-none mx-auto max-w-lg lg:justify-center relative;
+  @apply p-0 rounded-large shadow-lg overflow-hidden w-full bg-white outline-none focus:outline-none mx-auto max-w-lg lg:justify-center relative lg:h-auto h-full;
 
   .modal-header {
     height: $modal-header-size;
@@ -506,16 +506,17 @@ $modal-header-size: 70px;
   .modal-content-wrap {
     position: relative;
     height: 100%;
+    @apply p-5 lg:p-8 lg:pt-0;
 
     @media (max-width: 1199px) {
+      position: absolute;
+      top: $modal-header-size;
       overflow: hidden;
       overflow-y: auto;
-      height: 100vh;
-      height: calc(var(--vh, 1vh) * 100);
-      max-height: calc(100vh - $modal-header-size);
+      width: 100%;
+      height: calc(100% - $modal-header-size);
     }
     .modal-content {
-      @apply p-5 lg:p-8 lg:pt-0;
     }
   }
 }
