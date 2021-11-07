@@ -142,14 +142,15 @@ const TeckPage = () => {
     <section className={'subpage teck'}>
       <Header />
       {/* sub text */}
-      <div className="container lg:px-0 px-6 pb-16 subpage--description" style={{ top: '12rem' }}>
+      <div className="container lg:px-0 px-6 pb-16 subpage--description">
         <div>
-          <p className="text-base lg:text-xl leading-snug pb-2">고객의 Vital Balance를 위해</p>
+          <p className="text-base lg:text-xl leading-snug pb-2">비타메이트 알고리즘,</p>
           <h1 className="text-2xl leading-snug lg:text-4xl lg:leading-normal">
-            비타메이트 시스템에 탑재된 AI 큐레이팅 알고리즘을 통해 <br className="hidden lg:block" />
-            개인에 맞는 영양제를 추천합니다
+            MAX는 개인 맞춤 영양제 'AI큐레이터'입니다
           </h1>
-          <p className="mt-4 text-gray-600">AI큐레이팅 알고리즘: MAX 브랜드</p>
+        </div>
+        <div className="mt-8">
+          <button className="rounded-md bg-primary-600 text-white text-lg py-3 px-6">MAX 더 알아보기</button>
         </div>
       </div>
     </section>
