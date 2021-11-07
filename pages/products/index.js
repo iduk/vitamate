@@ -37,7 +37,7 @@ export default function Products({ prodItemList }) {
             >
               <div className="flex items-center justify-between">
                 <div className="inline-block">
-                  <h6 className="text-xl lg:text-2xl leading-snug mb-1">{Item.name}</h6>
+                  <h6 className="text-2xl leading-snug mb-1">{Item.name}</h6>
 
                   <div className="text-sm leading-normal text-gray-500">
                     <p>{Item.property}</p>
@@ -53,7 +53,7 @@ export default function Products({ prodItemList }) {
                 </div>
               </div>
 
-              <ul className="product-list text-sm lg:text-base lg:leading-normal overflow-hidden my-4">
+              <ul className="product-list text-base leading-normal lg:text-base lg:leading-normal overflow-hidden my-4">
                 <li className="flex">
                   <span className="bullet relative inline-block w-6">
                     <Img src="/images/check-mark.svg" width={12} height={12} alt="icon" />
