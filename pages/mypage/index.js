@@ -260,6 +260,22 @@ export default function Mypage() {
           <li className={'px-8 py-8 block lg:flex lg:justify-between lg:items-center'}>
             <div className="flex lg:w-7/12 items-center">
               <span className="pr-6 flex-shrink-0">
+                <Img src="/images/ic-main-productbuy.svg" width={76} height={76} alt="icon" />
+              </span>
+              <dl>
+                <dt className="text-lg font-bold mb-1">맞춤 추천 영양제</dt>
+                <dd className="text-gray-500">나만을 위한 추천 영양제를 확인해 보세요</dd>
+              </dl>
+            </div>
+            <div className="lg:w-5/12 lg:text-right mt-8 lg:mt-0">
+              <button className="w-full lg:w-auto py-3 px-5 rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-all">
+                맞춤 추천 확인하기
+              </button>
+            </div>
+          </li>
+          <li className={'px-8 py-8 block lg:flex lg:justify-between lg:items-center border-t border-gray-200'}>
+            <div className="flex lg:w-7/12 items-center">
+              <span className="pr-6 flex-shrink-0">
                 <Img src="/images/ic-health-survey.svg" width={76} height={76} alt="icon" />
               </span>
               <dl>
