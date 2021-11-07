@@ -1,17 +1,20 @@
 import Layout from 'components/Layouts/Layout'
 import Head from 'next/head'
 import 'styles/globals.scss'
+import { useEffect } from 'react'
 
 export default function App({ Component, pageProps }) {
-  let vh = window.innerHeight * 0.01
-  document.documentElement.style.setProperty('--vh', `${vh}px`)
-
-  window.addEventListener('resize', () => {
-    console.log('resize')
+  useEffect(() => {
     let vh = window.innerHeight * 0.01
-    document.documentElement.style.setProperty('--vh', `${vh}px`)
-  })
 
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+
+    window.addEventListener('resize', () => {
+      console.log('resize')
+      let vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    })
+  }, [])
   return (
     <>
       <Head>
