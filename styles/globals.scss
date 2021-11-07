@@ -8,6 +8,14 @@
 @import './calendar.css';
 @import './modal.css';
 
+html {
+  height: -webkit-fill-available;
+}
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
 body {
   // notch safe area - header
   padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
@@ -503,7 +511,7 @@ $modal-header-size: 70px;
       overflow: hidden;
       overflow-y: auto;
       height: 100vh;
-      max-height: calc(100vh - $modal-header-size);
+      max-height: calc(100% - $modal-header-size);
     }
     .modal-content {
       @apply p-5 lg:p-8 lg:pt-0;
