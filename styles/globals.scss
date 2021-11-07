@@ -494,23 +494,23 @@ $modal-size-lg: 800px !important;
 }
 
 // vita-modal
-$modal-header-size: 70px;
+$modal-header-size: 50px;
 
 .customModal {
-  @apply p-0 rounded-large shadow-lg overflow-hidden w-full bg-white outline-none focus:outline-none mx-auto max-w-lg lg:justify-center relative lg:h-auto h-full;
-
-  .modal-header {
-    height: $modal-header-size;
-    @apply flex items-start justify-between rounded-t p-5 pt-6 lg:p-8 lg:pt-6 pr-12;
-  }
+  @apply p-0 rounded-large shadow-lg overflow-hidden w-full bg-white outline-none focus:outline-none mx-auto max-w-lg lg:justify-center relative lg:h-auto;
 
   .modal-content-wrap {
+    @apply p-5 lg:p-8 lg:pt-0;
+    height: 90%;
     overflow: hidden;
     overflow-y: auto;
-    height: 90%;
+
+    .modal-header {
+      height: $modal-header-size;
+      @apply flex items-start justify-between rounded-t;
+    }
 
     .modal-content {
-      @apply p-5 lg:p-8 lg:pt-0;
     }
   }
 }

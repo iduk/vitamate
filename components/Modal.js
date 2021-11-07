@@ -3,13 +3,13 @@ import { Modal } from 'react-responsive-modal'
 import Img from 'next/image'
 
 export default function Modals({ show, onClose, children, size, title }) {
-  useEffect(() => {
-    if (show) {
-      document.body.className = 'scroll-lock'
-    } else {
-      document.body.className = ''
-    }
-  }, [show])
+  // useEffect(() => {
+  //   if (show) {
+  //     document.body.className = ''
+  //   } else {
+  //     document.body.className = ''
+  //   }
+  // }, [show])
 
   const closeIcon = (
     <button>
@@ -36,11 +36,12 @@ export default function Modals({ show, onClose, children, size, title }) {
       }}
       closeIcon={closeIcon}
       center
+      blockScroll
     >
-      <ModalHeader />
-
       <section className="modal-content-wrap">
-        <div className="modal-content">{children}</div>
+        <ModalHeader />
+
+        {children}
       </section>
     </Modal>
   )

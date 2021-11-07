@@ -20,9 +20,9 @@
 
 .react-responsive-modal-container {
   outline: 0;
-  height: 100%;
   overflow: hidden;
-  /* overflow-y: auto; */
+  height: 100%;
+  overflow-y: auto;
   text-align: center;
 }
 
@@ -40,12 +40,11 @@
   display: inline-block;
   text-align: left;
   vertical-align: middle;
-
   /* margin: 1.5rem; */
   padding: 2rem;
   position: relative;
-  /* height: 100%; */
-  /* overflow-y: auto; */
+  /* height: 100%;
+  overflow-y: auto; */
 }
 
 .react-responsive-modal-closeButton {
