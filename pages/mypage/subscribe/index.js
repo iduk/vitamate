@@ -164,101 +164,120 @@ const TabOne = () => {
 
         <footer className="my-6">
           {/* ----- 정산 ----- */}
-          <article className="w-full px-5 py-4 bg-gray-100 rounded-md lg:flex-shrink-0 lg:shadow">
-            <div className="flex justify-between">
-              <h6 className={'font-bold'}>총 구독상품</h6>
+          <table className="min-w-full leading-normal border-b border-gray-200">
+            <thead className="bg-gray-100 lg:text-center">
+              <tr>
+                <th scope="col" className="py-2 px-4 lg:py-4 lg:px-4 font-bold text-gray-900">
+                  구독상품수
+                </th>
+                <th scope="col" className="py-2 px-4 lg:py-4 lg:px-4 font-bold text-gray-900">
+                  구매금액(구독기간)
+                </th>
+                <th scope="col" className="py-2 px-4 lg:py-4 lg:px-4 font-bold text-gray-900">
+                  할인율
+                </th>
+                <th scope="col" className="py-2 px-4 lg:py-4 lg:px-4 font-bold text-gray-900">
+                  할인금액
+                </th>
+                <th scope="col" className="py-2 px-4 lg:py-4 lg:px-4 font-bold text-gray-900">
+                  최종금액
+                </th>
+                <th scope="col" className="py-2 px-4 lg:py-4 lg:px-4 font-bold text-gray-900">
+                  매월지불금액
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t border-gray-200 lg:text-center">
+                <td data-label="구독상품수" className="py-2 px-4 lg:py-4 lg:px-4 align-top">
+                  <span>15</span>개
+                </td>
+                <td data-label="구매금액(구독기간)" className="py-2 px-4 lg:py-4 lg:px-4 align-top">
+                  <span>100,000</span>원
+                </td>
+                <td data-label="할인율" className="py-2 px-4 lg:py-4 lg:px-4 align-top">
+                  <span>15</span>%
+                </td>
+                <td data-label="할인금액" className="py-2 px-4 lg:py-4 lg:px-4 align-top">
+                  <span>100,000</span>원
+                </td>
+                <td data-label="최종금액" className="py-2 px-4 lg:py-4 lg:px-4 align-top">
+                  <span>100,000</span>원
+                </td>
+                <td data-label="매월지불금액" className="py-2 px-4 lg:py-4 lg:px-4 align-top">
+                  <span>100,000</span>원
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-              <p>
-                <span>4</span>개<span className="px-2">/</span>
-                <span>80,000</span>원
-              </p>
-            </div>
-            <div className="flex justify-between mt-1">
-              <h6 className={'font-bold'}>약정기간</h6>
-              <p>2년</p>
-            </div>
-            <div className="flex justify-between mt-1">
-              <h6 className={'font-bold'}>할인금액</h6>
-              <p>
-                <span>6,000</span>원
-              </p>
-            </div>
-            <div className="flex justify-between mt-1">
-              <h6 className={'font-bold'}>매월 지불 금액</h6>
-              <p className="text-xl font-bold text-primary-600">
-                <span>74,000</span>원
-              </p>
-            </div>
-          </article>
-          <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <p className="block py-2 ml-0 mr-auto text-gray-700 text-lg">
-                주문할 영양제를 한꺼번에 받기를 원하십니까?
-              </p>
-              <p className="text-xs text-gray-600">
-                ※ 비타메이트는 매달 1개월분의 영양제를 배송합니다. <br />
-                만약 한꺼번에 배송받기를 원하실 경우 고객센터로 연락주시기 바랍니다.
-              </p>
-            </div>
+          <div className="mt-4">
             <div className="text-right">
               <button className="rounded px-6 py-4 w-full lg:w-56 bg-primary-600 text-white text-lg">결제하기</button>
             </div>
           </div>
         </footer>
 
-        <ul className="my-6 grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {productData1.map((product, id) => (
-            <li key={id} className="rounded-large bg-white p-8 border border-gray-200 relative">
-              <div className="flex justify-between">
-                <div className="w-full">
-                  <div className="absolute top-4 right-4">
-                    <span className="px-1 py-1 text-xs font-bold leading-none text-primary-600 border border-primary-600 rounded mb-1">
-                      구독중
-                    </span>
-                  </div>
-                  <h6 className="text-xl font-bold leading-snug mr-2">{product.name}</h6>
+        <hr className="lg:-mx-16 border-gray-200 mt-10 mb-4" />
 
-                  <div className="grid place-content-center ml-2"></div>
-                  <p className="text-sm">{product.property}</p>
-                  <div className="block lg:flex mt-3">
-                    <p className="text-base lg:text-lg">
-                      <span>{product.price}</span>원
-                    </p>
+        <article className="py-6 h-auto">
+          <h2 className="text-3xl font-bold mb-10 text-left">
+            <span className="text-highlight">알고리즘 추천영양제</span>
+          </h2>
+          <ul className="my-6 grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {productData1.map((product, id) => (
+              <li key={id} className="rounded-large bg-white p-8 border border-gray-200 relative">
+                <div className="flex justify-between">
+                  <div className="w-full">
+                    <div className="absolute top-4 right-4">
+                      <span className="px-1 py-1 text-xs font-bold leading-none text-primary-600 border border-primary-600 rounded mb-1">
+                        구독중
+                      </span>
+                    </div>
+                    <h6 className="text-xl font-bold leading-snug mr-2">{product.name}</h6>
+
+                    <div className="grid place-content-center ml-2"></div>
+                    <p className="text-sm">{product.property}</p>
+                    <div className="block lg:flex mt-3">
+                      <p className="text-base lg:text-lg">
+                        <span>{product.price}</span>원
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-6">
-                {toCart === true ? (
-                  <button
-                    onClick={() => setToCart(!toCart)}
-                    className="w-full p-3 rounded-md border border-gray-300 text-gray-400 hover:bg-gray-50 transition-all"
-                  >
-                    <>
-                      <span className="pr-2">-</span>
-                      <span>구독취소</span>
-                    </>
-                  </button>
-                ) : (
-                  <>
+                <div className="mt-6">
+                  {toCart === true ? (
                     <button
                       onClick={() => setToCart(!toCart)}
-                      className="w-full p-3 rounded-md text-primary-600 border border-primary-600 hover:bg-primary-600 hover:text-white transition-all"
+                      className="w-full p-3 rounded-md border border-gray-300 text-gray-400 hover:bg-gray-50 transition-all"
                     >
-                      <span className="pr-2">+</span>
-                      <span>구독하기</span>
+                      <>
+                        <span className="pr-2">-</span>
+                        <span>구독취소</span>
+                      </>
                     </button>
-                  </>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => setToCart(!toCart)}
+                        className="w-full p-3 rounded-md text-primary-600 border border-primary-600 hover:bg-primary-600 hover:text-white transition-all"
+                      >
+                        <span className="pr-2">+</span>
+                        <span>구독하기</span>
+                      </button>
+                    </>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </article>
 
         <hr className="lg:-mx-16 border-gray-200 mt-10 mb-4" />
 
         <article className="py-6 h-auto">
-          <h2 className="text-3xl font-bold mb-10 text-center">
+          <h2 className="text-3xl font-bold mb-10 text-left">
             <span className="text-highlight">함께 섭취하면 좋은 영양제</span>
           </h2>
           <ul className="grid grid-cols-1 lg:grid-cols-3 gap-5">
