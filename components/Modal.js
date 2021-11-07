@@ -3,14 +3,6 @@ import { Modal } from 'react-responsive-modal'
 import Img from 'next/image'
 
 export default function Modals({ show, onClose, children, size, title }) {
-  // useEffect(() => {
-  //   if (show) {
-  //     document.body.className = ''
-  //   } else {
-  //     document.body.className = ''
-  //   }
-  // }, [show])
-
   const closeIcon = (
     <button>
       <Img src="/images/btn-popup-cancel.svg" width={44} height={44} alt="닫기" />
@@ -36,12 +28,11 @@ export default function Modals({ show, onClose, children, size, title }) {
       }}
       closeIcon={closeIcon}
       center
-      blockScroll
     >
-      <section className="modal-content-wrap">
-        <ModalHeader />
+      <ModalHeader />
 
-        {children}
+      <section className="modal-content-wrap">
+        <div className="modal-content">{children}</div>
       </section>
     </Modal>
   )
